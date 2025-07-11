@@ -1,8 +1,32 @@
 /* Header component styles */
 
+/* Header styles */
+.header {
+  padding: 1rem;
+  background: #0074d9;
+  color: #fff;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+}
+
+/* Header navigation section styles */
+.header-nav {
+  margin-left: auto; /* Align navigation links to the right */
+}
+
+/* Header navigation links styles */
+.header-nav a {
+  color: #fff;
+  margin-right: 1rem;
+  text-decoration: none;
+  font-size: 2rem;
+}
+
 /* Logo styles */
 .header-logo {
-  width: 150px;
   height: auto;
-  /* Image source: /mindinblue_logo.png */
+  width: 300px;
 }

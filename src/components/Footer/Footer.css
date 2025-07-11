@@ -1,1 +1,27 @@
 /* Footer component styles */
+
+/* Footer styles */
+.footer {
+  padding: 1rem;
+  background-color: #222;
+  color: #fff;
+}
+
+/* Footer content styles */
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Footer icons styles */
+.footer-icon {
+  margin-right: 12px;
+  width: 48px;
+  height: 48px;
+}
+
+/* Footer copyright styles */
+.copyright {
+  font-size: 2rem;
+}
