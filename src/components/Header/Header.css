@@ -1,0 +1,8 @@
+/* Header component styles */
+
+/* Logo styles */
+.header-logo {
+  width: 150px;
+  height: auto;
+  /* Image source: /mindinblue_logo.png */
+}
