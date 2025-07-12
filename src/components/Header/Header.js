@@ -1,7 +1,8 @@
 // Header component for MindinBlue website
-// Logo will be displayed here using mindinblue_logo.png
+// Logo will be displayed here using header_logo.png
 
 import "./Header.css";
+import { Link } from "react-router-dom";
 
 function Header() {
   return (
@@ -13,10 +14,10 @@ function Header() {
           className="header-logo"
         />
         <nav className="header-nav">
-          <a href="/">Home</a>
-          <a href="/team">Team</a>
-          <a href="/services">Services</a>
-          <a href="/contact">Contact</a>
+          <Link to="/">Home</Link>
+          <Link to="/team">Team</Link>
+          <Link to="/services">Services</Link>
+          <Link to="/contact">Contact</Link>
         </nav>
       </div>
     </header>
