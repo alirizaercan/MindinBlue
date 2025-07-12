@@ -1,1 +1,62 @@
 /* Global styles for the website */
+
+body {
+  font-family: "Lemon Milk Pro";
+}
+
+@font-face {
+  font-family: "Lemon Milk Pro";
+  src: url("/public/fonts/Lemon Milk Pro Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Lemon Milk Pro";
+  src: url("/public/fonts/Lemon Milk Pro Regular Italic.otf") format("opentype");
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Lemon Milk Pro";
+  src: url("/public/fonts/Lemon Milk Pro Medium.otf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Lemon Milk Pro";
+  src: url("/public/fonts/Lemon Milk Pro Medium Italic.otf") format("opentype");
+  font-weight: 500;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Lemon Milk Pro";
+  src: url("/public/fonts/Lemon Milk Pro Bold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Lemon Milk Pro";
+  src: url("/public/fonts/Lemon Milk Pro Bold Italic.otf") format("opentype");
+  font-weight: 700;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Lemon Milk Pro";
+  src: url("/public/fonts/Lemon Milk Pro Ultra Light.otf") format("opentype");
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Lemon Milk Pro";
+  src: url("/public/fonts/Lemon Milk Pro Ultra Light Italic.otf")
+    format("opentype");
+  font-weight: 200;
+  font-style: italic;
+}

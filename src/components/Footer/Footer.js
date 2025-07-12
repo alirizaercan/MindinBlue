@@ -13,7 +13,7 @@ function Footer() {
             aria-label="Facebook"
           >
             <img
-              src="/Facebook_Logo.png"
+              src="/logos/Facebook_Logo.png"
               alt="Facebook"
               className="footer-icon"
             />
@@ -25,7 +25,7 @@ function Footer() {
             aria-label="Instagram"
           >
             <img
-              src="/Instagram_Logo.png"
+              src="/logos/Instagram_Logo.png"
               alt="Instagram"
               className="footer-icon"
             />
@@ -36,7 +36,11 @@ function Footer() {
             rel="noopener noreferrer"
             aria-label="TikTok"
           >
-            <img src="/TikTok_Logo.png" alt="TikTok" className="footer-icon" />
+            <img
+              src="/logos/TikTok_Logo.png"
+              alt="TikTok"
+              className="footer-icon"
+            />
           </a>
           <a
             href="https://www.youtube.com/@themindinblue"
@@ -45,7 +49,7 @@ function Footer() {
             aria-label="YouTube"
           >
             <img
-              src="/YouTube_Logo.png"
+              src="/logos/YouTube_Logo.png"
               alt="Youtube"
               className="footer-icon"
             />
@@ -57,7 +61,7 @@ function Footer() {
             aria-label="LinkedIn"
           >
             <img
-              src="/LinkedIn_Logo.png"
+              src="/logos/LinkedIn_Logo.png"
               alt="LinkedIn"
               className="footer-icon"
             />

@@ -1,1 +1,51 @@
 /* Home page styles */
+
+.sky-image-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.sky-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+.sky-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+  pointer-events: none; /* overlay doesn't block button clicks */
+}
+
+.sky-overlay h1,
+.sky-overlay p,
+.sky-overlay .book-btn {
+  pointer-events: auto; /* allow interaction with button */
+}
+
+.book-btn {
+  margin-top: 1rem;
+  padding: 0.75rem 2rem;
+  font-size: 1.2rem;
+  background: #3fa9f5;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background 0.2s;
+}
+
+.book-btn:hover {
+  background: #0074d9;
+}
