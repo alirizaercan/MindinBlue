@@ -13,6 +13,8 @@
 .header-content {
   display: flex;
   align-items: center;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 /* Header navigation section styles */
@@ -28,8 +30,33 @@
   font-size: 1.5rem;
 }
 
+.header-nav a:last-child {
+  margin-right: 0;
+}
+
 /* Logo styles */
 .header-logo {
   height: auto;
-  width: 300px;
+  width: 18.75rem;
+  max-width: 100%;
+}
+
+@media (max-width: 1024px) {
+  .header-content {
+    flex-direction: column;
+  }
+  .header-logo {
+    width: 180px;
+    margin-bottom: 1rem;
+  }
+  .header-nav {
+    margin-left: 0;
+  }
+
+  .header-nav a {
+    color: #fff;
+    margin-right: 0.5rem;
+    text-decoration: none;
+    font-size: 1.2rem;
+  }
 }

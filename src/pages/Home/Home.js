@@ -46,8 +46,7 @@ function Home() {
             height="450"
             src="https://www.youtube.com/embed/iCiEpSKVodQ"
             title="Meet the Founder"
-            frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; ecrypted-media; gyroscope; picture-in-picture"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
           ></iframe>
         </div>

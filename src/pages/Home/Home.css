@@ -1,5 +1,10 @@
 /* Home page styles */
 
+.body,
+.home-page {
+  overflow-x: hidden;
+}
+
 .sky-image-wrapper {
   position: relative;
   width: 100%;
@@ -10,6 +15,7 @@
   height: auto;
   display: block;
   object-fit: cover;
+  max-width: 100%;
 }
 
 .sky-overlay {
@@ -60,6 +66,7 @@
 
 .meet-founder-section {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: flex-start;
   margin: 3rem 0;
@@ -67,7 +74,8 @@
 }
 
 .meet-founder-text {
-  flex: 1;
+  min-width: 250px;
+  flex: 1 1 300px;
   max-width: 50%;
   margin-left: 5rem;
 }
@@ -101,8 +109,8 @@
 }
 
 .meet-founder-video {
-  flex: 1 1 400px;
-  min-width: 300px;
+  flex: 1 1 300px;
+  min-width: 250px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -112,6 +120,72 @@
   width: 100%;
   max-width: 800px;
   aspect-ratio: 16 / 9;
-  border-radius: 12px;
+  border-radius: 2%;
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.15);
+  border: none;
+  height: auto;
+  display: block;
+}
+
+@media (max-width: 900px) {
+  .meet-founder-section {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin: 1rem 0;
+  }
+  .meet-founder-text,
+  .meet-founder-video {
+    max-width: 100%;
+    margin-left: 0 !important;
+    min-width: 0;
+    padding: 0 0.5rem;
+  }
+  .meet-founder-video iframe {
+    width: 100%;
+    height: 220px;
+    max-width: 100%;
+  }
+
+  .home-page {
+    padding: 0;
+    margin: 0;
+    overflow-x: hidden;
+  }
+
+  .sky-overlay h1 {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  .sky-overlay p {
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  .book-btn {
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    max-width: 18rem;
+    margin: 0.5rem auto 0 auto;
+    display: block;
+  }
+
+  .calendly-btn {
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    max-width: 10rem;
+    margin: 0.5rem auto 0 auto;
+    display: block;
+  }
+
+  .meet-founder-text h2 {
+    font-size: 1.3rem;
+    text-align: center;
+  }
+
+  .meet-founder-text p {
+    font-size: 1rem;
+    text-align: center;
+  }
 }
