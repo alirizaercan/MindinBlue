@@ -19,6 +19,9 @@ function Header() {
           <Link to="/services">Services</Link>
           <Link to="/contact">Contact</Link>
         </nav>
+        <div className="header-phone">
+          <a href="tel:+48506080577">+48 (506) 080-577</a>
+        </div>
       </div>
     </header>
   );

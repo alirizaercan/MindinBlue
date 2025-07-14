@@ -127,6 +127,96 @@
   display: block;
 }
 
+.what-we-offer {
+  background-color: #3fa9f5;
+  color: white;
+  text-align: center;
+  padding: 3rem 1rem;
+}
+
+.what-we-offer h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  font-weight: bold;
+}
+
+.offer-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.offer-card {
+  background-color: #4cb3fc;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  flex: 1 1 300px;
+  transition: transform 0.3s ease;
+}
+
+.offer-card:hover {
+  transform: translateY(-5px);
+}
+
+.offer-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+.offer-card p {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.get-started-section {
+  background-color: #f5f5f5;
+  padding: 4rem 2rem;
+  text-align: left;
+}
+
+.get-started-title {
+  background-color: #2a66c7;
+  color: #fff;
+  padding: 1rem 2rem;
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 0 0 2rem;
+}
+
+.get-started-block {
+  margin-bottom: 3rem;
+}
+
+.get-started-block h3 {
+  font-size: 1.75rem;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.get-started-block .subtitle {
+  font-size: 1rem;
+  color: #999;
+  margin: 0.25rem 0;
+}
+
+.get-started-btn {
+  margin-top: 1rem;
+  background-color: #3fa9f5;
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.get-started-btn:hover {
+  background-color: #2e94de;
+}
+
 @media (max-width: 900px) {
   .meet-founder-section {
     flex-direction: column;
