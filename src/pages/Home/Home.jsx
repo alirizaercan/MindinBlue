@@ -2,9 +2,27 @@
 
 import "./Home.css";
 import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 
 function Home() {
   const navigate = useNavigate();
+
+  useEffect(() => {
+    // Load Trustindex script exactly as provided - no modifications
+    const trustindexScript = document.createElement("script");
+    trustindexScript.src = "https://cdn.trustindex.io/loader.js?ff726e85014a2267904680806d9";
+    trustindexScript.defer = true;
+    trustindexScript.async = true;
+    document.head.appendChild(trustindexScript);
+
+    return () => {
+      // Cleanup script on component unmount
+      if (document.head.contains(trustindexScript)) {
+        document.head.removeChild(trustindexScript);
+      }
+    };
+  }, []);
+
   return (
     <div className="home-page">
       <div className="sky-image-wrapper">
@@ -80,29 +98,45 @@ function Home() {
         </div>
       </section>
       <section className="get-started-section">
-        <h2 className="get-started-title">Get Started</h2>
+        <div className="get-started-container">
+          <h2 className="get-started-title">Get Started</h2>
+          
+          <div className="get-started-blocks-container">
+            <div className="get-started-block">
+              <h3>Choose your Therapist</h3>
+              <p className="subtitle">
+                Choose from 6 psychologists, available in 4 languages. (online or in-person)
+              </p>
+              <button
+                className="get-started-btn"
+                onClick={() => navigate("/team")}
+              >
+                View our Therapists
+              </button>
+            </div>
 
-        <div className="get-started-block">
-          <h3>Choose your Therapist</h3>
-          <p className="subtitle">
-            choose from 6 psychologists in, available in 4 languages. (online or in-person)
-          </p>
-          <button className="get-started-btn" onClick={() => navigate("/team")}>
-            View our Therapists
-          </button>
+            <div className="get-started-block">
+              <h3>Book Appointment</h3>
+              <p className="subtitle">
+                Book an appointment online or by calling our friendly and responsive team.
+              </p>
+              <p className="subtitle">
+                Appointments are available Monday to Friday, between 9am and 8pm
+              </p>
+              <button
+                className="get-started-btn"
+                onClick={() => navigate("/contact")}
+              >
+                Book an Appointment
+              </button>
+            </div>
+          </div>
         </div>
-
-        <div className="get-started-block">
-          <h3>Book Appointment</h3>
-          <p className="subtitle">
-            Book an appointment online or by calling our friendly and responsive team.
-          </p>
-          <p className="subtitle">
-            Appointments are available Monday to Friday, between  9am and 8pm
-          </p>
-          <button className="get-started-btn" onClick={() => navigate("/contact")}>
-            Book an Appointment
-          </button>
+      </section>
+      <section className="google-reviews-section">
+        <h2>Google Reviews</h2>
+        <div className="google-reviews-container">
+          <script defer async src='https://cdn.trustindex.io/loader.js?ff726e85014a2267904680806d9'></script>
         </div>
       </section>
     </div>
