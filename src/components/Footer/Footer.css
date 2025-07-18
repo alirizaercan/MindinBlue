@@ -2,9 +2,21 @@
 
 /* Footer styles */
 .footer {
-  padding: 1rem;
-  background-color: #222;
+  padding: 3rem 2rem 2rem 2rem;
+  background: linear-gradient(135deg, #1a1a1a 0%, #2c2c2c 100%);
   color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+
+.footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
 }
 
 /* Footer content styles */
@@ -12,16 +24,103 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Footer title styles */
+.footer-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: #fff;
+  text-align: center;
+  letter-spacing: 0.025em;
+}
+
+/* Footer social container */
+.footer-social {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
 }
 
 /* Footer icons styles */
 .footer-icon {
-  margin-right: 12px;
-  width: 48px;
-  height: 48px;
+  width: 40px;
+  height: 40px;
+  transition: all 0.3s ease;
+  filter: brightness(0.9);
+  border-radius: 8px;
+  object-fit: contain;
+}
+
+.footer-icon:hover {
+  transform: translateY(-3px) scale(1.1);
+  filter: brightness(1.1);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
 }
 
 /* Footer copyright styles */
 .copyright {
-  font-size: 2rem;
+  font-size: 0.875rem;
+  opacity: 0.8;
+  font-weight: 400;
+  letter-spacing: 0.025em;
+  margin-top: 0.5rem;
+  text-align: center;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .footer {
+    padding: 2.5rem 1.5rem 1.5rem 1.5rem;
+  }
+  
+  .footer-title {
+    font-size: 1.3rem;
+    margin-bottom: 1.25rem;
+  }
+  
+  .footer-social {
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .footer-icon {
+    width: 36px;
+    height: 36px;
+  }
+  
+  .copyright {
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer {
+    padding: 2rem 1rem 1rem 1rem;
+  }
+  
+  .footer-title {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .footer-social {
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .footer-icon {
+    width: 32px;
+    height: 32px;
+  }
+  
+  .copyright {
+    font-size: 0.7rem;
+  }
 }

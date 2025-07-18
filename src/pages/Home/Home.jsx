@@ -132,7 +132,7 @@ function Home() {
         </div>
       </section>
       <section className="google-reviews-section">
-        <h2>Google Reviews</h2>
+        <h2>What Our Clients Say</h2>
         <div className="google-reviews-container">
           <script defer async src='https://cdn.trustindex.io/loader.js?ff726e85014a2267904680806d9'></script>
         </div>

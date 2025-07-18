@@ -8,11 +8,13 @@
 .sky-image-wrapper {
   position: relative;
   width: 100%;
+  height: 60vh; /* Limit height to 60% of viewport */
+  overflow: hidden;
 }
 
 .sky-image {
   width: 100%;
-  height: auto;
+  height: 100%;
   display: block;
   object-fit: cover;
   max-width: 100%;
@@ -40,11 +42,16 @@
 }
 
 .sky-overlay h1 {
-  font-size: 40px;
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  text-align: center;
+  max-width: 90%;
 }
 
 .sky-overlay p {
-  font-size: 30px;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  text-align: center;
 }
 
 .book-btn {
@@ -61,39 +68,45 @@
 }
 
 .book-btn:hover {
-  background: #0074d9;
+  background: #2a66c7;
 }
 
 .meet-founder-section {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: flex-start;
-  margin: 3rem 0;
+  justify-content: center;
+  align-items: center;
+  margin: 3rem 2rem;
   gap: 2rem;
+  position: relative;
 }
 
 .meet-founder-text {
   min-width: 250px;
   flex: 1 1 300px;
-  max-width: 50%;
-  margin-left: 5rem;
+  max-width: 800px;
+  text-align: center;
+  margin: 0 auto;
 }
 
 .meet-founder-text h2 {
   font-size: 2.5rem;
   margin-bottom: 1rem;
+  text-align: center;
 }
 
 .meet-founder-text p {
   font-size: 1.25rem;
   line-height: 1.6;
+  text-align: justify;
+  max-width: 700px;
+  margin: 0 auto 3rem auto;
 }
 
 .calendly-btn {
-  margin-top: 1rem;
-  padding: 0.75rem 2rem;
-  font-size: 1.5rem;
+  margin-top: 2rem;
+  padding: 0.8rem 1.5rem;
+  font-size: 1.2rem;
   background: #3fa9f5;
   color: #fff;
   border: none;
@@ -102,10 +115,15 @@
   font-family: inherit;
   transition: background 0.2s;
   text-decoration: none;
+  display: block;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  width: fit-content;
 }
 
 .calendly-btn:hover {
-  background: #0074d9;
+  background: #2a66c7;
 }
 
 .meet-founder-video {
@@ -118,7 +136,7 @@
 
 .meet-founder-video iframe {
   width: 100%;
-  max-width: 800px;
+  max-width: 600px;
   aspect-ratio: 16 / 9;
   border-radius: 2%;
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.15);
@@ -153,8 +171,12 @@
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   max-width: 300px;
+  min-width: 300px;
   flex: 1 1 300px;
   transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  height: 280px;
 }
 
 .offer-card:hover {
@@ -164,15 +186,25 @@
 .offer-card h3 {
   font-size: 1.5rem;
   margin-bottom: 1rem;
+  height: 3.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  line-height: 1.2;
 }
+
 .offer-card p {
   font-size: 1rem;
   line-height: 1.5;
+  flex: 1;
+  display: flex;
+  align-items: flex-start;
 }
 
 .get-started-section {
-  background-color: #f5f5f5;
-  padding: 4rem 0;
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+  padding: 0 0 3rem 0;
   text-align: left;
   width: 100vw;
   position: relative;
@@ -180,6 +212,7 @@
   right: 50%;
   margin-left: -50vw;
   margin-right: -50vw;
+  margin-top: 3rem;
 }
 
 .get-started-section > * {
@@ -191,44 +224,68 @@
 }
 
 .get-started-title {
-  background-color: #2a66c7;
-  color: #fff;
-  padding: 1rem 2rem;
-  font-size: 2rem;
+  background: #ffffff;
+  color: #000000;
+  padding: 2rem;
+  font-size: 2.5rem;
   font-weight: bold;
   margin: 0 0 2rem;
+  text-align: center;
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  max-width: none;
 }
 
 .get-started-block {
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
+  background: #ffffff;
+  padding: 1.5rem;
+  border-radius: 0;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border-left: 6px solid #3fa9f5;
+  transition: all 0.3s ease;
+}
+
+.get-started-block:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
 }
 
 .get-started-block h3 {
-  font-size: 1.75rem;
-  color: #333;
+  font-size: 1.5rem;
+  color: #2a66c7;
   margin-bottom: 0.5rem;
+  font-weight: 700;
 }
 
 .get-started-block .subtitle {
   font-size: 1rem;
-  color: #999;
-  margin: 0.25rem 0;
+  color: #999999;
+  margin: 0.3rem 0 1rem 0;
+  line-height: 1.5;
 }
 
 .get-started-btn {
   margin-top: 1rem;
-  background-color: #3fa9f5;
+  padding: 0.8rem 1.5rem;
+  font-size: 1.2rem;
+  background: #3fa9f5;
   color: #fff;
-  padding: 0.75rem 1.5rem;
   border: none;
-  border-radius: 12px;
-  font-size: 1rem;
+  border-radius: 16px;
   cursor: pointer;
-  transition: background-color 0.2s ease;
+  font-family: inherit;
+  transition: background 0.2s;
+  text-decoration: none;
+  display: inline-block;
 }
 
 .get-started-btn:hover {
-  background-color: #2e94de;
+  background: #2a66c7;
 }
 
 /* Google Reviews Section */
@@ -240,7 +297,6 @@
 
 .google-reviews-section h2 {
   font-size: 2.5rem;
-  color: #2a66c7;
   margin-bottom: 2rem;
   font-weight: bold;
 }
@@ -292,6 +348,10 @@
 }
 
 @media (max-width: 900px) {
+  .sky-image-wrapper {
+    height: 50vh; /* Smaller on mobile */
+  }
+  
   .meet-founder-section {
     flex-direction: column;
     align-items: center;
@@ -318,12 +378,12 @@
   }
 
   .sky-overlay h1 {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     text-align: center;
   }
 
   .sky-overlay p {
-    font-size: 1rem;
+    font-size: 1.2rem;
     text-align: center;
   }
 
@@ -337,10 +397,12 @@
 
   .calendly-btn {
     font-size: 1rem;
-    padding: 0.5rem 1rem;
+    padding: 0.8rem 1rem;
     max-width: 10rem;
-    margin: 0.5rem auto 0 auto;
-    display: block;
+    margin: 2rem 0 0 0;
+    display: inline-block;
+    position: static;
+    transform: none;
   }
 
   .meet-founder-text h2 {
@@ -350,6 +412,64 @@
 
   .meet-founder-text p {
     font-size: 1rem;
-    text-align: center;
+    text-align: justify;
+  }
+
+  /* Mobile responsive styles for offer cards */
+  .offer-card {
+    min-width: 280px;
+    max-width: 100%;
+    height: 250px;
+    margin: 0 auto;
+  }
+
+  .offer-card h3 {
+    height: 3rem;
+    font-size: 1.3rem;
+  }
+
+  .offer-card p {
+    font-size: 0.9rem;
+  }
+}
+
+/* Tablet responsive design */
+@media (max-width: 1024px) and (min-width: 901px) {
+  .sky-image-wrapper {
+    height: 55vh;
+  }
+  
+  .sky-overlay h1 {
+    font-size: 2.2rem;
+  }
+  
+  .sky-overlay p {
+    font-size: 1.4rem;
+  }
+
+  /* Tablet styles for offer cards - stack vertically in one column */
+  .offer-cards {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    padding: 0 2rem;
+  }
+
+  .offer-card {
+    min-width: 400px;
+    max-width: 500px;
+    height: 200px;
+    flex: none;
+  }
+
+  .offer-card h3 {
+    height: 2.5rem;
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+  }
+
+  .offer-card p {
+    font-size: 1rem;
+    line-height: 1.5;
   }
 }

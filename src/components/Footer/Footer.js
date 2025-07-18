@@ -5,6 +5,7 @@ function Footer() {
   return (
     <footer className="footer">
       <div className="footer-content">
+        <h3 className="footer-title">Follow Us</h3>
         <div className="footer-social">
           <a
             href="https://www.facebook.com/themindinblue"

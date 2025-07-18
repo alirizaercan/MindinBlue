@@ -1,0 +1,6 @@
+Main Blue Color : #3fa9f5 
+Dark Blue Color : #2a66c7
+White : #ffffffff
+Dark : #000000ff
+Text Subtitle Color : #999
+
