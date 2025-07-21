@@ -2,12 +2,16 @@
 // Logo will be displayed here using header_logo.png
 
 import "./Header.css";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
 
 function Header() {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const location = useLocation();
+  
+  // Check if current page is home page
+  const isHomePage = location.pathname === '/';
 
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
@@ -27,9 +31,20 @@ function Header() {
         setIsDropdownOpen(false);
       }
       
-      // Set transparency based on scroll position
-      setIsScrolled(scrollTop > 10);
+      // Set transparency based on scroll position (only for home page)
+      if (isHomePage) {
+        setIsScrolled(scrollTop > 10);
+      } else {
+        setIsScrolled(true); // Always "scrolled" state for non-home pages
+      }
     };
+
+    // Initial check for non-home pages
+    if (!isHomePage) {
+      setIsScrolled(true);
+    } else {
+      setIsScrolled(window.scrollY > 10);
+    }
 
     window.addEventListener('scroll', handleScroll);
 
@@ -37,10 +52,10 @@ function Header() {
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
-  }, [isDropdownOpen]);
+  }, [isDropdownOpen, isHomePage]);
 
   return (
-    <header className={`header ${isScrolled ? 'scrolled' : 'transparent'} ${isDropdownOpen ? 'menu-open' : ''}`}>
+    <header className={`header ${isScrolled ? 'scrolled' : 'transparent'} ${isDropdownOpen ? 'menu-open' : ''} ${!isHomePage ? 'non-home-page' : ''}`}>
       <div className="header-content">
         <Link to="/" className="logo-link">
           <img

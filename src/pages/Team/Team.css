@@ -1,1 +1,512 @@
-/* Team styles */
+/* Team page styles */
+
+.team-page {
+  padding: 8rem 0 4rem 0; /* Added top padding to account for fixed header */
+  background-color: #ffffff;
+  min-height: 100vh;
+}
+
+.team-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.team-title {
+  font-size: 1.75rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 1rem;
+  color: #2a66c7;
+}
+
+.team-description {
+  font-size: 1.125rem;
+  text-align: center;
+  color: #666666;
+  max-width: 800px;
+  margin: 0 auto 4rem auto;
+  line-height: 1.6;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.team-member {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 2rem;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  border: 1px solid #f0f0f0;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.team-member:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+  border-color: #3fa9f5;
+}
+
+.team-member::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #3fa9f5, #2a66c7);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.team-member:hover::before {
+  transform: scaleX(1);
+}
+
+.member-image-container {
+  width: 180px;
+  height: 180px;
+  margin: 0 auto 1.5rem auto;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  border: 4px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.team-member:hover .member-image-container {
+  border-color: #3fa9f5;
+}
+
+.member-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.team-member:hover .member-image {
+  transform: scale(1.1);
+}
+
+.member-info {
+  padding-top: 1rem;
+}
+
+.member-name {
+  font-size: 1.375rem;
+  font-weight: bold;
+  color: #000000;
+  margin-bottom: 0.5rem;
+  transition: color 0.3s ease;
+}
+
+.team-member:hover .member-name {
+  color: #3fa9f5;
+}
+
+.member-title {
+  font-size: 1.125rem;
+  color: #666666;
+  margin-bottom: 1rem;
+  line-height: 1.4;
+  min-height: 2.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.member-flags {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.flag {
+  font-size: 1.2rem;
+  padding: 0.2rem;
+  transition: transform 0.3s ease;
+  font-family: "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", "Android Emoji", "EmojiSymbols", sans-serif;
+  font-variant-emoji: emoji;
+}
+
+.team-member:hover .flag {
+  transform: scale(1.2);
+}
+
+.view-profile-btn {
+  background: #3fa9f5;
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.team-member:hover .view-profile-btn {
+  opacity: 1;
+  transform: translateY(0);
+  background: #2a66c7;
+}
+
+/* Modal Styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 1rem;
+  animation: fadeIn 0.3s ease;
+}
+
+.modal-content {
+  background: white;
+  border-radius: 16px;
+  max-width: 600px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  animation: slideUp 0.3s ease;
+}
+
+.close-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #999;
+  z-index: 1001;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.close-btn:hover {
+  background: #f0f0f0;
+  color: #333;
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 2rem;
+  border-bottom: 1px solid #eee;
+}
+
+.modal-image {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #3fa9f5;
+}
+
+.modal-basic-info h2 {
+  margin: 0 0 0.5rem 0;
+  color: #333;
+  font-size: 1.75rem;
+}
+
+.modal-title {
+  color: #666;
+  margin: 0 0 0.5rem 0;
+  font-size: 1.125rem;
+}
+
+.modal-flags {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.modal-flags .flag {
+  font-family: "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", "Android Emoji", "EmojiSymbols", sans-serif;
+  font-variant-emoji: emoji;
+}
+
+.modal-body {
+  padding: 2rem;
+}
+
+.modal-section {
+  margin-bottom: 2rem;
+}
+
+.modal-section h3 {
+  color: #3fa9f5;
+  margin-bottom: 0.5rem;
+  font-size: 1.375rem;
+}
+
+.modal-section p {
+  color: #666;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.specialties-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.specialties-list li {
+  padding: 0.3rem 0;
+  color: #666;
+  position: relative;
+  padding-left: 1rem;
+}
+
+.specialties-list li::before {
+  content: '•';
+  color: #3fa9f5;
+  position: absolute;
+  left: 0;
+}
+
+.modal-footer {
+  padding: 1.5rem 2rem;
+  border-top: 1px solid #eee;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.book-appointment-btn {
+  background: #3fa9f5;
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  flex: 1;
+  min-width: 150px;
+}
+
+.book-appointment-btn:hover {
+  background: #2a66c7;
+}
+
+.contact-btn {
+  background: transparent;
+  color: #3fa9f5;
+  border: 2px solid #3fa9f5;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+  flex: 1;
+  min-width: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-btn:hover {
+  background: #3fa9f5;
+  color: white;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { 
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to { 
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Specific image positioning fixes */
+.team-member:nth-child(3) .member-image {
+  /* Justyna Foster - higher crop positioning */
+  object-position: center 20%;
+}
+
+.team-member:nth-child(4) .member-image {
+  /* Monika Skwierawska - better face positioning */
+  object-position: center top;
+}
+
+.modal-content .modal-image[src="/images/justyna.jpg"] {
+  /* Justyna Foster modal image - higher crop positioning */
+  object-position: center 20%;
+}
+
+.modal-content .modal-image[src="/images/monika.jpg"] {
+  /* Monika Skwierawska modal image positioning */
+  object-position: center top;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .team-page {
+    padding: 6rem 0 2rem 0; /* Adjusted for mobile header height */
+  }
+  
+  .team-container {
+    padding: 0 1rem;
+  }
+  
+  .team-title {
+    font-size: 2rem;
+  }
+  
+  .team-description {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+  
+  .team-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .team-member {
+    padding: 1.5rem 1rem;
+  }
+  
+  .member-image-container {
+    width: 140px;
+    height: 140px;
+  }
+  
+  .member-name {
+    font-size: 1.2rem;
+  }
+  
+  .member-title {
+    font-size: 0.9rem;
+    min-height: 2.5rem;
+  }
+  
+  .modal-header {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+  
+  .modal-image {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .modal-body {
+    padding: 1.5rem;
+  }
+  
+  .modal-footer {
+    flex-direction: column;
+    padding: 1.5rem;
+  }
+  
+  .book-appointment-btn,
+  .contact-btn {
+    min-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .team-container {
+    padding: 0 0.5rem;
+  }
+  
+  .team-title {
+    font-size: 1.8rem;
+  }
+  
+  .team-member {
+    padding: 1rem;
+  }
+  
+  .member-image-container {
+    width: 120px;
+    height: 120px;
+  }
+  
+  .modal-overlay {
+    padding: 0.5rem;
+  }
+  
+  .modal-content {
+    border-radius: 12px;
+  }
+  
+  .modal-header,
+  .modal-body {
+    padding: 1rem;
+  }
+}
+
+/* Large desktop responsive design */
+@media (min-width: 1200px) {
+  .team-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+  }
+}
+
+/* Tablet responsive design */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .team-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+  
+  .team-member {
+    padding: 1.8rem;
+  }
+}
+
+/* Medium tablet */
+@media (max-width: 900px) and (min-width: 769px) {
+  .team-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+  
+  .member-image-container {
+    width: 160px;
+    height: 160px;
+  }
+}

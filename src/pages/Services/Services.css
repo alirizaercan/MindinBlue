@@ -3,7 +3,7 @@
 .services-page {
   min-height: 100vh;
   background-color: #f8f9fa;
-  padding: 2rem 0;
+  padding: 8rem 0 2rem 0; /* Added top padding to account for fixed header */
 }
 
 .services-container {
@@ -13,7 +13,7 @@
 }
 
 .services-title {
-  font-size: 3rem;
+  font-size: 1.75rem;
   font-weight: bold;
   text-align: center;
   color: #2a66c7;
@@ -21,7 +21,7 @@
 }
 
 .services-subtitle {
-  font-size: 1.25rem;
+  font-size: 1.125rem;
   text-align: center;
   color: #666;
   margin-bottom: 3rem;
@@ -81,69 +81,204 @@
 }
 
 .service-title {
-  font-size: 1.5rem;
+  font-size: 1.375rem;
   font-weight: bold;
   color: #2a66c7;
   margin-bottom: 1rem;
 }
 
 .service-description {
-  font-size: 1rem;
+  font-size: 1.125rem;
   color: #666;
   line-height: 1.6;
   margin-bottom: 2rem;
 }
 
 .service-button {
-  background: linear-gradient(135deg, #3fa9f5, #2a66c7);
+  background: #3fa9f5;
   color: white;
   border: none;
   padding: 1rem 2rem;
-  border-radius: 30px;
-  font-size: 1rem;
+  border-radius: 16px;
+  font-size: 1.125rem;
   font-weight: 600;
   cursor: pointer;
-  transition: all 0.3s ease;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  box-shadow: 0 6px 20px rgba(63, 169, 245, 0.4);
+  transition: background 0.2s;
   min-width: 280px;
   max-width: 300px;
-  position: relative;
-  overflow: hidden;
   white-space: normal;
   line-height: 1.2;
   text-align: center;
-}
-
-.service-button::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-  transition: left 0.5s;
-}
-
-.service-button:hover::before {
-  left: 100%;
+  font-family: inherit;
 }
 
 .service-button:hover {
-  background: linear-gradient(135deg, #2e94de, #1e4a8a);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(63, 169, 245, 0.5);
+  background: #2a66c7;
 }
 
 .service-button:active {
-  transform: translateY(0);
-  box-shadow: 0 6px 20px rgba(63, 169, 245, 0.4);
+  background: #2a66c7;
+}
+
+/* Pricing Section */
+.pricing-section {
+  margin-top: 4rem;
+  background: white;
+  border-radius: 20px;
+  padding: 3rem 2rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.pricing-title {
+  font-size: 1.75rem;
+  font-weight: bold;
+  text-align: center;
+  color: #2a66c7;
+  margin-bottom: 2rem;
+}
+
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.pricing-card {
+  background: #3fa9f5;
+  color: white;
+  padding: 2rem;
+  border-radius: 15px;
+  text-align: center;
+  transition: transform 0.3s ease;
+  box-shadow: 0 6px 20px rgba(63, 169, 245, 0.3);
+}
+
+.pricing-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(63, 169, 245, 0.4);
+}
+
+.pricing-service-title {
+  font-size: 1.375rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: white;
+}
+
+.pricing-amount {
+  font-size: 2rem;
+  font-weight: bold;
+  color: white;
+}
+
+.pricing-note {
+  text-align: center;
+  background: #f8f9fa;
+  padding: 1rem;
+  border-radius: 10px;
+}
+
+.pricing-note p {
+  font-size: 1.125rem;
+  color: #666;
+  margin: 0;
+  font-style: italic;
+}
+
+/* Therapy Info Section */
+.therapy-info-section {
+  margin-top: 3rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+.therapy-info-card {
+  background: #3fa9f5;
+  color: white;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(63, 169, 245, 0.2);
+}
+
+.therapy-info-title {
+  font-size: 1.375rem;
+  font-weight: bold;
+  text-align: center;
+  color: white;
+  margin-bottom: 1.5rem;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 1rem;
+  border-radius: 10px;
+}
+
+.therapy-info-content p {
+  font-size: 1.125rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  color: white;
+}
+
+.therapy-info-content p:last-child {
+  margin-bottom: 0;
+}
+
+.booking-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+.booking-btn {
+  padding: 1rem 2rem;
+  border-radius: 30px;
+  font-size: 1.125rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  border: none;
+  display: inline-block;
+  text-align: center;
+  min-width: 180px;
+}
+
+.phone-btn {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  border: 2px solid white;
+  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.2);
+}
+
+.phone-btn:hover {
+  background: white;
+  color: #3fa9f5;
+  border: 2px solid white;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(255, 255, 255, 0.3);
+}
+
+.appointment-btn {
+  background: white;
+  color: #2a66c7;
+  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.3);
+}
+
+.appointment-btn:hover {
+  background: #f8f9fa;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(255, 255, 255, 0.4);
 }
 
 /* Tablet Styles */
 @media (max-width: 768px) {
+  .services-page {
+    padding: 6rem 0 2rem 0; /* Adjusted for mobile header height */
+  }
+  
   .services-container {
     padding: 0 1.5rem;
   }
@@ -185,6 +320,60 @@
     min-width: 240px;
     max-width: 260px;
     letter-spacing: 0.3px;
+  }
+
+  /* Pricing Section - Tablet */
+  .pricing-section {
+    margin-top: 3rem;
+    padding: 2rem 1.5rem;
+  }
+
+  .pricing-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .pricing-card {
+    padding: 1.5rem;
+  }
+
+  .pricing-service-title {
+    font-size: 1.25rem;
+  }
+
+  .pricing-amount {
+    font-size: 1.75rem;
+  }
+
+  /* Therapy Info Section - Tablet */
+  .therapy-info-section {
+    margin-top: 2.5rem;
+    gap: 1.5rem;
+  }
+
+  .therapy-info-card {
+    padding: 1.5rem;
+  }
+
+  .therapy-info-title {
+    font-size: 1.25rem;
+    padding: 0.75rem;
+  }
+
+  .therapy-info-content p {
+    font-size: 1rem;
+  }
+
+  .booking-buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .booking-btn {
+    padding: 0.875rem 1.5rem;
+    font-size: 1rem;
+    min-width: 200px;
   }
 }
 
@@ -250,6 +439,41 @@
     max-width: 240px;
     letter-spacing: 0.2px;
   }
+
+  /* Pricing Section - Small Tablet */
+  .pricing-section {
+    padding: 1.5rem 1rem;
+  }
+
+  .pricing-title {
+    font-size: 1.5rem;
+  }
+
+  .pricing-card {
+    padding: 1.25rem;
+  }
+
+  .pricing-service-title {
+    font-size: 1.125rem;
+  }
+
+  .pricing-amount {
+    font-size: 1.5rem;
+  }
+
+  /* Therapy Info Section - Small Tablet */
+  .therapy-info-card {
+    padding: 1.25rem;
+  }
+
+  .therapy-info-title {
+    font-size: 1.125rem;
+  }
+
+  .booking-btn {
+    min-width: 180px;
+    font-size: 0.95rem;
+  }
 }
 
 /* Mobile Styles */
@@ -297,6 +521,72 @@
     max-width: 220px;
     letter-spacing: 0.1px;
   }
+
+  /* Pricing Section - Mobile */
+  .pricing-section {
+    margin-top: 2rem;
+    padding: 1.5rem 1rem;
+  }
+
+  .pricing-title {
+    font-size: 1.375rem;
+  }
+
+  .pricing-grid {
+    gap: 1rem;
+  }
+
+  .pricing-card {
+    padding: 1rem;
+  }
+
+  .pricing-service-title {
+    font-size: 1rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .pricing-amount {
+    font-size: 1.375rem;
+  }
+
+  .pricing-note {
+    padding: 0.75rem;
+  }
+
+  .pricing-note p {
+    font-size: 1rem;
+  }
+
+  /* Therapy Info Section - Mobile */
+  .therapy-info-section {
+    margin-top: 2rem;
+    gap: 1rem;
+  }
+
+  .therapy-info-card {
+    padding: 1rem;
+  }
+
+  .therapy-info-title {
+    font-size: 1rem;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+  }
+
+  .therapy-info-content p {
+    font-size: 0.95rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .booking-buttons {
+    margin-top: 1.5rem;
+  }
+
+  .booking-btn {
+    padding: 0.75rem 1.25rem;
+    font-size: 0.9rem;
+    min-width: 160px;
+  }
 }
 
 /* Large Desktop Styles */
@@ -330,5 +620,62 @@
     font-size: 1.1rem;
     min-width: 300px;
     max-width: 320px;
+  }
+
+  /* Pricing Section - Large Desktop */
+  .pricing-section {
+    padding: 3.5rem 3rem;
+  }
+
+  .pricing-title {
+    font-size: 2rem;
+  }
+
+  .pricing-grid {
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 0 auto 2.5rem auto;
+  }
+
+  .pricing-card {
+    padding: 2.5rem;
+  }
+
+  .pricing-service-title {
+    font-size: 1.5rem;
+  }
+
+  .pricing-amount {
+    font-size: 2.25rem;
+  }
+
+  /* Therapy Info Section - Large Desktop */
+  .therapy-info-section {
+    margin-top: 4rem;
+    gap: 2.5rem;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .therapy-info-card {
+    padding: 2.5rem;
+  }
+
+  .therapy-info-title {
+    font-size: 1.5rem;
+    padding: 1.25rem;
+  }
+
+  .therapy-info-content p {
+    font-size: 1.25rem;
+  }
+
+  .booking-buttons {
+    gap: 1.5rem;
+  }
+
+  .booking-btn {
+    padding: 1.125rem 2.25rem;
+    font-size: 1.25rem;
+    min-width: 200px;
   }
 }

@@ -62,6 +62,55 @@ function Services() {
             </div>
           ))}
         </div>
+
+        {/* Pricing Section */}
+        <div className="pricing-section">
+          <h2 className="pricing-title">Our Therapy Prices</h2>
+          
+          <div className="pricing-grid">
+            <div className="pricing-card">
+              <h3 className="pricing-service-title">Counselling and Psychotherapy</h3>
+              <div className="pricing-amount">250 PLN</div>
+            </div>
+            
+            <div className="pricing-card">
+              <h3 className="pricing-service-title">Couples Therapy</h3>
+              <div className="pricing-amount">330 PLN</div>
+            </div>
+            
+            <div className="pricing-card">
+              <h3 className="pricing-service-title">Life Coaching</h3>
+              <div className="pricing-amount">370 PLN</div>
+            </div>
+          </div>
+          
+          <div className="pricing-note">
+            <p>Sessions are 50 minutes.</p>
+          </div>
+        </div>
+
+        {/* Therapy Sessions Info Section */}
+        <div className="therapy-info-section">
+          <div className="therapy-info-card">
+            <h2 className="therapy-info-title">How many therapy sessions will I need?</h2>
+            <div className="therapy-info-content">
+              <p>There is no fixed timeline for therapy.</p>
+              <p>In your first sessions, you will discuss your goals and a potential timelines with your therapist.</p>
+              <p>Short-term therapy usually lasts at least 6 weeks. Longer-term therapy can continue for a year or more.</p>
+            </div>
+          </div>
+
+          <div className="therapy-info-card">
+            <h2 className="therapy-info-title">How to book?</h2>
+            <div className="therapy-info-content">
+              <p>You can book your therapy session using our online booking system, or telephone +48 506 080 577</p>
+              <div className="booking-buttons">
+                <a href="tel:+48506080577" className="booking-btn phone-btn">+48 506 080 577</a>
+                <button className="booking-btn appointment-btn">Book an Appointment</button>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );

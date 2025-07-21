@@ -9,7 +9,7 @@
 .contact-hero {
   background: #3fa9f5;
   color: white;
-  padding: 2.5rem 0;
+  padding: 6.5rem 0 2.5rem 0; /* Added top padding to account for fixed header */
   text-align: center;
 }
 
@@ -20,13 +20,14 @@
 }
 
 .hero-content h1 {
-  font-size: 2.5rem;
+  font-size: 1.75rem;
   font-weight: 600;
   margin-bottom: 1rem;
+  color: #ffffff;
 }
 
 .hero-content > p {
-  font-size: 1.1rem;
+  font-size: 1.125rem;
   margin-bottom: 1.5rem;
   line-height: 1.5;
 }
@@ -79,7 +80,7 @@
 }
 
 .form-group label {
-  font-size: 0.9rem;
+  font-size: 1rem;
   color: #333;
   margin-bottom: 0.3rem;
   font-weight: 500;
@@ -91,7 +92,7 @@
   padding: 0.7rem;
   border: 1px solid #ddd;
   border-radius: 4px;
-  font-size: 0.9rem;
+  font-size: 1rem;
   font-family: inherit;
   transition: border-color 0.2s ease;
 }
@@ -114,7 +115,7 @@
   border: none;
   padding: 0.7rem 1.5rem;
   border-radius: 4px;
-  font-size: 0.9rem;
+  font-size: 1.125rem;
   font-weight: 600;
   cursor: pointer;
   transition: background-color 0.2s ease;
@@ -141,7 +142,7 @@
 }
 
 .contact-info h2 {
-  font-size: 1.4rem;
+  font-size: 1.375rem;
   font-weight: 600;
   margin-bottom: 1.5rem;
   text-align: center;
@@ -161,7 +162,7 @@
   padding: 0.5rem 1rem;
   margin: 0 0 0.7rem 0;
   border-radius: 4px;
-  font-size: 0.9rem;
+  font-size: 1rem;
   font-weight: 600;
 }
 
@@ -175,7 +176,7 @@
 .email {
   color: white;
   text-decoration: none;
-  font-size: 0.95rem;
+  font-size: 1rem;
   font-weight: 500;
   transition: opacity 0.2s ease;
 }
@@ -188,7 +189,7 @@
 
 .hours {
   color: white;
-  font-size: 0.9rem;
+  font-size: 1rem;
   margin: 0;
   line-height: 1.4;
 }
@@ -196,7 +197,7 @@
 .address {
   color: white;
   font-style: normal;
-  font-size: 0.9rem;
+  font-size: 1rem;
   line-height: 1.4;
 }
 
@@ -221,7 +222,11 @@
   }
   
   .hero-content h1 {
-    font-size: 2.2rem;
+    font-size: 1.75rem;
+  }
+  
+  .hero-content > p {
+    font-size: 1.125rem;
   }
   
   .contact-container {
@@ -232,7 +237,7 @@
 /* Mobile Styles */
 @media (max-width: 768px) {
   .contact-hero {
-    padding: 2rem 0;
+    padding: 5rem 0 2rem 0; /* Adjusted for mobile header height */
   }
   
   .hero-content {
@@ -240,11 +245,11 @@
   }
   
   .hero-content h1 {
-    font-size: 1.8rem;
+    font-size: 1.375rem;
   }
   
   .hero-content > p {
-    font-size: 1rem;
+    font-size: 1.125rem;
   }
   
   .contact-container {
@@ -257,7 +262,7 @@
   }
   
   .contact-info h2 {
-    font-size: 1.2rem;
+    font-size: 1.375rem;
   }
   
   .map-section iframe {
@@ -268,11 +273,11 @@
 /* Small Mobile Styles */
 @media (max-width: 480px) {
   .hero-content h1 {
-    font-size: 1.6rem;
+    font-size: 1.375rem;
   }
   
   .hero-content > p {
-    font-size: 0.95rem;
+    font-size: 1.125rem;
   }
   
   .hero-note {
@@ -296,7 +301,7 @@
   .form-group textarea,
   .form-group select {
     padding: 0.6rem;
-    font-size: 0.9rem;
+    font-size: 1rem;
   }
   
   .send-btn {

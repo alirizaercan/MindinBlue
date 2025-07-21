@@ -90,13 +90,14 @@
 }
 
 .meet-founder-text h2 {
-  font-size: 2.5rem;
+  font-size: 1.75rem;
   margin-bottom: 1rem;
   text-align: center;
+  color: #2a66c7;
 }
 
 .meet-founder-text p {
-  font-size: 1.25rem;
+  font-size: 1.125rem;
   line-height: 1.6;
   text-align: justify;
   max-width: 700px;
@@ -153,9 +154,10 @@
 }
 
 .what-we-offer h2 {
-  font-size: 2rem;
+  font-size: 1.75rem;
   margin-bottom: 2rem;
   font-weight: bold;
+  color: #ffffff;
 }
 
 .offer-cards {
@@ -184,7 +186,7 @@
 }
 
 .offer-card h3 {
-  font-size: 1.5rem;
+  font-size: 1.375rem;
   margin-bottom: 1rem;
   height: 3.5rem;
   display: flex;
@@ -225,9 +227,9 @@
 
 .get-started-title {
   background: #ffffff;
-  color: #000000;
+  color: #2a66c7;
   padding: 2rem;
-  font-size: 2.5rem;
+  font-size: 1.75rem;
   font-weight: bold;
   margin: 0 0 2rem;
   text-align: center;
@@ -256,14 +258,14 @@
 }
 
 .get-started-block h3 {
-  font-size: 1.5rem;
+  font-size: 1.375rem;
   color: #2a66c7;
   margin-bottom: 0.5rem;
   font-weight: 700;
 }
 
 .get-started-block .subtitle {
-  font-size: 1rem;
+  font-size: 1.125rem;
   color: #999999;
   margin: 0.3rem 0 1rem 0;
   line-height: 1.5;
@@ -272,7 +274,7 @@
 .get-started-btn {
   margin-top: 1rem;
   padding: 0.8rem 1.5rem;
-  font-size: 1.2rem;
+  font-size: 1.125rem;
   background: #3fa9f5;
   color: #fff;
   border: none;
@@ -296,9 +298,10 @@
 }
 
 .google-reviews-section h2 {
-  font-size: 2.5rem;
+  font-size: 1.75rem;
   margin-bottom: 2rem;
   font-weight: bold;
+  color: #2a66c7;
 }
 
 .google-reviews-container {

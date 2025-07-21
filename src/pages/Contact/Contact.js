@@ -98,7 +98,7 @@ function Contact() {
                   value={formData.service}
                   onChange={handleInputChange}
                 >
-                  <option value="">Counselling/psychotherapy</option>
+                  <option value="">Select a service</option>
                   <option value="counselling-psychotherapy">Counselling & Psychotherapy</option>
                   <option value="couples-therapy">Couples Therapy</option>
                   <option value="life-coaching">Life Coaching</option>
@@ -111,7 +111,7 @@ function Contact() {
                   value={formData.sessionType}
                   onChange={handleInputChange}
                 >
-                  <option value="">In person in Gdańsk</option>
+                  <option value="">Select session type</option>
                   <option value="online">Online Session</option>
                   <option value="in-person">In-Person (Gdańsk)</option>
                   <option value="either">Either Option</option>
