@@ -88,13 +88,8 @@ body, /* <body> element */
 }
 
 .meet-founder-text h2 {
-<<<<<<< HEAD
   font-size: 1.75rem;
   margin-bottom: 1rem;
-=======
-  font-size: 2.5rem;
-  margin-bottom: 2rem;
->>>>>>> dd052e02b1bcf04277e0a2d5722fde41351427f6
   text-align: center;
   color: #2a66c7;
 }
@@ -155,15 +150,12 @@ body, /* <body> element */
 }
 
 .what-we-offer h2 {
-<<<<<<< HEAD
   font-size: 1.75rem;
   margin-bottom: 2rem;
   font-weight: bold;
   color: #ffffff;
-=======
   font-size: 2.5rem;
   margin-bottom: 2rem;
->>>>>>> dd052e02b1bcf04277e0a2d5722fde41351427f6
 }
 
 .offer-cards {
@@ -235,12 +227,8 @@ body, /* <body> element */
   background: #ffffff;
   color: #2a66c7;
   padding: 2rem;
-<<<<<<< HEAD
   font-size: 1.75rem;
   font-weight: bold;
-=======
-  font-size: 2.5rem;
->>>>>>> dd052e02b1bcf04277e0a2d5722fde41351427f6
   margin: 0 0 2rem;
   text-align: center;
   max-width: none;
@@ -304,11 +292,8 @@ body, /* <body> element */
 .google-reviews-section h2 {
   font-size: 1.75rem;
   margin-bottom: 2rem;
-<<<<<<< HEAD
   font-weight: bold;
   color: #2a66c7;
-=======
->>>>>>> dd052e02b1bcf04277e0a2d5722fde41351427f6
 }
 
 .google-reviews-container {
