@@ -1,23 +1,22 @@
 /* Home page styles */
 
-.body,
-.home-page {
-  overflow-x: hidden;
-}
+body, /* <body> element */
+.home-page /* any element with class .home-page */ {
+  overflow-x: hidden; /* hide horizontal overflow */
+} /* prevent horizontal scrolling */
 
 .sky-image-wrapper {
   position: relative;
-  width: 100%;
-  height: 60vh; /* Limit height to 60% of viewport */
+  height: 80vh; /* Limit height to 80% of viewport */
   overflow: hidden;
 }
 
 .sky-image {
-  width: 100%;
-  height: 100%;
-  display: block;
-  object-fit: cover;
-  max-width: 100%;
+  width: 100%; /* Stretch the image to match the width of its container */
+  height: 100%; /* Stretch the image to match the height of its container */
+  display: block; /* 	Removes inline whitespace below image (useful in layout) */
+  object-fit: cover; /* Keep the image's aspect ratio and cover the full area, cropping if needed */
+  max-width: 100%; /* 	Prevents it from growing beyond the container (extra safe) */
 }
 
 .sky-overlay {
@@ -83,15 +82,19 @@
 
 .meet-founder-text {
   min-width: 250px;
-  flex: 1 1 300px;
   max-width: 800px;
   text-align: center;
   margin: 0 auto;
 }
 
 .meet-founder-text h2 {
+<<<<<<< HEAD
   font-size: 1.75rem;
   margin-bottom: 1rem;
+=======
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+>>>>>>> dd052e02b1bcf04277e0a2d5722fde41351427f6
   text-align: center;
   color: #2a66c7;
 }
@@ -118,8 +121,6 @@
   text-decoration: none;
   display: block;
   max-width: 700px;
-  margin-left: auto;
-  margin-right: auto;
   width: fit-content;
 }
 
@@ -154,10 +155,15 @@
 }
 
 .what-we-offer h2 {
+<<<<<<< HEAD
   font-size: 1.75rem;
   margin-bottom: 2rem;
   font-weight: bold;
   color: #ffffff;
+=======
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+>>>>>>> dd052e02b1bcf04277e0a2d5722fde41351427f6
 }
 
 .offer-cards {
@@ -229,16 +235,14 @@
   background: #ffffff;
   color: #2a66c7;
   padding: 2rem;
+<<<<<<< HEAD
   font-size: 1.75rem;
   font-weight: bold;
+=======
+  font-size: 2.5rem;
+>>>>>>> dd052e02b1bcf04277e0a2d5722fde41351427f6
   margin: 0 0 2rem;
   text-align: center;
-  width: 100vw;
-  position: relative;
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
   max-width: none;
 }
 
@@ -300,8 +304,11 @@
 .google-reviews-section h2 {
   font-size: 1.75rem;
   margin-bottom: 2rem;
+<<<<<<< HEAD
   font-weight: bold;
   color: #2a66c7;
+=======
+>>>>>>> dd052e02b1bcf04277e0a2d5722fde41351427f6
 }
 
 .google-reviews-container {
@@ -315,9 +322,9 @@
   .google-reviews-container {
     padding: 0 2rem;
   }
-  
+
   .google-reviews-section h2 {
-    font-size: 3rem;
+    font-size: 2.5rem;
   }
 }
 
@@ -325,11 +332,11 @@
   .google-reviews-section {
     padding: 2rem 1rem;
   }
-  
+
   .google-reviews-section h2 {
-    font-size: 2rem;
+    font-size: 2.5rem;
   }
-  
+
   .google-reviews-container {
     padding: 0 0.5rem;
   }
@@ -339,12 +346,12 @@
   .google-reviews-section {
     padding: 1.5rem 0.5rem;
   }
-  
+
   .google-reviews-section h2 {
-    font-size: 1.75rem;
+    font-size: 2rem;
     margin-bottom: 1.5rem;
   }
-  
+
   .google-reviews-container {
     padding: 0;
   }
@@ -354,7 +361,7 @@
   .sky-image-wrapper {
     height: 50vh; /* Smaller on mobile */
   }
-  
+
   .meet-founder-section {
     flex-direction: column;
     align-items: center;
@@ -409,7 +416,7 @@
   }
 
   .meet-founder-text h2 {
-    font-size: 1.3rem;
+    font-size: 2.5rem;
     text-align: center;
   }
 
@@ -441,11 +448,11 @@
   .sky-image-wrapper {
     height: 55vh;
   }
-  
+
   .sky-overlay h1 {
     font-size: 2.2rem;
   }
-  
+
   .sky-overlay p {
     font-size: 1.4rem;
   }
