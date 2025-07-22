@@ -1,9 +1,11 @@
 // Team page component
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Team.css';
 
 const Team = () => {
   const [selectedMember, setSelectedMember] = useState(null);
+  const navigate = useNavigate();
 
   const teamMembers = [
     {
@@ -175,8 +177,8 @@ const Team = () => {
   };
 
   const handleBookAppointment = (member) => {
-    // Here you can integrate with booking system
-    alert(`Booking appointment with ${member.name}. Redirecting to booking system...`);
+    // Navigate to contact page for booking appointment
+    navigate('/contact');
   };
 
   return (
@@ -270,23 +272,6 @@ const Team = () => {
                   </ul>
                 </div>
               )}
-              
-              <div className="modal-section">
-                <h3>Languages</h3>
-                <div className="modal-flags">
-                  {selectedMember.languages.map((language, index) => {
-                    const flagMap = {
-                      'English': '🇬🇧',
-                      'Polish': '🇵🇱',
-                      'Spanish': '🇪🇸',
-                      'Italian': '🇮🇹'
-                    };
-                    return (
-                      <span key={index} className="flag">{flagMap[language] || language}</span>
-                    );
-                  })}
-                </div>
-              </div>
 
               {selectedMember.closingMessage && (
                 <div className="modal-section">

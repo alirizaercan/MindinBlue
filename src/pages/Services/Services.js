@@ -24,10 +24,10 @@ function Services() {
     },
     {
       id: 3,
-      title: 'Life Coaching',
-      image: '/images/life-coaching.jpg',
-      route: '/life-coaching',
-      description: 'Goal-oriented coaching to help you achieve personal and professional growth.'
+      title: 'Online Consultation',
+      image: '/images/online-consultation.jpg',
+      route: '/online-consultation',
+      description: 'Convenient online therapy sessions accessible from anywhere in the world.'
     }
   ];
 
@@ -44,7 +44,7 @@ function Services() {
         <div className="services-grid">
           {services.map((service) => (
             <div key={service.id} className="service-card">
-              <div className="service-image-container">
+              <div className="service-image-container" onClick={() => handleServiceClick(service.route)} style={{ cursor: 'pointer' }}>
                 <img 
                   src={service.image} 
                   alt={service.title}
@@ -79,7 +79,7 @@ function Services() {
             </div>
             
             <div className="pricing-card">
-              <h3 className="pricing-service-title">Life Coaching</h3>
+              <h3 className="pricing-service-title">Online Consultation</h3>
               <div className="pricing-amount">370 PLN</div>
             </div>
           </div>
@@ -105,8 +105,13 @@ function Services() {
             <div className="therapy-info-content">
               <p>You can book your therapy session using our online booking system, or telephone +48 506 080 577</p>
               <div className="booking-buttons">
-                <a href="tel:+48506080577" className="booking-btn phone-btn">+48 506 080 577</a>
-                <button className="booking-btn appointment-btn">Book an Appointment</button>
+                <a href="tel:+48506080577" className="booking-btn services-phone-btn">+48 506 080 577</a>
+                <button 
+                  className="booking-btn services-appointment-btn"
+                  onClick={() => navigate('/contact')}
+                >
+                  Book an Appointment
+                </button>
               </div>
             </div>
           </div>

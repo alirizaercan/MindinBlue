@@ -10,6 +10,9 @@
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 2rem;
+  width: 100%;
+  box-sizing: border-box;
+  overflow-x: hidden;
 }
 
 .team-title {
@@ -31,9 +34,11 @@
 
 .team-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
   margin-top: 2rem;
+  width: 100%;
+  max-width: 100%;
 }
 
 .team-member {
@@ -47,6 +52,9 @@
   cursor: pointer;
   position: relative;
   overflow: hidden;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .team-member:hover {
@@ -223,8 +231,8 @@
 }
 
 .modal-image {
-  width: 100px;
-  height: 100px;
+  width: 150px;
+  height: 150px;
   border-radius: 50%;
   object-fit: cover;
   border: 3px solid #3fa9f5;
@@ -245,6 +253,7 @@
 .modal-flags {
   display: flex;
   gap: 0.5rem;
+  justify-content: center;
 }
 
 .modal-flags .flag {
@@ -386,6 +395,7 @@
   
   .team-container {
     padding: 0 1rem;
+    overflow-x: hidden;
   }
   
   .team-title {
@@ -400,15 +410,17 @@
   .team-grid {
     grid-template-columns: 1fr;
     gap: 1.5rem;
+    max-width: 100%;
   }
   
   .team-member {
     padding: 1.5rem 1rem;
+    max-width: 100%;
   }
   
   .member-image-container {
-    width: 140px;
-    height: 140px;
+    width: 180px;
+    height: 180px;
   }
   
   .member-name {
@@ -427,8 +439,8 @@
   }
   
   .modal-image {
-    width: 80px;
-    height: 80px;
+    width: 120px;
+    height: 120px;
   }
   
   .modal-body {
@@ -442,13 +454,17 @@
   
   .book-appointment-btn,
   .contact-btn {
-    min-width: 100%;
+    width: 100%;
+    max-width: 280px;
+    margin: 0 auto;
+    box-sizing: border-box;
   }
 }
 
 @media (max-width: 480px) {
   .team-container {
     padding: 0 0.5rem;
+    overflow-x: hidden;
   }
   
   .team-title {
@@ -460,8 +476,8 @@
   }
   
   .member-image-container {
-    width: 120px;
-    height: 120px;
+    width: 160px;
+    height: 160px;
   }
   
   .modal-overlay {
@@ -488,13 +504,19 @@
 
 /* Tablet responsive design */
 @media (max-width: 1024px) and (min-width: 769px) {
+  .team-container {
+    overflow-x: hidden;
+  }
+  
   .team-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
+    max-width: 100%;
   }
   
   .team-member {
     padding: 1.8rem;
+    max-width: 100%;
   }
 }
 
@@ -503,10 +525,11 @@
   .team-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
+    max-width: 100%;
   }
   
   .member-image-container {
-    width: 160px;
-    height: 160px;
+    width: 200px;
+    height: 200px;
   }
 }

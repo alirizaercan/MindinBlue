@@ -101,7 +101,7 @@ function Contact() {
                   <option value="">Select a service</option>
                   <option value="counselling-psychotherapy">Counselling & Psychotherapy</option>
                   <option value="couples-therapy">Couples Therapy</option>
-                  <option value="life-coaching">Life Coaching</option>
+                  <option value="online-consultation">Online Consultation</option>
                 </select>
               </div>
 

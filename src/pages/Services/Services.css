@@ -246,14 +246,14 @@
   min-width: 180px;
 }
 
-.phone-btn {
+.services-phone-btn {
   background: rgba(255, 255, 255, 0.1);
   color: white;
   border: 2px solid white;
   box-shadow: 0 6px 20px rgba(255, 255, 255, 0.2);
 }
 
-.phone-btn:hover {
+.services-phone-btn:hover {
   background: white;
   color: #3fa9f5;
   border: 2px solid white;
@@ -261,22 +261,25 @@
   box-shadow: 0 8px 25px rgba(255, 255, 255, 0.3);
 }
 
-.appointment-btn {
-  background: white;
-  color: #2a66c7;
-  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.3);
+.services-appointment-btn {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  border: 2px solid white;
+  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.2);
 }
 
-.appointment-btn:hover {
-  background: #f8f9fa;
+.services-appointment-btn:hover {
+  background: white;
+  color: #3fa9f5;
+  border: 2px solid white;
   transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(255, 255, 255, 0.4);
+  box-shadow: 0 8px 25px rgba(255, 255, 255, 0.3);
 }
 
 /* Tablet Styles */
 @media (max-width: 768px) {
   .services-page {
-    padding: 6rem 0 2rem 0; /* Adjusted for mobile header height */
+    padding: 3rem 0 2rem 0; /* Further increased top padding for mobile header */
   }
   
   .services-container {
@@ -479,16 +482,17 @@
 /* Mobile Styles */
 @media (max-width: 480px) {
   .services-page {
-    padding: 1rem 0;
+    padding: 2.6rem 0 1rem 0; /* Further increased top padding for very small mobile screens */
   }
   
   .services-container {
-    padding: 0 0.5rem;
+    padding: 0 0.7rem;
   }
   
   .services-title {
     font-size: 2rem;
     margin-bottom: 0.5rem;
+    padding: 0.2rem;
   }
   
   .services-subtitle {

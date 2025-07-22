@@ -234,19 +234,46 @@ body, /* <body> element */
   max-width: none;
 }
 
+/* Container for the two blocks */
+.get-started-blocks-container {
+  display: flex;
+  gap: 4rem;
+  align-items: stretch;
+}
+
 .get-started-block {
-  margin-bottom: 2rem;
+  flex: 1;
   background: #ffffff;
   padding: 1.5rem;
   border-radius: 0;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-  border-left: 6px solid #3fa9f5;
+  border-top: 6px solid transparent;
   transition: all 0.3s ease;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.get-started-block::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: linear-gradient(90deg, #3fa9f5, #2a66c7);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
 }
 
 .get-started-block:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+  transform: translateY(-8px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+  border-top: 6px solid transparent;
+}
+
+.get-started-block:hover::before {
+  transform: scaleX(1);
 }
 
 .get-started-block h3 {
@@ -264,7 +291,7 @@ body, /* <body> element */
 }
 
 .get-started-btn {
-  margin-top: 1rem;
+  margin-top: auto;
   padding: 0.8rem 1.5rem;
   font-size: 1.125rem;
   background: #3fa9f5;
@@ -276,6 +303,7 @@ body, /* <body> element */
   transition: background 0.2s;
   text-decoration: none;
   display: inline-block;
+  align-self: flex-start;
 }
 
 .get-started-btn:hover {
@@ -325,6 +353,10 @@ body, /* <body> element */
   .google-reviews-container {
     padding: 0 0.5rem;
   }
+
+  .meet-founder-section {
+    margin: 0.5rem 0.5rem;
+  }
 }
 
 @media (max-width: 480px) {
@@ -351,14 +383,14 @@ body, /* <body> element */
     flex-direction: column;
     align-items: center;
     gap: 1rem;
-    margin: 1rem 0;
+    margin: 0.5rem 0.5rem;
   }
   .meet-founder-text,
   .meet-founder-video {
     max-width: 100%;
     margin-left: 0 !important;
     min-width: 0;
-    padding: 0 0.5rem;
+    padding: 0.5rem 1rem;
   }
   .meet-founder-video iframe {
     width: 100%;
@@ -426,6 +458,38 @@ body, /* <body> element */
   .offer-card p {
     font-size: 0.9rem;
   }
+
+  /* Mobile responsive styles for get-started section */
+  .get-started-section {
+    margin-top: 2rem;
+    padding: 0 0 2rem 0;
+  }
+
+  .get-started-section > * {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .get-started-blocks-container {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .get-started-block {
+    padding: 1.25rem;
+    margin: 0;
+  }
+
+  .get-started-title {
+    padding: 1.5rem 1rem;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .get-started-btn {
+    font-size: 1rem;
+    padding: 0.7rem 1.2rem;
+  }
 }
 
 /* Tablet responsive design */
@@ -461,6 +525,15 @@ body, /* <body> element */
     height: 2.5rem;
     font-size: 1.4rem;
     margin-bottom: 1rem;
+  }
+
+  /* Tablet responsive styles for get-started section */
+  .get-started-blocks-container {
+    gap: 3rem;
+  }
+
+  .get-started-block {
+    padding: 1.25rem;
   }
 
   .offer-card p {
