@@ -412,6 +412,47 @@
     min-width: 260px;
     max-width: 280px;
   }
+
+  /* Pricing Section - Medium Tablet */
+  .pricing-section {
+    margin-top: 3rem;
+    padding: 2.5rem 2rem;
+  }
+
+  .pricing-title {
+    font-size: 1.6rem;
+    margin-bottom: 2rem;
+  }
+
+  .pricing-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    max-width: 350px;
+    margin: 0 auto 2rem auto;
+  }
+
+  .pricing-card {
+    padding: 2rem 1.5rem;
+  }
+
+  .pricing-service-title {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+
+  .pricing-amount {
+    font-size: 1.8rem;
+  }
+
+  .pricing-note {
+    padding: 1rem;
+    max-width: 350px;
+    margin: 0 auto;
+  }
+
+  .pricing-note p {
+    font-size: 1.1rem;
+  }
 }
 
 /* Small Tablet Styles */

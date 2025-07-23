@@ -121,6 +121,34 @@
   }
 }
 
+/* Surface Pro and similar tablet devices */
+@media (max-width: 950px) and (min-width: 769px) {
+  .couples-therapy {
+    margin-top: 20px; /* Much more reduced space for iPad Air/Surface Pro */
+  }
+
+  .hero-section,
+  .content-section {
+    padding: 20px 25px;
+  }
+  
+  .hero-content {
+    align-items: flex-start; /* Reset to top alignment */
+    gap: 30px; /* Reduce gap between text and image */
+  }
+  
+  .hero-image {
+    transform: translateY(80px); /* Move image down using transform */
+    margin-top: 0; /* Reset margin-top */
+  }
+  
+  /* Tablet button sizing - much smaller */
+  .appointment-btn {
+    padding: 0.6rem 1.5rem;
+    font-size: 1.2rem;
+  }
+}
+
 @media (max-width: 768px) {
   .couples-therapy {
     margin-top: 50px; /* Reduced space for tablet */

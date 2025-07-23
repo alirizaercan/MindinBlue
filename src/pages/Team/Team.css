@@ -390,7 +390,7 @@
 /* Responsive design */
 @media (max-width: 768px) {
   .team-page {
-    padding: 6rem 0 2rem 0; /* Adjusted for mobile header height */
+    padding: 4.5rem 0 2rem 0; /* Reduced top padding for better mobile spacing */
   }
   
   .team-container {
@@ -462,6 +462,10 @@
 }
 
 @media (max-width: 480px) {
+  .team-page {
+    padding: 4rem 0 2rem 0; /* Further reduced top padding for small mobile devices */
+  }
+  
   .team-container {
     padding: 0 0.5rem;
     overflow-x: hidden;
