@@ -81,10 +81,11 @@ body, /* <body> element */
 }
 
 .meet-founder-text {
-  min-width: 250px;
-  max-width: 800px;
+  flex: 1;
+  min-width: 300px;
+  max-width: 600px;
+  padding: 1rem;
   text-align: center;
-  margin: 0 auto;
 }
 
 .meet-founder-text h2 {
@@ -124,11 +125,13 @@ body, /* <body> element */
 }
 
 .meet-founder-video {
-  flex: 1 1 300px;
-  min-width: 250px;
+  flex: 1;
+  min-width: 300px;
+  max-width: 600px;
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 1rem;
 }
 
 .meet-founder-video iframe {
@@ -255,7 +258,7 @@ body, /* <body> element */
 }
 
 .get-started-block::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -331,17 +334,17 @@ body, /* <body> element */
 }
 
 /* Responsive styles for Google Reviews */
-@media (min-width: 1200px) {
+@media (min-width: 1024px) {
   .google-reviews-container {
     padding: 0 2rem;
   }
 
   .google-reviews-section h2 {
-    font-size: 2.5rem;
+    font-size: 1.75rem;
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .google-reviews-section {
     padding: 2rem 1rem;
   }
@@ -493,7 +496,7 @@ body, /* <body> element */
 }
 
 /* Tablet responsive design */
-@media (max-width: 1024px) and (min-width: 901px) {
+@media (max-width: 1023px) and (min-width: 768px) {
   .sky-image-wrapper {
     height: 55vh;
   }

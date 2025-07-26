@@ -10,7 +10,8 @@ function Home() {
   useEffect(() => {
     // Load Trustindex script exactly as provided - no modifications
     const trustindexScript = document.createElement("script");
-    trustindexScript.src = "https://cdn.trustindex.io/loader.js?ff726e85014a2267904680806d9";
+    trustindexScript.src =
+      "https://cdn.trustindex.io/loader.js?ff726e85014a2267904680806d9";
     trustindexScript.defer = true;
     trustindexScript.async = true;
     document.head.appendChild(trustindexScript);
@@ -62,7 +63,7 @@ function Home() {
           <iframe
             width="400"
             height="450"
-            src="https://www.youtube.com/embed/iCiEpSKVodQ"
+            src="https://www.youtube.com/embed/jPKA73f1rHI"
             title="Meet the Founder"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
@@ -72,10 +73,10 @@ function Home() {
       <section className="what-we-offer">
         <h2>What We Offer</h2>
         <div className="offer-cards">
-          <div 
-            className="offer-card" 
+          <div
+            className="offer-card"
             onClick={() => navigate("/counselling-psychotherapy")}
-            style={{ cursor: 'pointer' }}
+            style={{ cursor: "pointer" }}
           >
             <h3>Counselling & Psychotherapy</h3>
             <p>
@@ -84,10 +85,10 @@ function Home() {
               challenges abroad.
             </p>
           </div>
-          <div 
-            className="offer-card" 
+          <div
+            className="offer-card"
             onClick={() => navigate("/couples-therapy")}
-            style={{ cursor: 'pointer' }}
+            style={{ cursor: "pointer" }}
           >
             <h3>Couples Therapy</h3>
             <p>
@@ -96,15 +97,16 @@ function Home() {
               together.
             </p>
           </div>
-          <div 
-            className="offer-card" 
+          <div
+            className="offer-card"
             onClick={() => navigate("/online-consultation")}
-            style={{ cursor: 'pointer' }}
+            style={{ cursor: "pointer" }}
           >
             <h3>Online Consultation</h3>
             <p>
-              Define your goals, explore your strengths, and build a plan for
-              personal and professional growth with structured guidance.
+              Access professional help from anywhere. Our online consultations
+              connect you with qualified experts in a safe,
+              confidential environment.
             </p>
           </div>
         </div>
@@ -116,8 +118,8 @@ function Home() {
           <div className="get-started-block">
             <h3>Choose your Therapist</h3>
             <p className="subtitle">
-              choose from 6 psychologists in, available in 4 languages. (online or
-              in-person)
+              choose from 6 psychologists in, available in 4 languages. (online
+              or in-person)
             </p>
             <button
               className="get-started-btn"
@@ -130,8 +132,8 @@ function Home() {
           <div className="get-started-block">
             <h3>Book Appointment</h3>
             <p className="subtitle">
-              Book an appointment online or by calling our friendly and responsive
-              team.
+              Book an appointment online or by calling our friendly and
+              responsive team.
             </p>
             <p className="subtitle">
               Appointments are available Monday to Friday, between 9am and 8pm
@@ -148,7 +150,11 @@ function Home() {
       <section className="google-reviews-section">
         <h2>What Our Clients Say</h2>
         <div className="google-reviews-container">
-          <script defer async src='https://cdn.trustindex.io/loader.js?ff726e85014a2267904680806d9'></script>
+          <script
+            defer
+            async
+            src="https://cdn.trustindex.io/loader.js?ff726e85014a2267904680806d9"
+          ></script>
         </div>
       </section>
     </div>
