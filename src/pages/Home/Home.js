@@ -8,18 +8,16 @@ function Home() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    // Load Trustindex script exactly as provided - no modifications
-    const trustindexScript = document.createElement("script");
-    trustindexScript.src =
-      "https://cdn.trustindex.io/loader.js?ff726e85014a2267904680806d9";
-    trustindexScript.defer = true;
-    trustindexScript.async = true;
-    document.head.appendChild(trustindexScript);
+    // Load Elfsight script for Google Reviews
+    const elfsightScript = document.createElement("script");
+    elfsightScript.src = "https://static.elfsight.com/platform/platform.js";
+    elfsightScript.async = true;
+    document.head.appendChild(elfsightScript);
 
     return () => {
       // Cleanup script on component unmount
-      if (document.head.contains(trustindexScript)) {
-        document.head.removeChild(trustindexScript);
+      if (document.head.contains(elfsightScript)) {
+        document.head.removeChild(elfsightScript);
       }
     };
   }, []);
@@ -150,11 +148,8 @@ function Home() {
       <section className="google-reviews-section">
         <h2>What Our Clients Say</h2>
         <div className="google-reviews-container">
-          <script
-            defer
-            async
-            src="https://cdn.trustindex.io/loader.js?ff726e85014a2267904680806d9"
-          ></script>
+          {/* Elfsight Google Reviews | Untitled Google Reviews */}
+          <div className="elfsight-app-ca533c64-3c99-49d8-bd49-e0df1bebc033" data-elfsight-app-lazy></div>
         </div>
       </section>
     </div>
