@@ -6,10 +6,13 @@ import { Link, useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
 
 function Header() {
+
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [languageDropdownOpen, setLanguageDropdownOpen] = useState(false);
+  const [language, setLanguage] = useState('EN');
   const location = useLocation();
-  
+
   // Check if current page is home page
   const isHomePage = location.pathname === '/';
 
@@ -21,16 +24,30 @@ function Header() {
     setIsDropdownOpen(false);
   };
 
+  const toggleLanguageDropdown = () => {
+    setLanguageDropdownOpen(!languageDropdownOpen);
+  };
+
+  const selectLanguage = (lang) => {
+    setLanguage(lang);
+    setLanguageDropdownOpen(false);
+    // Here you can add logic to change the site language
+  };
+
   // Handle scroll detection and dropdown closing
   useEffect(() => {
     const handleScroll = () => {
       const scrollTop = window.scrollY;
-      
+
       // Close dropdown when scrolling
       if (isDropdownOpen) {
         setIsDropdownOpen(false);
       }
-      
+      // Close language dropdown when scrolling
+      if (languageDropdownOpen) {
+        setLanguageDropdownOpen(false);
+      }
+
       // Set transparency based on scroll position (only for home page)
       if (isHomePage) {
         setIsScrolled(scrollTop > 10);
@@ -52,7 +69,7 @@ function Header() {
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
-  }, [isDropdownOpen, isHomePage]);
+  }, [isDropdownOpen, isHomePage, languageDropdownOpen]);
 
   return (
     <header className={`header ${isScrolled ? 'scrolled' : 'transparent'} ${isDropdownOpen ? 'menu-open' : ''} ${!isHomePage ? 'non-home-page' : ''}`}>
@@ -64,7 +81,7 @@ function Header() {
             className="header-logo"
           />
         </Link>
-        
+
         {/* Desktop Navigation */}
         <nav className="header-nav desktop-nav">
           <Link to="/">Home</Link>
@@ -72,6 +89,21 @@ function Header() {
           <Link to="/services">Services</Link>
           <Link to="/contact">Contact</Link>
           <a href="tel:+48506080577" className="desktop-phone-btn">+48 (506) 080-577</a>
+          <div className="language-switcher-container desktop-only">
+            <button
+              className="language-switcher-btn"
+              onClick={toggleLanguageDropdown}
+              aria-label="Switch language"
+            >
+              {language} <span className="language-arrow">▼</span>
+            </button>
+            {languageDropdownOpen && (
+              <div className="language-dropdown">
+                <button onClick={() => selectLanguage('EN')} className={language === 'EN' ? 'active' : ''}>EN</button>
+                <button onClick={() => selectLanguage('PL')} className={language === 'PL' ? 'active' : ''}>PL</button>
+              </div>
+            )}
+          </div>
         </nav>
 
         {/* Mobile Menu Button */}
@@ -96,6 +128,12 @@ function Header() {
           <a href="tel:+48506080577" className="mobile-phone-link" onClick={closeDropdown}>
             +48 (506) 080-577
           </a>
+          <div className="language-switcher-mobile">
+            <span className="language-switcher-label">Language:</span>
+            <button onClick={() => selectLanguage(language === 'EN' ? 'PL' : 'EN')} className="language-switcher-btn-mobile">
+              {language === 'EN' ? 'PL' : 'EN'}
+            </button>
+          </div>
         </nav>
       </div>
     </header>
