@@ -31,6 +31,8 @@ function Header() {
   const selectLanguage = (lang) => {
     setLanguage(lang);
     setLanguageDropdownOpen(false);
+    // Close mobile menu if open
+    setIsDropdownOpen(false);
     // Here you can add logic to change the site language
   };
 
@@ -82,7 +84,7 @@ function Header() {
           />
         </Link>
 
-        {/* Desktop Navigation */}
+                {/* Desktop Navigation */}
         <nav className="header-nav desktop-nav">
           <Link to="/">Home</Link>
           <Link to="/team">Our Team</Link>
@@ -106,28 +108,28 @@ function Header() {
           </div>
         </nav>
 
-        {/* Mobile Menu Button */}
-        <button 
-          className="mobile-menu-btn"
-          onClick={toggleDropdown}
-          aria-label="Toggle navigation menu"
-        >
-          <span className={`hamburger ${isDropdownOpen ? 'open' : ''}`}>
-            <span></span>
-            <span></span>
-            <span></span>
-          </span>
-        </button>
+        {/* Mobile/Tablet Navigation - Dropdown Style */}
+        <div className="mobile-tablet-nav">
+          {/* Mobile Menu Button */}
+          <button 
+            className="mobile-menu-btn"
+            onClick={toggleDropdown}
+            aria-label="Toggle navigation menu"
+          >
+            <span className={`hamburger ${isDropdownOpen ? 'open' : ''}`}>
+              <span></span>
+              <span></span>
+              <span></span>
+            </span>
+          </button>
+        </div>
 
-        {/* Mobile Dropdown Menu */}
+        {/* Mobile Dropdown Menu - Navigation Links + Language Switcher */}
         <nav className={`mobile-dropdown ${isDropdownOpen ? 'open' : ''}`}>
           <Link to="/" onClick={closeDropdown}>Home</Link>
           <Link to="/team" onClick={closeDropdown}>Our Team</Link>
           <Link to="/services" onClick={closeDropdown}>Services</Link>
           <Link to="/contact" onClick={closeDropdown}>Contact</Link>
-          <a href="tel:+48506080577" className="mobile-phone-link" onClick={closeDropdown}>
-            +48 (506) 080-577
-          </a>
           <div className="language-switcher-mobile">
             <span className="language-switcher-label">Language:</span>
             <button onClick={() => selectLanguage(language === 'EN' ? 'PL' : 'EN')} className="language-switcher-btn-mobile">
