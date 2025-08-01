@@ -4,13 +4,14 @@
 import "./Header.css";
 import { Link, useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
+import { useLanguage } from "../../contexts/LanguageContext";
 
 function Header() {
+  const { currentLanguage, changeLanguage, t } = useLanguage();
 
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [languageDropdownOpen, setLanguageDropdownOpen] = useState(false);
-  const [language, setLanguage] = useState('EN');
   const location = useLocation();
 
   // Check if current page is home page
@@ -29,11 +30,10 @@ function Header() {
   };
 
   const selectLanguage = (lang) => {
-    setLanguage(lang);
+    changeLanguage(lang);
     setLanguageDropdownOpen(false);
     // Close mobile menu if open
     setIsDropdownOpen(false);
-    // Here you can add logic to change the site language
   };
 
   // Handle scroll detection and dropdown closing
@@ -86,23 +86,23 @@ function Header() {
 
                 {/* Desktop Navigation */}
         <nav className="header-nav desktop-nav">
-          <Link to="/">Home</Link>
-          <Link to="/team">Our Team</Link>
-          <Link to="/services">Services</Link>
-          <Link to="/contact">Contact</Link>
-          <a href="tel:+48506080577" className="desktop-phone-btn">+48 (506) 080-577</a>
+          <Link to="/">{t('home')}</Link>
+          <Link to="/team">{t('ourTeam')}</Link>
+          <Link to="/services">{t('services')}</Link>
+          <Link to="/contact">{t('contact')}</Link>
+          <a href="tel:+48506080577" className="desktop-phone-btn">{t('phoneNumber')}</a>
           <div className="language-switcher-container desktop-only">
             <button
               className="language-switcher-btn"
               onClick={toggleLanguageDropdown}
               aria-label="Switch language"
             >
-              {language} <span className="language-arrow">▼</span>
+              {currentLanguage} <span className="language-arrow">▼</span>
             </button>
             {languageDropdownOpen && (
               <div className="language-dropdown">
-                <button onClick={() => selectLanguage('EN')} className={language === 'EN' ? 'active' : ''}>EN</button>
-                <button onClick={() => selectLanguage('PL')} className={language === 'PL' ? 'active' : ''}>PL</button>
+                <button onClick={() => selectLanguage('EN')} className={currentLanguage === 'EN' ? 'active' : ''}>EN</button>
+                <button onClick={() => selectLanguage('PL')} className={currentLanguage === 'PL' ? 'active' : ''}>PL</button>
               </div>
             )}
           </div>
@@ -126,14 +126,14 @@ function Header() {
 
         {/* Mobile Dropdown Menu - Navigation Links + Language Switcher */}
         <nav className={`mobile-dropdown ${isDropdownOpen ? 'open' : ''}`}>
-          <Link to="/" onClick={closeDropdown}>Home</Link>
-          <Link to="/team" onClick={closeDropdown}>Our Team</Link>
-          <Link to="/services" onClick={closeDropdown}>Services</Link>
-          <Link to="/contact" onClick={closeDropdown}>Contact</Link>
+          <Link to="/" onClick={closeDropdown}>{t('home')}</Link>
+          <Link to="/team" onClick={closeDropdown}>{t('ourTeam')}</Link>
+          <Link to="/services" onClick={closeDropdown}>{t('services')}</Link>
+          <Link to="/contact" onClick={closeDropdown}>{t('contact')}</Link>
           <div className="language-switcher-mobile">
-            <span className="language-switcher-label">Language:</span>
-            <button onClick={() => selectLanguage(language === 'EN' ? 'PL' : 'EN')} className="language-switcher-btn-mobile">
-              {language === 'EN' ? 'PL' : 'EN'}
+            <span className="language-switcher-label">{t('language')}</span>
+            <button onClick={() => selectLanguage(currentLanguage === 'EN' ? 'PL' : 'EN')} className="language-switcher-btn-mobile">
+              {currentLanguage === 'EN' ? 'PL' : 'EN'}
             </button>
           </div>
         </nav>

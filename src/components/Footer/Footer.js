@@ -1,14 +1,16 @@
 // Footer component
 import React from 'react';
+import { useLanguage } from '../../contexts/LanguageContext';
 import "./Footer.css";
 
 function Footer() {
+  const { t } = useLanguage();
   return (
     <footer className="site-footer">
       <div className="footer-container">
         {/* Social Media Section */}
         <div className="footer-social-section">
-          <h3 className="social-title">Follow Us On Social Media</h3>
+          <h3 className="social-title">{t('followUsOnSocialMedia')}</h3>
           
           <div className="social-links">
             <a

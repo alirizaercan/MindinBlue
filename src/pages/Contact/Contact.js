@@ -1,9 +1,11 @@
 // Contact page component
 
 import React, { useState } from 'react';
+import { useLanguage } from '../../contexts/LanguageContext';
 import './Contact.css';
 
 function Contact() {
+  const { t } = useLanguage();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -32,10 +34,10 @@ function Contact() {
       {/* Hero Section */}
       <div className="contact-hero">
         <div className="hero-content">
-          <h1>Get In Touch</h1>
-          <p>If you want to book a consultation session or have any questions, you can get in touch by filling in the contact form below or give us a call.</p>
+          <h1>{t('contactHeroTitle')}</h1>
+          <p>{t('contactHeroDesc')}</p>
           <div className="hero-note">
-            <p>Unfortunately sometimes our replies can land in your spam folder, so please check it if you haven't got the response.</p>
+            <p>{t('contactNote')}</p>
           </div>
         </div>
       </div>
@@ -47,7 +49,7 @@ function Contact() {
           <div className="form-section">
             <form className="contact-form" onSubmit={handleSubmit}>
               <div className="form-group">
-                <label htmlFor="name">Your name</label>
+                <label htmlFor="name">{t('yourName')}</label>
                 <input
                   type="text"
                   id="name"
@@ -59,7 +61,7 @@ function Contact() {
               </div>
 
               <div className="form-group">
-                <label htmlFor="email">Your email</label>
+                <label htmlFor="email">{t('yourEmail')}</label>
                 <input
                   type="email"
                   id="email"
@@ -71,7 +73,7 @@ function Contact() {
               </div>
 
               <div className="form-group">
-                <label htmlFor="phone">Phone number</label>
+                <label htmlFor="phone">{t('phoneNumberLabel')}</label>
                 <input
                   type="tel"
                   id="phone"
@@ -82,7 +84,7 @@ function Contact() {
               </div>
 
               <div className="form-group">
-                <label htmlFor="message">Your message (optional)</label>
+                <label htmlFor="message">{t('yourMessage')}</label>
                 <textarea
                   id="message"
                   name="message"
@@ -98,10 +100,10 @@ function Contact() {
                   value={formData.service}
                   onChange={handleInputChange}
                 >
-                  <option value="">Select a service</option>
-                  <option value="counselling-psychotherapy">Counselling & Psychotherapy</option>
-                  <option value="couples-therapy">Couples Therapy</option>
-                  <option value="online-consultation">Online Consultation</option>
+                  <option value="">{t('selectService')}</option>
+                  <option value="counselling-psychotherapy">{t('counsellingPsychotherapy')}</option>
+                  <option value="couples-therapy">{t('couplesTherapy')}</option>
+                  <option value="online-consultation">{t('onlineConsultation')}</option>
                 </select>
               </div>
 
@@ -111,15 +113,15 @@ function Contact() {
                   value={formData.sessionType}
                   onChange={handleInputChange}
                 >
-                  <option value="">Select session type</option>
-                  <option value="online">Online Session</option>
-                  <option value="in-person">In-Person (Gdańsk)</option>
-                  <option value="either">Either Option</option>
+                  <option value="">{t('selectSessionType')}</option>
+                  <option value="online">{t('onlineSession')}</option>
+                  <option value="in-person">{t('inPersonGdansk')}</option>
+                  <option value="either">{t('eitherOption')}</option>
                 </select>
               </div>
 
               <button type="submit" className="send-btn">
-                SEND
+                {t('send')}
               </button>
             </form>
           </div>
@@ -127,26 +129,25 @@ function Contact() {
           {/* Contact Info */}
           <div className="info-section">
             <div className="contact-info">
-              <h2>Contact Info | Location</h2>
+              <h2>{t('contactInfoLocation')}</h2>
               
               <div className="info-card">
-                <h3>Telephone & Email</h3>
+                <h3>{t('telephoneEmail')}</h3>
                 <div className="contact-details">
-                  <a href="tel:+48506080577" className="phone-number">+48 506 080 577</a>
+                  <a href="tel:+48506080577" className="phone-number">{t('phoneNumber')}</a>
                   <a href="mailto:contact@mindinblue.com" className="email">contact@mindinblue.com</a>
                 </div>
               </div>
 
               <div className="info-card">
-                <h3>Opening Hours</h3>
-                <p className="hours">Monday to Friday – 9:00 am to 8:00 pm</p>
+                <h3>{t('openingHours')}</h3>
+                <p className="hours">{t('mondayToFriday')}</p>
               </div>
 
               <div className="info-card">
-                <h3>Office Location</h3>
+                <h3>{t('officeLocation')}</h3>
                 <address className="address">
-                  Sobótki 22/2<br/>
-                  80-247 Gdańsk, Poland
+                  {t('address')}
                 </address>
               </div>
             </div>

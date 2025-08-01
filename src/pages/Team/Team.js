@@ -1,11 +1,101 @@
 // Team page component
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useLanguage } from '../../contexts/LanguageContext';
 import './Team.css';
 
 const Team = () => {
   const [selectedMember, setSelectedMember] = useState(null);
   const navigate = useNavigate();
+  const { t, currentLanguage } = useLanguage();
+
+  // Helper function to get translated content
+  const getTranslatedContent = (member, field) => {
+    // Special handling for team members
+    if (member.name === "Anna Rozkwitalska") {
+      if (field === 'description' && currentLanguage === 'PL') {
+        return t('annarozkwitalskadescription');
+      }
+      if (field === 'closingMessage' && currentLanguage === 'PL') {
+        return t('annarozkwitalskaclosingmessage');
+      }
+      if (field === 'specialties' && currentLanguage === 'PL') {
+        return t('annarozkwitalskaaspecialties');
+      }
+      if (field === 'title' && currentLanguage === 'PL') {
+        return t('annaTitle');
+      }
+    }
+    
+    if (member.name === "Agata Gulbierz") {
+      if (field === 'description' && currentLanguage === 'PL') {
+        return t('agatagulbierzdescription');
+      }
+      if (field === 'closingMessage' && currentLanguage === 'PL') {
+        return t('agatagulbierzclosingmessage');
+      }
+      if (field === 'specialties' && currentLanguage === 'PL') {
+        return t('agatagulbierzspecialties');
+      }
+      if (field === 'title' && currentLanguage === 'PL') {
+        return "Psycholog i CBT";
+      }
+    }
+    
+    if (member.name === "Justyna Foster") {
+      if (field === 'description' && currentLanguage === 'PL') {
+        return t('justynafosterdescription');
+      }
+      if (field === 'specialties' && currentLanguage === 'PL') {
+        return t('justynafosterspecialties');
+      }
+      if (field === 'title' && currentLanguage === 'PL') {
+        return t('justynafostertitle');
+      }
+    }
+    
+    if (member.name === "Monika Skwierawska") {
+      if (field === 'description' && currentLanguage === 'PL') {
+        return t('monikaskwierawskadescription');
+      }
+      if (field === 'specialties' && currentLanguage === 'PL') {
+        return t('monikaskwierawskaspecialties');
+      }
+      if (field === 'title' && currentLanguage === 'PL') {
+        return t('monikaskwierawskatitle');
+      }
+    }
+    
+    if (member.name === "Alicja Gajewska") {
+      if (field === 'description' && currentLanguage === 'PL') {
+        return t('alicjagajewskadescription');
+      }
+      if (field === 'specialties' && currentLanguage === 'PL') {
+        return t('alicjagajewskaspecialties');
+      }
+      if (field === 'title' && currentLanguage === 'PL') {
+        return t('alicjagajewskatitle');
+      }
+    }
+    
+    if (member.name === "Magdalena Muskat") {
+      if (field === 'description' && currentLanguage === 'PL') {
+        return t('magdalenamuskatdescription');
+      }
+      if (field === 'specialties' && currentLanguage === 'PL') {
+        return t('magdalenamuskatspecialties');
+      }
+      if (field === 'closingMessage' && currentLanguage === 'PL') {
+        return t('magdalenamuskatclosingmessage');
+      }
+      if (field === 'title' && currentLanguage === 'PL') {
+        return t('magdalenamuskatitle');
+      }
+    }
+    
+    // Return original for all other cases
+    return member[field];
+  };
 
   const teamMembers = [
     {
@@ -37,6 +127,7 @@ const Team = () => {
         "See a fuller, clearer picture of your life and choices"
       ],
       closingMessage: "Whether you're going through a difficult time, looking for support, or simply feeling the need to grow or reconnect with yourself—I'm here to help. Feel free to reach out. Let's talk.",
+      closingMessagePL: "Niezależnie od tego, czy przechodzisz przez trudny czas, szukasz wsparcia, czy po prostu czujesz potrzebę rozwoju lub ponownego połączenia z sobą - jestem tutaj, aby pomóc. Skontaktuj się ze mną. Porozmawiajmy.",
       email: "anna@mindinblue.com",
       languages: ["English", "Polish", "Spanish", "Italian"]
     },
@@ -184,9 +275,9 @@ const Team = () => {
   return (
     <div className="team-page">
       <div className="team-container">
-        <h1 className="team-title">Our Team</h1>
+        <h1 className="team-title">{t('teamPageTitle')}</h1>
         <p className="team-description">
-          Meet our experienced team of psychologists, counsellors, and therapists who are dedicated to providing you with the highest quality mental health care.
+          {t('teamPageSubtitle')}
         </p>
         
         <div className="team-grid">
@@ -211,7 +302,7 @@ const Team = () => {
                     <span key={index} className="flag">{flag}</span>
                   ))}
                 </div>
-                <button className="view-profile-btn">View Profile</button>
+                <button className="view-profile-btn">{t('viewProfile')}</button>
               </div>
             </div>
           ))}
@@ -231,7 +322,7 @@ const Team = () => {
               />
               <div className="modal-basic-info">
                 <h2>{selectedMember.name}</h2>
-                <p className="modal-title">{selectedMember.title}</p>
+                <p className="modal-title">{getTranslatedContent(selectedMember, 'title')}</p>
                 <div className="modal-flags">
                   {selectedMember.flags.map((flag, index) => (
                     <span key={index} className="flag">{flag}</span>
@@ -242,21 +333,21 @@ const Team = () => {
             
             <div className="modal-body">
               <div className="modal-section">
-                <h3>About</h3>
-                {selectedMember.description.split('\n\n').map((paragraph, index) => (
+                <h3>{t('about')}</h3>
+                {(getTranslatedContent(selectedMember, 'description')).split('\n\n').map((paragraph, index) => (
                   <p key={index} style={{ marginBottom: '1rem' }}>{paragraph}</p>
                 ))}
               </div>
               
               <div className="modal-section">
-                <h3>Experience</h3>
-                <p>{selectedMember.experience}</p>
+                <h3>{t('experience')}</h3>
+                <p>{selectedMember.experience === 'Multiple years' ? t('multipleYears') : selectedMember.experience}</p>
               </div>
               
               <div className="modal-section">
-                <h3>Specialties</h3>
+                <h3>{t('specialties')}</h3>
                 <ul className="specialties-list">
-                  {selectedMember.specialties.map((specialty, index) => (
+                  {(getTranslatedContent(selectedMember, 'specialties') || selectedMember.specialties).map((specialty, index) => (
                     <li key={index}>{specialty}</li>
                   ))}
                 </ul>
@@ -264,11 +355,31 @@ const Team = () => {
 
               {selectedMember.sessionBenefits && (
                 <div className="modal-section">
-                  <h3>In Our Sessions, You Can:</h3>
+                  <h3>{t('sessionBenefits')}</h3>
                   <ul className="specialties-list">
-                    {selectedMember.sessionBenefits.map((benefit, index) => (
-                      <li key={index}>{benefit}</li>
-                    ))}
+                    {(() => {
+                      // Special handling for team members' sessionBenefits translation
+                      if (selectedMember.name === "Anna Rozkwitalska" && currentLanguage === 'PL') {
+                        const translated = t('annaSessionBenefits');
+                        if (Array.isArray(translated)) {
+                          return translated.map((benefit, index) => (
+                            <li key={index}>{benefit}</li>
+                          ));
+                        }
+                      }
+                      if (selectedMember.name === "Alicja Gajewska" && currentLanguage === 'PL') {
+                        const translated = t('alicjagajewskasessionbenefits');
+                        if (Array.isArray(translated)) {
+                          return translated.map((benefit, index) => (
+                            <li key={index}>{benefit}</li>
+                          ));
+                        }
+                      }
+                      // Default to original sessionBenefits
+                      return selectedMember.sessionBenefits.map((benefit, index) => (
+                        <li key={index}>{benefit}</li>
+                      ));
+                    })()}
                   </ul>
                 </div>
               )}
@@ -277,7 +388,7 @@ const Team = () => {
                 <div className="modal-section">
                   <div className="closing-message">
                     <p style={{ fontStyle: 'italic', color: '#3fa9f5', fontWeight: '500' }}>
-                      {selectedMember.closingMessage}
+                      {getTranslatedContent(selectedMember, 'closingMessage')}
                     </p>
                   </div>
                 </div>
@@ -289,13 +400,13 @@ const Team = () => {
                 className="book-appointment-btn"
                 onClick={() => handleBookAppointment(selectedMember)}
               >
-                Book Appointment
+                {t('bookAppointment')}
               </button>
               <a 
                 href={`mailto:${selectedMember.email}`}
                 className="contact-btn"
               >
-                Contact via Email
+                {t('contactViaEmail')}
               </a>
             </div>
           </div>
