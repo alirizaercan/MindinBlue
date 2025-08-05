@@ -79,11 +79,6 @@ function Services() {
               <h3 className="pricing-service-title">{t('couplesTherapy')}</h3>
               <div className="pricing-amount">330 PLN</div>
             </div>
-            
-            <div className="pricing-card">
-              <h3 className="pricing-service-title">{t('onlineConsultation')}</h3>
-              <div className="pricing-amount">370 PLN</div>
-            </div>
           </div>
           
           <div className="pricing-note">
