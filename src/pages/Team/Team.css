@@ -310,23 +310,6 @@
 }
 
 .book-appointment-btn {
-  background: #3fa9f5;
-  color: white;
-  border: none;
-  padding: 0.8rem 1.5rem;
-  border-radius: 8px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background 0.3s ease;
-  flex: 1;
-  min-width: 150px;
-}
-
-.book-appointment-btn:hover {
-  background: #2a66c7;
-}
-
-.contact-btn {
   background: transparent;
   color: #3fa9f5;
   border: 2px solid #3fa9f5;
@@ -344,7 +327,7 @@
   justify-content: center;
 }
 
-.contact-btn:hover {
+.book-appointment-btn:hover {
   background: #3fa9f5;
   color: white;
 }

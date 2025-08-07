@@ -1,5 +1,4 @@
-// Main App component for MindinBlue website
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { LanguageProvider } from "./contexts/LanguageContext";
 import ScrollToTop from "./components/ScrollToTop";
 import Header from "./components/Header/Header";
@@ -11,26 +10,40 @@ import Team from "./pages/Team/Team";
 import CounsellingPsychotherapy from "./pages/CounsellingPsychotherapy/CounsellingPsychotherapy";
 import CouplesTherapy from "./pages/CouplesTherapy/CouplesTherapy";
 import OnlineConsultation from "./pages/OnlineConsultation/OnlineConsultation";
+import ExpatTherapyConsultation from "./pages/ExpatTherapy/ExpatTherapyConsultation";
+
+function AppContent() {
+  const location = useLocation();
+  const isExpatTherapyPage = location.pathname === '/expat-therapy-poland';
+
+  return (
+    <>
+      <ScrollToTop />
+      {!isExpatTherapyPage && <Header />}
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/team" element={<Team />} />
+        <Route path="/services" element={<Services />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route
+          path="/counselling-psychotherapy"
+          element={<CounsellingPsychotherapy />}
+        />
+        <Route path="/couples-therapy" element={<CouplesTherapy />} />
+        <Route path="/online-consultation" element={<OnlineConsultation />} />
+        {/* Expat Therapy - Standalone landing page without Header/Footer */}
+        <Route path="/expat-therapy-poland" element={<ExpatTherapyConsultation />} />
+      </Routes>
+      {!isExpatTherapyPage && <Footer />}
+    </>
+  );
+}
 
 function App() {
   return (
     <LanguageProvider>
       <BrowserRouter>
-        <ScrollToTop />
-        <Header />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/team" element={<Team />} />
-          <Route path="/services" element={<Services />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route
-            path="/counselling-psychotherapy"
-            element={<CounsellingPsychotherapy />}
-          />
-          <Route path="/couples-therapy" element={<CouplesTherapy />} />
-          <Route path="/online-consultation" element={<OnlineConsultation />} />
-        </Routes>
-        <Footer />
+        <AppContent />
       </BrowserRouter>
     </LanguageProvider>
   );

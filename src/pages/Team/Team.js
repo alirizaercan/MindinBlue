@@ -402,12 +402,6 @@ const Team = () => {
               >
                 {t('bookAppointment')}
               </button>
-              <a 
-                href={`mailto:${selectedMember.email}`}
-                className="contact-btn"
-              >
-                {t('contactViaEmail')}
-              </a>
             </div>
           </div>
         </div>
