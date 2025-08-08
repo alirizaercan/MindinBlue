@@ -1,32 +1,130 @@
 // Contact page component
 
-import React, { useState } from 'react';
-import { useLanguage } from '../../contexts/LanguageContext';
-import './Contact.css';
+import React, { useState } from "react";
+import { useLanguage } from "../../contexts/LanguageContext";
+import emailjs from "@emailjs/browser";
+import "./Contact.css";
 
 function Contact() {
   const { t } = useLanguage();
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    service: '',
-    sessionType: '',
-    message: ''
+    name: "",
+    email: "",
+    phone: "",
+    service: "",
+    sessionType: "",
+    message: "",
   });
+
+  const [errors, setErrors] = useState({});
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  // Initialize EmailJS (add your public key from EmailJS dashboard)
+  emailjs.init("WsafYrZj3fnh_4yA0"); // Replace with your EmailJS public key
+
+  const validateForm = () => {
+    const newErrors = {};
+
+    if (!formData.name.trim()) {
+      newErrors.name = t("nameRequired") || "Name is required";
+    }
+
+    if (!formData.email.trim()) {
+      newErrors.email = t("emailRequired") || "Email is required";
+    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
+      newErrors.email = t("emailInvalid") || "Email is invalid";
+    }
+
+    if (!formData.service) {
+      newErrors.service = t("serviceRequired") || "Please select a service";
+    }
+
+    if (!formData.sessionType) {
+      newErrors.sessionType =
+        t("sessionTypeRequired") || "Please select a session type";
+    }
+
+    if (!formData.message.trim()) {
+      newErrors.message = t("messageRequired") || "Message is required";
+    }
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+
+  const isFormValid = () => {
+    return (
+      formData.name.trim() &&
+      formData.email.trim() &&
+      /\S+@\S+\.\S+/.test(formData.email) &&
+      formData.service &&
+      formData.sessionType &&
+      formData.message.trim()
+    );
+  };
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    setFormData(prevState => ({
+    setFormData((prevState) => ({
       ...prevState,
-      [name]: value
+      [name]: value,
     }));
+
+    // Clear error when user starts typing
+    if (errors[name]) {
+      setErrors((prev) => ({
+        ...prev,
+        [name]: "",
+      }));
+    }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
-    alert('Thank you for your message! We will get back to you soon.');
+
+    if (!validateForm()) {
+      return;
+    }
+
+    setIsSubmitting(true);
+
+    try {
+      // EmailJS template parameters
+      const templateParams = {
+        from_name: formData.name,
+        from_email: formData.email,
+        phone: formData.phone,
+        service: formData.service,
+        session_type: formData.sessionType,
+        message: formData.message,
+        to_email: "vanya.puhachov@gmail.com",
+      };
+
+      await emailjs.send("service_6nnbqus", "template_6lfplix", templateParams);
+
+      alert(
+        t("messageSent") ||
+          "Thank you for your message! We will get back to you soon."
+      );
+
+      // Reset form
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        service: "",
+        sessionType: "",
+        message: "",
+      });
+    } catch (error) {
+      console.error("Email sending failed:", error);
+      alert(
+        t("messageError") ||
+          "Sorry, there was an error sending your message. Please try again."
+      );
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -34,10 +132,10 @@ function Contact() {
       {/* Hero Section */}
       <div className="contact-hero">
         <div className="hero-content">
-          <h1>{t('contactHeroTitle')}</h1>
-          <p>{t('contactHeroDesc')}</p>
+          <h1>{t("contactHeroTitle")}</h1>
+          <p>{t("contactHeroDesc")}</p>
           <div className="hero-note">
-            <p>{t('contactNote')}</p>
+            <p>{t("contactNote")}</p>
           </div>
         </div>
       </div>
@@ -49,7 +147,7 @@ function Contact() {
           <div className="form-section">
             <form className="contact-form" onSubmit={handleSubmit}>
               <div className="form-group">
-                <label htmlFor="name">{t('yourName')}</label>
+                <label htmlFor="name">{t("yourName")}</label>
                 <input
                   type="text"
                   id="name"
@@ -57,11 +155,15 @@ function Contact() {
                   value={formData.name}
                   onChange={handleInputChange}
                   required
+                  className={errors.name ? "error" : ""}
                 />
+                {errors.name && (
+                  <span className="error-message">{errors.name}</span>
+                )}
               </div>
 
               <div className="form-group">
-                <label htmlFor="email">{t('yourEmail')}</label>
+                <label htmlFor="email">{t("yourEmail")}</label>
                 <input
                   type="email"
                   id="email"
@@ -69,11 +171,15 @@ function Contact() {
                   value={formData.email}
                   onChange={handleInputChange}
                   required
+                  className={errors.email ? "error" : ""}
                 />
+                {errors.email && (
+                  <span className="error-message">{errors.email}</span>
+                )}
               </div>
 
               <div className="form-group">
-                <label htmlFor="phone">{t('phoneNumberLabel')}</label>
+                <label htmlFor="phone">{t("phoneNumberLabel")}</label>
                 <input
                   type="tel"
                   id="phone"
@@ -84,14 +190,18 @@ function Contact() {
               </div>
 
               <div className="form-group">
-                <label htmlFor="message">{t('yourMessage')}</label>
+                <label htmlFor="message">{t("yourMessage")}</label>
                 <textarea
                   id="message"
                   name="message"
                   value={formData.message}
                   onChange={handleInputChange}
                   rows="4"
+                  className={errors.message ? "error" : ""}
                 ></textarea>
+                {errors.message && (
+                  <span className="error-message">{errors.message}</span>
+                )}
               </div>
 
               <div className="form-group">
@@ -99,12 +209,20 @@ function Contact() {
                   name="service"
                   value={formData.service}
                   onChange={handleInputChange}
+                  className={errors.service ? "error" : ""}
                 >
-                  <option value="">{t('selectService')}</option>
-                  <option value="counselling-psychotherapy">{t('counsellingPsychotherapy')}</option>
-                  <option value="couples-therapy">{t('couplesTherapy')}</option>
-                  <option value="online-consultation">{t('onlineConsultation')}</option>
+                  <option value="">{t("selectService")}</option>
+                  <option value="counselling-psychotherapy">
+                    {t("counsellingPsychotherapy")}
+                  </option>
+                  <option value="couples-therapy">{t("couplesTherapy")}</option>
+                  <option value="online-consultation">
+                    {t("onlineConsultation")}
+                  </option>
                 </select>
+                {errors.service && (
+                  <span className="error-message">{errors.service}</span>
+                )}
               </div>
 
               <div className="form-group">
@@ -112,16 +230,24 @@ function Contact() {
                   name="sessionType"
                   value={formData.sessionType}
                   onChange={handleInputChange}
+                  className={errors.sessionType ? "error" : ""}
                 >
-                  <option value="">{t('selectSessionType')}</option>
-                  <option value="online">{t('onlineSession')}</option>
-                  <option value="in-person">{t('inPersonGdansk')}</option>
-                  <option value="either">{t('eitherOption')}</option>
+                  <option value="">{t("selectSessionType")}</option>
+                  <option value="online">{t("onlineSession")}</option>
+                  <option value="in-person">{t("inPersonGdansk")}</option>
+                  <option value="either">{t("eitherOption")}</option>
                 </select>
+                {errors.sessionType && (
+                  <span className="error-message">{errors.sessionType}</span>
+                )}
               </div>
 
-              <button type="submit" className="send-btn">
-                {t('send')}
+              <button
+                type="submit"
+                className={`send-btn ${!isFormValid() ? "disabled" : ""}`}
+                disabled={!isFormValid() || isSubmitting}
+              >
+                {isSubmitting ? t("sending") || "Sending..." : t("send")}
               </button>
             </form>
           </div>
@@ -129,26 +255,28 @@ function Contact() {
           {/* Contact Info */}
           <div className="info-section">
             <div className="contact-info">
-              <h2>{t('contactInfoLocation')}</h2>
-              
+              <h2>{t("contactInfoLocation")}</h2>
+
               <div className="info-card">
-                <h3>{t('telephoneEmail')}</h3>
+                <h3>{t("telephoneEmail")}</h3>
                 <div className="contact-details">
-                  <a href="tel:+48506080577" className="phone-number">{t('phoneNumber')}</a>
-                  <a href="mailto:contact@mindinblue.com" className="email">contact@mindinblue.com</a>
+                  <a href="tel:+48506080577" className="phone-number">
+                    {t("phoneNumber")}
+                  </a>
+                  <a href="mailto:contact@mindinblue.com" className="email">
+                    contact@mindinblue.com
+                  </a>
                 </div>
               </div>
 
               <div className="info-card">
-                <h3>{t('openingHours')}</h3>
-                <p className="hours">{t('mondayToFriday')}</p>
+                <h3>{t("openingHours")}</h3>
+                <p className="hours">{t("mondayToFriday")}</p>
               </div>
 
               <div className="info-card">
-                <h3>{t('officeLocation')}</h3>
-                <address className="address">
-                  {t('address')}
-                </address>
+                <h3>{t("officeLocation")}</h3>
+                <address className="address">{t("address")}</address>
               </div>
             </div>
 
