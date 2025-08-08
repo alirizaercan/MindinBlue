@@ -20,7 +20,7 @@ const ContactModal = memo(({
         >
           ×
         </button>
-        <h2 className="expat-modal-title">🇵🇱 Book Your FREE Expat Consultation</h2>
+        <h2 className="expat-modal-title">Fill in the form below<br />to get started</h2>
         <form onSubmit={handleSubmit}>
           <div className="expat-form-group">
             <label htmlFor="firstName">First Name *</label>
@@ -73,44 +73,18 @@ const ContactModal = memo(({
               autoComplete="tel"
             />
           </div>
+        
           
           <div className="expat-form-group">
-            <label htmlFor="experience">How long have you been living in Poland? *</label>
-            <select
-              id="experience"
-              name="experience"
-              value={formData.experience || ''}
-              onChange={handleInputChange}
-              required
-            >
-              <option value="">Select...</option>
-              <option value="new-arrival">Just arrived (0-6 months)</option>
-              <option value="settling-in">Settling in (6 months - 2 years)</option>
-              <option value="established">Established (2-5 years)</option>
-              <option value="long-term">Long-term resident (5+ years)</option>
-              <option value="considering">Considering moving to Poland</option>
-            </select>
-          </div>
-          
-          <div className="expat-form-group">
-            <label htmlFor="goal">What's your biggest challenge as an expat? *</label>
-            <select
+            <label htmlFor="goal">What's your biggest challenge as an expat?</label>
+            <textarea
               id="goal"
               name="goal"
               value={formData.goal || ''}
               onChange={handleInputChange}
-              required
-            >
-              <option value="">Select...</option>
-              <option value="cultural-adaptation">Cultural adaptation & homesickness</option>
-              <option value="language-barriers">Language barriers & communication stress</option>
-              <option value="social-isolation">Feeling isolated & making friends</option>
-              <option value="relationship-strain">Relationship strain due to relocation</option>
-              <option value="work-stress">Work stress & career challenges in Poland</option>
-              <option value="identity-crisis">Identity & belonging issues</option>
-              <option value="anxiety-depression">Anxiety, depression, or mood issues</option>
-              <option value="family-adjustment">Family/children adjustment to Poland</option>
-            </select>
+              rows="4"
+              placeholder="Please describe your biggest challenge as an expat in Poland..."
+            />
           </div>
           
           <div className="expat-form-group">
@@ -123,11 +97,8 @@ const ContactModal = memo(({
               required
             >
               <option value="">Select...</option>
-              <option value="online-sessions">Online therapy sessions (worldwide)</option>
-              <option value="in-person-gdansk">In-person sessions in Gdansk</option>
-              <option value="couples-expat-therapy">Couples therapy for expats</option>
-              <option value="cultural-coaching">Cultural adaptation coaching</option>
-              <option value="consultation-first">Free consultation first</option>
+              <option value="online-sessions">Online</option>
+              <option value="in-person-gdansk">In-person in Gdansk</option>
             </select>
           </div>
           
@@ -143,7 +114,7 @@ const ContactModal = memo(({
                 className="expat-consent-checkbox"
               />
               <div className="expat-consent-text">
-                I agree to be contacted about expat therapy services in Poland. *
+                By sending this form, you’re giving Mind in Blue permission to get in touch with you about your therapy needs. We respect your privacy and will keep your details safe. *
               </div>
             </div>
             <div className="expat-privacy-notice">
@@ -160,7 +131,7 @@ const ContactModal = memo(({
           </div>
           
           <button type="submit" className="expat-send-button">
-            SUBMIT
+            SUBMIT & WATCH THE VIDEO
           </button>
         </form>
       </div>
@@ -202,6 +173,22 @@ function ExpatTherapyConsultation() {
       document.body.style.overflow = 'unset';
     };
   }, [showModal, showPrivacyModal]);
+
+  // Google Reviews Widget Script
+  useEffect(() => {
+    const script = document.createElement("script");
+    script.src =
+      "https://app.reviewconnect.me/embed/oEYFWLQK1XUVahJzCmQqd4Kr3j2Lo0X5/widget.js";
+    script.async = true;
+    document.body.appendChild(script);
+
+    return () => {
+      // Only remove script if it exists in the DOM
+      if (document.body.contains(script)) {
+        document.body.removeChild(script);
+      }
+    };
+  }, []);
 
   const handleInputChange = useCallback((e) => {
     const { name, value, type, checked } = e.target;
@@ -267,14 +254,14 @@ Please prioritize - this is a qualified lead from our Meta Ads campaign.
       {/* Top Banner - Market Call Out */}
       <div className="expat-top-banner">
         <div className="expat-container">
-          <p>🇵🇱 FREE consultation for expats in Poland - English-speaking therapists in Gdansk</p>
+          <p>FREE 15-minute consultation call with English-speaking therapists</p>
         </div>
       </div>
 
       {/* Blue Highlight Section - VSL Hook */}
       <div className="expat-highlight-section">
         <div className="expat-container">
-          <p>400+ expats found professional therapy in English - No waiting lists, no language barriers</p>
+          <p>If you are an expat in Poland, looking for psychologial support, book your FREE 15-minute call</p>
         </div>
       </div>
 
@@ -283,18 +270,18 @@ Please prioritize - this is a qualified lead from our Meta Ads campaign.
         <div className="expat-container">
           <section className="expat-hero-section">
             <h1 className="expat-hero-title">
-              Get English-speaking therapy in Poland without waiting lists or language barriers
+              Get English-speaking therapy in Poland without language barriers
             </h1>
             <p className="expat-hero-subtitle">
-              6 licensed psychologists in Gdansk - Online & in-person sessions for expats
+              Licensed psychologists online or in-person in Gdańsk
             </p>
           </section>
 
           {/* Main Content Grid */}
-          <section className="expat-main-grid">
-            <div className="expat-product-image">
+          <section className="expat-homepage-grid">
+            <div className="expat-homepage-image">
               <img 
-                src={process.env.PUBLIC_URL + "/logos/mindinblue_logo.png"} 
+                src={process.env.PUBLIC_URL + "/images/mindinblue_therapists.png"} 
                 alt="Mind in Blue Professional Therapy" 
                 className="expat-therapy-image" 
                 onError={(e) => {
@@ -304,23 +291,23 @@ Please prioritize - this is a qualified lead from our Meta Ads campaign.
               />
             </div>
             
-            <div className="expat-benefits-section">
-              <h2 className="expat-benefits-title">This FREE consultation reveals:</h2>
-              <ul className="expat-benefits-list">
-                <li>✓ How to access English-speaking therapists in Gdansk who understand expat challenges (cultural adaptation, homesickness, identity issues)</li>
-                <li>✓ The "Culturally Sensitive Approach" - therapy adapted to your background, values, and expat experience in Poland</li>
-                <li>✓ How to get professional counselling & psychotherapy without Polish language barriers or confusing healthcare system</li>
-                <li>✓ Why 400+ expats choose Mind in Blue over other therapy options in Poland</li>
-                <li>✓ Online AND in-person sessions available Monday-Friday 9am-8pm (flexible for your work schedule)</li>
-                <li>✓ How to work with licensed psychologists in 4 languages without insurance complications</li>
+            <div className="expat-homepage-benefits">
+              <h2 className="expat-homepage-benefits-title">In your free 15-minute consultation, you can:</h2>
+              <ul className="expat-homepage-benefits-list">
+                <li>✓ Share what you’re dealing with right now</li>
+                <li>✓ Sum up what you need</li>
+                <li>✓ Talk to someone who understands expat life in Poland</li>
+                <li>✓ Explore options for therapy in English (in Gdańsk or online)</li>
+                <li>✓ Get guidance without language barriers or healthcare confusion</li>
+                <li>✓ Decide your next steps toward feeling better</li>
               </ul>
               <button 
                 className="expat-cta-button"
                 onClick={() => setShowModal(true)}
               >
-                ➤ GET MY FREE CONSULTATION NOW
+                ➤ FIND OUT HOW WE CAN HELP YOU
               </button>
-              <p className="expat-warning-text">⚠️ LIMITED SPOTS: Only 15 free consultations available this week for expats in Poland</p>
+              <p className="expat-homepage-warning-text">⚠️ LIMITED SPOTS: Only 5 free consultations available this week</p>
             </div>
           </section>
         </div>
@@ -329,37 +316,29 @@ Please prioritize - this is a qualified lead from our Meta Ads campaign.
       {/* Black Section - What's Included */}
       <section className="expat-what-includes-section">
         <div className="expat-container">
-          <h2 className="expat-section-title-white">What Mind in Blue offers expats in Poland:</h2>
+          <h2 className="expat-section-title-white">Your options for professional support:</h2>
           
           <div className="expat-features-grid">
             <div className="expat-feature-item">
               <div className="expat-feature-icon">🫂</div>
               <h3>Counselling & Psychotherapy</h3>
-              <p>Culturally sensitive counselling and psychotherapy services in Gdansk for individuals and expats. Professional treatment for anxiety, depression, cultural adaptation, and life transitions.</p>
             </div>
             <div className="expat-feature-item">
               <div className="expat-feature-icon">💑</div>
               <h3>Couples Therapy</h3>
-              <p>Relationship counseling in Gdansk by English-speaking psychologists. Specialized support for expat couples facing cultural and relationship challenges.</p>
             </div>
             <div className="expat-feature-item">
               <div className="expat-feature-icon">💻</div>
               <h3>Online Consultations</h3>
-              <p>Online psychotherapy consultations for clients across Poland and abroad. Access professional support from anywhere with flexible scheduling.</p>
             </div>
           </div>
 
           <div className="expat-bottom-text">
-            <p>
-              🇵🇱 EXPAT-FOCUSED: Don't struggle alone with cultural adaptation, homesickness, or finding your place in Poland. 
-              Mind in Blue specializes in expat mental health with 6 licensed psychologists who understand your unique challenges. 
-              Available in English and 3 other languages - both online and in-person in Gdansk.
-            </p>
             <button 
               className="expat-cta-button expat-secondary"
               onClick={() => setShowModal(true)}
             >
-              ➤ BOOK MY FREE CONSULTATION
+              ➤ FIND OUT HOW WE CAN HELP YOU
             </button>
           </div>
         </div>
@@ -368,20 +347,20 @@ Please prioritize - this is a qualified lead from our Meta Ads campaign.
       {/* Steps Section */}
       <section className="expat-steps-section">
         <div className="expat-container">
-          <h2 className="expat-section-title">🇵🇱 How expats in Poland get started (3 simple steps):</h2>
+          <h2 className="expat-section-title">How expats in Poland get started (3 simple steps):</h2>
           
           <div className="expat-steps-grid">
             <div className="expat-step-item">
               <div className="expat-step-icon">📝</div>
-              <h3>1. Fill out the expat-focused form below (takes 2 minutes)</h3>
+              <h3>1. Click the button and fill out the form (takes 1 minute)</h3>
             </div>
             <div className="expat-step-item">
               <div className="expat-step-icon">📞</div>
-              <h3>2. Get contacted within 24 hours by our English-speaking team</h3>
+              <h3>2. Get contacted within 24h by English speaking therapists</h3>
             </div>
             <div className="expat-step-item">
               <div className="expat-step-icon">🎯</div>
-              <h3>3. Schedule your first session (online or in-person in Gdansk)</h3>
+              <h3>3. Schedule your FREE 15 minute call</h3>
             </div>
           </div>
 
@@ -397,152 +376,38 @@ Please prioritize - this is a qualified lead from our Meta Ads campaign.
       {/* Founder Section */}
       <section className="expat-founder-section">
         <div className="expat-container">
-          <h2 className="expat-section-title-white">Meet the Mind in Blue Team - Specialists in Expat Mental Health</h2>
+          <h2 className="expat-section-title-white"></h2>
           
           <div className="expat-founder-grid">
             <div className="expat-founder-content">
-              <h3>Professional Team of 6 Licensed Psychologists</h3>
+              <h3>You’re in good hands</h3>
               <p>
-                Mind in Blue is the leading expat-focused mental health service in Poland, 
-                with a team of 6 experienced psychologists specializing in cultural adaptation and expat challenges.
+                Our licensed psychologists understand firsthand the ups and downs of expat life — and how to help you navigate them.
               </p>
               <p>
-                Our team has helped 400+ expats successfully navigate life in Poland, from cultural shock 
-                to relationship issues, career transitions, and personal growth.
+                Since 2018, we’ve been supporting expats in Poland with everything from cultural shock and relationship crises to personal growth, offering sessions in fluent English.
               </p>
-              <p>
-                🌍 AVAILABLE IN 4 LANGUAGES: English, Polish, German, and Spanish
-              </p>
-              <p>
-                📍 LOCATIONS: Online sessions worldwide + In-person sessions in Gdansk
-              </p>
-              <p>
-                ⏰ FLEXIBLE SCHEDULING: Monday-Friday, 9am-8pm (perfect for working expats)
-              </p>
-              <p>
-                🎯 SPECIALIZED SERVICES: Individual therapy, couples counseling, life coaching, 
-                cultural adaptation support, and expat-specific mental health challenges.
-              </p>
+              <h3>
+                Ready to heal and grow?
+              </h3>
+              <button 
+              className="expat-cta-button expat-final-cta"
+              onClick={() => setShowModal(true)}
+            >
+              YES, I WANT TO GET STARTED
+            </button>
             </div>
             <div className="expat-founder-image">
-              <img src={process.env.PUBLIC_URL + "/logos/mindinblue_logo.png"} alt="Mind in Blue Team" className="expat-founder-photo" />
+              <img src={process.env.PUBLIC_URL + "/images/mindinblue_therapists.png"} alt="Mind in Blue Team" className="expat-founder-photo" />
             </div>
           </div>
         </div>
       </section>
-
-      {/* Final CTA */}
-      <section className="expat-final-cta-section">
-        <div className="expat-container">
-          <h2 className="expat-final-cta-title">🇵🇱 Ready to thrive as an expat in Poland?</h2>
-          <p className="expat-final-cta-text">
-            Join 400+ expats who chose Mind in Blue for professional, culturally-sensitive mental health support. 
-            Book your FREE consultation now and discover why we're Poland's #1 choice for English-speaking therapy.
-          </p>
-          <button 
-            className="expat-cta-button expat-final-cta"
-            onClick={() => setShowModal(true)}
-          >
-            YES, GET MY FREE EXPAT CONSULTATION
-          </button>
-        </div>
-      </section>
-
-      {/* Footer */}
-      <footer className="expat-footer-section">
-        <div className="expat-container">
-          <div className="expat-footer-content">
-            <img src={process.env.PUBLIC_URL + "/logos/mindinblue_logo.png"} alt="Mind in Blue Logo" className="expat-footer-logo" />
-            <div className="expat-footer-text">
-              <h3>Disclaimer</h3>
-              <p>
-                <strong>RESULTS AND THERAPY OUTCOMES DISCLAIMER</strong>
-              </p>
-              <p>
-                All testimonials on this website are from real clients. The results presented on this page are not typical. 
-                Their experiences do not guarantee similar results. Individual outcomes may vary depending on your commitment, 
-                participation, motivation, and other unforeseen factors. The company has not yet conducted research on the 
-                outcomes of its typical clients. Your results may differ.
-              </p>
-              <p>
-                Mind in Blue does not sell business opportunities, "get rich quick" programs, or money-making systems. 
-                We believe that through professional therapy and counseling, individuals can be better prepared to make 
-                life decisions and improve their mental health, but we do not guarantee success in our treatment. We make 
-                no representations regarding therapeutic outcomes, efforts, or claims that our therapy will solve all your problems.
-              </p>
-              <p>
-                Mental health treatment involves personal commitment and possible emotional discomfort during the therapeutic process. 
-                Some strategies may not be suitable for all individuals or situations. We make no representations regarding the 
-                probability that any actual therapy will achieve specific results or perform in a predictable manner.
-              </p>
-              <p>
-                Statements and descriptions are opinions, results, or experiences of individuals who have typically purchased 
-                our services. Results vary, are not typical, and depend on individual effort, time, skills, and unknown 
-                conditions and other factors. We do not measure earnings or financial results. Instead, we track completed 
-                therapy sessions and service satisfaction through voluntary surveys.
-              </p>
-              <p>
-                Mind in Blue may refer to content or services created by or provided by third parties that are not affiliated 
-                with the company. The company is not responsible for such content and does not endorse or approve it. The company 
-                may provide services or refer you to external companies. Some of these companies may have shared interests and 
-                owners with the company.
-              </p>
-              <p>
-                Mind in Blue is not part of YouTube, Bing, Google, or Facebook services; Google Inc, Microsoft INC, or Meta Inc. 
-                Furthermore, Mind in Blue is not supported in any way by YouTube, Google, Bing, or Facebook. FACEBOOK is a 
-                trademark of FACEBOOK, Inc. YOUTUBE is a trademark of GOOGLE Inc. BING is a trademark of MICROSOFT Inc.
-              </p>
-              <p>
-                <strong>Mind in Blue - Professional Mental Health Services</strong><br/>
-                Located in Gdansk, Poland<br/>
-                Services provided in accordance with Polish healthcare regulations and EU GDPR compliance.
-              </p>
-              <div className="expat-footer-social-section">
-                <h3>Connect With Us</h3>
-                <div className="expat-footer-social">
-                  <a href="https://www.facebook.com/themindinblue#" target="_blank" rel="noopener noreferrer" className="expat-social-icon">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                      <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-                    </svg>
-                  </a>
-                  <a href="https://www.instagram.com/themindinblue/" target="_blank" rel="noopener noreferrer" className="expat-social-icon">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                      <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-                    </svg>
-                  </a>
-                  <a href="https://www.tiktok.com/@themindinblue" target="_blank" rel="noopener noreferrer" className="expat-social-icon">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                      <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/>
-                    </svg>
-                  </a>
-                  <a href="https://www.youtube.com/@themindinblue" target="_blank" rel="noopener noreferrer" className="expat-social-icon">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                      <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
-                    </svg>
-                  </a>
-                  <a href="https://www.linkedin.com/company/themindinblue" target="_blank" rel="noopener noreferrer" className="expat-social-icon">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                      <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                    </svg>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </footer>
-    </div>
+   </div>
   );
 
   const ThankYouPage = () => (
     <div>
-      {/* Top Banner - Success Message */}
-      <div className="expat-top-banner">
-        <div className="expat-container">
-          <p>✅ Application received! Our team will contact you within 24 hours</p>
-        </div>
-      </div>
-
       {/* Blue Highlight Section */}
       <div className="expat-highlight-section">
         <div className="expat-container">
@@ -562,30 +427,19 @@ Please prioritize - this is a qualified lead from our Meta Ads campaign.
             </p>
           </section>
 
-          {/* Video and CTA Grid */}
-          <section className="expat-main-grid">
-            <div className="expat-product-image">
-              <div className="expat-video-container">
-                <iframe
-                  src="https://www.youtube.com/embed/jPKA73f1rHI"
-                  title="Mind in Blue Professional Therapy Services"
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                ></iframe>
-              </div>
+          {/* Video and CTA Section - Centered Single Column */}
+          <section className="expat-video-cta-section">
+            <div className="expat-video-container">
+              <iframe
+                src="https://www.youtube.com/embed/jPKA73f1rHI"
+                title="Mind in Blue Professional Therapy Services"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              ></iframe>
             </div>
-
-            <div className="expat-benefits-section">
-              <h2 className="expat-benefits-title">🇵🇱 Ready to start your therapy journey?</h2>
-              <ul className="expat-benefits-list">
-                <li>✓ FREE 15-minute consultation with licensed psychologist</li>
-                <li>✓ English-speaking therapists who understand expat challenges</li>
-                <li>✓ Online or in-person sessions in Gdansk</li>
-                <li>✓ Flexible scheduling (Monday-Friday, 9am-8pm)</li>
-                <li>✓ Culturally sensitive approach for expats in Poland</li>
-                <li>✓ Same-day or next-day appointment availability</li>
-              </ul>
+            
+            <div className="expat-cta-section">
               <a 
                 href="https://calendly.com/mindinblue/free-15-minute-consultation-call"
                 target="_blank"
@@ -594,6 +448,16 @@ Please prioritize - this is a qualified lead from our Meta Ads campaign.
               >
                 ➤ BOOK YOUR FREE CONSULTATION NOW
               </a>
+            </div>
+
+            <div className="expat-benefits-section">
+              <h2 className="expat-benefits-title">Ready to start your therapy journey?</h2>
+              <ul className="expat-benefits-list">
+                <li>✓ FREE 15-minute consultation with licensed psychologist</li>
+                <li>✓ English-speaking therapists who understand expat challenges</li>
+                <li>✓ Online or in-person sessions in Gdansk</li>
+                <li>✓ Culturally sensitive approach for expats in Poland</li>
+              </ul>
               <p className="expat-warning-text">📞 Don't wait - schedule your call today and take the first step toward better mental health</p>
             </div>
           </section>
@@ -608,32 +472,24 @@ Please prioritize - this is a qualified lead from our Meta Ads campaign.
           <div className="expat-features-grid">
             <div className="expat-feature-item">
               <div className="expat-feature-icon">🎯</div>
-              <h3>Assessment & Goals</h3>
-              <p>Discuss your specific challenges as an expat and what you want to achieve through therapy.</p>
+              <h3>Explore your goals & challenges</h3>
             </div>
             <div className="expat-feature-item">
-              <div className="expat-feature-icon">🗣️</div>
-              <h3>Approach Explanation</h3>
-              <p>Learn about our culturally sensitive therapy methods and how we support expats in Poland.</p>
+              <div className="expat-feature-icon">💬</div>
+              <h3>Talk about your options</h3>
             </div>
             <div className="expat-feature-item">
               <div className="expat-feature-icon">📅</div>
-              <h3>Session Planning</h3>
-              <p>Schedule your first therapy session and choose between online or in-person options in Gdansk.</p>
+              <h3>Decide your next steps</h3>
             </div>
           </div>
 
           <div className="expat-bottom-text">
-            <p>
-              🇵🇱 EXPAT-FOCUSED: Our team has helped 400+ expats successfully navigate life in Poland. 
-              From cultural adaptation to relationship challenges, we understand your unique situation 
-              and provide professional support in English.
-            </p>
             <a 
               href="https://calendly.com/mindinblue/free-15-minute-consultation-call"
               target="_blank"
               rel="noopener noreferrer"
-              className="cta-button secondary"
+              className="expat-cta-button expat-secondary"
             >
               ➤ SCHEDULE MY FREE CALL
             </a>
@@ -641,68 +497,15 @@ Please prioritize - this is a qualified lead from our Meta Ads campaign.
         </div>
       </section>
 
-      {/* Final CTA */}
-      <section className="expat-final-cta-section">
+      {/* Google Reviews Section */}
+      <section className="expat-google-reviews-section">
         <div className="expat-container">
-          <h2 className="expat-final-cta-title">🇵🇱 Ready to thrive as an expat in Poland?</h2>
-          <p className="expat-final-cta-text">
-            Don't wait another day to get the support you deserve. Book your FREE consultation now
-            and start your journey toward better mental health with Poland's #1 English-speaking therapy team.
-          </p>
-          <a 
-            href="https://calendly.com/mindinblue/free-15-minute-consultation-call"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="expat-cta-button expat-final-cta"
-          >
-            BOOK MY FREE CONSULTATION CALL
-          </a>
-        </div>
-      </section>
-
-      {/* Footer */}
-      <footer className="expat-footer-section">
-        <div className="expat-container">
-          <div className="expat-footer-content">
-            <img src={process.env.PUBLIC_URL + "/logos/mindinblue_logo.png"} alt="Mind in Blue Logo" className="expat-footer-logo" />
-            <div className="expat-footer-text">
-              <h3>Connect With Us</h3>
-              <div className="expat-footer-social">
-                <a href="https://www.facebook.com/themindinblue#" target="_blank" rel="noopener noreferrer" className="expat-social-icon">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-                  </svg>
-                </a>
-                <a href="https://www.instagram.com/themindinblue/" target="_blank" rel="noopener noreferrer" className="expat-social-icon">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-                  </svg>
-                </a>
-                <a href="https://www.tiktok.com/@themindinblue" target="_blank" rel="noopener noreferrer" className="expat-social-icon">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/>
-                  </svg>
-                </a>
-                <a href="https://www.youtube.com/@themindinblue" target="_blank" rel="noopener noreferrer" className="expat-social-icon">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
-                  </svg>
-                </a>
-                <a href="https://www.linkedin.com/company/themindinblue" target="_blank" rel="noopener noreferrer" className="expat-social-icon">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                  </svg>
-                </a>
-              </div>
-              <p>
-                <strong>Mind in Blue - Professional Mental Health Services</strong><br/>
-                Located in Gdansk, Poland<br/>
-                English-speaking therapy for expats
-              </p>
-            </div>
+          <h2 className="expat-section-title">What Our Clients Say</h2>
+          <div className="expat-google-reviews-container">
+            <div id="reviews-widget-154"></div>
           </div>
         </div>
-      </footer>
+      </section>
     </div>
   );
 
@@ -781,7 +584,7 @@ Please prioritize - this is a qualified lead from our Meta Ads campaign.
 
           <div className="expat-privacy-section">
             <h3>Contact Information</h3>
-            <p>For any questions about this privacy policy or to exercise your rights, please contact us at: <strong>info@mindinblue.com</strong></p>
+            <p>For any questions about this privacy policy or to exercise your rights, please contact us at: <strong>contact@mindinblue.com</strong></p>
           </div>
 
           <div className="expat-privacy-footer">

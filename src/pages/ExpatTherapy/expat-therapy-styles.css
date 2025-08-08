@@ -75,13 +75,112 @@
   line-height: 1.5;
 }
 
-/* Main Grid */
-.expat-main-grid {
+/* Homepage Main Grid - Original 2-column layout */
+.expat-homepage-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 60px;
-  align-items: center;
+  align-items: start;
   margin-bottom: 60px;
+}
+
+.expat-homepage-image {
+  text-align: center;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 0;
+  margin-top: 30px;
+}
+
+.expat-therapy-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 15px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  background: white;
+}
+
+.expat-homepage-benefits {
+  padding-left: 40px;
+}
+
+.expat-homepage-benefits-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #000;
+  margin-bottom: 30px;
+}
+
+.expat-homepage-benefits-list {
+  list-style: none;
+  margin-bottom: 40px;
+}
+
+.expat-homepage-benefits-list li {
+  padding: 12px 0;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #333;
+  border-bottom: 1px solid #eee;
+}
+
+.expat-homepage-benefits-list li:last-child {
+  border-bottom: none;
+}
+
+.expat-homepage-warning-text {
+  color: #dc2626;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+/* Video and CTA Section - Centered Single Column */
+.expat-video-cta-section {
+  text-align: center;
+  margin-bottom: 60px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.expat-video-cta-section .expat-video-container {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  margin-bottom: 40px;
+}
+
+.expat-video-cta-section .expat-video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.expat-cta-section {
+  margin-bottom: 40px;
+}
+
+.expat-video-cta-section .expat-benefits-section {
+  padding-left: 0;
+  text-align: left;
+}
+
+.expat-video-cta-section .expat-benefits-title {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.expat-video-cta-section .expat-warning-text {
+  text-align: center;
+  margin-top: 20px;
 }
 
 .expat-product-image {
@@ -308,13 +407,18 @@
   font-size: 2rem;
   font-weight: 700;
   color: white;
-  margin-bottom: 20px;
+  margin-bottom: 50px;
+  margin-top: 30px;
+}
+
+.expat-founder-content h3:first-child {
+  margin-top: 0;
 }
 
 .expat-founder-content p {
   color: #ccc;
   line-height: 1.7;
-  margin-bottom: 20px;
+  margin-bottom: 50px;
   font-size: 1rem;
 }
 
@@ -450,7 +554,8 @@
 }
 
 .expat-form-group input,
-.expat-form-group select {
+.expat-form-group select,
+.expat-form-group textarea {
   width: 100%;
   padding: 14px 16px;
   border: 2px solid #e2e8f0;
@@ -462,7 +567,8 @@
 }
 
 .expat-form-group input:focus,
-.expat-form-group select:focus {
+.expat-form-group select:focus,
+.expat-form-group textarea:focus {
   outline: none;
   border-color: #2563eb;
   background: white;
@@ -835,6 +941,24 @@
   box-shadow: 0 4px 15px rgba(220, 38, 38, 0.3);
 }
 
+/* Google Reviews Section */
+.expat-google-reviews-section {
+  background: white;
+  padding: 80px 0;
+  text-align: center;
+}
+
+.expat-google-reviews-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.expat-google-reviews-container #reviews-widget-154 {
+  width: 100%;
+  min-height: 400px;
+}
+
 /* Footer */
 .expat-footer-section {
   background: #f8fafc;
@@ -938,12 +1062,19 @@
     font-size: 2rem;
   }
   
+  .expat-video-cta-section {
+    max-width: 100%;
+    padding: 0 20px;
+  }
+  
+  .expat-homepage-grid,
   .expat-main-grid,
   .expat-founder-grid {
     grid-template-columns: 1fr;
     gap: 40px;
   }
   
+  .expat-homepage-benefits,
   .expat-benefits-section {
     padding-left: 0;
   }
