@@ -7,10 +7,9 @@ export const translations = {
     
     // Team Members Detailed Information
     // Anna Rozkwitalska
-    annaTitle: "Psychologist, counsellor & life coach",
+    annaTitle: "Psychologist & counsellor",
     annaSpecialties: [
       "Psychodynamic Therapy", 
-      "Life Coaching", 
       "Cultural Adaptation", 
       "Anxiety & Depression", 
       "Trauma Healing", 
@@ -19,7 +18,7 @@ export const translations = {
       "Stress & Burnout",
       "Goal-Oriented Strategies"
     ],
-    annaDescription: "Hello, I'm a psychologist, counselor, and life coach working with people from all around the world. I offer online sessions in English, Polish, Italian, and Spanish, supporting clients with diverse backgrounds, life stories, and challenges.\n\nOver the years, I've lived, studied, and worked in various countries, and I understand what it's like to move between cultures, face change, and adapt to new environments. These personal experiences deeply shape my approach—open-minded, flexible, and culturally sensitive—allowing me to meet each client exactly where they are, wherever they are in the world.\n\nI hold a degree in psychology from SWPS University in Sopot and completed a one-year exchange program at the University of Kent in the UK. I've completed a two-year program in psychotherapy and interpersonal training at the Psychodynamic School of Cracow, as well as a one-year course in psychotraumatology at the Triada Institute in Gdańsk.\n\nI work with adults, children, couples, and families, helping them gain clarity, build emotional resilience, and move forward in life with more self-awareness and confidence. My therapeutic approach is always tailored to the individual. I primarily use a psychodynamic perspective, while also integrating coaching techniques and goal-oriented strategies, depending on your needs and goals.\n\nTo maintain the highest professional and ethical standards, I regularly consult with a certified supervisor.",
+    annaDescription: "Hello, I'm a psychologist and counselor working with people from all around the world. I offer online sessions in English, Polish, Italian, and Spanish, supporting clients with diverse backgrounds, life stories, and challenges.\n\nOver the years, I've lived, studied, and worked in various countries, and I understand what it's like to move between cultures, face change, and adapt to new environments. These personal experiences deeply shape my approach—open-minded, flexible, and culturally sensitive—allowing me to meet each client exactly where they are, wherever they are in the world.\n\nI hold a degree in psychology from SWPS University in Sopot and completed a one-year exchange program at the University of Kent in the UK. I've completed a two-year program in psychotherapy and interpersonal training at the Psychodynamic School of Cracow, as well as a one-year course in psychotraumatology at the Triada Institute in Gdańsk.\n\nI work with adults, children, couples, and families, helping them gain clarity, build emotional resilience, and move forward in life with more self-awareness and confidence. My therapeutic approach is always tailored to the individual. I primarily use a psychodynamic perspective, while also integrating goal-oriented strategies, depending on your needs and goals.\n\nTo maintain the highest professional and ethical standards, I regularly consult with a certified supervisor.",
     annaSessionBenefits: [
       "Deepen your self-understanding and emotional awareness",
       "Explore your relationships and patterns", 
@@ -45,7 +44,7 @@ export const translations = {
     magdalenamuskatClosingMessage: "Feel free to get in touch with us if you have any questions or want to book a consultation session.",
     
     // Team member translations with correct key format
-    annarozkwitalskadescription: "Hello, I'm a psychologist, counselor, and life coach working with people from all around the world. I offer online sessions in English, Polish, Italian, and Spanish, supporting clients with diverse backgrounds, life stories, and challenges.\n\nOver the years, I've lived, studied, and worked in various countries, and I understand what it's like to move between cultures, face change, and adapt to new environments. These personal experiences deeply shape my approach—open-minded, flexible, and culturally sensitive—allowing me to meet each client exactly where they are, wherever they are in the world.\n\nI hold a degree in psychology from SWPS University in Sopot and completed a one-year exchange program at the University of Kent in the UK. I've completed a two-year program in psychotherapy and interpersonal training at the Psychodynamic School of Cracow, as well as a one-year course in psychotraumatology at the Triada Institute in Gdańsk.\n\nI work with adults, children, couples, and families, helping them gain clarity, build emotional resilience, and move forward in life with more self-awareness and confidence. My therapeutic approach is always tailored to the individual. I primarily use a psychodynamic perspective, while also integrating coaching techniques and goal-oriented strategies, depending on your needs and goals.\n\nTo maintain the highest professional and ethical standards, I regularly consult with a certified supervisor.",
+    annarozkwitalskadescription: "Hello, I'm a psychologist and counselor working with people from all around the world. I offer online sessions in English, Polish, Italian, and Spanish, supporting clients with diverse backgrounds, life stories, and challenges.\n\nOver the years, I've lived, studied, and worked in various countries, and I understand what it's like to move between cultures, face change, and adapt to new environments. These personal experiences deeply shape my approach—open-minded, flexible, and culturally sensitive—allowing me to meet each client exactly where they are, wherever they are in the world.\n\nI hold a degree in psychology from SWPS University in Sopot and completed a one-year exchange program at the University of Kent in the UK. I've completed a two-year program in psychotherapy and interpersonal training at the Psychodynamic School of Cracow, as well as a one-year course in psychotraumatology at the Triada Institute in Gdańsk.\n\nI work with adults, children, couples, and families, helping them gain clarity, build emotional resilience, and move forward in life with more self-awareness and confidence. My therapeutic approach is always tailored to the individual. I primarily use a psychodynamic perspective, while also integrating goal-oriented strategies, depending on your needs and goals.\n\nTo maintain the highest professional and ethical standards, I regularly consult with a certified supervisor.",
     annarozkwitalskaclosingmessage: "Whether you're going through a difficult time, looking for support, or simply feeling the need to grow or reconnect with yourself—I'm here to help. Feel free to reach out. Let's talk.",
     
     // Agata Gulbierz
@@ -130,13 +129,13 @@ export const translations = {
 
     // Home Page
     heroTitle: "For when you're ready to heal and grow",
-    heroSubtitle: "Counselling • Psychotherapy • Life Coaching",
+    heroSubtitle: "Counselling • Psychotherapy",
     bookAppointment: "Book an appointment",
     bookYourFreeCall: "Book your free call",
     
     // Meet Founder Section
     meetFounder: "Meet the Founder",
-    founderDescription: "Mind in Blue is a private psychotherapy and coaching studio founded by psychologist Anna Rozkwitalska. We specialize in culturally sensitive, English-language mental health care for expatriates, couples, and locals. Whether online or face-to-face in our cozy Gdansk practice, our chartered psychologists provide a confidential, judgment-free space to work through anxiety, relationship challenges, and life transitions. Blending evidence-based therapy, mindfulness, and goal-oriented coaching, we help you build resilience, gain clarity, and move forward with confidence.",
+    founderDescription: "Mind in Blue is a private psychotherapy studio founded by psychologist Anna Rozkwitalska. We specialize in culturally sensitive, English-language mental health care for expatriates, couples, and locals. Whether online or face-to-face in our cozy Gdansk practice, our chartered psychologists provide a confidential, judgment-free space to work through anxiety, relationship challenges, and life transitions. Blending evidence-based therapy, mindfulness, and goal-oriented strategies, we help you build resilience, gain clarity, and move forward with confidence.",
     
     // What We Offer
     whatWeOffer: "What We Offer",
@@ -183,7 +182,7 @@ export const translations = {
     
     // Contact Page
     contactHeroTitle: "Contact Us",
-    contactHeroDesc: "We're here to help. Get in touch with us to book an appointment or ask any questions.",
+    contactHeroDesc: "We're here to help. <a href='tel:+48506080577' style='color: rgba(255, 255, 255, 0.95); text-decoration: underline;'>Get in touch with us</a> to book an appointment or ask any questions.",
     contactNote: "We typically respond within 24 hours. Unfortunately sometimes our replies can land in your spam folder, so please check it if you haven't got the response.",
     
     // Contact Form
@@ -207,7 +206,7 @@ export const translations = {
     address: "Sobótki 22/2\n80-247 Gdańsk, Poland",
     
     // Team Member Descriptions
-    annaDescription: "Hello, I'm a psychologist, counselor, and life coach working with people from all around the world. I offer online sessions in English, Polish, Italian, and Spanish, supporting clients with diverse backgrounds, life stories, and challenges.\n\nOver the years, I've lived, studied, and worked in various countries, and I understand what it's like to move between cultures, face change, and adapt to new environments. These personal experiences deeply shape my approach—open-minded, flexible, and culturally sensitive—allowing me to meet each client exactly where they are, wherever they are in the world.\n\nI hold a degree in psychology from SWPS University in Sopot and completed a one-year exchange program at the University of Kent in the UK. I've completed a two-year program in psychotherapy and interpersonal training at the Psychodynamic School of Cracow, as well as a one-year course in psychotraumatology at the Triada Institute in Gdańsk.\n\nI work with adults, children, couples, and families, helping them gain clarity, build emotional resilience, and move forward in their personal and professional lives.",
+    annaDescription: "Hello, I'm a psychologist and counselor working with people from all around the world. I offer online sessions in English, Polish, Italian, and Spanish, supporting clients with diverse backgrounds, life stories, and challenges.\n\nOver the years, I've lived, studied, and worked in various countries, and I understand what it's like to move between cultures, face change, and adapt to new environments. These personal experiences deeply shape my approach—open-minded, flexible, and culturally sensitive—allowing me to meet each client exactly where they are, wherever they are in the world.\n\nI hold a degree in psychology from SWPS University in Sopot and completed a one-year exchange program at the University of Kent in the UK. I've completed a two-year program in psychotherapy and interpersonal training at the Psychodynamic School of Cracow, as well as a one-year course in psychotraumatology at the Triada Institute in Gdańsk.\n\nI work with adults, children, couples, and families, helping them gain clarity, build emotional resilience, and move forward in their personal and professional lives.",
     
     annaClosingMessage: "If you're ready to take the next step in your mental health journey, I'm here to support you every step of the way.",
     
@@ -257,7 +256,7 @@ export const translations = {
     onlineConsultationTitle: "Online consultation",
     onlineHeroDesc1: "We provide all our services online to clients from all over the world, expats and digital nomads, people who live in remote places or change their location often. We offer our services to clients who live in other countries, sometimes remote places where they don't have access to psychotherapy in English or such services are very highly priced. Being located in Poland we have competitive prices making mental health more accessible.",
     onlineHeroDesc2: "As we approach health in a holistic way we offer:",
-    onlineHeroDesc3: "psychotherapy, couples therapy, nutrition consultations, life and career coaching.",
+    onlineHeroDesc3: "psychotherapy, couples therapy, nutrition consultations.",
     onlineContentDesc1: "We offer help with all psychological problems, the most common being: depression, anxiety, relationship problems, professional burnout or emotional instability to name a few.",
     onlineContentDesc2: "Working with people who travel a lot and experience an exciting life full of new places and people we offer help with problems and difficulties that the same lifestyle brings: loneliness, feelings of emptiness, inadequacy, and stress-related to the transient life. There can also be problems with decision-making, long-distance relationships, intercultural relationships, and culture shock.",
     onlineContentDesc3: "By taking care of what is challenging in your life, you can enable yourself to get the most out of it.",
@@ -292,19 +291,20 @@ export const translations = {
     onlineConsultationTitle: "Konsultacje online",
     onlineHeroDesc1: "Świadczymy wszystkie nasze usługi online klientom z całego świata, ekspatom i nomadami cyfrowymi, osobom mieszkającym w odległych miejscach lub często zmieniającym swoją lokalizację. Oferujemy nasze usługi klientom mieszkającym w innych krajach, czasami w odległych miejscach, gdzie nie mają dostępu do psychoterapii w języku angielskim lub takie usługi są bardzo drogie. Będąc zlokalizowani w Polsce, mamy konkurencyjne ceny, czyniąc zdrowie psychiczne bardziej dostępnym.",
     onlineHeroDesc2: "Ponieważ podchodzimy do zdrowia w sposób holistyczny, oferujemy:",
-    onlineHeroDesc3: "psychoterapię, terapię par, konsultacje żywieniowe, coaching życiowy i zawodowy.",
+    onlineHeroDesc3: "psychoterapię, terapię par, konsultacje żywieniowe.",
     onlineContentDesc1: "Oferujemy pomoc przy wszystkich problemach psychologicznych, najczęstszymi są: depresja, lęk, problemy w związkach, wypalenie zawodowe czy niestabilność emocjonalna, by wymienić tylko kilka.",
     onlineContentDesc2: "Pracując z ludźmi, którzy dużo podróżują i doświadczają ekscytującego życia pełnego nowych miejsc i ludzi, oferujemy pomoc z problemami i trudnościami, które niesie ze sobą taki styl życia: samotność, poczucie pustki, nieadekwatność i stres związany z przejściowym życiem. Mogą również wystąpić problemy z podejmowaniem decyzji, związkami na odległość, związkami międzykulturowymi i szokiem kulturowym.",
     onlineContentDesc3: "Dbając o to, co jest wyzwaniem w Twoim życiu, możesz umożliwić sobie wyciągnięcie z niego jak najwięcej.",
     onlineContentDesc4: "Oczywiście, nawet jeśli to jest praca online, którą wykonujemy razem, kiedy tylko jesteś w Gdańsku, zapraszamy na sesję twarzą w twarz. Będziemy bardzo szczęśliwi, mogąc Cię tu gościć!",
     
     // Team member translations with correct key format
-    annarozkwitalskadescription: "Cześć, jestem psychologiem, doradcą i coachem życiowym pracującym z ludźmi z całego świata. Oferuję sesje online w języku angielskim, polskim, włoskim i hiszpańskim, wspierając klientów o różnym pochodzeniu, historiach życia i wyzwaniach.\n\nPrzez lata mieszkałam, studiowałam i pracowałam w różnych krajach i rozumiem, jak to jest poruszać się między kulturami, stawiać czoła zmianom i adaptować się do nowych środowisk. Te osobiste doświadczenia głęboko kształtują moje podejście - otwarte, elastyczne i wrażliwe kulturowo - pozwalając mi spotkać każdego klienta dokładnie tam, gdzie jest, gdziekolwiek jest na świecie.\n\nMam dyplom z psychologii z Uniwersytetu SWPS w Sopocie i ukończyłam roczny program wymiany na Uniwersytecie Kent w Wielkiej Brytanii. Ukończyłam dwuletni program psychoterapii i treningu interpersonalnego w Psychodynamicznej Szkole Krakowskiej, a także roczny kurs psychotraumatologii w Instytucie Triada w Gdańsku.\n\nPracuję z dorosłymi, dziećmi, parami i rodzinami, pomagając im zyskać jasność, budować odporność emocjonalną i iść naprzód w życiu z większą samoświadomością i pewnością siebie. Moje podejście terapeutyczne jest zawsze dostosowane do jednostki. Używam głównie perspektywy psychodynamicznej, jednocześnie integrując techniki coachingu i strategie zorientowane na cel, w zależności od Twoich potrzeb i celów.\n\nAby utrzymać najwyższe standardy profesjonalne i etyczne, regularnie konsultuję się z certyfikowanym supervisorem.",
+    annarozkwitalskadescription: "Cześć, jestem psychologiem i doradcą pracującym z ludźmi z całego świata. Oferuję sesje online w języku angielskim, polskim, włoskim i hiszpańskim, wspierając klientów o różnym pochodzeniu, historiach życia i wyzwaniach.\n\nPrzez lata mieszkałam, studiowałam i pracowałam w różnych krajach i rozumiem, jak to jest poruszać się między kulturami, stawiać czoła zmianom i adaptować się do nowych środowisk. Te osobiste doświadczenia głęboko kształtują moje podejście - otwarte, elastyczne i wrażliwe kulturowo - pozwalając mi spotkać każdego klienta dokładnie tam, gdzie jest, gdziekolwiek jest na świecie.\n\nMam dyplom z psychologii z Uniwersytetu SWPS w Sopocie i ukończyłam roczny program wymiany na Uniwersytecie Kent w Wielkiej Brytanii. Ukończyłam dwuletni program psychoterapii i treningu interpersonalnego w Psychodynamicznej Szkole Krakowskiej, a także roczny kurs psychotraumatologii w Instytucie Triada w Gdańsku.\n\nPracuję z dorosłymi, dziećmi, parami i rodzinami, pomagając im zyskać jasność, budować odporność emocjonalną i iść naprzód w życiu z większą samoświadomością i pewnością siebie. Moje podejście terapeutyczne jest zawsze dostosowane do jednostki. Używam głównie perspektywy psychodynamicznej, jednocześnie integrując strategie zorientowane na cel, w zależności od Twoich potrzeb i celów.\n\nAby utrzymać najwyższe standardy profesjonalne i etyczne, regularnie konsultuję się z certyfikowanym supervisorem.",
     annarozkwitalskaclosingmessage: "Niezależnie od tego, czy przechodzisz przez trudny czas, szukasz wsparcia, czy po prostu czujesz potrzebę rozwoju lub ponownego połączenia z sobą - jestem tutaj, aby pomóc. Skontaktuj się ze mną. Porozmawiajmy.",
     
     // Agata Gulbierz
     agatagulbierzdescription: "Jestem anglojęzycznym psychologiem, doradcą i terapeutą poznawczo-behawioralnym w trakcie szkolenia. Pracuję zarówno online, jak i osobiście w Gdańsku.\n\nSpecjalizuję się w pracy z młodzieżą (14+) i dorosłymi, wspierając ich w radzeniu sobie z wyzwaniami życiowymi i stresem. Skupiam się na budowaniu odporności psychicznej — umiejętności skutecznego zarządzania trudnymi emocjami i radzenia sobie z trudnościami życiowymi.\n\nPracuję przy użyciu opartych na dowodach podejść terapeutycznych, w tym Terapii Poznawczo-Behawioralnej (CBT), Terapii Akceptacji i Zaangażowania (ACT) oraz Wywiadu Motywującego (MI). Te metody mogą pomóc Ci zarządzać emocjami, budować poczucie własnej wartości i poprawić ogólną jakość życia.\n\nW mojej pracy przykładam wielką wagę do tworzenia autentycznej, opartej na zaufaniu relacji opartej na akceptacji i zrozumieniu. Dążę do wspierania Cię nie tylko w pokonywaniu trudności, ale także w rozpoznawaniu Twoich mocnych stron i budowaniu większej pewności siebie. Moje podejście jest zawsze dostosowane do Twoich indywidualnych potrzeb, a sesje prowadzone są w atmosferze szacunku i wsparcia.\n\nObok praktyki prywatnej mam doświadczenie w pracy z młodzieżą i dorosłymi w lokalnych organizacjach i fundacjach, takich jak Niebieskie Trampki i Fundacja FOSA. Pracowałam również w Szpitalu Psychiatrycznym w Gdańsku. Mam ponad dziesięć lat doświadczenia w pracy w środowisku biznesowym w Polsce, na Węgrzech i w Anglii.\n\nJestem członkiem Polskiego Towarzystwa Terapii Poznawczej i Behawioralnej i regularnie uczestniczę w szkoleniach i konferencjach w celu dalszego rozwoju moich umiejętności. Podlegam również regularnej profesjonalnej supervizji, aby zapewnić wysokie standardy w mojej pracy.",
     agatagulbierzclosingmessage: "Jeśli chcesz poprawić jakość swojego życia, pogłębić samorozumienie i stać się silniejszą, bardziej odporną wersją siebie — skontaktuj się ze mną. Jestem tutaj, aby wspierać Cię w stawianiu czoła wyzwaniom i odkrywaniu Twojego potencjału.",
+    agatagulbierztitle: "Psycholog i CBT",
     agatagulbierzspecialties: [
       "Terapia Poznawczo-Behawioralna (CBT)",
       "Terapia Akceptacji i Zaangażowania (ACT)",
@@ -388,7 +388,6 @@ export const translations = {
     // Specialties translations
     annarozkwitalskaaspecialties: [
       "Terapia Psychodynamiczna", 
-      "Coaching Życiowy", 
       "Adaptacja Kulturowa", 
       "Lęk i Depresja", 
       "Uzdrawianie Traumy", 
@@ -400,10 +399,9 @@ export const translations = {
     
     // Team Members Detailed Information
     // Anna Rozkwitalska
-    annaTitle: "Psycholog, doradca i coach życiowy",
+    annaTitle: "Psycholog i doradca",
     annaSpecialties: [
       "Terapia Psychodynamiczna", 
-      "Coaching Życiowy", 
       "Adaptacja Kulturowa", 
       "Lęk i Depresja", 
       "Uzdrawianie Traumy", 
@@ -412,7 +410,7 @@ export const translations = {
       "Stres i Wypalenie",
       "Strategie Zorientowane na Cel"
     ],
-    annaDescription: "Cześć, jestem psychologiem, doradcą i coachem życiowym pracującym z ludźmi z całego świata. Oferuję sesje online w języku angielskim, polskim, włoskim i hiszpańskim, wspierając klientów o różnym pochodzeniu, historiach życia i wyzwaniach.\n\nPrzez lata mieszkałam, studiowałam i pracowałam w różnych krajach i rozumiem, jak to jest poruszać się między kulturami, stawiać czoła zmianom i adaptować się do nowych środowisk. Te osobiste doświadczenia głęboko kształtują moje podejście - otwarte, elastyczne i wrażliwe kulturowo - pozwalając mi spotkać każdego klienta dokładnie tam, gdzie jest, gdziekolwiek jest na świecie.\n\nMam dyplom z psychologii z Uniwersytetu SWPS w Sopocie i ukończyłam roczny program wymiany na Uniwersytecie Kent w Wielkiej Brytanii. Ukończyłam dwuletni program psychoterapii i treningu interpersonalnego w Psychodynamicznej Szkole Krakowskiej, a także roczny kurs psychotraumatologii w Instytucie Triada w Gdańsku.\n\nPracuję z dorosłymi, dziećmi, parami i rodzinami, pomagając im zyskać jasność, budować odporność emocjonalną i iść naprzód w życiu z większą samoświadomością i pewnością siebie. Moje podejście terapeutyczne jest zawsze dostosowane do jednostki. Używam głównie perspektywy psychodynamicznej, jednocześnie integrując techniki coachingu i strategie zorientowane na cel, w zależności od Twoich potrzeb i celów.\n\nAby utrzymać najwyższe standardy profesjonalne i etyczne, regularnie konsultuję się z certyfikowanym supervisorem.",
+    annaDescription: "Cześć, jestem psychologiem i doradcą pracującym z ludźmi z całego świata. Oferuję sesje online w języku angielskim, polskim, włoskim i hiszpańskim, wspierając klientów o różnym pochodzeniu, historiach życia i wyzwaniach.\n\nPrzez lata mieszkałam, studiowałam i pracowałam w różnych krajach i rozumiem, jak to jest poruszać się między kulturami, stawiać czoła zmianom i adaptować się do nowych środowisk. Te osobiste doświadczenia głęboko kształtują moje podejście - otwarte, elastyczne i wrażliwe kulturowo - pozwalając mi spotkać każdego klienta dokładnie tam, gdzie jest, gdziekolwiek jest na świecie.\n\nMam dyplom z psychologii z Uniwersytetu SWPS w Sopocie i ukończyłam roczny program wymiany na Uniwersytecie Kent w Wielkiej Brytanii. Ukończyłam dwuletni program psychoterapii i treningu interpersonalnego w Psychodynamicznej Szkole Krakowskiej, a także roczny kurs psychotraumatologii w Instytucie Triada w Gdańsku.\n\nPracuję z dorosłymi, dziećmi, parami i rodzinami, pomagając im zyskać jasność, budować odporność emocjonalną i iść naprzód w życiu z większą samoświadomością i pewnością siebie. Moje podejście terapeutyczne jest zawsze dostosowane do jednostki. Używam głównie perspektywy psychodynamicznej, jednocześnie integrując strategie zorientowane na cel, w zależności od Twoich potrzeb i celów.\n\nAby utrzymać najwyższe standardy profesjonalne i etyczne, regularnie konsultuję się z certyfikowanym supervisorem.",
     annaSessionBenefits: [
       "Pogłęb swoje samorozumienie i świadomość emocjonalną",
       "Odkryj swoje związki i wzorce", 
@@ -439,13 +437,13 @@ export const translations = {
 
     // Home Page
     heroTitle: "Kiedy jesteś gotowy na uzdrowienie i rozwój",
-    heroSubtitle: "Poradnictwo • Psychoterapia • Coaching Życiowy",
+    heroSubtitle: "Poradnictwo • Psychoterapia",
     bookAppointment: "Umów wizytę",
     bookYourFreeCall: "Umów bezpłatną rozmowę",
     
     // Meet Founder Section
     meetFounder: "Poznaj Założycielkę",
-    founderDescription: "Mind in Blue to prywatne studio psychoterapii i coachingu założone przez psycholog Annę Rozkwitalską. Specjalizujemy się w kulturowo wrażliwej opiece zdrowotnej w języku angielskim dla ekspatriantów, par i mieszkańców. Niezależnie od tego, czy online, czy osobiście w naszej przytulnej praktyce w Gdańsku, nasi dyplomowani psychologowie zapewniają poufną przestrzeń wolną od osądów do pracy nad lękiem, wyzwaniami w relacjach i przejściami życiowymi. Łącząc terapię opartą na dowodach, mindfulness i coaching zorientowany na cele, pomagamy budować odporność, zyskiwać jasność i pewnie iść naprzód.",
+    founderDescription: "Mind in Blue to prywatne studio psychoterapii założone przez psycholog Annę Rozkwitalską. Specjalizujemy się w kulturowo wrażliwej opiece zdrowotnej w języku angielskim dla ekspatriantów, par i mieszkańców. Niezależnie od tego, czy online, czy osobiście w naszej przytulnej praktyce w Gdańsku, nasi dyplomowani psychologowie zapewniają poufną przestrzeń wolną od osądów do pracy nad lękiem, wyzwaniami w relacjach i przejściami życiowymi. Łącząc terapię opartą na dowodach, mindfulness i strategie zorientowane na cele, pomagamy budować odporność, zyskiwać jasność i pewnie iść naprzód.",
     
     // What We Offer
     whatWeOffer: "Co Oferujemy",
@@ -492,7 +490,7 @@ export const translations = {
     
     // Contact Page
     contactHeroTitle: "Skontaktuj się z Nami",
-    contactHeroDesc: "Jesteśmy tutaj, aby pomóc. Skontaktuj się z nami, aby umówić wizytę lub zadać pytania.",
+    contactHeroDesc: "Jesteśmy tutaj, aby pomóc. <a href='tel:+48506080577' style='color: rgba(255, 255, 255, 0.95); text-decoration: underline;'>Skontaktuj się z nami</a>, aby umówić wizytę lub zadać pytania.",
     contactNote: "Zazwyczaj odpowiadamy w ciągu 24 godzin. Niestety czasami nasze odpowiedzi mogą trafić do folderu spam, więc sprawdź go, jeśli nie otrzymałeś odpowiedzi.",
     
     // Contact Form
@@ -516,7 +514,7 @@ export const translations = {
     address: "Sobótki 22/2\n80-247 Gdańsk, Polska",
     
     // Team Member Descriptions - Polish Translations
-    annaDescription: "Cześć, jestem psychologiem, doradcą i life coachem pracującym z ludźmi z całego świata. Oferuję sesje online w języku angielskim, polskim, włoskim i hiszpańskim, wspierając klientów o różnych pochodzeniach, historiach życia i wyzwaniach.\n\nPrzez lata mieszkałam, studiowałam i pracowałam w różnych krajach, i rozumiem, jak to jest poruszać się między kulturami, stawiać czoła zmianom i adaptować się do nowych środowisk. Te osobiste doświadczenia głęboko kształtują moje podejście - otwarte, elastyczne i kulturowo wrażliwe - pozwalając mi spotkać każdego klienta dokładnie tam, gdzie jest, gdziekolwiek na świecie się znajduje.\n\nPosiadam dyplom psychologii z Uniwersytetu SWPS w Sopocie i ukończyłam roczny program wymiany na University of Kent w Wielkiej Brytanii. Ukończyłam dwuletni program psychoterapii i szkoleń interpersonalnych w Krakowskiej Szkole Psychodynamicznej, a także roczny kurs psychotraumatologii w Instytucie Triada w Gdańsku.\n\nPracuję z dorosłymi, dziećmi, parami i rodzinami, pomagając im zyskać jasność, budować odporność emocjonalną i iść naprzód w życiu osobistym i zawodowym.",
+    annaDescription: "Cześć, jestem psychologiem i doradcą pracującym z ludźmi z całego świata. Oferuję sesje online w języku angielskim, polskim, włoskim i hiszpańskim, wspierając klientów o różnych pochodzeniach, historiach życia i wyzwaniach.\n\nPrzez lata mieszkałam, studiowałam i pracowałam w różnych krajach, i rozumiem, jak to jest poruszać się między kulturami, stawiać czoła zmianom i adaptować się do nowych środowisk. Te osobiste doświadczenia głęboko kształtują moje podejście - otwarte, elastyczne i kulturowo wrażliwe - pozwalając mi spotkać każdego klienta dokładnie tam, gdzie jest, gdziekolwiek na świecie się znajduje.\n\nPosiadam dyplom psychologii z Uniwersytetu SWPS w Sopocie i ukończyłam roczny program wymiany na University of Kent w Wielkiej Brytanii. Ukończyłam dwuletni program psychoterapii i szkoleń interpersonalnych w Krakowskiej Szkole Psychodynamicznej, a także roczny kurs psychotraumatologii w Instytucie Triada w Gdańsku.\n\nPracuję z dorosłymi, dziećmi, parami i rodzinami, pomagając im zyskać jasność, budować odporność emocjonalną i iść naprzód w życiu osobistym i zawodowym.",
     
     annaClosingMessage: "Jeśli jesteś gotowy podjąć kolejny krok w swojej podróży zdrowia psychicznego, jestem tutaj, aby wspierać Cię na każdym kroku.",
     

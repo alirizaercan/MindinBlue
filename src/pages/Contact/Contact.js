@@ -133,7 +133,7 @@ function Contact() {
       <div className="contact-hero">
         <div className="hero-content">
           <h1>{t("contactHeroTitle")}</h1>
-          <p>{t("contactHeroDesc")}</p>
+          <p dangerouslySetInnerHTML={{ __html: t("contactHeroDesc") }}></p>
           <div className="hero-note">
             <p>{t("contactNote")}</p>
           </div>

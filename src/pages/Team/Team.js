@@ -38,7 +38,7 @@ const Team = () => {
         return t('agatagulbierzspecialties');
       }
       if (field === 'title' && currentLanguage === 'PL') {
-        return "Psycholog i CBT";
+        return t('agatagulbierztitle');
       }
     }
     
@@ -101,13 +101,12 @@ const Team = () => {
     {
       id: 1,
       name: "Anna Rozkwitalska",
-      title: "Psychologist, counsellor & life coach",
+      title: "Psychologist & counsellor",
       image: "/images/anna.jpg",
       flags: ["🇬🇧", "🇵🇱", "🇪🇸", "🇮🇹"],
       experience: "10+ years",
       specialties: [
         "Psychodynamic Therapy", 
-        "Life Coaching", 
         "Cultural Adaptation", 
         "Anxiety & Depression", 
         "Trauma Healing", 
@@ -116,7 +115,7 @@ const Team = () => {
         "Stress & Burnout",
         "Goal-Oriented Strategies"
       ],
-      description: "Hello, I'm a psychologist, counselor, and life coach working with people from all around the world. I offer online sessions in English, Polish, Italian, and Spanish, supporting clients with diverse backgrounds, life stories, and challenges.\n\nOver the years, I've lived, studied, and worked in various countries, and I understand what it's like to move between cultures, face change, and adapt to new environments. These personal experiences deeply shape my approach—open-minded, flexible, and culturally sensitive—allowing me to meet each client exactly where they are, wherever they are in the world.\n\nI hold a degree in psychology from SWPS University in Sopot and completed a one-year exchange program at the University of Kent in the UK. I've completed a two-year program in psychotherapy and interpersonal training at the Psychodynamic School of Cracow, as well as a one-year course in psychotraumatology at the Triada Institute in Gdańsk.\n\nI work with adults, children, couples, and families, helping them gain clarity, build emotional resilience, and move forward in life with more self-awareness and confidence. My therapeutic approach is always tailored to the individual. I primarily use a psychodynamic perspective, while also integrating coaching techniques and goal-oriented strategies, depending on your needs and goals.\n\nTo maintain the highest professional and ethical standards, I regularly consult with a certified supervisor.",
+      description: "Hello, I'm a psychologist and counselor working with people from all around the world. I offer online sessions in English, Polish, Italian, and Spanish, supporting clients with diverse backgrounds, life stories, and challenges.\n\nOver the years, I've lived, studied, and worked in various countries, and I understand what it's like to move between cultures, face change, and adapt to new environments. These personal experiences deeply shape my approach—open-minded, flexible, and culturally sensitive—allowing me to meet each client exactly where they are, wherever they are in the world.\n\nI hold a degree in psychology from SWPS University in Sopot and completed a one-year exchange program at the University of Kent in the UK. I've completed a two-year program in psychotherapy and interpersonal training at the Psychodynamic School of Cracow, as well as a one-year course in psychotraumatology at the Triada Institute in Gdańsk.\n\nI work with adults, children, couples, and families, helping them gain clarity, build emotional resilience, and move forward in life with more self-awareness and confidence. My therapeutic approach is always tailored to the individual. I primarily use a psychodynamic perspective, while also integrating goal-oriented strategies, depending on your needs and goals.\n\nTo maintain the highest professional and ethical standards, I regularly consult with a certified supervisor.",
       sessionBenefits: [
         "Deepen your self-understanding and emotional awareness",
         "Explore your relationships and patterns", 
@@ -296,7 +295,7 @@ const Team = () => {
               </div>
               <div className="member-info">
                 <h3 className="member-name">{member.name}</h3>
-                <p className="member-title">{member.title}</p>
+                <p className="member-title">{getTranslatedContent(member, 'title')}</p>
                 <div className="member-flags">
                   {member.flags.map((flag, index) => (
                     <span key={index} className="flag">{flag}</span>
