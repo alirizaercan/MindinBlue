@@ -216,9 +216,6 @@ function Contact() {
                     {t("counsellingPsychotherapy")}
                   </option>
                   <option value="couples-therapy">{t("couplesTherapy")}</option>
-                  <option value="online-consultation">
-                    {t("onlineConsultation")}
-                  </option>
                 </select>
                 {errors.service && (
                   <span className="error-message">{errors.service}</span>
@@ -261,7 +258,7 @@ function Contact() {
                 <h3>{t("telephoneEmail")}</h3>
                 <div className="contact-details">
                   <a href="tel:+48506080577" className="phone-number">
-                    {t("phoneNumber")}
+                    +48 506 080 577
                   </a>
                   <a href="mailto:contact@mindinblue.com" className="email">
                     contact@mindinblue.com

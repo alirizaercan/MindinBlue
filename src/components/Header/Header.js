@@ -90,7 +90,7 @@ function Header() {
           <Link to="/team">{t('ourTeam')}</Link>
           <Link to="/services">{t('services')}</Link>
           <Link to="/contact">{t('contact')}</Link>
-          <a href="tel:+48506080577" className="desktop-phone-btn">{t('phoneNumber')}</a>
+          <a href="tel:+48506080577" className="desktop-phone-btn">+48 506 080 577</a>
           <div className="language-switcher-container desktop-only">
             <button
               className="language-switcher-btn"

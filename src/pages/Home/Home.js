@@ -51,7 +51,7 @@ function Home() {
             width="400"
             height="450"
             src="https://www.youtube.com/embed/jPKA73f1rHI"
-            title="Meet the Founder"
+            title="Welcome to Mind in Blue"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
           ></iframe>

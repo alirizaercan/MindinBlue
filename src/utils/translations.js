@@ -134,8 +134,8 @@ export const translations = {
     bookYourFreeCall: "Book your free call",
     
     // Meet Founder Section
-    meetFounder: "Meet the Founder",
-    founderDescription: "Mind in Blue is a private psychotherapy studio founded by psychologist Anna Rozkwitalska. We specialize in culturally sensitive, English-language mental health care for expatriates, couples, and locals. Whether online or face-to-face in our cozy Gdansk practice, our chartered psychologists provide a confidential, judgment-free space to work through anxiety, relationship challenges, and life transitions. Blending evidence-based therapy, mindfulness, and goal-oriented strategies, we help you build resilience, gain clarity, and move forward with confidence.",
+    meetFounder: "Welcome to Mind in Blue",
+    founderDescription: "I'm Anna, a psychologist and founder of Mind in Blue in Gdańsk. We are a team of six therapists offering support in English, Spanish, Italian, and Polish, both online and in person. We help individuals and couples navigate anxiety, relationship challenges, and life transitions in a safe, judgement-free, and culturally sensitive space.",
     
     // What We Offer
     whatWeOffer: "What We Offer",
@@ -442,8 +442,8 @@ export const translations = {
     bookYourFreeCall: "Umów bezpłatną rozmowę",
     
     // Meet Founder Section
-    meetFounder: "Poznaj Założycielkę",
-    founderDescription: "Mind in Blue to prywatne studio psychoterapii założone przez psycholog Annę Rozkwitalską. Specjalizujemy się w kulturowo wrażliwej opiece zdrowotnej w języku angielskim dla ekspatriantów, par i mieszkańców. Niezależnie od tego, czy online, czy osobiście w naszej przytulnej praktyce w Gdańsku, nasi dyplomowani psychologowie zapewniają poufną przestrzeń wolną od osądów do pracy nad lękiem, wyzwaniami w relacjach i przejściami życiowymi. Łącząc terapię opartą na dowodach, mindfulness i strategie zorientowane na cele, pomagamy budować odporność, zyskiwać jasność i pewnie iść naprzód.",
+    meetFounder: "Witamy w Mind in Blue",
+    founderDescription: "Jestem Anna, psycholog i założycielka Mind in Blue w Gdańsku. Jesteśmy zespołem sześciu terapeutów oferujących wsparcie w języku angielskim, hiszpańskim, włoskim i polskim, zarówno online, jak i osobiście. Pomagamy osobom i parom w radzeniu sobie z lękiem, wyzwaniami w relacjach i przejściami życiowymi w bezpiecznej, wolnej od osądów i kulturowo wrażliwej przestrzeni.",
     
     // What We Offer
     whatWeOffer: "Co Oferujemy",

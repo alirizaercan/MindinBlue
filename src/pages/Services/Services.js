@@ -102,7 +102,7 @@ function Services() {
             <div className="therapy-info-content">
               <p>{t('howToBookDesc')}</p>
               <div className="booking-buttons">
-                <a href="tel:+48506080577" className="booking-btn services-phone-btn">{t('phoneNumber')}</a>
+                <a href="tel:+48506080577" className="booking-btn services-phone-btn">+48 506 080 577</a>
                 <button 
                   className="booking-btn services-appointment-btn"
                   onClick={() => navigate('/contact')}
