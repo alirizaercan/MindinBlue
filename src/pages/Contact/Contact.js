@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import { useLanguage } from "../../contexts/LanguageContext";
+import { trackLead } from "../../utils/fbPixel";
 import emailjs from "@emailjs/browser";
 import "./Contact.css";
 
@@ -96,6 +97,14 @@ function Contact() {
       };
 
       await emailjs.send("service_6nnbqus", "template_6lfplix", templateParams);
+
+      // Track Facebook Pixel Lead event
+      trackLead({
+        content_name: 'Contact Form Submission',
+        content_category: 'Therapy Services',
+        service: formData.service,
+        session_type: formData.sessionType
+      });
 
       alert(
         t("messageSent") ||

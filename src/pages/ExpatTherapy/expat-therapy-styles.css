@@ -68,7 +68,7 @@
 
 .expat-hero-subtitle {
   font-size: 1rem;
-  color: #666;
+  color: #333;
   font-style: italic;
   max-width: 800px;
   margin: 0 auto 50px;
@@ -322,7 +322,16 @@
 .expat-feature-icon {
   font-size: 3rem;
   margin-bottom: 20px;
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.expat-feature-icon svg {
+  width: 48px;
+  height: 48px;
+  stroke: currentColor;
 }
 
 .expat-feature-item h3 {

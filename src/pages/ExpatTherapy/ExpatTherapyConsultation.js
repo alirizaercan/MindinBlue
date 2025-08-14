@@ -87,7 +87,7 @@ const ContactModal = memo(
 
             <div className="expat-form-group">
               <label htmlFor="goal">
-                What's your biggest challenge as an expat?
+                What would you like support with right now?
               </label>
               <textarea
                 id="goal"
@@ -95,7 +95,7 @@ const ContactModal = memo(
                 value={formData.goal || ""}
                 onChange={handleInputChange}
                 rows="4"
-                placeholder="Please describe your biggest challenge as an expat in Poland..."
+                placeholder="Please describe what you would like support with right now..."
               />
             </div>
 
@@ -318,7 +318,7 @@ function ExpatTherapyConsultation() {
       <div className="expat-top-banner">
         <div className="expat-container">
           <p>
-            FREE 15-minute consultation call with English-speaking therapists
+            FREE 15-minute consultation call with English-speaking therapist
           </p>
         </div>
       </div>
@@ -385,7 +385,7 @@ function ExpatTherapyConsultation() {
                 ➤ FIND OUT HOW WE CAN HELP YOU
               </button>
               <p className="expat-homepage-warning-text">
-                ⚠️ LIMITED SPOTS: Only 5 free consultations available this week
+                ⚠️ LIMITED SPOTS
               </p>
             </div>
           </section>
@@ -401,15 +401,29 @@ function ExpatTherapyConsultation() {
 
           <div className="expat-features-grid">
             <div className="expat-feature-item">
-              <div className="expat-feature-icon">🫂</div>
+              <div className="expat-feature-icon">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                </svg>
+              </div>
               <h3>Counselling & Psychotherapy</h3>
             </div>
             <div className="expat-feature-item">
-              <div className="expat-feature-icon">💑</div>
+              <div className="expat-feature-icon">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                </svg>
+              </div>
               <h3>Couples Therapy</h3>
             </div>
             <div className="expat-feature-item">
-              <div className="expat-feature-icon">💻</div>
+              <div className="expat-feature-icon">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+                  <line x1="8" y1="21" x2="16" y2="21"/>
+                  <line x1="12" y1="17" x2="12" y2="21"/>
+                </svg>
+              </div>
               <h3>Online Consultations</h3>
             </div>
           </div>
@@ -434,19 +448,19 @@ function ExpatTherapyConsultation() {
 
           <div className="expat-steps-grid">
             <div className="expat-step-item">
-              <div className="expat-step-icon">📝</div>
+              <div className="expat-step-icon">1</div>
               <h3>
                 1. Click the button and fill out the form (takes 1 minute)
               </h3>
             </div>
             <div className="expat-step-item">
-              <div className="expat-step-icon">📞</div>
+              <div className="expat-step-icon">2</div>
               <h3>
-                2. Get contacted within 24h by English speaking therapists
+                2. Get contacted within 24h by English speaking therapist
               </h3>
             </div>
             <div className="expat-step-item">
-              <div className="expat-step-icon">🎯</div>
+              <div className="expat-step-icon">3</div>
               <h3>3. Schedule your FREE 15 minute call</h3>
             </div>
           </div>
@@ -506,6 +520,15 @@ function ExpatTherapyConsultation() {
 
   const ThankYouPage = () => (
     <div>
+      {/* Blue Banner for Thank You Page */}
+      <div className="expat-highlight-section">
+        <div className="expat-container">
+          <p>
+            🎯 Next step: Watch the video below and book your free consultation call
+          </p>
+        </div>
+      </div>
+
       {/* Main Content */}
       <main className="expat-main-content">
         <div className="expat-container">
@@ -547,7 +570,7 @@ function ExpatTherapyConsultation() {
             <ul className="expat-benefits-list">
               <li>✓ FREE 15-minute consultation with licensed psychologist</li>
               <li>
-                ✓ English-speaking therapists who understand expat challenges
+                ✓ English-speaking therapist who understand expat challenges
               </li>
               <li>✓ Online or in-person sessions in Gdansk</li>
               <li>✓ Culturally sensitive approach for expats in Poland</li>
@@ -561,7 +584,7 @@ function ExpatTherapyConsultation() {
               ➤ BOOK YOUR FREE CONSULTATION NOW
             </a>
             <p className="expat-warning-text">
-              📞 Don't wait - schedule your call today and take the first step
+              → Don't wait - schedule your call today and take the first step
               toward better mental health
             </p>
           </div>
@@ -576,15 +599,30 @@ function ExpatTherapyConsultation() {
           </h2>
           <div className="expat-features-grid">
             <div className="expat-feature-item">
-              <div className="expat-feature-icon">🎯</div>
+              <div className="expat-feature-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <circle cx="12" cy="12" r="10"/>
+                  <circle cx="12" cy="12" r="6"/>
+                  <circle cx="12" cy="12" r="2"/>
+                </svg>
+              </div>
               <h3>Explore your goals & challenges</h3>
             </div>
             <div className="expat-feature-item">
-              <div className="expat-feature-icon">💬</div>
+              <div className="expat-feature-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                </svg>
+              </div>
               <h3>Talk about your options</h3>
             </div>
             <div className="expat-feature-item">
-              <div className="expat-feature-icon">📅</div>
+              <div className="expat-feature-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <line x1="5" y1="12" x2="19" y2="12"/>
+                  <polyline points="12,5 19,12 12,19"/>
+                </svg>
+              </div>
               <h3>Decide your next steps</h3>
             </div>
           </div>

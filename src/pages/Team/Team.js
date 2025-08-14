@@ -278,8 +278,13 @@ const Team = () => {
   };
 
   const handleBookAppointment = (member) => {
-    // Navigate to contact page for booking appointment
-    navigate("/contact");
+    // Special handling for Anna - direct to Calendly
+    if (member.name === "Anna Rozkwitalska") {
+      window.open("https://calendly.com/mindinblue/free-15-minute-consultation-call", "_blank");
+    } else {
+      // Navigate to contact page for other therapists
+      navigate("/contact");
+    }
   };
 
   const handleImageClick = (e) => {
@@ -451,7 +456,7 @@ const Team = () => {
                 className="book-appointment-btn"
                 onClick={() => handleBookAppointment(selectedMember)}
               >
-                {t("bookAppointment")}
+                {t("bookCall")}
               </button>
             </div>
           </div>

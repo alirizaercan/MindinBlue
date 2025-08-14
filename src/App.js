@@ -1,5 +1,7 @@
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+import { useEffect } from "react";
 import { LanguageProvider } from "./contexts/LanguageContext";
+import { initFacebookPixel } from "./utils/fbPixel";
 import ScrollToTop from "./components/ScrollToTop";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
@@ -15,6 +17,11 @@ import ExpatTherapyConsultation from "./pages/ExpatTherapy/ExpatTherapyConsultat
 function AppContent() {
   const location = useLocation();
   const isExpatTherapyPage = location.pathname === '/expat-therapy-poland';
+
+  // Initialize Facebook Pixel
+  useEffect(() => {
+    initFacebookPixel();
+  }, []);
 
   return (
     <>

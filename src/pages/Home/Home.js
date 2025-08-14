@@ -104,12 +104,11 @@ function Home() {
           <div className="get-started-block">
             <h3>{t("bookAppointmentTitle")}</h3>
             <p className="subtitle">{t("bookAppointmentDesc")}</p>
-            <p className="subtitle">{t("appointmentHours")}</p>
             <button
               className="get-started-btn"
               onClick={() => navigate("/contact")}
             >
-              {t("bookAppointment")}
+              {t("contactUs")}
             </button>
           </div>
         </div>

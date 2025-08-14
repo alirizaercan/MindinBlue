@@ -3,8 +3,8 @@
 
 export const translations = {
   EN: {
-    // Hea    onlineContentDesc4: "Of course, even if this is an online work that we do together, whenever you're in Gdansk, you are welcome to come for a face-to-face session. We would be more than happy to have you here!",
-
+    // Headings
+    bookCall: "Book your call",
     // Team Members Detailed Information
     // Anna Rozkwitalska
     annaTitle: "Founder & Client Coordinator",
@@ -157,23 +157,24 @@ export const translations = {
     whatWeOffer: "What We Offer",
     counsellingPsychotherapy: "Counselling & Psychotherapy",
     counsellingDesc:
-      "A safe, judgment-free space to explore your thoughts and feelings. We support expats dealing with adaptation, anxiety, or emotional challenges abroad.",
+      "A safe, judgment-free space. We help you navigate life transitions and emotional challenges, and support your growth.",
     couplesTherapy: "Couples Therapy",
     couplesDesc:
       "A space for partners to understand each other better, improve communication, and navigate cultural or personal differences together.",
     onlineConsultation: "Online Consultation",
     onlineDesc:
-      "Access professional help from anywhere. Our online consultations connect you with qualified experts in a safe, confidential environment.",
+      "Access professional help from anywhere. Our online consultations connect you with qualified experts in a safe, confidential space.",
 
     // Get Started Section
     getStarted: "Get Started",
-    chooseTherapist: "Choose your Therapist",
+    chooseTherapist: "Meet Our Team",
     chooseTherapistDesc:
-      "choose from 6 psychologists in, available in 4 languages. (online or in-person)",
-    viewOurTherapists: "View our Therapists",
-    bookAppointmentTitle: "Book Appointment",
+      "We are a team of psychologists offering support in four languages, with sessions available online or in person.",
+    viewOurTherapists: "Meet Our Therapists",
+    bookAppointmentTitle: "Book an Appointment",
     bookAppointmentDesc:
-      "Book an appointment online or by calling our friendly and responsive team.",
+      "Fill in our contact form or call our friendly team to arrange your first appointment.",
+    contactUs: "Contact Us",
     appointmentHours:
       "Appointments are available Monday to Friday, between 9am and 8pm",
 
@@ -470,6 +471,7 @@ export const translations = {
 
     // Team Members Detailed Information
     // Anna Rozkwitalska
+    bookCall: "Umów rozmowę",
     annaTitle: "Założycielka i Koordynatorka ds. Klientów",
     annaSpecialties: [
       "Terapia Psychodynamiczna",
@@ -527,7 +529,7 @@ export const translations = {
     whatWeOffer: "Co Oferujemy",
     counsellingPsychotherapy: "Poradnictwo i Psychoterapia",
     counsellingDesc:
-      "Bezpieczna przestrzeń wolna od osądów do eksploracji myśli i uczuć. Wspieramy ekspatriantów radzących sobie z adaptacją, lękiem lub wyzwaniami emocjonalnymi za granicą.",
+      "Bezpieczna przestrzeń wolna od osądów. Pomagamy w nawigowaniu przez przejścia życiowe i wyzwania emocjonalne oraz wspieramy Twój rozwój.",
     couplesTherapy: "Terapia Par",
     couplesDesc:
       "Przestrzeń dla partnerów do lepszego zrozumienia siebie nawzajem, poprawy komunikacji i wspólnego radzenia sobie z różnicami kulturowymi lub osobistymi.",
@@ -537,13 +539,14 @@ export const translations = {
 
     // Get Started Section
     getStarted: "Rozpocznij",
-    chooseTherapist: "Wybierz swojego Terapeutę",
+    chooseTherapist: "Poznaj Nasz Zespół",
     chooseTherapistDesc:
-      "wybierz spośród 6 psychologów dostępnych w 4 językach (online lub osobiście)",
-    viewOurTherapists: "Zobacz naszych Terapeutów",
-    bookAppointmentTitle: "Napisz do nas",
+      "Jesteśmy zespołem psychologów oferujących wsparcie w czterech językach, z sesjami dostępnymi online lub osobiście.",
+    viewOurTherapists: "Poznaj Naszych Terapeutów",
+    bookAppointmentTitle: "Umów Wizytę",
     bookAppointmentDesc:
-      "Napisz do nas online lub dzwoniąc do naszego przyjaznego i responsywnego zespołu.",
+      "Wypełnij nasz formularz kontaktowy lub zadzwoń do naszego przyjaznego zespołu, aby umówić swoją pierwszą wizytę.",
+    contactUs: "Skontaktuj się z nami",
     appointmentHours:
       "Wizyty dostępne od poniedziałku do piątku, między 9:00 a 20:00",
 
