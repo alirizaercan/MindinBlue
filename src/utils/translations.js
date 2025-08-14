@@ -7,7 +7,7 @@ export const translations = {
 
     // Team Members Detailed Information
     // Anna Rozkwitalska
-    annaTitle: "Psychologist & counsellor",
+    annaTitle: "Founder & Client Coordinator",
     annaSpecialties: [
       "Psychodynamic Therapy",
       "Cultural Adaptation",
@@ -196,8 +196,9 @@ export const translations = {
       "You can book your therapy session using our online booking system, or telephone +48 506 080 577",
 
     // Team Page
-    teamPageTitle: "Our Team",
-    teamPageSubtitle: "Meet our qualified psychologists and therapists",
+    teamPageTitle: "Meet Our Team",
+    teamPageSubtitle:
+      "We are a team of psychologists offering support in four languages, with sessions available online or in person.",
     viewProfile: "View Profile",
     about: "About",
     experience: "Experience",
@@ -469,7 +470,7 @@ export const translations = {
 
     // Team Members Detailed Information
     // Anna Rozkwitalska
-    annaTitle: "Psycholog i doradca",
+    annaTitle: "Założycielka i Koordynatorka ds. Klientów",
     annaSpecialties: [
       "Terapia Psychodynamiczna",
       "Adaptacja Kulturowa",
@@ -566,9 +567,9 @@ export const translations = {
       "Możesz umówić sesję terapeutyczną używając naszego systemu rezerwacji online lub dzwoniąc +48 506 080 577",
 
     // Team Page
-    teamPageTitle: "Nasz Zespół",
+    teamPageTitle: "Poznaj nasz zespół",
     teamPageSubtitle:
-      "Poznaj naszych wykwalifikowanych psychologów i terapeutów",
+      "Jesteśmy zespołem psychologów oferujących wsparcie w czterech językach, z możliwością sesji online lub stacjonarnie.",
     viewProfile: "Zobacz Profil",
     about: "O mnie",
     experience: "Doświadczenie",

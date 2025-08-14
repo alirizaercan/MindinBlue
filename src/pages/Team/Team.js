@@ -102,7 +102,7 @@ const Team = () => {
     {
       id: 1,
       name: "Anna Rozkwitalska",
-      title: "Psychologist & counsellor",
+      title: "Founder & Client Coordinator",
       image: "/images/anna.jpg",
       flags: ["🇬🇧", "🇵🇱", "🇪🇸", "🇮🇹"],
       experience: "10+ years",
