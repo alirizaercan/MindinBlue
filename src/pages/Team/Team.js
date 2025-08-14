@@ -6,6 +6,7 @@ import './Team.css';
 
 const Team = () => {
   const [selectedMember, setSelectedMember] = useState(null);
+  const [enlargedImage, setEnlargedImage] = useState(false);
   const navigate = useNavigate();
   const { t, currentLanguage } = useLanguage();
 
@@ -271,6 +272,15 @@ const Team = () => {
     navigate('/contact');
   };
 
+  const handleImageClick = (e) => {
+    e.stopPropagation();
+    setEnlargedImage(true);
+  };
+
+  const handleCloseEnlarged = () => {
+    setEnlargedImage(false);
+  };
+
   return (
     <div className="team-page">
       <div className="team-container">
@@ -318,6 +328,7 @@ const Team = () => {
                 src={selectedMember.image} 
                 alt={selectedMember.name}
                 className="modal-image"
+                onClick={handleImageClick}
               />
               <div className="modal-basic-info">
                 <h2>{selectedMember.name}</h2>
@@ -403,6 +414,20 @@ const Team = () => {
               </button>
             </div>
           </div>
+        </div>
+      )}
+
+      {/* Enlarged image overlay */}
+      {selectedMember && enlargedImage && (
+        <div 
+          className={`enlarged-image-overlay ${enlargedImage ? 'active' : ''}`}
+          onClick={handleCloseEnlarged}
+        >
+          <img
+            src={selectedMember.image}
+            alt={selectedMember.name}
+            className="enlarged-image"
+          />
         </div>
       )}
     </div>

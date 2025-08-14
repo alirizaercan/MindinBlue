@@ -236,6 +236,7 @@
   border-radius: 50%;
   object-fit: cover;
   border: 3px solid #3fa9f5;
+  cursor: pointer;
 }
 
 .modal-basic-info h2 {
@@ -332,6 +333,34 @@
   color: white;
 }
 
+/* Modal image enlargement styles */
+.enlarged-image-overlay {
+  display: none; /* Hidden by default */
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.9);
+  z-index: 1100;
+  justify-content: center;
+  align-items: center;
+}
+
+.enlarged-image {
+  max-width: 90%;
+  max-height: 90vh;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+/* Show enlarged image only on mobile and tablet */
+@media (max-width: 1024px) {
+  .enlarged-image-overlay.active {
+    display: flex;
+  }
+}
+
 /* Animations */
 @keyframes fadeIn {
   from { opacity: 0; }
@@ -422,8 +451,8 @@
   }
   
   .modal-image {
-    width: 120px;
-    height: 120px;
+    width: 180px; /* было 120px */
+    height: 180px; /* было 120px */
   }
   
   .modal-body {
