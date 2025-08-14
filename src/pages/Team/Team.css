@@ -64,7 +64,7 @@
 }
 
 .team-member::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -143,7 +143,8 @@
   font-size: 1.2rem;
   padding: 0.2rem;
   transition: transform 0.3s ease;
-  font-family: "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", "Android Emoji", "EmojiSymbols", sans-serif;
+  font-family: "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji",
+    "Android Emoji", "EmojiSymbols", sans-serif;
   font-variant-emoji: emoji;
 }
 
@@ -258,7 +259,8 @@
 }
 
 .modal-flags .flag {
-  font-family: "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", "Android Emoji", "EmojiSymbols", sans-serif;
+  font-family: "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji",
+    "Android Emoji", "EmojiSymbols", sans-serif;
   font-variant-emoji: emoji;
 }
 
@@ -296,7 +298,7 @@
 }
 
 .specialties-list li::before {
-  content: '•';
+  content: "•";
   color: #3fa9f5;
   position: absolute;
   left: 0;
@@ -363,16 +365,20 @@
 
 /* Animations */
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 @keyframes slideUp {
-  from { 
+  from {
     opacity: 0;
     transform: translateY(30px);
   }
-  to { 
+  to {
     opacity: 1;
     transform: translateY(0);
   }
@@ -404,66 +410,66 @@
   .team-page {
     padding: 4.5rem 0 2rem 0; /* Reduced top padding for better mobile spacing */
   }
-  
+
   .team-container {
     padding: 0 1rem;
     overflow-x: hidden;
   }
-  
+
   .team-title {
     font-size: 2rem;
   }
-  
+
   .team-description {
     font-size: 1rem;
     margin-bottom: 2rem;
   }
-  
+
   .team-grid {
     grid-template-columns: 1fr;
     gap: 1.5rem;
     max-width: 100%;
   }
-  
+
   .team-member {
     padding: 1.5rem 1rem;
     max-width: 100%;
   }
-  
+
   .member-image-container {
     width: 180px;
     height: 180px;
   }
-  
+
   .member-name {
     font-size: 1.2rem;
   }
-  
+
   .member-title {
     font-size: 0.9rem;
     min-height: 2.5rem;
   }
-  
+
   .modal-header {
     flex-direction: column;
     text-align: center;
     gap: 1rem;
   }
-  
+
   .modal-image {
     width: 180px; /* было 120px */
     height: 180px; /* было 120px */
   }
-  
+
   .modal-body {
     padding: 1.5rem;
   }
-  
+
   .modal-footer {
     flex-direction: column;
     padding: 1.5rem;
   }
-  
+
   .book-appointment-btn,
   .contact-btn {
     width: 100%;
@@ -477,33 +483,33 @@
   .team-page {
     padding: 4rem 0 2rem 0; /* Further reduced top padding for small mobile devices */
   }
-  
+
   .team-container {
     padding: 0 0.5rem;
     overflow-x: hidden;
   }
-  
+
   .team-title {
     font-size: 1.8rem;
   }
-  
+
   .team-member {
     padding: 1rem;
   }
-  
+
   .member-image-container {
     width: 160px;
     height: 160px;
   }
-  
+
   .modal-overlay {
     padding: 0.5rem;
   }
-  
+
   .modal-content {
     border-radius: 12px;
   }
-  
+
   .modal-header,
   .modal-body {
     padding: 1rem;
@@ -523,13 +529,13 @@
   .team-container {
     overflow-x: hidden;
   }
-  
+
   .team-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
     max-width: 100%;
   }
-  
+
   .team-member {
     padding: 1.8rem;
     max-width: 100%;
@@ -543,7 +549,7 @@
     gap: 1.5rem;
     max-width: 100%;
   }
-  
+
   .member-image-container {
     width: 200px;
     height: 200px;

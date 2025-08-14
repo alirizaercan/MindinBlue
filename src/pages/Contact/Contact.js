@@ -44,10 +44,6 @@ function Contact() {
         t("sessionTypeRequired") || "Please select a session type";
     }
 
-    if (!formData.message.trim()) {
-      newErrors.message = t("messageRequired") || "Message is required";
-    }
-
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
@@ -58,8 +54,7 @@ function Contact() {
       formData.email.trim() &&
       /\S+@\S+\.\S+/.test(formData.email) &&
       formData.service &&
-      formData.sessionType &&
-      formData.message.trim()
+      formData.sessionType
     );
   };
 
@@ -96,7 +91,7 @@ function Contact() {
         phone: formData.phone,
         service: formData.service,
         session_type: formData.sessionType,
-        message: formData.message,
+        message: formData.message || "", // поддержка пустого сообщения
         to_email: "vanya.puhachov@gmail.com",
       };
 
@@ -190,7 +185,7 @@ function Contact() {
               </div>
 
               <div className="form-group">
-                <label htmlFor="message">{t("yourMessage")}</label>
+                <label htmlFor="message">{t("yourMessage")} (optional)</label>
                 <textarea
                   id="message"
                   name="message"
@@ -199,9 +194,6 @@ function Contact() {
                   rows="4"
                   className={errors.message ? "error" : ""}
                 ></textarea>
-                {errors.message && (
-                  <span className="error-message">{errors.message}</span>
-                )}
               </div>
 
               <div className="form-group">

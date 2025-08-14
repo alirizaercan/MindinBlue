@@ -1,158 +1,183 @@
-import React, { useState, useEffect, useCallback, memo } from 'react';
-import './expat-therapy-styles.css';
+import React, { useState, useEffect, useCallback, memo } from "react";
+import "./expat-therapy-styles.css";
+import emailjs from "@emailjs/browser"; // + EmailJS
 
-const ContactModal = memo(({ 
-  showModal, 
-  formData, 
-  handleInputChange, 
-  handleSubmit, 
-  closeModal, 
-  setShowPrivacyModal 
-}) => {
-  if (!showModal) return null;
-  
-  return (
-    <div className="expat-modal-overlay" onClick={closeModal}>
-      <div className="expat-modal-content" onClick={(e) => e.stopPropagation()}>
-        <button 
-          className="expat-modal-close"
-          onClick={closeModal}
+// Добавьте рядом с импортами (замените на ваш новый template_id из EmailJS)
+const EMAILJS_SERVICE_ID = "service_6nnbqus";
+const EMAILJS_TEMPLATE_ID_EXPAT = "template_l4g1q2h"; // <-- используем ваш реальный Template ID из EmailJS
+
+const ContactModal = memo(
+  ({
+    showModal,
+    formData,
+    handleInputChange,
+    handleSubmit,
+    closeModal,
+    setShowPrivacyModal,
+    isSubmitting, // + pass loading state
+  }) => {
+    if (!showModal) return null;
+
+    return (
+      <div className="expat-modal-overlay" onClick={closeModal}>
+        <div
+          className="expat-modal-content"
+          onClick={(e) => e.stopPropagation()}
         >
-          ×
-        </button>
-        <h2 className="expat-modal-title">Fill in the form below<br />to get started</h2>
-        <form onSubmit={handleSubmit}>
-          <div className="expat-form-group">
-            <label htmlFor="firstName">First Name *</label>
-            <input
-              type="text"
-              id="firstName"
-              name="firstName"
-              value={formData.firstName || ''}
-              onChange={handleInputChange}
-              required
-              autoComplete="given-name"
-            />
-          </div>
-          
-          <div className="expat-form-group">
-            <label htmlFor="lastName">Last Name *</label>
-            <input
-              type="text"
-              id="lastName"
-              name="lastName"
-              value={formData.lastName || ''}
-              onChange={handleInputChange}
-              required
-              autoComplete="family-name"
-            />
-          </div>
-          
-          <div className="expat-form-group">
-            <label htmlFor="email">Email Address *</label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              value={formData.email || ''}
-              onChange={handleInputChange}
-              required
-              autoComplete="email"
-            />
-          </div>
-          
-          <div className="expat-form-group">
-            <label htmlFor="phone">Phone Number *</label>
-            <input
-              type="tel"
-              id="phone"
-              name="phone"
-              value={formData.phone || ''}
-              onChange={handleInputChange}
-              required
-              autoComplete="tel"
-            />
-          </div>
-        
-          
-          <div className="expat-form-group">
-            <label htmlFor="goal">What's your biggest challenge as an expat?</label>
-            <textarea
-              id="goal"
-              name="goal"
-              value={formData.goal || ''}
-              onChange={handleInputChange}
-              rows="4"
-              placeholder="Please describe your biggest challenge as an expat in Poland..."
-            />
-          </div>
-          
-          <div className="expat-form-group">
-            <label htmlFor="budget">Preferred way to receive support *</label>
-            <select
-              id="budget"
-              name="budget"
-              value={formData.budget || ''}
-              onChange={handleInputChange}
-              required
-            >
-              <option value="">Select...</option>
-              <option value="online-sessions">Online</option>
-              <option value="in-person-gdansk">In-person in Gdansk</option>
-            </select>
-          </div>
-          
-          <div className="expat-form-group">
-            <div className="expat-consent-section">
+          <button className="expat-modal-close" onClick={closeModal}>
+            ×
+          </button>
+          <h2 className="expat-modal-title">
+            Fill in the form below
+            <br />
+            to get started
+          </h2>
+          <form onSubmit={handleSubmit}>
+            <div className="expat-form-group">
+              <label htmlFor="firstName">First Name *</label>
               <input
-                type="checkbox"
-                id="consent"
-                name="consent"
-                checked={formData.consent || false}
+                type="text"
+                id="firstName"
+                name="firstName"
+                value={formData.firstName || ""}
                 onChange={handleInputChange}
                 required
-                className="expat-consent-checkbox"
+                autoComplete="given-name"
               />
-              <div className="expat-consent-text">
-                By sending this form, you’re giving Mind in Blue permission to get in touch with you about your therapy needs. We respect your privacy and will keep your details safe. *
+            </div>
+
+            <div className="expat-form-group">
+              <label htmlFor="lastName">Last Name *</label>
+              <input
+                type="text"
+                id="lastName"
+                name="lastName"
+                value={formData.lastName || ""}
+                onChange={handleInputChange}
+                required
+                autoComplete="family-name"
+              />
+            </div>
+
+            <div className="expat-form-group">
+              <label htmlFor="email">Email Address *</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                value={formData.email || ""}
+                onChange={handleInputChange}
+                required
+                autoComplete="email"
+              />
+            </div>
+
+            <div className="expat-form-group">
+              <label htmlFor="phone">Phone Number *</label>
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                value={formData.phone || ""}
+                onChange={handleInputChange}
+                required
+                autoComplete="tel"
+              />
+            </div>
+
+            <div className="expat-form-group">
+              <label htmlFor="goal">
+                What's your biggest challenge as an expat?
+              </label>
+              <textarea
+                id="goal"
+                name="goal"
+                value={formData.goal || ""}
+                onChange={handleInputChange}
+                rows="4"
+                placeholder="Please describe your biggest challenge as an expat in Poland..."
+              />
+            </div>
+
+            <div className="expat-form-group">
+              <label htmlFor="budget">Preferred way to receive support *</label>
+              <select
+                id="budget"
+                name="budget"
+                value={formData.budget || ""}
+                onChange={handleInputChange}
+                required
+              >
+                <option value="">Select...</option>
+                <option value="online-sessions">Online</option>
+                <option value="in-person-gdansk">In-person in Gdansk</option>
+              </select>
+            </div>
+
+            <div className="expat-form-group">
+              <div className="expat-consent-section">
+                <input
+                  type="checkbox"
+                  id="consent"
+                  name="consent"
+                  checked={formData.consent || false}
+                  onChange={handleInputChange}
+                  required
+                  className="expat-consent-checkbox"
+                />
+                <div className="expat-consent-text">
+                  By sending this form, you’re giving Mind in Blue permission to
+                  get in touch with you about your therapy needs. We respect
+                  your privacy and will keep your details safe. *
+                </div>
+              </div>
+              <div className="expat-privacy-notice">
+                By submitting this form, you accept our{" "}
+                <button
+                  type="button"
+                  onClick={() => setShowPrivacyModal(true)}
+                  className="expat-privacy-link"
+                >
+                  Privacy Policy
+                </button>
+                .
               </div>
             </div>
-            <div className="expat-privacy-notice">
-              By submitting this form, you accept our{' '}
-              <button 
-                type="button"
-                onClick={() => setShowPrivacyModal(true)}
-                className="expat-privacy-link"
-              >
-                Privacy Policy
-              </button>
-              .
-            </div>
-          </div>
-          
-          <button type="submit" className="expat-send-button">
-            SUBMIT & WATCH THE VIDEO
-          </button>
-        </form>
+
+            <button
+              type="submit"
+              className="expat-send-button"
+              disabled={isSubmitting}
+            >
+              {isSubmitting ? "SENDING…" : "SUBMIT & WATCH THE VIDEO"}
+            </button>
+          </form>
+        </div>
       </div>
-    </div>
-  );
-});
+    );
+  }
+);
 
 function ExpatTherapyConsultation() {
-  const [currentPage, setCurrentPage] = useState('home');
+  const [currentPage, setCurrentPage] = useState("home"); // вернул обратно на "home"
   const [showModal, setShowModal] = useState(false);
   const [showPrivacyModal, setShowPrivacyModal] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false); // + loading state
   const [formData, setFormData] = useState({
-    firstName: '',
-    lastName: '',
-    email: '',
-    phone: '',
-    experience: '',
-    goal: '',
-    budget: '',
-    consent: false
+    firstName: "",
+    lastName: "",
+    email: "",
+    phone: "",
+    experience: "",
+    goal: "",
+    budget: "",
+    consent: false,
   });
+
+  // + Initialize EmailJS (reuse the same public key as /contact)
+  useEffect(() => {
+    emailjs.init("WsafYrZj3fnh_4yA0"); // same as Contact.js
+  }, []);
 
   // Handle modal open state
   useEffect(() => {
@@ -160,41 +185,61 @@ function ExpatTherapyConsultation() {
     const handleModalState = () => {
       if (showModal || showPrivacyModal) {
         // Prevent background scrolling
-        document.body.style.overflow = 'hidden';
+        document.body.style.overflow = "hidden";
       } else {
-        document.body.style.overflow = 'unset';
+        document.body.style.overflow = "unset";
       }
     };
 
     handleModalState();
-    
+
     // Cleanup function
     return () => {
-      document.body.style.overflow = 'unset';
+      document.body.style.overflow = "unset";
     };
   }, [showModal, showPrivacyModal]);
 
-  // Google Reviews Widget Script
+  // Google Reviews Widget Script - только для thank you страницы
   useEffect(() => {
-    const script = document.createElement("script");
-    script.src =
-      "https://app.reviewconnect.me/embed/oEYFWLQK1XUVahJzCmQqd4Kr3j2Lo0X5/widget.js";
-    script.async = true;
-    document.body.appendChild(script);
+    if (currentPage === "thankyou") {
+      // Небольшая задержка для уверенности, что DOM элемент создан
+      const timer = setTimeout(() => {
+        const widgetContainer = document.getElementById("reviews-widget-154");
+        if (widgetContainer) {
+          const script = document.createElement("script");
+          script.src =
+            "https://app.reviewconnect.me/embed/oEYFWLQK1XUVahJzCmQqd4Kr3j2Lo0X5/widget.js";
+          script.async = true;
+          script.onload = () => {
+            console.log("Reviews widget script loaded successfully");
+          };
+          script.onerror = () => {
+            console.error("Failed to load reviews widget script");
+          };
+          document.body.appendChild(script);
+        } else {
+          console.warn("Reviews widget container not found");
+        }
+      }, 500);
 
-    return () => {
-      // Only remove script if it exists in the DOM
-      if (document.body.contains(script)) {
-        document.body.removeChild(script);
-      }
-    };
-  }, []);
+      return () => {
+        clearTimeout(timer);
+        // Убираем скрипт при размонтировании
+        const existingScript = document.querySelector(
+          'script[src*="reviewconnect.me"]'
+        );
+        if (existingScript && document.body.contains(existingScript)) {
+          document.body.removeChild(existingScript);
+        }
+      };
+    }
+  }, [currentPage]);
 
   const handleInputChange = useCallback((e) => {
     const { name, value, type, checked } = e.target;
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
-      [name]: type === 'checkbox' ? checked : value
+      [name]: type === "checkbox" ? checked : value,
     }));
   }, []);
 
@@ -202,66 +247,89 @@ function ExpatTherapyConsultation() {
     setShowModal(false);
   };
 
-  const handleSubmit = (e) => {
+  // REPLACE mailto with EmailJS
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    
-    // Create mailto link with form data
-    const subject = encodeURIComponent('🇵🇱 URGENT: New Expat Client Application - Mind in Blue');
-    const body = encodeURIComponent(`
-🇵🇱 NEW EXPAT CLIENT FROM SALES FUNNEL:
+    setIsSubmitting(true);
+    try {
+      const sessionType =
+        formData.budget === "online-sessions"
+          ? "Online"
+          : formData.budget === "in-person-gdansk"
+          ? "In-person in Gdansk"
+          : formData.budget || "Not specified";
 
-First Name: ${formData.firstName}
-Last Name: ${formData.lastName}
-Email: ${formData.email}
-Phone: ${formData.phone}
+      // Всегда только "Biggest challenge:" — без лишних секций
+      const biggestChallengeText = `Biggest challenge:\n${
+        formData.goal && formData.goal.trim() ? formData.goal.trim() : "-"
+      }`;
 
-EXPAT-SPECIFIC INFO:
-Time in Poland: ${formData.experience}
-Biggest Challenge: ${formData.goal}
-Preferred Support: ${formData.budget}
-Consent Given: ${formData.consent ? 'Yes' : 'No'}
+      const templateParams = {
+        from_name: `${formData.firstName || ""} ${
+          formData.lastName || ""
+        }`.trim(),
+        name: `${formData.firstName || ""} ${formData.lastName || ""}`.trim(),
+        from_email: formData.email,
+        reply_to: formData.email,
+        phone: formData.phone,
+        service: "Expat Therapy Consultation",
+        session_type: sessionType,
+        message: biggestChallengeText, // только этот блок
+        to_email: "vanya.puhachov@gmail.com",
+      };
 
-SOURCE: Meta Ads Hybrid Sales Funnel
-TARGET: Expats in Poland & Gdansk
-PRIORITY: FREE CONSULTATION REQUESTED
+      await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID_EXPAT,
+        templateParams
+      );
 
-This application was submitted from the Mind in Blue expat-focused sales funnel.
-Please prioritize - this is a qualified lead from our Meta Ads campaign.
-    `);
-    
-    // Open email client
-    window.location.href = `mailto:oyunraptiyesi1@gmail.com?subject=${subject}&body=${body}`;
-    
-    // Reset form data after successful submit
-    setFormData({
-      firstName: '',
-      lastName: '',
-      email: '',
-      phone: '',
-      experience: '',
-      goal: '',
-      budget: '',
-      consent: false
-    });
-    
-    // Close modal and go to thank you page
-    setShowModal(false);
-    setCurrentPage('thankyou');
+      // Optional: user feedback
+      alert("Thank you for your application! We will contact you within 24h.");
+
+      // Reset and navigate to thank you
+      setFormData({
+        firstName: "",
+        lastName: "",
+        email: "",
+        phone: "",
+        experience: "",
+        goal: "",
+        budget: "",
+        consent: false,
+      });
+      setShowModal(false);
+      setCurrentPage("thankyou");
+    } catch (error) {
+      console.error("Email sending failed:", error);
+      alert(
+        "Sorry, there was an error sending your application. Please try again."
+      );
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const HomePage = () => (
     <div>
+      {/* Убрана временная тестовая кнопка */}
+
       {/* Top Banner - Market Call Out */}
       <div className="expat-top-banner">
         <div className="expat-container">
-          <p>FREE 15-minute consultation call with English-speaking therapists</p>
+          <p>
+            FREE 15-minute consultation call with English-speaking therapists
+          </p>
         </div>
       </div>
 
       {/* Blue Highlight Section - VSL Hook */}
       <div className="expat-highlight-section">
         <div className="expat-container">
-          <p>If you are an expat in Poland, looking for psychologial support, book your FREE 15-minute call</p>
+          <p>
+            If you are an expat in Poland, looking for psychologial support,
+            book your FREE 15-minute call
+          </p>
         </div>
       </div>
 
@@ -280,34 +348,45 @@ Please prioritize - this is a qualified lead from our Meta Ads campaign.
           {/* Main Content Grid */}
           <section className="expat-homepage-grid">
             <div className="expat-homepage-image">
-              <img 
-                src={process.env.PUBLIC_URL + "/images/mindinblue_therapists.png"} 
-                alt="Mind in Blue Professional Therapy" 
-                className="expat-therapy-image" 
+              <img
+                src={
+                  process.env.PUBLIC_URL + "/images/mindinblue_therapists.png"
+                }
+                alt="Mind in Blue Professional Therapy"
+                className="expat-therapy-image"
                 onError={(e) => {
-                  e.target.style.display = 'none';
-                  console.log('Image failed to load');
+                  e.target.style.display = "none";
+                  console.log("Image failed to load");
                 }}
               />
             </div>
-            
+
             <div className="expat-homepage-benefits">
-              <h2 className="expat-homepage-benefits-title">In your free 15-minute consultation, you can:</h2>
+              <h2 className="expat-homepage-benefits-title">
+                In your free 15-minute consultation, you can:
+              </h2>
               <ul className="expat-homepage-benefits-list">
                 <li>✓ Share what you’re dealing with right now</li>
                 <li>✓ Sum up what you need</li>
                 <li>✓ Talk to someone who understands expat life in Poland</li>
-                <li>✓ Explore options for therapy in English (in Gdańsk or online)</li>
-                <li>✓ Get guidance without language barriers or healthcare confusion</li>
+                <li>
+                  ✓ Explore options for therapy in English (in Gdańsk or online)
+                </li>
+                <li>
+                  ✓ Get guidance without language barriers or healthcare
+                  confusion
+                </li>
                 <li>✓ Decide your next steps toward feeling better</li>
               </ul>
-              <button 
+              <button
                 className="expat-cta-button"
                 onClick={() => setShowModal(true)}
               >
                 ➤ FIND OUT HOW WE CAN HELP YOU
               </button>
-              <p className="expat-homepage-warning-text">⚠️ LIMITED SPOTS: Only 5 free consultations available this week</p>
+              <p className="expat-homepage-warning-text">
+                ⚠️ LIMITED SPOTS: Only 5 free consultations available this week
+              </p>
             </div>
           </section>
         </div>
@@ -316,8 +395,10 @@ Please prioritize - this is a qualified lead from our Meta Ads campaign.
       {/* Black Section - What's Included */}
       <section className="expat-what-includes-section">
         <div className="expat-container">
-          <h2 className="expat-section-title-white">Your options for professional support:</h2>
-          
+          <h2 className="expat-section-title-white">
+            Your options for professional support:
+          </h2>
+
           <div className="expat-features-grid">
             <div className="expat-feature-item">
               <div className="expat-feature-icon">🫂</div>
@@ -334,7 +415,7 @@ Please prioritize - this is a qualified lead from our Meta Ads campaign.
           </div>
 
           <div className="expat-bottom-text">
-            <button 
+            <button
               className="expat-cta-button expat-secondary"
               onClick={() => setShowModal(true)}
             >
@@ -347,16 +428,22 @@ Please prioritize - this is a qualified lead from our Meta Ads campaign.
       {/* Steps Section */}
       <section className="expat-steps-section">
         <div className="expat-container">
-          <h2 className="expat-section-title">How expats in Poland get started (3 simple steps):</h2>
-          
+          <h2 className="expat-section-title">
+            How expats in Poland get started (3 simple steps):
+          </h2>
+
           <div className="expat-steps-grid">
             <div className="expat-step-item">
               <div className="expat-step-icon">📝</div>
-              <h3>1. Click the button and fill out the form (takes 1 minute)</h3>
+              <h3>
+                1. Click the button and fill out the form (takes 1 minute)
+              </h3>
             </div>
             <div className="expat-step-item">
               <div className="expat-step-icon">📞</div>
-              <h3>2. Get contacted within 24h by English speaking therapists</h3>
+              <h3>
+                2. Get contacted within 24h by English speaking therapists
+              </h3>
             </div>
             <div className="expat-step-item">
               <div className="expat-step-icon">🎯</div>
@@ -364,7 +451,7 @@ Please prioritize - this is a qualified lead from our Meta Ads campaign.
             </div>
           </div>
 
-          <button 
+          <button
             className="expat-cta-button expat-final"
             onClick={() => setShowModal(true)}
           >
@@ -377,53 +464,56 @@ Please prioritize - this is a qualified lead from our Meta Ads campaign.
       <section className="expat-founder-section">
         <div className="expat-container">
           <h2 className="expat-section-title-white"></h2>
-          
+
           <div className="expat-founder-grid">
             <div className="expat-founder-content">
               <h3>You’re in good hands</h3>
               <p>
-                Our licensed psychologists understand firsthand the ups and downs of expat life — and how to help you navigate them.
+                Our licensed psychologists understand firsthand the ups and
+                downs of expat life — and how to help you navigate them.
               </p>
               <p>
-                Since 2018, we’ve been supporting expats in Poland with everything from cultural shock and relationship crises to personal growth, offering sessions in fluent English.
+                Since 2018, we’ve been supporting expats in Poland with
+                everything from cultural shock and relationship crises to
+                personal growth, offering sessions in fluent English.
               </p>
-              <h3>
-                Ready to heal and grow?
-              </h3>
-              <button 
-              className="expat-cta-button expat-final-cta"
-              onClick={() => setShowModal(true)}
-            >
-              YES, I WANT TO GET STARTED
-            </button>
+              <h3>Ready to heal and grow?</h3>
+              <button
+                className="expat-cta-button expat-final-cta"
+                onClick={() => setShowModal(true)}
+              >
+                YES, I WANT TO GET STARTED
+              </button>
             </div>
             <div className="expat-founder-image">
-              <img src={process.env.PUBLIC_URL + "/images/mindinblue_therapists.png"} alt="Mind in Blue Team" className="expat-founder-photo" />
+              <img
+                src={
+                  process.env.PUBLIC_URL + "/images/mindinblue_therapists.png"
+                }
+                alt="Mind in Blue Team"
+                className="expat-founder-photo"
+                onError={(e) => {
+                  e.target.style.display = "none";
+                  console.log("Image failed to load");
+                }}
+              />
             </div>
           </div>
         </div>
       </section>
-   </div>
+    </div>
   );
 
   const ThankYouPage = () => (
     <div>
-      {/* Blue Highlight Section */}
-      <div className="expat-highlight-section">
-        <div className="expat-container">
-          <p>🎯 Next step: Watch the video below and book your free consultation call</p>
-        </div>
-      </div>
-
       {/* Main Content */}
       <main className="expat-main-content">
         <div className="expat-container">
           <section className="expat-hero-section">
-            <h1 className="expat-hero-title">
-              Thank You for Your Application
-            </h1>
+            <h1 className="expat-hero-title">Thank You for Your Application</h1>
             <p className="expat-hero-subtitle">
-              Your consultation request has been received successfully. Meet our team and book your free call below.
+              Your consultation request has been received successfully. Meet our
+              team and book your free call below.
             </p>
           </section>
 
@@ -438,9 +528,8 @@ Please prioritize - this is a qualified lead from our Meta Ads campaign.
                 allowFullScreen
               ></iframe>
             </div>
-            
             <div className="expat-cta-section">
-              <a 
+              <a
                 href="https://calendly.com/mindinblue/free-15-minute-consultation-call"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -449,26 +538,42 @@ Please prioritize - this is a qualified lead from our Meta Ads campaign.
                 ➤ BOOK YOUR FREE CONSULTATION NOW
               </a>
             </div>
-
-            <div className="expat-benefits-section">
-              <h2 className="expat-benefits-title">Ready to start your therapy journey?</h2>
-              <ul className="expat-benefits-list">
-                <li>✓ FREE 15-minute consultation with licensed psychologist</li>
-                <li>✓ English-speaking therapists who understand expat challenges</li>
-                <li>✓ Online or in-person sessions in Gdansk</li>
-                <li>✓ Culturally sensitive approach for expats in Poland</li>
-              </ul>
-              <p className="expat-warning-text">📞 Don't wait - schedule your call today and take the first step toward better mental health</p>
-            </div>
           </section>
+
+          <div className="expat-benefits-section">
+            <h2 className="expat-benefits-title">
+              Ready to start your therapy journey?
+            </h2>
+            <ul className="expat-benefits-list">
+              <li>✓ FREE 15-minute consultation with licensed psychologist</li>
+              <li>
+                ✓ English-speaking therapists who understand expat challenges
+              </li>
+              <li>✓ Online or in-person sessions in Gdansk</li>
+              <li>✓ Culturally sensitive approach for expats in Poland</li>
+            </ul>
+            <a
+              href="https://calendly.com/mindinblue/free-15-minute-consultation-call"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="expat-cta-button expat-final"
+            >
+              ➤ BOOK YOUR FREE CONSULTATION NOW
+            </a>
+            <p className="expat-warning-text">
+              📞 Don't wait - schedule your call today and take the first step
+              toward better mental health
+            </p>
+          </div>
         </div>
       </main>
 
       {/* Black Section - What to Expect */}
       <section className="expat-what-includes-section">
         <div className="expat-container">
-          <h2 className="expat-section-title-white">What to expect in your free consultation:</h2>
-
+          <h2 className="expat-section-title-white">
+            What to expect in your free consultation:
+          </h2>
           <div className="expat-features-grid">
             <div className="expat-feature-item">
               <div className="expat-feature-icon">🎯</div>
@@ -485,7 +590,7 @@ Please prioritize - this is a qualified lead from our Meta Ads campaign.
           </div>
 
           <div className="expat-bottom-text">
-            <a 
+            <a
               href="https://calendly.com/mindinblue/free-15-minute-consultation-call"
               target="_blank"
               rel="noopener noreferrer"
@@ -512,7 +617,7 @@ Please prioritize - this is a qualified lead from our Meta Ads campaign.
   const PrivacyPolicyModal = () => (
     <div className="expat-modal-overlay">
       <div className="expat-privacy-modal-content">
-        <button 
+        <button
           className="expat-modal-close"
           onClick={() => setShowPrivacyModal(false)}
         >
@@ -522,12 +627,17 @@ Please prioritize - this is a qualified lead from our Meta Ads campaign.
         <div className="expat-privacy-content">
           <div className="expat-privacy-section">
             <h3>Data Controller</h3>
-            <p>Mind in Blue, located at Gdansk, Poland, is the data controller for the personal data you provide through this website.</p>
+            <p>
+              Mind in Blue, located at Gdansk, Poland, is the data controller
+              for the personal data you provide through this website.
+            </p>
           </div>
-
           <div className="expat-privacy-section">
             <h3>What Data We Collect</h3>
-            <p>We collect the following personal data when you submit the contact form:</p>
+            <p>
+              We collect the following personal data when you submit the contact
+              form:
+            </p>
             <ul>
               <li>First and last name</li>
               <li>Email address</li>
@@ -536,17 +646,18 @@ Please prioritize - this is a qualified lead from our Meta Ads campaign.
               <li>Primary concerns and session preferences</li>
             </ul>
           </div>
-
           <div className="expat-privacy-section">
             <h3>Legal Basis for Processing</h3>
-            <p>We process your personal data based on your explicit consent (GDPR Art. 6(1)(a)) for:</p>
+            <p>
+              We process your personal data based on your explicit consent (GDPR
+              Art. 6(1)(a)) for:
+            </p>
             <ul>
               <li>Contacting you about our mental health services</li>
               <li>Providing consultation and therapy services</li>
               <li>Sending information about our treatments and programs</li>
             </ul>
           </div>
-
           <div className="expat-privacy-section">
             <h3>How We Use Your Data</h3>
             <p>Your personal data is used exclusively to:</p>
@@ -557,12 +668,14 @@ Please prioritize - this is a qualified lead from our Meta Ads campaign.
               <li>Maintain therapy records as required by Polish law</li>
             </ul>
           </div>
-
           <div className="expat-privacy-section">
             <h3>Data Retention</h3>
-            <p>We retain your personal data for the duration necessary to provide our services and as required by Polish healthcare regulations, typically 5 years after the last therapy session.</p>
+            <p>
+              We retain your personal data for the duration necessary to provide
+              our services and as required by Polish healthcare regulations,
+              typically 5 years after the last therapy session.
+            </p>
           </div>
-
           <div className="expat-privacy-section">
             <h3>Your Rights Under GDPR</h3>
             <p>You have the following rights regarding your personal data:</p>
@@ -576,20 +689,27 @@ Please prioritize - this is a qualified lead from our Meta Ads campaign.
               <li>Right to lodge a complaint with supervisory authority</li>
             </ul>
           </div>
-
           <div className="expat-privacy-section">
             <h3>Data Security</h3>
-            <p>We implement appropriate technical and organizational measures to protect your personal data against unauthorized access, alteration, disclosure, or destruction.</p>
+            <p>
+              We implement appropriate technical and organizational measures to
+              protect your personal data against unauthorized access,
+              alteration, disclosure, or destruction.
+            </p>
           </div>
-
           <div className="expat-privacy-section">
             <h3>Contact Information</h3>
-            <p>For any questions about this privacy policy or to exercise your rights, please contact us at: <strong>contact@mindinblue.com</strong></p>
+            <p>
+              For any questions about this privacy policy or to exercise your
+              rights, please contact us at:{" "}
+              <strong>contact@mindinblue.com</strong>
+            </p>
           </div>
-
           <div className="expat-privacy-footer">
-            <strong>Last updated:</strong> August 2025<br/>
-            This privacy policy complies with Polish Personal Data Protection Act and EU GDPR regulations.
+            <strong>Last updated:</strong> August 2025
+            <br />
+            This privacy policy complies with Polish Personal Data Protection
+            Act and EU GDPR regulations.
           </div>
         </div>
       </div>
@@ -598,15 +718,16 @@ Please prioritize - this is a qualified lead from our Meta Ads campaign.
 
   return (
     <div className="ExpatTherapyConsultation">
-      {currentPage === 'home' && <HomePage />}
-      {currentPage === 'thankyou' && <ThankYouPage />}
-      <ContactModal 
+      {currentPage === "home" && <HomePage />}
+      {currentPage === "thankyou" && <ThankYouPage />}
+      <ContactModal
         showModal={showModal}
         formData={formData}
         handleInputChange={handleInputChange}
         handleSubmit={handleSubmit}
         closeModal={closeModal}
         setShowPrivacyModal={setShowPrivacyModal}
+        isSubmitting={isSubmitting} // + pass loading state
       />
       {showPrivacyModal && <PrivacyPolicyModal />}
     </div>
