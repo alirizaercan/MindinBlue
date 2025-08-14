@@ -25,7 +25,7 @@
 
 .hero-text h1 {
   font-size: 2.5rem;
-  color: #2B5A87;
+  color: #2b5a87;
   margin-bottom: 30px;
   font-weight: 600;
   line-height: 1.2;
@@ -46,7 +46,7 @@
 
 .hero-image img {
   width: 100%;
-  height: 350px; /* Fixed height for consistent sizing */
+  height: 350px;
   border-radius: 8px;
   object-fit: cover;
 }
@@ -114,7 +114,7 @@
   .content-section {
     padding: 40px 60px;
   }
-  
+
   .hero-content,
   .content-wrapper {
     gap: 40px;
@@ -131,17 +131,16 @@
   .content-section {
     padding: 20px 25px;
   }
-  
+
   .hero-content {
     align-items: flex-start; /* Reset to top alignment */
     gap: 30px; /* Reduce gap between text and image */
   }
-  
+
   .hero-image {
-    transform: translateY(80px); /* Move image down using transform */
     margin-top: 0; /* Reset margin-top */
   }
-  
+
   /* Tablet button sizing - much smaller */
   .appointment-btn {
     padding: 0.6rem 1.5rem;
@@ -158,26 +157,26 @@
   .content-section {
     padding: 30px 40px;
   }
-  
+
   .hero-content,
   .content-wrapper {
     flex-direction: column;
     gap: 30px;
   }
-  
+
   .hero-text h1 {
     font-size: 2rem;
   }
-  
+
   .hero-image,
   .content-image {
     max-width: 100%;
   }
-  
+
   .content-wrapper {
     flex-direction: column-reverse;
   }
-  
+
   /* Tablet button sizing */
   .appointment-btn {
     padding: 0.6rem 1.5rem;
@@ -194,16 +193,16 @@
   .content-section {
     padding: 20px;
   }
-  
+
   .hero-text h1 {
     font-size: 1.8rem;
   }
-  
+
   .hero-text p,
   .content-text p {
     font-size: 0.95rem;
   }
-  
+
   /* Mobile button sizing */
   .appointment-btn {
     padding: 0.5rem 1.2rem;
