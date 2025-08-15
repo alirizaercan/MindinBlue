@@ -517,7 +517,7 @@ export const translations = {
       "Zapraszam do kontaktu, jeśli masz jakiekolwiek pytania lub chcesz umówić sesję konsultacyjną.",
 
     // Home Page
-    heroTitle: "Kiedy jesteś gotowy na uzdrowienie i rozwój",
+    heroTitle: "Dla tych, którzy są gotowi zrobić krok w stronę zmiany",
     heroSubtitle: "Poradnictwo • Psychoterapia",
     bookAppointment: "Napisz do nas",
     bookYourFreeCall: "Umów bezpłatną rozmowę",
