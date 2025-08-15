@@ -2,12 +2,13 @@
 // Logo will be displayed here using header_logo.png
 
 import "./Header.css";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { useLanguage } from "../../contexts/LanguageContext";
 
 function Header() {
   const { currentLanguage, changeLanguage, t } = useLanguage();
+  const navigate = useNavigate();
 
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -33,6 +34,22 @@ function Header() {
     changeLanguage(lang);
     setLanguageDropdownOpen(false);
     // Close mobile menu if open
+    setIsDropdownOpen(false);
+  };
+
+  const handleFeesClick = (e) => {
+    e.preventDefault();
+    navigate('/services');
+    setTimeout(() => {
+      const pricingElement = document.getElementById('pricing');
+      if (pricingElement) {
+        const elementPosition = pricingElement.offsetTop;
+        window.scrollTo({
+          top: elementPosition - 100,
+          behavior: 'smooth'
+        });
+      }
+    }, 100);
     setIsDropdownOpen(false);
   };
 
@@ -89,6 +106,7 @@ function Header() {
           <Link to="/">{t('home')}</Link>
           <Link to="/team">{t('ourTeam')}</Link>
           <Link to="/services">{t('services')}</Link>
+          <a href="/services#pricing" onClick={handleFeesClick}>Fees</a>
           <Link to="/contact">{t('contact')}</Link>
           <a href="tel:+48506080577" className="desktop-phone-btn">+48 506 080 577</a>
           <div className="language-switcher-container desktop-only">
@@ -129,6 +147,7 @@ function Header() {
           <Link to="/" onClick={closeDropdown}>{t('home')}</Link>
           <Link to="/team" onClick={closeDropdown}>{t('ourTeam')}</Link>
           <Link to="/services" onClick={closeDropdown}>{t('services')}</Link>
+          <a href="/services#pricing" onClick={handleFeesClick}>Fees</a>
           <Link to="/contact" onClick={closeDropdown}>{t('contact')}</Link>
           <div className="language-switcher-mobile">
             <span className="language-switcher-label">{t('language')}</span>
