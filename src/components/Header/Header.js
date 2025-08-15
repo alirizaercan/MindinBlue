@@ -2,12 +2,13 @@
 // Logo will be displayed here using header_logo.png
 
 import "./Header.css";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { useLanguage } from "../../contexts/LanguageContext";
 
 function Header() {
   const { currentLanguage, changeLanguage, t } = useLanguage();
+  const navigate = useNavigate();
 
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -15,7 +16,7 @@ function Header() {
   const location = useLocation();
 
   // Check if current page is home page
-  const isHomePage = location.pathname === '/';
+  const isHomePage = location.pathname === "/";
 
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
@@ -33,6 +34,22 @@ function Header() {
     changeLanguage(lang);
     setLanguageDropdownOpen(false);
     // Close mobile menu if open
+    setIsDropdownOpen(false);
+  };
+
+  const handleFeesClick = (e) => {
+    e.preventDefault();
+    navigate("/services");
+    setTimeout(() => {
+      const pricingElement = document.getElementById("pricing");
+      if (pricingElement) {
+        const elementPosition = pricingElement.offsetTop;
+        window.scrollTo({
+          top: elementPosition - 100,
+          behavior: "smooth",
+        });
+      }
+    }, 100);
     setIsDropdownOpen(false);
   };
 
@@ -65,16 +82,20 @@ function Header() {
       setIsScrolled(window.scrollY > 10);
     }
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
 
     // Cleanup event listener on component unmount
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, [isDropdownOpen, isHomePage, languageDropdownOpen]);
 
   return (
-    <header className={`header ${isScrolled ? 'scrolled' : 'transparent'} ${isDropdownOpen ? 'menu-open' : ''} ${!isHomePage ? 'non-home-page' : ''}`}>
+    <header
+      className={`header ${isScrolled ? "scrolled" : "transparent"} ${
+        isDropdownOpen ? "menu-open" : ""
+      } ${!isHomePage ? "non-home-page" : ""}`}
+    >
       <div className="header-content">
         <Link to="/" className="logo-link">
           <img
@@ -84,13 +105,18 @@ function Header() {
           />
         </Link>
 
-                {/* Desktop Navigation */}
+        {/* Desktop Navigation */}
         <nav className="header-nav desktop-nav">
-          <Link to="/">{t('home')}</Link>
-          <Link to="/team">{t('ourTeam')}</Link>
-          <Link to="/services">{t('services')}</Link>
-          <Link to="/contact">{t('contact')}</Link>
-          <a href="tel:+48506080577" className="desktop-phone-btn">+48 506 080 577</a>
+          <Link to="/">{t("home")}</Link>
+          <Link to="/team">{t("ourTeam")}</Link>
+          <Link to="/services">{t("services")}</Link>
+          <a href="/services#pricing" onClick={handleFeesClick}>
+            Fees
+          </a>
+          <Link to="/contact">{t("contact")}</Link>
+          <a href="tel:+48506080577" className="desktop-phone-btn">
+            +48 506 080 577
+          </a>
           <div className="language-switcher-container desktop-only">
             <button
               className="language-switcher-btn"
@@ -101,8 +127,18 @@ function Header() {
             </button>
             {languageDropdownOpen && (
               <div className="language-dropdown">
-                <button onClick={() => selectLanguage('EN')} className={currentLanguage === 'EN' ? 'active' : ''}>EN</button>
-                <button onClick={() => selectLanguage('PL')} className={currentLanguage === 'PL' ? 'active' : ''}>PL</button>
+                <button
+                  onClick={() => selectLanguage("EN")}
+                  className={currentLanguage === "EN" ? "active" : ""}
+                >
+                  EN
+                </button>
+                <button
+                  onClick={() => selectLanguage("PL")}
+                  className={currentLanguage === "PL" ? "active" : ""}
+                >
+                  PL
+                </button>
               </div>
             )}
           </div>
@@ -111,12 +147,12 @@ function Header() {
         {/* Mobile/Tablet Navigation - Dropdown Style */}
         <div className="mobile-tablet-nav">
           {/* Mobile Menu Button */}
-          <button 
+          <button
             className="mobile-menu-btn"
             onClick={toggleDropdown}
             aria-label="Toggle navigation menu"
           >
-            <span className={`hamburger ${isDropdownOpen ? 'open' : ''}`}>
+            <span className={`hamburger ${isDropdownOpen ? "open" : ""}`}>
               <span></span>
               <span></span>
               <span></span>
@@ -125,15 +161,31 @@ function Header() {
         </div>
 
         {/* Mobile Dropdown Menu - Navigation Links + Language Switcher */}
-        <nav className={`mobile-dropdown ${isDropdownOpen ? 'open' : ''}`}>
-          <Link to="/" onClick={closeDropdown}>{t('home')}</Link>
-          <Link to="/team" onClick={closeDropdown}>{t('ourTeam')}</Link>
-          <Link to="/services" onClick={closeDropdown}>{t('services')}</Link>
-          <Link to="/contact" onClick={closeDropdown}>{t('contact')}</Link>
+        <nav className={`mobile-dropdown ${isDropdownOpen ? "open" : ""}`}>
+          <Link to="/" onClick={closeDropdown}>
+            {t("home")}
+          </Link>
+          <Link to="/team" onClick={closeDropdown}>
+            {t("ourTeam")}
+          </Link>
+          <Link to="/services" onClick={closeDropdown}>
+            {t("services")}
+          </Link>
+          <a href="/services#pricing" onClick={handleFeesClick}>
+            Fees
+          </a>
+          <Link to="/contact" onClick={closeDropdown}>
+            {t("contact")}
+          </Link>
           <div className="language-switcher-mobile">
-            <span className="language-switcher-label">{t('language')}</span>
-            <button onClick={() => selectLanguage(currentLanguage === 'EN' ? 'PL' : 'EN')} className="language-switcher-btn-mobile">
-              {currentLanguage === 'EN' ? 'PL' : 'EN'}
+            <span className="language-switcher-label">{t("language")}</span>
+            <button
+              onClick={() =>
+                selectLanguage(currentLanguage === "EN" ? "PL" : "EN")
+              }
+              className="language-switcher-btn-mobile"
+            >
+              {currentLanguage === "EN" ? "PL" : "EN"}
             </button>
           </div>
         </nav>
