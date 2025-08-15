@@ -93,7 +93,7 @@ function Contact() {
         service: formData.service,
         session_type: formData.sessionType,
         message: formData.message || "", // поддержка пустого сообщения
-        to_email: "vanya.puhachov@gmail.com",
+        to_email: "contact@mindinblue.com",
       };
 
       await emailjs.send("service_6nnbqus", "template_6lfplix", templateParams);
@@ -194,7 +194,7 @@ function Contact() {
               </div>
 
               <div className="form-group">
-                <label htmlFor="message">{t("yourMessage")} (optional)</label>
+                <label htmlFor="message">{t("yourMessage")} </label>
                 <textarea
                   id="message"
                   name="message"

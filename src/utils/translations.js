@@ -327,7 +327,7 @@ export const translations = {
     phoneNumber: "+48 (506) 080-577",
 
     // Counselling & Psychotherapy Polish translations
-    counsellingPsychotherapyTitle: "Poradnictwo i Psychoterapia",
+    counsellingPsychotherapyTitle: "Psychoterapia",
     counsellingHeroDesc1:
       "Oferujemy poufną, bezocenną i bezpieczną przestrzeń, w której możesz rozmawiać o wszystkim, co dzieje się w Twoim życiu. Witamy wszystkich niezależnie od religii, preferencji seksualnych, pochodzenia kulturowego czy etnicznego.",
     counsellingHeroDesc2:
@@ -450,7 +450,7 @@ export const translations = {
       "Psychoterapia Systemowa",
       "Adaptacja Kulturowa",
       "Warsztaty Rozwoju Osobistego",
-      "Poradnictwo Międzykulturowe",
+      "Doradztwo Międzykulturowe",
       "Przejścia Życiowe",
       "Rozwój Tożsamości",
       "Samopoznanie",
@@ -518,26 +518,26 @@ export const translations = {
 
     // Home Page
     heroTitle: "Dla tych, którzy są gotowi zrobić krok w stronę zmiany",
-    heroSubtitle: "Poradnictwo • Psychoterapia",
+    heroSubtitle: "Psychoterapia • Terapia Par",
     bookAppointment: "Napisz do nas",
     bookYourFreeCall: "Umów bezpłatną rozmowę",
 
     // Meet Founder Section
     meetFounder: "Witamy w Mind in Blue",
     founderDescription:
-      "Jestem Anna, psycholog i założycielka Mind in Blue w Gdańsku. Jesteśmy zespołem sześciu terapeutów oferujących wsparcie w języku angielskim, hiszpańskim, włoskim i polskim, zarówno online, jak i osobiście. Pomagamy osobom i parom w radzeniu sobie z lękiem, wyzwaniami w relacjach i przejściami życiowymi w bezpiecznej, wolnej od osądów i kulturowo wrażliwej przestrzeni.",
+      "Nazywam się Anna Rozkwitalska, jestem psychologiem i założycielką Mind in Blue w Gdańsku. Wraz z moim zespołem oferujemy wsparcie w języku polskim i angielskim, zarówno online, jak i osobiście w Gdańsku Wrzeszczu. Wspieramy w trudnych momentach życia, wyzwaniach osobistych i w relacjach. Zapraszam na bezpłatną, 15-minutową rozmowę wstępną, podczas której odpowiem na Twoje pytania i pomogę ustalić dalsze kroki.",
 
     // What We Offer
     whatWeOffer: "Co Oferujemy",
-    counsellingPsychotherapy: "Poradnictwo i Psychoterapia",
+    counsellingPsychotherapy: "Psychoterapia i wsparcie psychologiczne",
     counsellingDesc:
-      "Bezpieczna przestrzeń wolna od osądów. Pomagamy w nawigowaniu przez przejścia życiowe i wyzwania emocjonalne oraz wspieramy Twój rozwój.",
+      "Bezpieczna przestrzeń, wolna od osądów. Wspieramy w trudnych momentach życia, wyzwaniach osobistych i emocjonalnych oraz w rozwoju osobistym.",
     couplesTherapy: "Terapia Par",
     couplesDesc:
-      "Przestrzeń dla partnerów do lepszego zrozumienia siebie nawzajem, poprawy komunikacji i wspólnego radzenia sobie z różnicami kulturowymi lub osobistymi.",
+      "Przestrzeń dla par, która pomaga lepiej się zrozumieć, poprawić komunikację i radzić sobie z trudnościami w relacji.",
     onlineConsultation: "Konsultacje Online",
     onlineDesc:
-      "Dostęp do profesjonalnej pomocy z dowolnego miejsca. Nasze konsultacje online łączą Cię z wykwalifikowanymi ekspertami w bezpiecznym, poufnym środowisku.",
+      "Profesjonalne wsparcie, gdziekolwiek jesteś. Podczas naszych konsultacji online spotkasz się z wykwalifikowanym specjalistą w bezpiecznej i poufnej atmosferze.",
 
     // Get Started Section
     getStarted: "Rozpocznij",
@@ -583,9 +583,9 @@ export const translations = {
     contactViaEmail: "Kontakt przez Email",
 
     // Contact Page
-    contactHeroTitle: "Skontaktuj się z Nami",
+    contactHeroTitle: "Skontaktuj się z nami!",
     contactHeroDesc:
-      "Jesteśmy tutaj, aby pomóc. <a href='tel:+48506080577' style='color: rgba(255, 255, 255, 0.95); text-decoration: underline;'>Skontaktuj się z nami</a>, aby umówić wizytę lub zadać pytania.",
+      "Jesteśmy tutaj, aby Ci pomóc. <a href='tel:+48506080577' style='color: rgba(255, 255, 255, 0.95); text-decoration: underline;'>Skontaktuj się z nami</a>, jeśli chcesz umówić wizytę lub zadać pytanie.",
     contactNote:
       "Zazwyczaj odpowiadamy w ciągu 24 godzin. Niestety czasami nasze odpowiedzi mogą trafić do folderu spam, więc sprawdź go, jeśli nie otrzymałeś odpowiedzi.",
 
@@ -594,11 +594,11 @@ export const translations = {
     yourEmail: "Twój email",
     phoneNumberLabel: "Numer telefonu",
     yourMessage: "Twoja wiadomość (opcjonalne)",
-    selectService: "Wybierz usługę",
-    selectSessionType: "Wybierz typ sesji",
-    onlineSession: "Sesja Online",
-    inPersonGdansk: "Osobiście (Gdańsk)",
-    eitherOption: "Dowolna opcja",
+    selectService: "Rodzaj terapii",
+    selectSessionType: "Jak chcesz się spotkać?",
+    onlineSession: "Online",
+    inPersonGdansk: "Osobiście w Gdańsku",
+    eitherOption: "Dowolnie",
     send: "WYŚLIJ",
 
     // Contact Info
@@ -606,7 +606,7 @@ export const translations = {
     telephoneEmail: "Telefon i Email",
     openingHours: "Godziny Otwarcia",
     mondayToFriday: "Poniedziałek - Piątek – 9:00 - 20:00",
-    officeLocation: "Lokalizacja Biura",
+    officeLocation: "Lokalizacja",
     address: "Sobótki 22/2\n80-247 Gdańsk, Polska",
 
     // Team Member Descriptions - Polish Translations
@@ -647,14 +647,14 @@ export const translations = {
       "Zachęcam do skontaktowania się z nami, jeśli masz jakiekolwiek pytania lub chcesz umówić sesję konsultacyjną.",
 
     // Footer
-    followUsOnSocialMedia: "Śledź Nas w Mediach Społecznościowych",
+    followUsOnSocialMedia: "Obserwuj nas w social mediach",
     copyright: "© 2024 Mind in Blue",
 
     // Multiple years experience
     multipleYears: "Wieloletnie doświadczenie",
 
     // Counselling & Psychotherapy Page
-    counsellingPsychotherapyTitle: "Poradnictwo i Psychoterapia",
+    counsellingPsychotherapyTitle: "Psychoterapia",
     counsellingHeroDesc1:
       "Oferujemy bezpieczną, poufną i wolną od ocen przestrzeń, w której możesz porozmawiać o wszystkim, co dzieje się w Twoim życiu. Zapraszamy każdego, niezależnie od pochodzenia, przekonań czy tożsamości.",
     counsellingHeroDesc2:

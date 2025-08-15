@@ -1,13 +1,13 @@
 // Home page component
 
 import "./Home.css";
-import { useNavigate } from "react-router-dom";
+import {useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import { useLanguage } from "../../contexts/LanguageContext";
 
 function Home() {
   const navigate = useNavigate();
-  const { t } = useLanguage();
+  const { t, currentLanguage } = useLanguage();
 
   useEffect(() => {
     const script = document.createElement("script");
@@ -47,14 +47,29 @@ function Home() {
           </a>
         </div>
         <div className="meet-founder-video">
-          <iframe
-            width="400"
-            height="450"
-            src="https://www.youtube.com/embed/jPKA73f1rHI"
-            title="Welcome to Mind in Blue"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-          ></iframe>
+          {currentLanguage === "PL" ? (
+            <img
+              src="/images/anna.jpg"
+              alt="Anna Rozkwitalska - Founder & Client Coordinator"
+              className="founder-image"
+              style={{
+                width: "400px",
+                height: "450px",
+                objectFit: "cover",
+                borderRadius: "8px",
+                boxShadow: "0 4px 15px rgba(0, 0, 0, 0.1)"
+              }}
+            />
+          ) : (
+            <iframe
+              width="400"
+              height="450"
+              src="https://www.youtube.com/embed/jPKA73f1rHI"
+              title="Welcome to Mind in Blue"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            ></iframe>
+          )}
         </div>
       </section>
       <section className="what-we-offer">
