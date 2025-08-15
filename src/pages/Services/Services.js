@@ -66,7 +66,7 @@ function Services() {
         </div>
 
         {/* Pricing Section */}
-        <div className="pricing-section" id="pricing">
+        <div className="pricing-section">
           <h2 className="pricing-title">{t('ourTherapyPrices')}</h2>
           
           <div className="pricing-grid">
