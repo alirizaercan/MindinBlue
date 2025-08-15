@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirecting... | MindinBlue</title>
+    <script>
+        // Single Page App fallback
+        // Redirect to main app and let React Router handle the route
+        const currentPath = window.location.pathname;
+        const currentSearch = window.location.search;
+        const currentHash = window.location.hash;
+        
+        // Redirect to index.html with the original path preserved
+        window.location.replace('/' + currentPath.slice(1) + currentSearch + currentHash);
+    </script>
+</head>
+<body>
+    <div style="text-align: center; padding: 50px; font-family: Arial, sans-serif;">
+        <h2>Redirecting...</h2>
+        <p>If you're not redirected automatically, <a href="/">click here</a>.</p>
+    </div>
+</body>
+</html>

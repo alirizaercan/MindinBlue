@@ -318,10 +318,10 @@ export const translations = {
 
   PL: {
     // Header Navigation
-    home: "Główna",
+    home: "Strona główna",
     ourTeam: "Nasz Zespół",
     services: "Usługi",
-    fees: "Ceny",
+    fees: "Cennik",
     contact: "Kontakt",
     language: "Język:",
     phoneNumber: "+48 (506) 080-577",
