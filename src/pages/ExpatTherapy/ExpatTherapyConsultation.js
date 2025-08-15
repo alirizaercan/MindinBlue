@@ -275,7 +275,7 @@ function ExpatTherapyConsultation() {
         service: "Expat Therapy Consultation",
         session_type: sessionType,
         message: biggestChallengeText, // только этот блок
-        to_email: "contact@mindinblue.com",
+        to_email: "anna.rozkwitalska@gmail.com",
       };
 
       await emailjs.send(

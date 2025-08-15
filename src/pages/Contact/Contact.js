@@ -93,7 +93,7 @@ function Contact() {
         service: formData.service,
         session_type: formData.sessionType,
         message: formData.message || "", // поддержка пустого сообщения
-        to_email: "contact@mindinblue.com",
+        to_email: "anna.rozkwitalska@gmail.com",
       };
 
       await emailjs.send("service_6nnbqus", "template_6lfplix", templateParams);
