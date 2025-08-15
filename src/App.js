@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { useEffect } from "react";
 import { LanguageProvider } from "./contexts/LanguageContext";
 import { initFacebookPixel } from "./utils/fbPixel";
+import { applySEO } from "./utils/seo";
 import ScrollToTop from "./components/ScrollToTop";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
@@ -22,6 +23,25 @@ function AppContent() {
   useEffect(() => {
     initFacebookPixel();
   }, []);
+
+  // Apply SEO based on current route
+  useEffect(() => {
+    const routeToSEOMap = {
+      '/': 'home',
+      '/team': 'team', 
+      '/services': 'services',
+      '/contact': 'contact',
+      '/counselling-psychotherapy': 'counsellingPsychotherapy',
+      '/couples-therapy': 'couplesTherapy',
+      '/online-consultation': 'onlineConsultation',
+      '/expat-therapy-poland': 'expatTherapy'
+    };
+
+    const seoKey = routeToSEOMap[location.pathname];
+    if (seoKey) {
+      applySEO(seoKey);
+    }
+  }, [location.pathname]);
 
   return (
     <>
