@@ -111,7 +111,7 @@ function Header() {
           <Link to="/team">{t("ourTeam")}</Link>
           <Link to="/services">{t("services")}</Link>
           <a href="/services#pricing" onClick={handleFeesClick}>
-            Fees
+            {t("fees")}
           </a>
           <Link to="/contact">{t("contact")}</Link>
           <a href="tel:+48506080577" className="desktop-phone-btn">
@@ -172,7 +172,7 @@ function Header() {
             {t("services")}
           </Link>
           <a href="/services#pricing" onClick={handleFeesClick}>
-            Fees
+            {t("fees")}
           </a>
           <Link to="/contact" onClick={closeDropdown}>
             {t("contact")}
