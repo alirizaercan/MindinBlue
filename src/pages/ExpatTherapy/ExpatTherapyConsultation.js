@@ -260,7 +260,7 @@ function ExpatTherapyConsultation() {
           : formData.budget || "Not specified";
 
       // Всегда только "Biggest challenge:" — без лишних секций
-      const biggestChallengeText = `Biggest challenge:\n${
+      const biggestChallengeText = `Would like support with:\n${
         formData.goal && formData.goal.trim() ? formData.goal.trim() : "-"
       }`;
 
@@ -384,9 +384,7 @@ function ExpatTherapyConsultation() {
               >
                 ➤ FIND OUT HOW WE CAN HELP YOU
               </button>
-              <p className="expat-homepage-warning-text">
-                ⚠️ LIMITED SPOTS
-              </p>
+              <p className="expat-homepage-warning-text">⚠️ LIMITED SPOTS</p>
             </div>
           </section>
         </div>
@@ -402,26 +400,53 @@ function ExpatTherapyConsultation() {
           <div className="expat-features-grid">
             <div className="expat-feature-item">
               <div className="expat-feature-icon">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                <svg
+                  width="32"
+                  height="32"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
                 </svg>
               </div>
               <h3>Counselling & Psychotherapy</h3>
             </div>
             <div className="expat-feature-item">
               <div className="expat-feature-icon">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                <svg
+                  width="32"
+                  height="32"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
                 </svg>
               </div>
               <h3>Couples Therapy</h3>
             </div>
             <div className="expat-feature-item">
               <div className="expat-feature-icon">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
-                  <line x1="8" y1="21" x2="16" y2="21"/>
-                  <line x1="12" y1="17" x2="12" y2="21"/>
+                <svg
+                  width="32"
+                  height="32"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
+                  <line x1="8" y1="21" x2="16" y2="21" />
+                  <line x1="12" y1="17" x2="12" y2="21" />
                 </svg>
               </div>
               <h3>Online Consultations</h3>
@@ -455,9 +480,7 @@ function ExpatTherapyConsultation() {
             </div>
             <div className="expat-step-item">
               <div className="expat-step-icon">2</div>
-              <h3>
-                2. Get contacted within 24h by English speaking therapist
-              </h3>
+              <h3>2. Get contacted within 24h by English speaking therapist</h3>
             </div>
             <div className="expat-step-item">
               <div className="expat-step-icon">3</div>
@@ -524,7 +547,8 @@ function ExpatTherapyConsultation() {
       <div className="expat-highlight-section">
         <div className="expat-container">
           <p>
-            🎯 Next step: Watch the video below and book your free consultation call
+            🎯 Next step: Watch the video below and book your free consultation
+            call
           </p>
         </div>
       </div>
@@ -600,27 +624,54 @@ function ExpatTherapyConsultation() {
           <div className="expat-features-grid">
             <div className="expat-feature-item">
               <div className="expat-feature-icon">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <circle cx="12" cy="12" r="10"/>
-                  <circle cx="12" cy="12" r="6"/>
-                  <circle cx="12" cy="12" r="2"/>
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <circle cx="12" cy="12" r="10" />
+                  <circle cx="12" cy="12" r="6" />
+                  <circle cx="12" cy="12" r="2" />
                 </svg>
               </div>
               <h3>Explore your goals & challenges</h3>
             </div>
             <div className="expat-feature-item">
               <div className="expat-feature-icon">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
                 </svg>
               </div>
               <h3>Talk about your options</h3>
             </div>
             <div className="expat-feature-item">
               <div className="expat-feature-icon">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <line x1="5" y1="12" x2="19" y2="12"/>
-                  <polyline points="12,5 19,12 12,19"/>
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <line x1="5" y1="12" x2="19" y2="12" />
+                  <polyline points="12,5 19,12 12,19" />
                 </svg>
               </div>
               <h3>Decide your next steps</h3>
