@@ -4,13 +4,6 @@ Allow: /
 # Sitemaps
 Sitemap: https://mindinblue.com/sitemap.xml
 
-# Specific rules for SEO bots
-User-agent: Googlebot
-Allow: /
-
-User-agent: Bingbot
-Allow: /
-
 # Block unnecessary paths
 Disallow: /static/
 Disallow: /*.json$
@@ -23,3 +16,5 @@ Allow: /static/media/
 
 # Crawl delay (optional)
 Crawl-delay: 1
+
+Disallow: /search
