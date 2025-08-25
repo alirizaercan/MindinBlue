@@ -3,26 +3,22 @@ RewriteEngine On
 # Handle Angular/React Router
 RewriteBase /
 
-# --- 301 redirects for old WordPress URLs (place BEFORE SPA fallback) ---
-# Polish team page → new team page
-Redirect 301 /pl/team/ /team
+# --- Redirect whole Polish namespace to /team (or /) ---
+RedirectMatch 301 ^/pl/.*$ /team
 
-# Old profile/content slugs → team page (keeps users + passes equity)
+# Old profile/content slugs → team page
 Redirect 301 /jakub-hyla/ /team
 Redirect 301 /kateryna-katerynchuk/ /team
 Redirect 301 /intuitive-eating/ /team
 
-# Normalize trailing slash: /team/ → /team
-# Avoids duplicate URLs. Only for non-files/dirs.
+# Normalize trailing slash (skip real files/dirs)
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^(.+?)/$ /$1 [R=301,L]
 
 
-# --- SPA fallback (keep this AFTER redirects) ---
-# Don’t rewrite the real index file
+# --- SPA fallback ---
 RewriteRule ^index\.html$ - [L]
-# Send everything that is not a real file/dir to index.html
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule . /index.html [L]
