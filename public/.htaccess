@@ -3,11 +3,30 @@ RewriteEngine On
 # Handle Angular/React Router
 RewriteBase /
 
-# Handle client-side routing
+# --- 301 redirects for old WordPress URLs (place BEFORE SPA fallback) ---
+# Polish team page → new team page
+Redirect 301 /pl/team/ /team
+
+# Old profile/content slugs → team page (keeps users + passes equity)
+Redirect 301 /jakub-hyla/ /team
+Redirect 301 /kateryna-katerynchuk/ /team
+Redirect 301 /intuitive-eating/ /team
+
+# Normalize trailing slash: /team/ → /team
+# Avoids duplicate URLs. Only for non-files/dirs.
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.+?)/$ /$1 [R=301,L]
+
+
+# --- SPA fallback (keep this AFTER redirects) ---
+# Don’t rewrite the real index file
 RewriteRule ^index\.html$ - [L]
+# Send everything that is not a real file/dir to index.html
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule . /index.html [L]
+
 
 # Security headers
 Header always set X-Content-Type-Options nosniff
@@ -26,7 +45,9 @@ Header always set X-XSS-Protection "1; mode=block"
     ExpiresByType image/svg+xml "access plus 1 year"
 </IfModule>
 
-# Gzip compression
+
+# --- Gzip/deflate ---
+
 <IfModule mod_deflate.c>
     AddOutputFilterByType DEFLATE text/plain
     AddOutputFilterByType DEFLATE text/html
