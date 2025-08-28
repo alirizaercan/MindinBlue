@@ -3,8 +3,50 @@ RewriteEngine On
 # Handle Angular/React Router
 RewriteBase /
 
-# --- Redirect whole Polish namespace to /team (or /) ---
-RedirectMatch 301 ^/pl/.*$ /team
+# WordPress query URL: /pl/?page_id= → /
+RewriteCond %{QUERY_STRING} (^|&)page_id=\d+(&|$)
+RewriteRule ^ /? [R=301,L]
+
+# Disable caching only when page_id is present, so rewrite can run
+SetEnvIfExpr "%{QUERY_STRING} =~ /(^|&)page_id=\d+(&|$)/" NOCACHE_PAGEID=1
+Header set Cache-Control "no-cache, no-store, must-revalidate" env=NOCACHE_PAGEID
+
+# If LiteSpeed is present, also hint it explicitly (optional but helpful)
+<IfModule LiteSpeed>
+    Header set LSCache-Control "no-cache" env=NOCACHE_PAGEID
+</IfModule>
+
+# Team page variants
+Redirect 301 /our-team/ /team
+
+Redirect 301 /psychotherapy-in-english /counselling-psychotherapy
+
+# Contact email path mistake
+RewriteRule ^contact/contact@mindinblue\.com/?$ /contact [R=301,L]
+
+# Old "home" slugs
+Redirect 301 /home/ /
+Redirect 301 /pl/home/ /
+
+# Old service slug → new
+Redirect 301 /psychotherapy-coaching-online/ /online-consultation
+
+# Polish contact → contact
+Redirect 301 /pl/kontakt/ /contact
+Redirect 301 /kontakt/ /contact
+
+# Old profile pages → team (or use 410 if you want them gone)
+Redirect 301 /joanna-wronska/ /team
+Redirect 301 /pl/anna/ /team
+Redirect 301 /anna/ /team
+
+
+
+# --- Strip /pl/ prefix and keep the rest ---
+# /pl  or /pl/   →  /
+RedirectMatch 301 ^/pl/?$ /
+# /pl/anything   →  /anything   (query string preserved)
+RedirectMatch 301 ^/pl/(.+)$ /$1
 
 # Old profile/content slugs → team page
 Redirect 301 /jakub-hyla/ /team
@@ -17,11 +59,13 @@ RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^(.+?)/$ /$1 [R=301,L]
 
 
-# --- SPA fallback ---
-RewriteRule ^index\.html$ - [L]
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule . /index.html [L]
+RewriteRule ^$ /index.html [L]
+# known routes
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(team|services|contact|counselling-psychotherapy|couples-therapy|online-consultation|expat-therapy-poland)/?$ /index.html [L]
 
 
 # Security headers
