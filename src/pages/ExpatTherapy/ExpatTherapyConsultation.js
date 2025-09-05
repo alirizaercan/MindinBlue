@@ -179,6 +179,58 @@ function ExpatTherapyConsultation() {
     emailjs.init("WsafYrZj3fnh_4yA0"); // same as Contact.js
   }, []);
 
+  // Track page view for Expat Therapy page
+  useEffect(() => {
+    // Multiple tracking attempts to ensure Meta receives the data
+    const trackExpatPageView = () => {
+      if (window.fbq) {
+        // Initialize the special Pixel ID for expat therapy
+        window.fbq('init', '1552008896250076');
+        console.log('🟢 Special Pixel ID initialized: 1552008896250076');
+        
+        // 1. Standard PageView with special pixel
+        window.fbq('track', 'PageView');
+        console.log('🟢 Standard PageView tracked with special pixel');
+        
+        // 2. ViewContent event
+        window.fbq('track', 'ViewContent', {
+          content_name: 'Expat Therapy Poland Landing Page',
+          content_category: 'Landing Page',
+          content_ids: ['expat-therapy-poland'],
+          content_type: 'website',
+          value: 1,
+          currency: 'USD'
+        });
+        console.log('🟢 ViewContent tracked with special pixel');
+        
+        // 3. Custom event specifically for this page
+        window.fbq('trackCustom', 'ExpatTherapyPageView', {
+          page: 'expat-therapy-poland',
+          url: window.location.href,
+          timestamp: new Date().toISOString(),
+          user_agent: navigator.userAgent
+        });
+        console.log('🟢 Custom ExpatTherapyPageView tracked');
+        
+        // 4. Another custom event for backup
+        window.fbq('trackCustom', 'ExpatPageVisit', {
+          landing_page: 'expat-therapy-poland'
+        });
+        console.log('🟢 Backup ExpatPageVisit tracked');
+      } else {
+        console.error('❌ Facebook Pixel not available!');
+      }
+    };
+
+    // Track immediately
+    trackExpatPageView();
+    
+    // Track again after a delay to ensure everything is loaded
+    setTimeout(trackExpatPageView, 500);
+    setTimeout(trackExpatPageView, 2000);
+    
+  }, []);
+
   // Handle modal open state
   useEffect(() => {
     // Modal state management without affecting global body
@@ -283,6 +335,30 @@ function ExpatTherapyConsultation() {
         EMAILJS_TEMPLATE_ID_EXPAT,
         templateParams
       );
+
+      // Track successful form submission for Expat Therapy
+      if (window.fbq) {
+        // Use the special pixel ID for expat therapy
+        window.fbq('init', '1552008896250076');
+        
+        window.fbq('track', 'Lead', {
+          content_name: 'Expat Therapy Form Submission',
+          content_category: 'Lead Generation',
+          content_ids: ['expat-therapy-form'],
+          value: 1,
+          currency: 'USD'
+        });
+
+        // Track custom conversion event
+        window.fbq('trackCustom', 'ExpatTherapyLead', {
+          lead_type: 'consultation_request',
+          session_type: sessionType,
+          timestamp: new Date().toISOString(),
+          page: 'expat-therapy-poland'
+        });
+
+        console.log('🟢 Expat Therapy form submission tracked with special Pixel ID: 1552008896250076');
+      }
 
       // Optional: user feedback
       alert("Thank you for your application! We will contact you within 24h.");

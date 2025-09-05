@@ -106,7 +106,16 @@
         "script",
         "https://connect.facebook.net/en_US/fbevents.js"
       );
+      
+      // Initialize main pixel
       fbq("init", "328637166250708");
+      
+      // Initialize special pixel for expat therapy IMMEDIATELY
+      if (window.location.pathname === '/expat-therapy-poland') {
+        fbq("init", "1552008896250076");
+        console.log('🎯 Special Pixel initialized for expat-therapy-poland');
+      }
+      
       fbq("track", "PageView");
     </script>
     <noscript
@@ -115,6 +124,13 @@
         width="1"
         style="display: none"
         src="https://www.facebook.com/tr?id=328637166250708&ev=PageView&noscript=1"
+    /></noscript>
+    <noscript
+      ><img
+        height="1"
+        width="1"
+        style="display: none"
+        src="https://www.facebook.com/tr?id=1552008896250076&ev=PageView&noscript=1"
     /></noscript>
     <!-- End Meta Pixel Code -->
 

@@ -21,7 +21,7 @@ export const updateCanonicalUrl = (url) => {
   let link = document.querySelector('link[rel="canonical"]');
   if (!link) {
     link = document.createElement("link");
-    link.setAtttribute("rel", "canonical");
+    link.setAttribute("rel", "canonical");
     document.head.appendChild(link);
   }
   link.setAttribute("href", url);

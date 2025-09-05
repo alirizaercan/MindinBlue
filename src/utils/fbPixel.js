@@ -2,6 +2,11 @@
 export const initFacebookPixel = () => {
   if (typeof window !== 'undefined' && window.fbq) {
     console.log('Facebook Pixel initialized');
+    // Track initial page view
+    window.fbq('track', 'PageView');
+    console.log('Initial PageView tracked');
+  } else {
+    console.warn('Facebook Pixel not found on window object');
   }
 };
 
