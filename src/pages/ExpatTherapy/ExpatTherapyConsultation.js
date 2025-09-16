@@ -179,56 +179,149 @@ function ExpatTherapyConsultation() {
     emailjs.init("WsafYrZj3fnh_4yA0"); // same as Contact.js
   }, []);
 
-  // Track page view for Expat Therapy page
+  // Enhanced page view tracking for Expat Therapy page
   useEffect(() => {
-    // Multiple tracking attempts to ensure Meta receives the data
     const trackExpatPageView = () => {
       if (window.fbq) {
-        // Initialize the special Pixel ID for expat therapy
+        // Ensure special pixel is initialized (redundant check for safety)
         window.fbq('init', '1552008896250076');
-        console.log('🟢 Special Pixel ID initialized: 1552008896250076');
+
         
-        // 1. Standard PageView with special pixel
-        window.fbq('track', 'PageView');
-        console.log('🟢 Standard PageView tracked with special pixel');
+        // 1. Enhanced PageView with specific pixel targeting
+        window.fbq('track', 'PageView', {
+          source: 'react_component',
+          page_type: 'landing_page'
+        }, '1552008896250076');
+
         
-        // 2. ViewContent event
+        // 2. Advanced ViewContent event with detailed parameters
         window.fbq('track', 'ViewContent', {
-          content_name: 'Expat Therapy Poland Landing Page',
-          content_category: 'Landing Page',
-          content_ids: ['expat-therapy-poland'],
-          content_type: 'website',
-          value: 1,
-          currency: 'USD'
-        });
-        console.log('🟢 ViewContent tracked with special pixel');
+          content_name: 'Expat Therapy Poland - Free Consultation Landing',
+          content_category: 'Therapy Services',
+          content_ids: ['expat-therapy-poland-landing'],
+          content_type: 'landing_page',
+          value: 0, // 0 value - analytics tracking only
+          currency: 'PLN',
+          predicted_ltv: 3000,
+          custom_data: {
+            service_type: 'expat_therapy',
+            consultation_type: 'free_15min',
+            target_audience: 'expats_poland'
+          }
+        }, '1552008896250076');
+
         
-        // 3. Custom event specifically for this page
-        window.fbq('trackCustom', 'ExpatTherapyPageView', {
-          page: 'expat-therapy-poland',
-          url: window.location.href,
-          timestamp: new Date().toISOString(),
-          user_agent: navigator.userAgent
-        });
-        console.log('🟢 Custom ExpatTherapyPageView tracked');
-        
-        // 4. Another custom event for backup
-        window.fbq('trackCustom', 'ExpatPageVisit', {
-          landing_page: 'expat-therapy-poland'
-        });
-        console.log('🟢 Backup ExpatPageVisit tracked');
+        // 3. Specialized custom events for campaign optimization
+        window.fbq('trackCustom', 'ExpatTherapyPageEngagement', {
+          engagement_type: 'page_load',
+          landing_page: 'expat-therapy-poland',
+          user_journey_stage: 'awareness',
+          page_load_timestamp: new Date().toISOString(),
+          referrer: document.referrer || 'direct',
+          user_language: navigator.language,
+          screen_resolution: `${screen.width}x${screen.height}`,
+          device_type: /Mobile|Android|iPhone|iPad/.test(navigator.userAgent) ? 'mobile' : 'desktop'
+        }, '1552008896250076');
+
+
+        // 4. Funnel tracking event
+        window.fbq('trackCustom', 'ExpatTherapyFunnelEntry', {
+          funnel_stage: 'landing_page_view',
+          campaign_objective: 'lead_generation',
+          target_action: 'form_submission',
+          page_position: 'top_of_funnel'
+        }, '1552008896250076');
+
+
+        // 5. Time-based engagement tracking
+        setTimeout(() => {
+          window.fbq('trackCustom', 'ExpatTherapyTimeOnPage', {
+            time_spent: '10_seconds',
+            engagement_quality: 'initial'
+          }, '1552008896250076');
+
+        }, 10000);
+
+        setTimeout(() => {
+          window.fbq('trackCustom', 'ExpatTherapyTimeOnPage', {
+            time_spent: '30_seconds',
+            engagement_quality: 'moderate'
+          }, '1552008896250076');
+
+        }, 30000);
+
+        setTimeout(() => {
+          window.fbq('trackCustom', 'ExpatTherapyTimeOnPage', {
+            time_spent: '60_seconds',
+            engagement_quality: 'high'
+          }, '1552008896250076');
+
+        }, 60000);
+
       } else {
-        console.error('❌ Facebook Pixel not available!');
+        console.error('❌ Facebook Pixel not available for page tracking!');
       }
     };
 
-    // Track immediately
+    // Track immediately when component mounts
     trackExpatPageView();
     
-    // Track again after a delay to ensure everything is loaded
-    setTimeout(trackExpatPageView, 500);
-    setTimeout(trackExpatPageView, 2000);
+    // Track scroll behavior
+    const trackScrollBehavior = () => {
+      let scrollTracked25 = false;
+      let scrollTracked50 = false;
+      let scrollTracked75 = false;
+      let scrollTracked100 = false;
+
+      const handleScroll = () => {
+        const scrollPercent = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
+        
+        if (scrollPercent >= 25 && !scrollTracked25 && window.fbq) {
+          window.fbq('trackCustom', 'ExpatTherapyScrollDepth', {
+            scroll_depth: '25_percent',
+            engagement_level: 'low'
+          }, '1552008896250076');
+          scrollTracked25 = true;
+
+        }
+        
+        if (scrollPercent >= 50 && !scrollTracked50 && window.fbq) {
+          window.fbq('trackCustom', 'ExpatTherapyScrollDepth', {
+            scroll_depth: '50_percent',
+            engagement_level: 'medium'
+          }, '1552008896250076');
+          scrollTracked50 = true;
+
+        }
+        
+        if (scrollPercent >= 75 && !scrollTracked75 && window.fbq) {
+          window.fbq('trackCustom', 'ExpatTherapyScrollDepth', {
+            scroll_depth: '75_percent',
+            engagement_level: 'high'
+          }, '1552008896250076');
+          scrollTracked75 = true;
+
+        }
+        
+        if (scrollPercent >= 90 && !scrollTracked100 && window.fbq) {
+          window.fbq('trackCustom', 'ExpatTherapyScrollDepth', {
+            scroll_depth: '90_percent',
+            engagement_level: 'very_high'
+          }, '1552008896250076');
+          scrollTracked100 = true;
+
+        }
+      };
+
+      window.addEventListener('scroll', handleScroll);
+      return () => window.removeEventListener('scroll', handleScroll);
+    };
+
+    const cleanupScroll = trackScrollBehavior();
     
+    return () => {
+      cleanupScroll();
+    };
   }, []);
 
   // Handle modal open state
@@ -263,7 +356,7 @@ function ExpatTherapyConsultation() {
             "https://app.reviewconnect.me/embed/oEYFWLQK1XUVahJzCmQqd4Kr3j2Lo0X5/widget.js";
           script.async = true;
           script.onload = () => {
-            console.log("Reviews widget script loaded successfully");
+
           };
           script.onerror = () => {
             console.error("Failed to load reviews widget script");
@@ -336,28 +429,64 @@ function ExpatTherapyConsultation() {
         templateParams
       );
 
-      // Track successful form submission for Expat Therapy
+      // PRIMARY CONVERSION EVENT - Form Submission (HIGHEST PRIORITY FOR META ADS)
       if (window.fbq) {
-        // Use the special pixel ID for expat therapy
+        // Ensure special pixel ID is initialized for this conversion
         window.fbq('init', '1552008896250076');
         
+        // 1. PRIMARY META CONVERSION - Submit Application
+        window.fbq('track', 'SubmitApplication');
+        
+        // 2. MAIN CONVERSION EVENT - Lead (For analytics/statistics only)
         window.fbq('track', 'Lead', {
-          content_name: 'Expat Therapy Form Submission',
-          content_category: 'Lead Generation',
-          content_ids: ['expat-therapy-form'],
-          value: 1,
-          currency: 'USD'
-        });
+          content_name: 'Expat Therapy Consultation Request',
+          content_category: 'ANALYTICS_TRACKING', // Analytics focused
+          content_ids: ['expat-therapy-form-submission'],
+          content_type: 'consultation_form',
+          value: 0, // 0 value - pure analytics tracking
+          currency: 'PLN',
+          source: 'expat-therapy-landing-page',
+          // Analytics parameters
+          tracking_purpose: 'statistics_only',
+          lead_quality: 'verified_contact',
+          user_intent: 'ready_to_book'
+        }, '1552008896250076'); // Explicitly use expat pixel
 
-        // Track custom conversion event
-        window.fbq('trackCustom', 'ExpatTherapyLead', {
-          lead_type: 'consultation_request',
-          session_type: sessionType,
-          timestamp: new Date().toISOString(),
-          page: 'expat-therapy-poland'
-        });
+        // 2. SECONDARY CONVERSION - Contact (analytics tracking)
+        window.fbq('track', 'Contact', {
+          content_name: 'Expat Therapy Contact Form',
+          content_category: 'ANALYTICS_CONTACT',
+          value: 0, // 0 value - statistics only
+          currency: 'PLN',
+          contact_quality: 'form_submission',
+          tracking_purpose: 'analytics'
+        }, '1552008896250076');
 
-        console.log('🟢 Expat Therapy form submission tracked with special Pixel ID: 1552008896250076');
+        // 3. CUSTOM PRIMARY CONVERSION for campaign reporting
+        window.fbq('trackCustom', 'ExpatTherapyFormSubmitted', {
+          event_priority: 'PRIMARY_CONVERSION',
+          conversion_type: 'consultation_request',
+          lead_quality: 'high_intent',
+          form_completion: 'full',
+          session_preference: sessionType,
+          user_qualified: 'yes',
+          conversion_value: 0, // Statistics only
+          // Data for Meta's learning algorithm
+          user_journey_completed: 'form_submission',
+          engagement_level: 'conversion_ready',
+          intent_signal: 'strongest'
+        }, '1552008896250076');
+
+        // 4. PURCHASE EVENT - Analytics tracking only
+        window.fbq('track', 'Purchase', {
+          content_name: 'Expat Therapy Consultation Analytics',
+          content_type: 'analytics_event',
+          content_ids: ['consultation-analytics'],
+          value: 0, // 0 value = pure statistics tracking
+          currency: 'PLN',
+          num_items: 1,
+          purchase_type: 'analytics_tracking'
+        }, '1552008896250076');
       }
 
       // Optional: user feedback
@@ -432,7 +561,7 @@ function ExpatTherapyConsultation() {
                 className="expat-therapy-image"
                 onError={(e) => {
                   e.target.style.display = "none";
-                  console.log("Image failed to load");
+
                 }}
               />
             </div>
@@ -456,7 +585,35 @@ function ExpatTherapyConsultation() {
               </ul>
               <button
                 className="expat-cta-button"
-                onClick={() => setShowModal(true)}
+                onClick={() => {
+                  // INTENT SIGNAL - CTA click shows interest in form submission
+                  if (window.fbq) {
+                    window.fbq('track', 'InitiateCheckout', {
+                      content_name: 'Expat Therapy CTA - Form Intent',
+                      content_category: 'INTENT_SIGNAL',
+                      content_type: 'form_opening',
+                      value: 0, // 0 value - analytics tracking only
+                      currency: 'PLN',
+                      // Signals to Meta: this user is moving toward conversion
+                      intent_level: 'form_opening',
+                      conversion_likelihood: 'medium'
+                    }, '1552008896250076');
+                    
+                    window.fbq('trackCustom', 'ExpatTherapyFormIntent', {
+                      event_priority: 'INTENT_SIGNAL',
+                      intent_action: 'cta_clicked',
+                      cta_type: 'primary_form_opener',
+                      cta_position: 'hero_section',
+                      user_journey_stage: 'pre_conversion',
+                      conversion_probability: 'high',
+                      value: 0, // Analytics only
+                      currency: 'PLN'
+                    }, '1552008896250076');
+                    
+
+                  }
+                  setShowModal(true);
+                }}
               >
                 ➤ FIND OUT HOW WE CAN HELP YOU
               </button>
@@ -532,7 +689,34 @@ function ExpatTherapyConsultation() {
           <div className="expat-bottom-text">
             <button
               className="expat-cta-button expat-secondary"
-              onClick={() => setShowModal(true)}
+              onClick={() => {
+                // INTENT SIGNAL - Secondary CTA shows continued interest
+                if (window.fbq) {
+                  window.fbq('track', 'InitiateCheckout', {
+                    content_name: 'Expat Therapy CTA - Secondary Form Intent',
+                    content_category: 'INTENT_SIGNAL',
+                    content_type: 'form_opening_secondary',
+                    value: 0, // 0 value - statistics tracking only
+                    currency: 'PLN',
+                    intent_level: 'secondary_form_opening',
+                    conversion_likelihood: 'medium'
+                  }, '1552008896250076');
+                  
+                  window.fbq('trackCustom', 'ExpatTherapyFormIntent', {
+                    event_priority: 'INTENT_SIGNAL',
+                    intent_action: 'secondary_cta_clicked',
+                    cta_type: 'secondary_form_opener',
+                    cta_position: 'features_section',
+                    user_journey_stage: 'deep_consideration',
+                    conversion_probability: 'very_high', // Scrolled down and clicked
+                    value: 0, // Analytics only
+                    currency: 'PLN'
+                  }, '1552008896250076');
+                  
+
+                }
+                setShowModal(true);
+              }}
             >
               ➤ FIND OUT HOW WE CAN HELP YOU
             </button>
@@ -566,7 +750,35 @@ function ExpatTherapyConsultation() {
 
           <button
             className="expat-cta-button expat-final"
-            onClick={() => setShowModal(true)}
+            onClick={() => {
+              // STRONG INTENT SIGNAL - Final CTA after seeing steps
+              if (window.fbq) {
+                window.fbq('track', 'InitiateCheckout', {
+                  content_name: 'Start Expat Therapy Journey - High Intent',
+                  content_category: 'STRONG_INTENT_SIGNAL',
+                  content_type: 'journey_starter',
+                  value: 0, // 0 value - analytics tracking only
+                  currency: 'PLN',
+                  intent_level: 'journey_commitment',
+                  conversion_likelihood: 'very_high'
+                }, '1552008896250076');
+                
+                window.fbq('trackCustom', 'ExpatTherapyFormIntent', {
+                  event_priority: 'STRONG_INTENT_SIGNAL',
+                  intent_action: 'journey_starter_clicked',
+                  cta_type: 'journey_commitment',
+                  cta_position: 'steps_section',
+                  user_journey_stage: 'ready_to_convert',
+                  conversion_probability: 'extremely_high',
+                  engagement_depth: 'read_full_process',
+                  value: 0, // Analytics only
+                  currency: 'PLN'
+                }, '1552008896250076');
+                
+
+              }
+              setShowModal(true);
+            }}
           >
             START MY EXPAT THERAPY JOURNEY
           </button>
@@ -593,7 +805,33 @@ function ExpatTherapyConsultation() {
               <h3>Ready to heal and grow?</h3>
               <button
                 className="expat-cta-button expat-final-cta"
-                onClick={() => setShowModal(true)}
+                onClick={() => {
+                  // MAXIMUM INTENT SIGNAL - Bottom CTA after full page
+                  if (window.fbq) {
+                    window.fbq('track', 'InitiateCheckout', {
+                      content_name: 'Yes I Want To Get Started - Maximum Intent',
+                      content_category: 'MAXIMUM_INTENT_SIGNAL',
+                      content_type: 'final_decision',
+                      value: 0, // 0 value - analytics tracking only
+                      currency: 'PLN'
+                    }, '1552008896250076');
+                    
+                    window.fbq('trackCustom', 'ExpatTherapyFormIntent', {
+                      event_priority: 'MAXIMUM_INTENT_SIGNAL',
+                      intent_action: 'final_commitment_clicked',
+                      cta_type: 'full_page_decision',
+                      cta_position: 'founder_section',
+                      user_journey_stage: 'immediate_conversion',
+                      conversion_probability: 'almost_certain',
+                      engagement_depth: 'full_page_consumed',
+                      value: 0, // Analytics only
+                      currency: 'PLN'
+                    }, '1552008896250076');
+                    
+
+                  }
+                  setShowModal(true);
+                }}
               >
                 YES, I WANT TO GET STARTED
               </button>
@@ -607,7 +845,7 @@ function ExpatTherapyConsultation() {
                 className="expat-founder-photo"
                 onError={(e) => {
                   e.target.style.display = "none";
-                  console.log("Image failed to load");
+
                 }}
               />
             </div>
@@ -616,6 +854,163 @@ function ExpatTherapyConsultation() {
       </section>
     </div>
   );
+
+  // Video tracking hook for Thank You page
+  const useVideoTracking = () => {
+    useEffect(() => {
+      if (currentPage === "thankyou") {
+        // Track video page view
+        if (window.fbq) {
+          window.fbq('init', '1552008896250076');
+          
+          // Track that user reached the video page
+          window.fbq('trackCustom', 'ExpatTherapyVideoPageView', {
+            page: 'thank-you-video-page',
+            video_id: 'jPKA73f1rHI',
+            video_title: 'Mind in Blue Professional Therapy Services',
+            conversion_funnel_step: 'post_form_submission',
+            timestamp: new Date().toISOString()
+          });
+
+
+          // Track ViewContent for the video page
+          window.fbq('track', 'ViewContent', {
+            content_name: 'Expat Therapy Introduction Video',
+            content_category: 'Video Content',
+            content_ids: ['expat-therapy-intro-video'],
+            content_type: 'video',
+            value: 50,
+            currency: 'PLN'
+          });
+
+        }
+
+        // YouTube API tracking setup
+        const setupYouTubeTracking = () => {
+          // Load YouTube API if not already loaded
+          if (!window.YT) {
+            const tag = document.createElement('script');
+            tag.src = 'https://www.youtube.com/iframe_api';
+            const firstScriptTag = document.getElementsByTagName('script')[0];
+            firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+          }
+
+          // Setup YouTube player event tracking
+          window.onYouTubeIframeAPIReady = () => {
+            const iframe = document.querySelector('iframe[src*="youtube.com"]');
+            if (iframe && iframe.contentWindow) {
+              // Track video events via postMessage
+              window.addEventListener('message', (event) => {
+                if (event.origin !== 'https://www.youtube.com') return;
+                
+                if (event.data && typeof event.data === 'string') {
+                  const data = JSON.parse(event.data);
+                  
+                  if (data.event === 'video-progress' && window.fbq) {
+                    const progressPercent = Math.round((data.info.currentTime / data.info.duration) * 100);
+                    
+                    // SUPPORTING SIGNALS - Video engagement (helps Meta find similar users)
+                    if (progressPercent >= 25 && !window.videoTracked25) {
+                      window.fbq('trackCustom', 'ExpatTherapyVideoEngagement', {
+                        event_priority: 'SUPPORTING_SIGNAL',
+                        video_progress: '25_percent',
+                        video_id: 'jPKA73f1rHI',
+                        engagement_quality: 'initial_interest',
+                        intent_level: 'low',
+                        value: 0, // 0 value - analytics tracking only
+                        currency: 'PLN'
+                      }, '1552008896250076');
+                      window.videoTracked25 = true;
+
+                    }
+                    
+                    if (progressPercent >= 50 && !window.videoTracked50) {
+                      window.fbq('trackCustom', 'ExpatTherapyVideoEngagement', {
+                        event_priority: 'SUPPORTING_SIGNAL',
+                        video_progress: '50_percent',
+                        video_id: 'jPKA73f1rHI',
+                        engagement_quality: 'moderate_interest',
+                        intent_level: 'medium',
+                        value: 0, // 0 value - analytics tracking only
+                        currency: 'PLN'
+                      }, '1552008896250076');
+                      window.videoTracked50 = true;
+
+                    }
+                    
+                    if (progressPercent >= 75 && !window.videoTracked75) {
+                      window.fbq('trackCustom', 'ExpatTherapyVideoEngagement', {
+                        event_priority: 'SUPPORTING_SIGNAL',
+                        video_progress: '75_percent',
+                        video_id: 'jPKA73f1rHI',
+                        engagement_quality: 'high_interest',
+                        intent_level: 'high',
+                        value: 0, // 0 value - analytics tracking only
+                        currency: 'PLN'
+                      }, '1552008896250076');
+                      window.videoTracked75 = true;
+
+                    }
+                    
+                    if (progressPercent >= 95 && !window.videoTrackedComplete) {
+                      // Video completion - this is more valuable but still secondary
+                      window.fbq('trackCustom', 'ExpatTherapyVideoCompleted', {
+                        event_priority: 'SECONDARY_CONVERSION',
+                        video_progress: 'completed',
+                        video_id: 'jPKA73f1rHI',
+                        engagement_quality: 'very_high_interest',
+                        intent_level: 'conversion_likely',
+                        watch_completion: 'full',
+                        value: 0, // 0 value - analytics tracking only
+                        currency: 'PLN'
+                      }, '1552008896250076');
+                      
+                      // Track as ViewContent (supporting signal, not primary conversion)
+                      window.fbq('track', 'ViewContent', {
+                        content_name: 'Video Watched Complete - Expat Therapy',
+                        content_category: 'Video Engagement',
+                        content_type: 'supporting_signal',
+                        value: 0, // 0 value - analytics tracking only
+                        currency: 'PLN'
+                      }, '1552008896250076');
+                      
+                      window.videoTrackedComplete = true;
+
+                    }
+                  }
+                }
+              });
+            }
+          };
+        };
+
+        setupYouTubeTracking();
+
+        // Fallback tracking for video interaction (click-based)
+        const trackVideoInteraction = () => {
+          const iframe = document.querySelector('iframe[src*="youtube.com"]');
+          if (iframe) {
+            iframe.addEventListener('click', () => {
+              if (window.fbq && !window.videoClicked) {
+                window.fbq('trackCustom', 'ExpatTherapyVideoInteraction', {
+                  interaction_type: 'click',
+                  video_id: 'jPKA73f1rHI',
+                  engagement_action: 'video_clicked'
+                });
+                window.videoClicked = true;
+
+              }
+            });
+          }
+        };
+
+        setTimeout(trackVideoInteraction, 1000);
+      }
+    }, []);
+  };
+
+  // Use the video tracking hook
+  useVideoTracking();
 
   const ThankYouPage = () => (
     <div>
@@ -644,11 +1039,12 @@ function ExpatTherapyConsultation() {
           <section className="expat-video-cta-section">
             <div className="expat-video-container">
               <iframe
-                src="https://www.youtube.com/embed/jPKA73f1rHI"
+                src="https://www.youtube.com/embed/jPKA73f1rHI?enablejsapi=1&origin=https://mindinblue.com"
                 title="Mind in Blue Professional Therapy Services"
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
+                id="expat-therapy-video"
               ></iframe>
             </div>
             <div className="expat-cta-section">
@@ -657,6 +1053,33 @@ function ExpatTherapyConsultation() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="expat-cta-button"
+                onClick={() => {
+                  // HIGHEST VALUE EVENT - Calendly booking after form + video
+                  if (window.fbq) {
+                    window.fbq('track', 'Schedule', {
+                      content_name: 'Book Free Consultation - Post Form & Video',
+                      content_category: 'FINAL_CONVERSION',
+                      content_type: 'appointment_booking',
+                      value: 0, // 0 value - analytics tracking only
+                      currency: 'PLN',
+                      conversion_stage: 'final_booking',
+                      lead_quality: 'premium'
+                    }, '1552008896250076');
+                    
+                    window.fbq('trackCustom', 'ExpatTherapyFinalConversion', {
+                      event_priority: 'ULTIMATE_CONVERSION',
+                      conversion_type: 'calendly_booking',
+                      user_journey: 'form_video_booking',
+                      calendly_position: 'post_video',
+                      conversion_quality: 'highest',
+                      booking_readiness: 'immediate',
+                      value: 0, // Analytics only
+                      currency: 'PLN'
+                    }, '1552008896250076');
+                    
+
+                  }
+                }}
               >
                 ➤ BOOK YOUR FREE CONSULTATION NOW
               </a>
@@ -680,6 +1103,33 @@ function ExpatTherapyConsultation() {
               target="_blank"
               rel="noopener noreferrer"
               className="expat-cta-button expat-final"
+              onClick={() => {
+                // HIGH VALUE EVENT - Calendly booking after form submission
+                if (window.fbq) {
+                  window.fbq('track', 'Schedule', {
+                    content_name: 'Book Free Consultation - Post Form Submission',
+                    content_category: 'HIGH_VALUE_CONVERSION',
+                    content_type: 'direct_booking',
+                    value: 0, // 0 value - analytics tracking only
+                    currency: 'PLN',
+                    conversion_stage: 'direct_booking',
+                    lead_quality: 'very_high'
+                  }, '1552008896250076');
+                  
+                  window.fbq('trackCustom', 'ExpatTherapyHighValueConversion', {
+                    event_priority: 'HIGH_VALUE_CONVERSION',
+                    conversion_type: 'direct_calendly_booking',
+                    user_journey: 'form_to_booking',
+                    calendly_position: 'benefits_section',
+                    conversion_quality: 'very_high',
+                    booking_speed: 'immediate',
+                    value: 0, // Analytics only
+                    currency: 'PLN'
+                  }, '1552008896250076');
+                  
+
+                }
+              }}
             >
               ➤ BOOK YOUR FREE CONSULTATION NOW
             </a>
@@ -760,6 +1210,25 @@ function ExpatTherapyConsultation() {
               target="_blank"
               rel="noopener noreferrer"
               className="expat-cta-button expat-secondary"
+              onClick={() => {
+                // Track bottom Calendly link
+                if (window.fbq) {
+                  window.fbq('track', 'Schedule', {
+                    content_name: 'Schedule Free Call - Bottom',
+                    content_category: 'Appointment Booking',
+                    value: 300,
+                    currency: 'PLN'
+                  }, '1552008896250076');
+                  
+                  window.fbq('trackCustom', 'ExpatTherapyCalendlyClick', {
+                    click_type: 'bottom',
+                    calendly_position: 'expectations_section',
+                    user_journey_stage: 'final_decision'
+                  }, '1552008896250076');
+                  
+
+                }
+              }}
             >
               ➤ SCHEDULE MY FREE CALL
             </a>

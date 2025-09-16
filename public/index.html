@@ -110,13 +110,46 @@
       // Initialize main pixel
       fbq("init", "328637166250708");
       
-      // Initialize special pixel for expat therapy IMMEDIATELY
-      if (window.location.pathname === '/expat-therapy-poland') {
+      // Initialize special pixel for expat therapy IMMEDIATELY and with better targeting
+      const currentPath = window.location.pathname;
+      const isExpatTherapyPage = currentPath === '/expat-therapy-poland' || 
+                                currentPath.includes('expat-therapy') ||
+                                window.location.href.includes('expat-therapy-poland');
+      
+      if (isExpatTherapyPage) {
         fbq("init", "1552008896250076");
-        console.log('🎯 Special Pixel initialized for expat-therapy-poland');
+        
+        // Track special page view immediately for expat therapy
+        fbq("track", "PageView", {}, "1552008896250076");
+        
+        // Track landing page event
+        fbq("trackCustom", "ExpatTherapyLandingPageView", {
+          page_type: 'landing_page',
+          campaign_type: 'expat_therapy',
+          pixel_id: '1552008896250076',
+          initialization_time: new Date().toISOString()
+        }, "1552008896250076");
       }
       
+      // Track standard page view for main pixel
       fbq("track", "PageView");
+      
+      // Enhanced tracking for all pages
+      fbq("track", "ViewContent", {
+        content_name: document.title,
+        content_category: 'Website',
+        content_ids: [currentPath],
+        content_type: 'website'
+      });
+      
+      // Track page engagement after 30 seconds
+      setTimeout(function() {
+        fbq("trackCustom", "PageEngagement30s", {
+          page_url: window.location.href,
+          page_title: document.title,
+          engagement_duration: '30_seconds'
+        });
+      }, 30000);
     </script>
     <noscript
       ><img
