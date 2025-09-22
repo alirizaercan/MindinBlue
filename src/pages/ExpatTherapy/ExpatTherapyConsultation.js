@@ -146,8 +146,15 @@ const ContactModal = memo(
 
             <button
               type="submit"
+              id="submitApplicationButton"
               className="expat-send-button"
               disabled={isSubmitting}
+              onClick={() => {
+                // Meta's recommended: Track SubmitApplication on button click
+                if (window.fbq) {
+                  window.fbq('track', 'SubmitApplication');
+                }
+              }}
             >
               {isSubmitting ? "SENDING…" : "SUBMIT & WATCH THE VIDEO"}
             </button>
@@ -435,7 +442,16 @@ function ExpatTherapyConsultation() {
         window.fbq('init', '1552008896250076');
         
         // 1. PRIMARY META CONVERSION - Submit Application
-        window.fbq('track', 'SubmitApplication');
+        window.fbq('track', 'SubmitApplication', {
+          content_name: 'Expat Therapy Consultation Application',
+          content_category: 'Form Submission',
+          content_ids: ['expat-therapy-application'],
+          content_type: 'application',
+          value: 0, // 0 value for analytics tracking
+          currency: 'PLN',
+          application_type: 'consultation_request',
+          form_name: 'expat_therapy_form'
+        }, '1552008896250076');
         
         // 2. MAIN CONVERSION EVENT - Lead (For analytics/statistics only)
         window.fbq('track', 'Lead', {
@@ -487,6 +503,15 @@ function ExpatTherapyConsultation() {
           num_items: 1,
           purchase_type: 'analytics_tracking'
         }, '1552008896250076');
+        
+        // Send a custom test event as backup for tracking
+        if (window.fbq) {
+          window.fbq('trackCustom', 'ExpatTherapyFormSubmissionTest', {
+            event_time: new Date().toISOString(),
+            form_completed: true,
+            pixel_id: '1552008896250076'
+          }, '1552008896250076');
+        }
       }
 
       // Optional: user feedback
@@ -1012,7 +1037,15 @@ function ExpatTherapyConsultation() {
   // Use the video tracking hook
   useVideoTracking();
 
-  const ThankYouPage = () => (
+  const ThankYouPage = () => {
+    // Meta's Method 2: Track SubmitApplication on Thank You page load
+    useEffect(() => {
+      if (window.fbq) {
+        window.fbq('track', 'SubmitApplication');
+      }
+    }, []);
+
+    return (
     <div>
       {/* Blue Banner for Thank You Page */}
       <div className="expat-highlight-section">
@@ -1246,7 +1279,8 @@ function ExpatTherapyConsultation() {
         </div>
       </section>
     </div>
-  );
+    );
+  };
 
   const PrivacyPolicyModal = () => (
     <div className="expat-modal-overlay">
