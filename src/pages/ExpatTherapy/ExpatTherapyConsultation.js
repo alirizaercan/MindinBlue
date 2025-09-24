@@ -150,9 +150,10 @@ const ContactModal = memo(
               className="expat-send-button"
               disabled={isSubmitting}
               onClick={() => {
-                // Meta's recommended: Track SubmitApplication on button click
+                // Meta's EXACT recommended format
                 if (window.fbq) {
-                  window.fbq('track', 'SubmitApplication');
+                  window.fbq('track', 'SubmitApplication', {}, '1552008896250076');
+                  console.log('🎯 BUTTON CLICK: SubmitApplication sent to pixel 1552008896250076');
                 }
               }}
             >
@@ -441,17 +442,16 @@ function ExpatTherapyConsultation() {
         // Ensure special pixel ID is initialized for this conversion
         window.fbq('init', '1552008896250076');
         
-        // 1. PRIMARY META CONVERSION - Submit Application
-        window.fbq('track', 'SubmitApplication', {
-          content_name: 'Expat Therapy Consultation Application',
-          content_category: 'Form Submission',
-          content_ids: ['expat-therapy-application'],
-          content_type: 'application',
-          value: 0, // 0 value for analytics tracking
-          currency: 'PLN',
-          application_type: 'consultation_request',
-          form_name: 'expat_therapy_form'
+        // 1. PRIMARY META CONVERSION - Submit Application (EXACT Meta format)
+        window.fbq('track', 'SubmitApplication', {}, '1552008896250076');
+        console.log('🎯 FORM SUBMIT: SubmitApplication sent to pixel 1552008896250076');
+        
+        // 2. BACKUP: CompleteRegistration event (Meta standard event)
+        window.fbq('track', 'CompleteRegistration', {
+          content_name: 'Expat Therapy Form',
+          status: 'completed'
         }, '1552008896250076');
+        console.log('🎯 BACKUP: CompleteRegistration sent to pixel 1552008896250076');
         
         // 2. MAIN CONVERSION EVENT - Lead (For analytics/statistics only)
         window.fbq('track', 'Lead', {
@@ -1041,7 +1041,8 @@ function ExpatTherapyConsultation() {
     // Meta's Method 2: Track SubmitApplication on Thank You page load
     useEffect(() => {
       if (window.fbq) {
-        window.fbq('track', 'SubmitApplication');
+        window.fbq('track', 'SubmitApplication', {}, '1552008896250076');
+        console.log('🎯 THANK YOU PAGE: SubmitApplication sent to pixel 1552008896250076');
       }
     }, []);
 

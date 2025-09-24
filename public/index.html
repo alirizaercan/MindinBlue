@@ -118,9 +118,11 @@
       
       if (isExpatTherapyPage) {
         fbq("init", "1552008896250076");
+        console.log('🎯 PIXEL INIT: Special pixel 1552008896250076 initialized for expat therapy');
         
         // Track special page view immediately for expat therapy
         fbq("track", "PageView", {}, "1552008896250076");
+        console.log('🎯 PAGE VIEW: PageView sent to pixel 1552008896250076');
         
         // Track landing page event
         fbq("trackCustom", "ExpatTherapyLandingPageView", {
