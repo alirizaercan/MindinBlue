@@ -149,13 +149,7 @@ const ContactModal = memo(
               id="submitApplicationButton"
               className="expat-send-button"
               disabled={isSubmitting}
-              onClick={() => {
-                // Meta's EXACT recommended format
-                if (window.fbq) {
-                  window.fbq('track', 'SubmitApplication', {}, '1552008896250076');
-                  console.log('🎯 BUTTON CLICK: SubmitApplication sent to pixel 1552008896250076');
-                }
-              }}
+
             >
               {isSubmitting ? "SENDING…" : "SUBMIT & WATCH THE VIDEO"}
             </button>
@@ -191,10 +185,6 @@ function ExpatTherapyConsultation() {
   useEffect(() => {
     const trackExpatPageView = () => {
       if (window.fbq) {
-        // Ensure special pixel is initialized (redundant check for safety)
-        window.fbq('init', '1552008896250076');
-
-        
         // 1. Enhanced PageView with specific pixel targeting
         window.fbq('track', 'PageView', {
           source: 'react_component',
@@ -439,19 +429,14 @@ function ExpatTherapyConsultation() {
 
       // PRIMARY CONVERSION EVENT - Form Submission (HIGHEST PRIORITY FOR META ADS)
       if (window.fbq) {
-        // Ensure special pixel ID is initialized for this conversion
-        window.fbq('init', '1552008896250076');
-        
         // 1. PRIMARY META CONVERSION - Submit Application (EXACT Meta format)
         window.fbq('track', 'SubmitApplication', {}, '1552008896250076');
-        console.log('🎯 FORM SUBMIT: SubmitApplication sent to pixel 1552008896250076');
         
         // 2. BACKUP: CompleteRegistration event (Meta standard event)
         window.fbq('track', 'CompleteRegistration', {
           content_name: 'Expat Therapy Form',
           status: 'completed'
         }, '1552008896250076');
-        console.log('🎯 BACKUP: CompleteRegistration sent to pixel 1552008896250076');
         
         // 2. MAIN CONVERSION EVENT - Lead (For analytics/statistics only)
         window.fbq('track', 'Lead', {
@@ -886,8 +871,6 @@ function ExpatTherapyConsultation() {
       if (currentPage === "thankyou") {
         // Track video page view
         if (window.fbq) {
-          window.fbq('init', '1552008896250076');
-          
           // Track that user reached the video page
           window.fbq('trackCustom', 'ExpatTherapyVideoPageView', {
             page: 'thank-you-video-page',
@@ -1038,11 +1021,14 @@ function ExpatTherapyConsultation() {
   useVideoTracking();
 
   const ThankYouPage = () => {
-    // Meta's Method 2: Track SubmitApplication on Thank You page load
+    // Track Thank You page view for analytics
     useEffect(() => {
       if (window.fbq) {
-        window.fbq('track', 'SubmitApplication', {}, '1552008896250076');
-        console.log('🎯 THANK YOU PAGE: SubmitApplication sent to pixel 1552008896250076');
+        window.fbq('track', 'ViewContent', {
+          content_name: 'Thank You Page - Form Submitted',
+          content_category: 'Post Conversion',
+          content_type: 'thank_you_page'
+        }, '1552008896250076');
       }
     }, []);
 
