@@ -189,7 +189,7 @@ function ExpatTherapyConsultation() {
         window.fbq('track', 'PageView', {
           source: 'react_component',
           page_type: 'landing_page'
-        }, '1552008896250076');
+        }, '328637166250708');
 
         
         // 2. Advanced ViewContent event with detailed parameters
@@ -206,7 +206,7 @@ function ExpatTherapyConsultation() {
             consultation_type: 'free_15min',
             target_audience: 'expats_poland'
           }
-        }, '1552008896250076');
+        }, '328637166250708');
 
         
         // 3. Specialized custom events for campaign optimization
@@ -219,7 +219,7 @@ function ExpatTherapyConsultation() {
           user_language: navigator.language,
           screen_resolution: `${screen.width}x${screen.height}`,
           device_type: /Mobile|Android|iPhone|iPad/.test(navigator.userAgent) ? 'mobile' : 'desktop'
-        }, '1552008896250076');
+        }, '328637166250708');
 
 
         // 4. Funnel tracking event
@@ -228,7 +228,7 @@ function ExpatTherapyConsultation() {
           campaign_objective: 'lead_generation',
           target_action: 'form_submission',
           page_position: 'top_of_funnel'
-        }, '1552008896250076');
+        }, '328637166250708');
 
 
         // 5. Time-based engagement tracking
@@ -236,7 +236,7 @@ function ExpatTherapyConsultation() {
           window.fbq('trackCustom', 'ExpatTherapyTimeOnPage', {
             time_spent: '10_seconds',
             engagement_quality: 'initial'
-          }, '1552008896250076');
+          }, '328637166250708');
 
         }, 10000);
 
@@ -244,7 +244,7 @@ function ExpatTherapyConsultation() {
           window.fbq('trackCustom', 'ExpatTherapyTimeOnPage', {
             time_spent: '30_seconds',
             engagement_quality: 'moderate'
-          }, '1552008896250076');
+          }, '328637166250708');
 
         }, 30000);
 
@@ -252,7 +252,7 @@ function ExpatTherapyConsultation() {
           window.fbq('trackCustom', 'ExpatTherapyTimeOnPage', {
             time_spent: '60_seconds',
             engagement_quality: 'high'
-          }, '1552008896250076');
+          }, '328637166250708');
 
         }, 60000);
 
@@ -278,7 +278,7 @@ function ExpatTherapyConsultation() {
           window.fbq('trackCustom', 'ExpatTherapyScrollDepth', {
             scroll_depth: '25_percent',
             engagement_level: 'low'
-          }, '1552008896250076');
+          }, '328637166250708');
           scrollTracked25 = true;
 
         }
@@ -287,7 +287,7 @@ function ExpatTherapyConsultation() {
           window.fbq('trackCustom', 'ExpatTherapyScrollDepth', {
             scroll_depth: '50_percent',
             engagement_level: 'medium'
-          }, '1552008896250076');
+          }, '328637166250708');
           scrollTracked50 = true;
 
         }
@@ -296,7 +296,7 @@ function ExpatTherapyConsultation() {
           window.fbq('trackCustom', 'ExpatTherapyScrollDepth', {
             scroll_depth: '75_percent',
             engagement_level: 'high'
-          }, '1552008896250076');
+          }, '328637166250708');
           scrollTracked75 = true;
 
         }
@@ -305,7 +305,7 @@ function ExpatTherapyConsultation() {
           window.fbq('trackCustom', 'ExpatTherapyScrollDepth', {
             scroll_depth: '90_percent',
             engagement_level: 'very_high'
-          }, '1552008896250076');
+          }, '328637166250708');
           scrollTracked100 = true;
 
         }
@@ -431,9 +431,9 @@ function ExpatTherapyConsultation() {
       if (window.fbq) {
         // 1. PRIMARY META CONVERSION - Submit Application to MAIN PIXEL (Dataset)
         window.fbq('track', 'SubmitApplication', {}, '328637166250708');
+        console.log('🎯 MAIN PIXEL: SubmitApplication sent to 328637166250708');
         
-        // 2. BACKUP: Submit Application to EXPAT PIXEL (for segmentation)
-        window.fbq('track', 'SubmitApplication', {}, '1552008896250076');
+
         
         // 3. LEAD EVENT to MAIN PIXEL (most reliable for campaigns)
         window.fbq('track', 'Lead', {
@@ -444,6 +444,7 @@ function ExpatTherapyConsultation() {
           value: 0,
           currency: 'PLN'
         }, '328637166250708');
+        console.log('🎯 MAIN PIXEL: Lead sent to 328637166250708');
         
         // 4. CompleteRegistration to MAIN PIXEL
         window.fbq('track', 'CompleteRegistration', {
@@ -472,7 +473,7 @@ function ExpatTherapyConsultation() {
           tracking_purpose: 'statistics_only',
           lead_quality: 'verified_contact',
           user_intent: 'ready_to_book'
-        }, '1552008896250076'); // Explicitly use expat pixel
+        }, '328637166250708'); // Explicitly use expat pixel
 
         // 2. SECONDARY CONVERSION - Contact (analytics tracking)
         window.fbq('track', 'Contact', {
@@ -482,7 +483,7 @@ function ExpatTherapyConsultation() {
           currency: 'PLN',
           contact_quality: 'form_submission',
           tracking_purpose: 'analytics'
-        }, '1552008896250076');
+        }, '328637166250708');
 
         // 3. CUSTOM PRIMARY CONVERSION for campaign reporting
         window.fbq('trackCustom', 'ExpatTherapyFormSubmitted', {
@@ -497,7 +498,7 @@ function ExpatTherapyConsultation() {
           user_journey_completed: 'form_submission',
           engagement_level: 'conversion_ready',
           intent_signal: 'strongest'
-        }, '1552008896250076');
+        }, '328637166250708');
 
         // 4. PURCHASE EVENT - Analytics tracking only
         window.fbq('track', 'Purchase', {
@@ -508,15 +509,15 @@ function ExpatTherapyConsultation() {
           currency: 'PLN',
           num_items: 1,
           purchase_type: 'analytics_tracking'
-        }, '1552008896250076');
+        }, '328637166250708');
         
         // Send a custom test event as backup for tracking
         if (window.fbq) {
           window.fbq('trackCustom', 'ExpatTherapyFormSubmissionTest', {
             event_time: new Date().toISOString(),
             form_completed: true,
-            pixel_id: '1552008896250076'
-          }, '1552008896250076');
+            pixel_id: '328637166250708'
+          }, '328637166250708');
         }
       }
 
@@ -635,7 +636,7 @@ function ExpatTherapyConsultation() {
                       content_type: 'form_opening',
                       value: 0,
                       currency: 'PLN'
-                    }, '1552008896250076');
+                    }, '328637166250708');
                     
 
                   }
@@ -727,7 +728,7 @@ function ExpatTherapyConsultation() {
                     currency: 'PLN',
                     intent_level: 'secondary_form_opening',
                     conversion_likelihood: 'medium'
-                  }, '1552008896250076');
+                  }, '328637166250708');
                   
                   window.fbq('trackCustom', 'ExpatTherapyFormIntent', {
                     event_priority: 'INTENT_SIGNAL',
@@ -738,7 +739,7 @@ function ExpatTherapyConsultation() {
                     conversion_probability: 'very_high', // Scrolled down and clicked
                     value: 0, // Analytics only
                     currency: 'PLN'
-                  }, '1552008896250076');
+                  }, '328637166250708');
                   
 
                 }
@@ -788,7 +789,7 @@ function ExpatTherapyConsultation() {
                   currency: 'PLN',
                   intent_level: 'journey_commitment',
                   conversion_likelihood: 'very_high'
-                }, '1552008896250076');
+                }, '328637166250708');
                 
                 window.fbq('trackCustom', 'ExpatTherapyFormIntent', {
                   event_priority: 'STRONG_INTENT_SIGNAL',
@@ -800,7 +801,7 @@ function ExpatTherapyConsultation() {
                   engagement_depth: 'read_full_process',
                   value: 0, // Analytics only
                   currency: 'PLN'
-                }, '1552008896250076');
+                }, '328637166250708');
                 
 
               }
@@ -841,7 +842,7 @@ function ExpatTherapyConsultation() {
                       content_type: 'final_decision',
                       value: 0, // 0 value - analytics tracking only
                       currency: 'PLN'
-                    }, '1552008896250076');
+                    }, '328637166250708');
                     
                     window.fbq('trackCustom', 'ExpatTherapyFormIntent', {
                       event_priority: 'MAXIMUM_INTENT_SIGNAL',
@@ -853,7 +854,7 @@ function ExpatTherapyConsultation() {
                       engagement_depth: 'full_page_consumed',
                       value: 0, // Analytics only
                       currency: 'PLN'
-                    }, '1552008896250076');
+                    }, '328637166250708');
                     
 
                   }
@@ -944,7 +945,7 @@ function ExpatTherapyConsultation() {
                         intent_level: 'low',
                         value: 0, // 0 value - analytics tracking only
                         currency: 'PLN'
-                      }, '1552008896250076');
+                      }, '328637166250708');
                       window.videoTracked25 = true;
 
                     }
@@ -958,7 +959,7 @@ function ExpatTherapyConsultation() {
                         intent_level: 'medium',
                         value: 0, // 0 value - analytics tracking only
                         currency: 'PLN'
-                      }, '1552008896250076');
+                      }, '328637166250708');
                       window.videoTracked50 = true;
 
                     }
@@ -972,7 +973,7 @@ function ExpatTherapyConsultation() {
                         intent_level: 'high',
                         value: 0, // 0 value - analytics tracking only
                         currency: 'PLN'
-                      }, '1552008896250076');
+                      }, '328637166250708');
                       window.videoTracked75 = true;
 
                     }
@@ -988,7 +989,7 @@ function ExpatTherapyConsultation() {
                         watch_completion: 'full',
                         value: 0, // 0 value - analytics tracking only
                         currency: 'PLN'
-                      }, '1552008896250076');
+                      }, '328637166250708');
                       
                       // Track as ViewContent (supporting signal, not primary conversion)
                       window.fbq('track', 'ViewContent', {
@@ -997,7 +998,7 @@ function ExpatTherapyConsultation() {
                         content_type: 'supporting_signal',
                         value: 0, // 0 value - analytics tracking only
                         currency: 'PLN'
-                      }, '1552008896250076');
+                      }, '328637166250708');
                       
                       window.videoTrackedComplete = true;
 
@@ -1045,7 +1046,7 @@ function ExpatTherapyConsultation() {
           content_name: 'Thank You Page - Form Submitted',
           content_category: 'Post Conversion',
           content_type: 'thank_you_page'
-        }, '1552008896250076');
+        }, '328637166250708');
       }
     }, []);
 
@@ -1101,7 +1102,7 @@ function ExpatTherapyConsultation() {
                       currency: 'PLN',
                       conversion_stage: 'final_booking',
                       lead_quality: 'premium'
-                    }, '1552008896250076');
+                    }, '328637166250708');
                     
                     window.fbq('trackCustom', 'ExpatTherapyFinalConversion', {
                       event_priority: 'ULTIMATE_CONVERSION',
@@ -1112,7 +1113,7 @@ function ExpatTherapyConsultation() {
                       booking_readiness: 'immediate',
                       value: 0, // Analytics only
                       currency: 'PLN'
-                    }, '1552008896250076');
+                    }, '328637166250708');
                     
 
                   }
@@ -1151,7 +1152,7 @@ function ExpatTherapyConsultation() {
                     currency: 'PLN',
                     conversion_stage: 'direct_booking',
                     lead_quality: 'very_high'
-                  }, '1552008896250076');
+                  }, '328637166250708');
                   
                   window.fbq('trackCustom', 'ExpatTherapyHighValueConversion', {
                     event_priority: 'HIGH_VALUE_CONVERSION',
@@ -1162,7 +1163,7 @@ function ExpatTherapyConsultation() {
                     booking_speed: 'immediate',
                     value: 0, // Analytics only
                     currency: 'PLN'
-                  }, '1552008896250076');
+                  }, '328637166250708');
                   
 
                 }
@@ -1255,13 +1256,13 @@ function ExpatTherapyConsultation() {
                     content_category: 'Appointment Booking',
                     value: 300,
                     currency: 'PLN'
-                  }, '1552008896250076');
+                  }, '328637166250708');
                   
                   window.fbq('trackCustom', 'ExpatTherapyCalendlyClick', {
                     click_type: 'bottom',
                     calendly_position: 'expectations_section',
                     user_journey_stage: 'final_decision'
-                  }, '1552008896250076');
+                  }, '328637166250708');
                   
 
                 }
