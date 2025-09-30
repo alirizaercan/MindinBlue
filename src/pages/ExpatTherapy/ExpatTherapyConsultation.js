@@ -429,14 +429,35 @@ function ExpatTherapyConsultation() {
 
       // PRIMARY CONVERSION EVENT - Form Submission (HIGHEST PRIORITY FOR META ADS)
       if (window.fbq) {
-        // 1. PRIMARY META CONVERSION - Submit Application (EXACT Meta format)
+        // 1. PRIMARY META CONVERSION - Submit Application to MAIN PIXEL (Dataset)
+        window.fbq('track', 'SubmitApplication', {}, '328637166250708');
+        
+        // 2. BACKUP: Submit Application to EXPAT PIXEL (for segmentation)
         window.fbq('track', 'SubmitApplication', {}, '1552008896250076');
         
-        // 2. BACKUP: CompleteRegistration event (Meta standard event)
+        // 3. LEAD EVENT to MAIN PIXEL (most reliable for campaigns)
+        window.fbq('track', 'Lead', {
+          content_name: 'Expat Therapy Consultation Request',
+          content_category: 'Form Submission',
+          content_ids: ['expat-therapy-form'],
+          content_type: 'consultation_form',
+          value: 0,
+          currency: 'PLN'
+        }, '328637166250708');
+        
+        // 4. CompleteRegistration to MAIN PIXEL
         window.fbq('track', 'CompleteRegistration', {
           content_name: 'Expat Therapy Form',
           status: 'completed'
-        }, '1552008896250076');
+        }, '328637166250708');
+        
+        // 5. DEBUG: Custom event to MAIN PIXEL for Test Events visibility
+        window.fbq('trackCustom', 'ExpatTherapySubmitApplication', {
+          event_type: 'form_submission',
+          form_name: 'expat_therapy_consultation',
+          timestamp: new Date().toISOString(),
+          pixel_used: 'main_dataset'
+        }, '328637166250708');
         
         // 2. MAIN CONVERSION EVENT - Lead (For analytics/statistics only)
         window.fbq('track', 'Lead', {
@@ -598,25 +619,21 @@ function ExpatTherapyConsultation() {
                 onClick={() => {
                   // INTENT SIGNAL - CTA click shows interest in form submission
                   if (window.fbq) {
+                    // Send to MAIN PIXEL (Dataset) for campaigns
                     window.fbq('track', 'InitiateCheckout', {
                       content_name: 'Expat Therapy CTA - Form Intent',
                       content_category: 'INTENT_SIGNAL',
                       content_type: 'form_opening',
-                      value: 0, // 0 value - analytics tracking only
-                      currency: 'PLN',
-                      // Signals to Meta: this user is moving toward conversion
-                      intent_level: 'form_opening',
-                      conversion_likelihood: 'medium'
-                    }, '1552008896250076');
+                      value: 0,
+                      currency: 'PLN'
+                    }, '328637166250708');
                     
-                    window.fbq('trackCustom', 'ExpatTherapyFormIntent', {
-                      event_priority: 'INTENT_SIGNAL',
-                      intent_action: 'cta_clicked',
-                      cta_type: 'primary_form_opener',
-                      cta_position: 'hero_section',
-                      user_journey_stage: 'pre_conversion',
-                      conversion_probability: 'high',
-                      value: 0, // Analytics only
+                    // Send to EXPAT PIXEL for segmentation
+                    window.fbq('track', 'InitiateCheckout', {
+                      content_name: 'Expat Therapy CTA - Form Intent',
+                      content_category: 'INTENT_SIGNAL',
+                      content_type: 'form_opening',
+                      value: 0,
                       currency: 'PLN'
                     }, '1552008896250076');
                     
