@@ -80,6 +80,40 @@
     <link rel="preconnect" href="https://connect.facebook.net" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="dns-prefetch" href="//www.google-analytics.com" />
+    <link rel="preconnect" href="https://www.googletagmanager.com" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7GEW6YKK9Z"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-7GEW6YKK9Z', {
+        'send_page_view': false, // We'll send manually for better tracking
+        'cookie_domain': 'mindinblue.com',
+        'cookie_flags': 'SameSite=None;Secure',
+        'allow_google_signals': true,
+        'allow_ad_personalization_signals': true
+      });
+      
+      // Enhanced tracking for expat therapy page
+      const gaCurrentPath = window.location.pathname;
+      if (gaCurrentPath === '/expat-therapy-poland' || gaCurrentPath.includes('expat-therapy')) {
+        gtag('event', 'page_view', {
+          page_title: 'Expat Therapy Poland - Free Consultation',
+          page_location: window.location.href,
+          page_path: gaCurrentPath,
+          content_group: 'Expat Therapy Landing Page'
+        });
+      } else {
+        gtag('event', 'page_view', {
+          page_title: document.title,
+          page_location: window.location.href,
+          page_path: gaCurrentPath
+        });
+      }
+    </script>
 
     <!-- Meta Pixel Code -->
     <script>

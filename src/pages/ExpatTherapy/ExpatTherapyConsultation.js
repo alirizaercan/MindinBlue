@@ -433,6 +433,24 @@ function ExpatTherapyConsultation() {
         window.fbq('track', 'SubmitApplication', {}, '328637166250708');
         console.log('🎯 MAIN PIXEL: SubmitApplication sent to 328637166250708');
         
+        // GOOGLE ANALYTICS: Form submission
+        if (window.gtag) {
+          window.gtag('event', 'form_submission', {
+            event_category: 'Expat Therapy',
+            event_label: 'Consultation Request',
+            form_name: 'expat_therapy_consultation',
+            session_type: sessionType,
+            value: 1
+          });
+          
+          window.gtag('event', 'generate_lead', {
+            event_category: 'Lead Generation',
+            event_label: 'Expat Therapy Lead',
+            currency: 'PLN',
+            value: 0
+          });
+        }
+        
 
         
         // 3. LEAD EVENT to MAIN PIXEL (most reliable for campaigns)
@@ -618,6 +636,16 @@ function ExpatTherapyConsultation() {
               <button
                 className="expat-cta-button"
                 onClick={() => {
+                  // GOOGLE ANALYTICS: CTA Click
+                  if (window.gtag) {
+                    window.gtag('event', 'cta_click', {
+                      event_category: 'User Engagement',
+                      event_label: 'Hero Section - Find Out How We Can Help',
+                      cta_position: 'hero_section',
+                      intent_level: 'high'
+                    });
+                  }
+                  
                   // INTENT SIGNAL - CTA click shows interest in form submission
                   if (window.fbq) {
                     // Send to MAIN PIXEL (Dataset) for campaigns
@@ -743,6 +771,18 @@ function ExpatTherapyConsultation() {
                   
 
                 }
+
+                // Google Analytics - Secondary CTA tracking
+                if (window.gtag) {
+                  window.gtag('event', 'cta_click', {
+                    event_category: 'User Engagement',
+                    event_label: 'Features Section - Secondary CTA',
+                    cta_position: 'features_section',
+                    intent_level: 'medium',
+                    conversion_likelihood: 'very_high'
+                  });
+                }
+
                 setShowModal(true);
               }}
             >
@@ -802,9 +842,20 @@ function ExpatTherapyConsultation() {
                   value: 0, // Analytics only
                   currency: 'PLN'
                 }, '328637166250708');
+              }
+
+              // Google Analytics - Journey starter CTA tracking
+              if (window.gtag) {
+                window.gtag('event', 'cta_click', {
+                  event_category: 'Strong Intent Signal',
+                  event_label: 'Steps Section - Start Journey',
+                  cta_position: 'steps_section',
+                  intent_level: 'very_high',
+                  conversion_likelihood: 'extremely_high'
+                });
+              }
                 
 
-              }
               setShowModal(true);
             }}
           >
@@ -858,6 +909,18 @@ function ExpatTherapyConsultation() {
                     
 
                   }
+
+                  // Google Analytics - Maximum intent CTA tracking
+                  if (window.gtag) {
+                    window.gtag('event', 'cta_click', {
+                      event_category: 'Maximum Intent Signal',
+                      event_label: 'Founder Section - Final Decision',
+                      cta_position: 'founder_section',
+                      intent_level: 'maximum',
+                      conversion_likelihood: 'almost_certain'
+                    });
+                  }
+
                   setShowModal(true);
                 }}
               >
@@ -946,6 +1009,17 @@ function ExpatTherapyConsultation() {
                         value: 0, // 0 value - analytics tracking only
                         currency: 'PLN'
                       }, '328637166250708');
+
+                      // Google Analytics - 25% video progress
+                      if (window.gtag) {
+                        window.gtag('event', 'video_progress', {
+                          event_category: 'Video Engagement',
+                          event_label: '25% - Initial Interest',
+                          video_progress: '25_percent',
+                          video_id: 'jPKA73f1rHI'
+                        });
+                      }
+
                       window.videoTracked25 = true;
 
                     }
@@ -960,6 +1034,17 @@ function ExpatTherapyConsultation() {
                         value: 0, // 0 value - analytics tracking only
                         currency: 'PLN'
                       }, '328637166250708');
+
+                      // Google Analytics - 50% video progress
+                      if (window.gtag) {
+                        window.gtag('event', 'video_progress', {
+                          event_category: 'Video Engagement',
+                          event_label: '50% - Moderate Interest',
+                          video_progress: '50_percent',
+                          video_id: 'jPKA73f1rHI'
+                        });
+                      }
+
                       window.videoTracked50 = true;
 
                     }
@@ -974,6 +1059,17 @@ function ExpatTherapyConsultation() {
                         value: 0, // 0 value - analytics tracking only
                         currency: 'PLN'
                       }, '328637166250708');
+
+                      // Google Analytics - 75% video progress
+                      if (window.gtag) {
+                        window.gtag('event', 'video_progress', {
+                          event_category: 'Video Engagement',
+                          event_label: '75% - High Interest',
+                          video_progress: '75_percent',
+                          video_id: 'jPKA73f1rHI'
+                        });
+                      }
+
                       window.videoTracked75 = true;
 
                     }
@@ -999,6 +1095,17 @@ function ExpatTherapyConsultation() {
                         value: 0, // 0 value - analytics tracking only
                         currency: 'PLN'
                       }, '328637166250708');
+
+                      // Google Analytics - Video completion
+                      if (window.gtag) {
+                        window.gtag('event', 'video_complete', {
+                          event_category: 'Video Engagement',
+                          event_label: 'Complete - Very High Interest',
+                          video_progress: 'completed',
+                          video_id: 'jPKA73f1rHI',
+                          engagement_quality: 'very_high'
+                        });
+                      }
                       
                       window.videoTrackedComplete = true;
 
@@ -1047,6 +1154,22 @@ function ExpatTherapyConsultation() {
           content_category: 'Post Conversion',
           content_type: 'thank_you_page'
         }, '328637166250708');
+      }
+
+      // Google Analytics - Thank You page view
+      if (window.gtag) {
+        window.gtag('event', 'page_view', {
+          page_title: 'Thank You - Expat Therapy Form Submitted',
+          page_location: window.location.href,
+          page_path: '/expat-therapy-poland/thank-you',
+          event_category: 'Post Conversion',
+          event_label: 'Thank You Page View'
+        });
+
+        window.gtag('event', 'conversion_complete', {
+          event_category: 'Conversion',
+          event_label: 'Expat Therapy Form Submitted - Thank You Page Loaded'
+        });
       }
     }, []);
 
@@ -1117,6 +1240,23 @@ function ExpatTherapyConsultation() {
                     
 
                   }
+
+                  // Google Analytics - Ultimate conversion tracking
+                  if (window.gtag) {
+                    window.gtag('event', 'calendly_booking', {
+                      event_category: 'Ultimate Conversion',
+                      event_label: 'Post Video - Final Booking',
+                      calendly_position: 'post_video',
+                      user_journey: 'form_video_booking',
+                      lead_quality: 'premium',
+                      value: 0
+                    });
+
+                    window.gtag('event', 'schedule_appointment', {
+                      event_category: 'Conversion',
+                      event_label: 'Free Consultation Booking - Post Video'
+                    });
+                  }
                 }}
               >
                 ➤ BOOK YOUR FREE CONSULTATION NOW
@@ -1166,6 +1306,23 @@ function ExpatTherapyConsultation() {
                   }, '328637166250708');
                   
 
+                }
+
+                // Google Analytics - High value conversion tracking
+                if (window.gtag) {
+                  window.gtag('event', 'calendly_booking', {
+                    event_category: 'High Value Conversion',
+                    event_label: 'Post Form - Benefits Section',
+                    calendly_position: 'benefits_section',
+                    user_journey: 'form_to_booking',
+                    lead_quality: 'very_high',
+                    value: 0
+                  });
+
+                  window.gtag('event', 'schedule_appointment', {
+                    event_category: 'Conversion',
+                    event_label: 'Free Consultation Booking - Benefits Section'
+                  });
                 }
               }}
             >
@@ -1265,6 +1422,22 @@ function ExpatTherapyConsultation() {
                   }, '328637166250708');
                   
 
+                }
+
+                // Google Analytics - Bottom Calendly booking tracking
+                if (window.gtag) {
+                  window.gtag('event', 'calendly_booking', {
+                    event_category: 'Appointment Booking',
+                    event_label: 'Bottom Section - Final Decision',
+                    calendly_position: 'expectations_section',
+                    user_journey_stage: 'final_decision',
+                    value: 300
+                  });
+
+                  window.gtag('event', 'schedule_appointment', {
+                    event_category: 'Conversion',
+                    event_label: 'Free Consultation Booking - Bottom Section'
+                  });
                 }
               }}
             >
