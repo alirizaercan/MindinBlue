@@ -273,7 +273,7 @@ export const translations = {
       "Feel free to get in touch with us if you have any questions or want to book a consultation session.",
 
     // Footer
-    followUsOnSocialMedia: "Follow Us On Social Media",
+    followUsOnSocialMedia: "Follow Us On Instagram",
     copyright: "© 2024 Mind in Blue",
 
     // Multiple years experience
@@ -647,7 +647,7 @@ export const translations = {
       "Zachęcam do skontaktowania się z nami, jeśli masz jakiekolwiek pytania lub chcesz umówić sesję konsultacyjną.",
 
     // Footer
-    followUsOnSocialMedia: "Obserwuj nas w social mediach",
+    followUsOnSocialMedia: "Obserwuj nas na Instagramie",
     copyright: "© 2024 Mind in Blue",
 
     // Multiple years experience
