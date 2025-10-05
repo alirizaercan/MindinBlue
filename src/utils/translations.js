@@ -140,6 +140,7 @@ export const translations = {
     services: "Services",
     fees: "Fees",
     contact: "Contact",
+    callUs: "Call Us",
     language: "Language:",
     phoneNumber: "+48 (506) 080-577",
 
@@ -323,6 +324,7 @@ export const translations = {
     services: "Usługi",
     fees: "Cennik",
     contact: "Kontakt",
+    callUs: "Zadzwoń do nas",
     language: "Język:",
     phoneNumber: "+48 (506) 080-577",
 

@@ -115,7 +115,7 @@ function Header() {
           </a>
           <Link to="/contact">{t("contact")}</Link>
           <a href="tel:+48506080577" className="desktop-phone-btn">
-            +48 506 080 577
+            {t("callUs")}
           </a>
           <div className="language-switcher-container desktop-only">
             <button
