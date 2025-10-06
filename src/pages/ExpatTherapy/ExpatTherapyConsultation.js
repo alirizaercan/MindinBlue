@@ -181,6 +181,37 @@ function ExpatTherapyConsultation() {
     emailjs.init("WsafYrZj3fnh_4yA0"); // same as Contact.js
   }, []);
 
+  // Preserve fbclid and other tracking parameters in localStorage
+  useEffect(() => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const fbclid = urlParams.get('fbclid');
+    const fbp = urlParams.get('fbp');
+    const utm_source = urlParams.get('utm_source');
+    const utm_medium = urlParams.get('utm_medium');
+    const utm_campaign = urlParams.get('utm_campaign');
+    
+    if (fbclid) {
+      localStorage.setItem('_fbclid', fbclid);
+      localStorage.setItem('_fbclid_timestamp', Date.now().toString());
+      console.log('✅ fbclid saved to localStorage:', fbclid);
+    }
+    
+    if (fbp) {
+      localStorage.setItem('_fbp_param', fbp);
+    }
+    
+    if (utm_source || utm_medium || utm_campaign) {
+      const utm_data = {
+        utm_source,
+        utm_medium,
+        utm_campaign,
+        timestamp: Date.now()
+      };
+      localStorage.setItem('_utm_data', JSON.stringify(utm_data));
+      console.log('✅ UTM parameters saved:', utm_data);
+    }
+  }, []);
+
   // Enhanced page view tracking for Expat Therapy page
   useEffect(() => {
     const trackExpatPageView = () => {
@@ -429,9 +460,36 @@ function ExpatTherapyConsultation() {
 
       // PRIMARY CONVERSION EVENT - Form Submission (HIGHEST PRIORITY FOR META ADS)
       if (window.fbq) {
+        // Generate unique event ID for deduplication between Pixel and CAPI
+        const eventID = 'expat_form_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+        const eventTime = Math.floor(Date.now() / 1000);
+        
+        // Capture fbclid for attribution (if available from URL)
+        const urlParams = new URLSearchParams(window.location.search);
+        const fbclid = urlParams.get('fbclid') || urlParams.get('fbp') || null;
+        const fbc = fbclid ? `fb.1.${Date.now()}.${fbclid}` : null;
+        
+        // Get fbp cookie (first-party cookie)
+        const fbp = document.cookie.split('; ').find(row => row.startsWith('_fbp='))?.split('=')[1] || null;
+        
+        console.log('🔍 DEBUG INFO:', {
+          eventID: eventID,
+          fbclid: fbclid,
+          fbc: fbc,
+          fbp: fbp,
+          eventTime: eventTime,
+          url: window.location.href
+        });
+        
         // 1. PRIMARY META CONVERSION - Submit Application to MAIN PIXEL (Dataset)
-        window.fbq('track', 'SubmitApplication', {}, '328637166250708');
-        console.log('🎯 MAIN PIXEL: SubmitApplication sent to 328637166250708');
+        window.fbq('track', 'SubmitApplication', {
+          eventID: eventID, // CRITICAL: Unique event ID for deduplication
+          event_time: eventTime,
+          fbc: fbc, // Facebook click ID
+          fbp: fbp, // Facebook browser ID
+          external_id: formData.email // For advanced matching
+        }, {eventID: eventID}, '328637166250708');
+        console.log('🎯 MAIN PIXEL: SubmitApplication sent to 328637166250708 with eventID:', eventID);
         
         // GOOGLE ANALYTICS: Form submission
         if (window.gtag) {
@@ -460,23 +518,36 @@ function ExpatTherapyConsultation() {
           content_ids: ['expat-therapy-form'],
           content_type: 'consultation_form',
           value: 0,
-          currency: 'PLN'
-        }, '328637166250708');
-        console.log('🎯 MAIN PIXEL: Lead sent to 328637166250708');
+          currency: 'PLN',
+          eventID: eventID, // Same event ID for deduplication
+          event_time: eventTime,
+          fbc: fbc,
+          fbp: fbp
+        }, {eventID: eventID}, '328637166250708');
+        console.log('🎯 MAIN PIXEL: Lead sent to 328637166250708 with eventID:', eventID);
         
         // 4. CompleteRegistration to MAIN PIXEL
         window.fbq('track', 'CompleteRegistration', {
           content_name: 'Expat Therapy Form',
-          status: 'completed'
-        }, '328637166250708');
+          status: 'completed',
+          eventID: eventID,
+          event_time: eventTime,
+          fbc: fbc,
+          fbp: fbp
+        }, {eventID: eventID}, '328637166250708');
         
         // 5. DEBUG: Custom event to MAIN PIXEL for Test Events visibility
         window.fbq('trackCustom', 'ExpatTherapySubmitApplication', {
           event_type: 'form_submission',
           form_name: 'expat_therapy_consultation',
           timestamp: new Date().toISOString(),
-          pixel_used: 'main_dataset'
-        }, '328637166250708');
+          pixel_used: 'main_dataset',
+          eventID: eventID,
+          fbclid: fbclid,
+          fbc: fbc,
+          fbp: fbp,
+          test_event_code: 'TEST12345' // For Test Events in Events Manager
+        }, {eventID: eventID}, '328637166250708');
         
         // 2. MAIN CONVERSION EVENT - Lead (For analytics/statistics only)
         window.fbq('track', 'Lead', {
@@ -490,8 +561,12 @@ function ExpatTherapyConsultation() {
           // Analytics parameters
           tracking_purpose: 'statistics_only',
           lead_quality: 'verified_contact',
-          user_intent: 'ready_to_book'
-        }, '328637166250708'); // Explicitly use expat pixel
+          user_intent: 'ready_to_book',
+          eventID: eventID,
+          event_time: eventTime,
+          fbc: fbc,
+          fbp: fbp
+        }, {eventID: eventID}, '328637166250708'); // Explicitly use expat pixel
 
         // 2. SECONDARY CONVERSION - Contact (analytics tracking)
         window.fbq('track', 'Contact', {
@@ -500,8 +575,11 @@ function ExpatTherapyConsultation() {
           value: 0, // 0 value - statistics only
           currency: 'PLN',
           contact_quality: 'form_submission',
-          tracking_purpose: 'analytics'
-        }, '328637166250708');
+          tracking_purpose: 'analytics',
+          eventID: eventID,
+          fbc: fbc,
+          fbp: fbp
+        }, {eventID: eventID}, '328637166250708');
 
         // 3. CUSTOM PRIMARY CONVERSION for campaign reporting
         window.fbq('trackCustom', 'ExpatTherapyFormSubmitted', {
@@ -515,8 +593,17 @@ function ExpatTherapyConsultation() {
           // Data for Meta's learning algorithm
           user_journey_completed: 'form_submission',
           engagement_level: 'conversion_ready',
-          intent_signal: 'strongest'
-        }, '328637166250708');
+          intent_signal: 'strongest',
+          eventID: eventID,
+          event_time: eventTime,
+          fbc: fbc,
+          fbp: fbp,
+          // Enhanced matching data
+          em: formData.email, // Hashed email for advanced matching
+          ph: formData.phone, // Phone for advanced matching
+          fn: formData.firstName,
+          ln: formData.lastName
+        }, {eventID: eventID}, '328637166250708');
 
         // 4. PURCHASE EVENT - Analytics tracking only
         window.fbq('track', 'Purchase', {
@@ -526,16 +613,26 @@ function ExpatTherapyConsultation() {
           value: 0, // 0 value = pure statistics tracking
           currency: 'PLN',
           num_items: 1,
-          purchase_type: 'analytics_tracking'
-        }, '328637166250708');
+          purchase_type: 'analytics_tracking',
+          eventID: eventID,
+          fbc: fbc,
+          fbp: fbp
+        }, {eventID: eventID}, '328637166250708');
         
         // Send a custom test event as backup for tracking
         if (window.fbq) {
           window.fbq('trackCustom', 'ExpatTherapyFormSubmissionTest', {
             event_time: new Date().toISOString(),
             form_completed: true,
-            pixel_id: '328637166250708'
-          }, '328637166250708');
+            pixel_id: '328637166250708',
+            eventID: eventID,
+            fbclid: fbclid,
+            url_with_params: window.location.href,
+            referrer: document.referrer || 'direct'
+          }, {eventID: eventID}, '328637166250708');
+          
+          console.log('✅ All conversion events sent successfully with eventID:', eventID);
+          console.log('📊 Check Events Manager "Test Events" tab to verify attribution');
         }
       }
 
