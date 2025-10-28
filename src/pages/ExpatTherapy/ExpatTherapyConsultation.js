@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useCallback, memo } from "react";
 import "./expat-therapy-styles.css";
 import emailjs from "@emailjs/browser"; // + EmailJS
+import { trackFormSubmission, trackLead, trackCTAClick } from "../../utils/analytics";
 
 // Добавьте рядом с импортами (замените на ваш новый template_id из EmailJS)
 const EMAILJS_SERVICE_ID = "service_6nnbqus";

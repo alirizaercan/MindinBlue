@@ -3,6 +3,8 @@ import { useEffect } from "react";
 import { LanguageProvider } from "./contexts/LanguageContext";
 import { initFacebookPixel, trackEvent } from "./utils/fbPixel";
 import { applySEO } from "./utils/seo";
+import usePageTracking from "./utils/usePageTracking";
+import { gtmPageView } from "./utils/gtm";
 import ScrollToTop from "./components/ScrollToTop";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
@@ -18,6 +20,9 @@ import ExpatTherapyConsultation from "./pages/ExpatTherapy/ExpatTherapyConsultat
 function AppContent() {
   const location = useLocation();
   const isExpatTherapyPage = location.pathname === '/expat-therapy-poland';
+
+  // Google Analytics - Automatic page tracking for SPA navigation
+  usePageTracking();
 
   // Initialize Facebook Pixel
   useEffect(() => {
@@ -41,6 +46,13 @@ function AppContent() {
     if (seoKey) {
       applySEO(seoKey);
     }
+
+    // GTM Page View Tracking
+    gtmPageView(
+      document.title,
+      location.pathname + location.search,
+      window.location.href
+    );
 
     // Force PageView tracking for all routes - especially expat therapy
     setTimeout(() => {
