@@ -25,54 +25,58 @@
 
 /* Top Banner */
 .expat-top-banner {
-  background: #000000;
+  background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
   color: white;
-  padding: 8px 0;
+  padding: 12px 0;
   text-align: center;
   font-size: 14px;
-  font-weight: 500;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 /* Blue Highlight Section */
 .expat-highlight-section {
-  background: #2563eb;
+  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
   color: white;
-  padding: 12px 0;
+  padding: 16px 0;
   text-align: center;
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 500;
-  font-style: italic;
+  line-height: 1.5;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
 }
 
 /* Main Content */
 .expat-main-content {
   background: white;
-  padding: 20px 0;
+  padding: 60px 0 40px;
 }
 
 .expat-hero-section {
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 60px;
 }
 
 .expat-hero-title {
-  font-size: 1.8rem;
-  font-weight: 700;
+  font-size: 2.5rem;
+  font-weight: 800;
   color: #000;
-  margin-bottom: 25px;
+  margin-bottom: 30px;
   line-height: 1.2;
-  max-width: 1000px;
+  max-width: 900px;
   margin-left: auto;
   margin-right: auto;
+  letter-spacing: -0.5px;
 }
 
 .expat-hero-subtitle {
-  font-size: 1rem;
-  color: #333;
-  font-style: italic;
-  max-width: 800px;
+  font-size: 1.15rem;
+  color: #555;
+  max-width: 700px;
   margin: 0 auto 50px;
-  line-height: 1.5;
+  line-height: 1.7;
+  font-weight: 400;
 }
 
 /* Homepage Main Grid - Original 2-column layout */
@@ -106,23 +110,30 @@
 }
 
 .expat-homepage-benefits-title {
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   font-weight: 700;
   color: #000;
-  margin-bottom: 30px;
+  margin-bottom: 35px;
+  letter-spacing: -0.3px;
 }
 
 .expat-homepage-benefits-list {
   list-style: none;
-  margin-bottom: 40px;
+  margin-bottom: 45px;
 }
 
 .expat-homepage-benefits-list li {
-  padding: 12px 0;
-  font-size: 1rem;
+  padding: 16px 0;
+  font-size: 1.05rem;
   line-height: 1.6;
-  color: #333;
-  border-bottom: 1px solid #eee;
+  color: #444;
+  border-bottom: 1px solid #e5e7eb;
+  transition: all 0.2s ease;
+}
+
+.expat-homepage-benefits-list li:hover {
+  color: #2563eb;
+  padding-left: 8px;
 }
 
 .expat-homepage-benefits-list li:last-child {
@@ -262,26 +273,49 @@
 
 /* CTA Button */
 .expat-cta-button {
-  background: #dc2626;
+  background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
   color: white;
   border: none;
-  padding: 20px 40px;
-  font-size: 1.2rem;
+  padding: 22px 50px;
+  font-size: 1.1rem;
   font-weight: 700;
-  border-radius: 5px;
+  border-radius: 8px;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   text-transform: none;
-  letter-spacing: 0;
+  letter-spacing: 0.3px;
   display: inline-block;
   text-decoration: none;
   margin-bottom: 20px;
+  box-shadow: 0 4px 14px rgba(220, 38, 38, 0.25);
+  position: relative;
+  overflow: hidden;
+}
+
+.expat-cta-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: left 0.5s;
+}
+
+.expat-cta-button:hover::before {
+  left: 100%;
 }
 
 .expat-cta-button:hover {
-  background: #b91c1c;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(220, 38, 38, 0.3);
+  background: linear-gradient(135deg, #b91c1c 0%, #991b1b 100%);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(220, 38, 38, 0.4);
+}
+
+.expat-cta-button:active {
+  transform: translateY(-1px);
+  box-shadow: 0 5px 15px rgba(220, 38, 38, 0.3);
 }
 
 .expat-warning-text {
@@ -293,35 +327,120 @@
 /* Black Sections */
 .expat-what-includes-section,
 .expat-founder-section {
-  background: #000000;
+  background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
   color: white;
-  padding: 80px 0;
+  padding: 100px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.expat-what-includes-section::before,
+.expat-founder-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
 }
 
 .expat-section-title-white {
-  font-size: 1.8rem;
-  font-weight: 700;
+  font-size: 2.2rem;
+  font-weight: 800;
   color: white;
   text-align: center;
-  margin-bottom: 60px;
+  margin-bottom: 25px;
+  letter-spacing: -0.5px;
+  line-height: 1.2;
 }
 
-/* Features Grid */
+/* Therapy Options Grid (2 items - Online/In-Person) */
+.expat-therapy-options-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 50px;
+  margin-bottom: 60px;
+  margin-top: 60px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.expat-therapy-option-item {
+  text-align: center;
+  padding: 40px 30px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.expat-therapy-option-item:hover {
+  background: rgba(255, 255, 255, 0.06);
+  transform: translateY(-5px);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.expat-therapy-option-item .expat-feature-icon {
+  font-size: 3rem;
+  margin-bottom: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.expat-therapy-option-item .expat-feature-icon svg {
+  width: 52px;
+  height: 52px;
+  filter: drop-shadow(0 4px 8px rgba(255, 255, 255, 0.1));
+}
+
+.expat-therapy-option-item h3 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 18px;
+  letter-spacing: -0.3px;
+}
+
+.expat-therapy-option-item p {
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.7;
+  font-size: 1rem;
+}
+
+/* Features Grid (3 items - Pricing) */
 .expat-features-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 40px;
   margin-bottom: 60px;
+  margin-top: 60px;
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .expat-feature-item {
   text-align: center;
-  padding: 30px 20px;
+  padding: 40px 25px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.expat-feature-item:hover {
+  background: rgba(255, 255, 255, 0.06);
+  transform: translateY(-5px);
+  border-color: rgba(255, 255, 255, 0.2);
 }
 
 .expat-feature-icon {
   font-size: 3rem;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -329,22 +448,23 @@
 }
 
 .expat-feature-icon svg {
-  width: 48px;
-  height: 48px;
-  stroke: currentColor;
+  width: 52px;
+  height: 52px;
+  filter: drop-shadow(0 4px 8px rgba(255, 255, 255, 0.1));
 }
 
 .expat-feature-item h3 {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   font-weight: 700;
   color: white;
-  margin-bottom: 15px;
+  margin-bottom: 18px;
+  letter-spacing: -0.3px;
 }
 
 .expat-feature-item p {
-  color: #ccc;
-  line-height: 1.6;
-  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.7;
+  font-size: 1rem;
 }
 
 .expat-bottom-text {
@@ -366,58 +486,90 @@
 
 /* Steps Section */
 .expat-steps-section {
-  background: white;
-  padding: 80px 0;
+  background: #f9fafb;
+  padding: 100px 0;
   text-align: center;
+  position: relative;
 }
 
 .expat-section-title {
-  font-size: 1.8rem;
-  font-weight: 700;
+  font-size: 2.2rem;
+  font-weight: 800;
   color: #000;
   text-align: center;
-  margin-bottom: 60px;
+  margin-bottom: 70px;
+  letter-spacing: -0.5px;
 }
 
 .expat-steps-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 40px;
-  margin-bottom: 60px;
+  gap: 50px;
+  margin-bottom: 70px;
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .expat-step-item {
   text-align: center;
-  padding: 30px 20px;
+  padding: 40px 30px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.expat-step-item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+  border-color: #2563eb;
 }
 
 .expat-step-icon {
-  font-size: 3rem;
-  margin-bottom: 20px;
+  font-size: 3.5rem;
+  margin-bottom: 25px;
   display: block;
+  font-weight: 800;
+  color: #2563eb;
+  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .expat-step-item h3 {
-  font-size: 1.3rem;
-  font-weight: 600;
-  color: #333;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #000;
   line-height: 1.4;
+  margin-bottom: 15px;
+  letter-spacing: -0.3px;
+}
+
+.expat-step-item p {
+  color: #666;
+  line-height: 1.7;
+  font-size: 1rem;
 }
 
 /* Founder Section */
 .expat-founder-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1.2fr 1fr;
   gap: 80px;
   align-items: center;
 }
 
 .expat-founder-content h3 {
-  font-size: 2rem;
-  font-weight: 700;
+  font-size: 1.9rem;
+  font-weight: 800;
   color: white;
-  margin-bottom: 50px;
-  margin-top: 30px;
+  margin-bottom: 25px;
+  margin-top: 40px;
+  letter-spacing: -0.5px;
+  line-height: 1.3;
 }
 
 .expat-founder-content h3:first-child {
@@ -425,21 +577,23 @@
 }
 
 .expat-founder-content p {
-  color: #ccc;
-  line-height: 1.7;
-  margin-bottom: 50px;
-  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.8;
+  margin-bottom: 30px;
+  font-size: 1.05rem;
 }
 
 .expat-founder-image {
   text-align: center;
+  position: relative;
 }
 
 .expat-founder-photo {
   max-width: 100%;
   height: auto;
-  border-radius: 15px;
-  box-shadow: 0 20px 40px rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+  border: 2px solid rgba(255, 255, 255, 0.1);
 }
 
 /* Final CTA Section */
@@ -1066,6 +1220,13 @@
 }
 
 /* Responsive Design */
+@media (max-width: 1024px) {
+  .expat-features-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 35px;
+  }
+}
+
 @media (max-width: 768px) {
   .expat-hero-title {
     font-size: 2rem;
@@ -1088,6 +1249,7 @@
     padding-left: 0;
   }
   
+  .expat-therapy-options-grid,
   .expat-features-grid,
   .expat-steps-grid {
     grid-template-columns: 1fr;

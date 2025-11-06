@@ -351,7 +351,7 @@ function ExpatTherapyConsultation() {
       <div className="expat-top-banner">
         <div className="expat-container">
           <p>
-            FREE 15-minute consultation call with English-speaking therapist
+            Professional Therapy in English. Accessible Worldwide.
           </p>
         </div>
       </div>
@@ -360,8 +360,7 @@ function ExpatTherapyConsultation() {
       <div className="expat-highlight-section">
         <div className="expat-container">
           <p>
-            If you are an expat in Poland, looking for psychologial support,
-            book your FREE 15-minute call
+            Get support from qualified, experienced therapists online from anywhere, or in-person in Gdańsk. No long waiting lists.
           </p>
         </div>
       </div>
@@ -371,10 +370,10 @@ function ExpatTherapyConsultation() {
         <div className="expat-container">
           <section className="expat-hero-section">
             <h1 className="expat-hero-title">
-              Get English-speaking therapy in Poland without language barriers
+              Finding the Right Support Shouldn't Be This Hard
             </h1>
             <p className="expat-hero-subtitle">
-              Licensed psychologists online or in-person in Gdańsk
+              Finding a therapist who understands you can feel overwhelming, especially when you are living in a new place.
             </p>
           </section>
 
@@ -396,20 +395,12 @@ function ExpatTherapyConsultation() {
 
             <div className="expat-homepage-benefits">
               <h2 className="expat-homepage-benefits-title">
-                In your free 15-minute consultation, you can:
+                You may be feeling:
               </h2>
               <ul className="expat-homepage-benefits-list">
-                <li>✓ Share what you’re dealing with right now</li>
-                <li>✓ Sum up what you need</li>
-                <li>✓ Talk to someone who understands expat life in Poland</li>
-                <li>
-                  ✓ Explore options for therapy in English (in Gdańsk or online)
-                </li>
-                <li>
-                  ✓ Get guidance without language barriers or healthcare
-                  confusion
-                </li>
-                <li>✓ Decide your next steps toward feeling better</li>
+                <li>✓ It's hard to find a qualified therapist who speaks fluent English.</li>
+                <li>✓ Therapy in your country is too expensive or has long waiting lists.</li>
+                <li>✓ You need to find a professional you can trust with your mental health.</li>
               </ul>
               <button
                 className="expat-cta-button"
@@ -417,7 +408,7 @@ function ExpatTherapyConsultation() {
                   setShowModal(true);
                 }}
               >
-                ➤ FIND OUT HOW WE CAN HELP YOU
+                ➤ FILL FORM & BOOK YOUR FREE CALL
               </button>
               <p className="expat-homepage-warning-text">⚠️ LIMITED SPOTS</p>
             </div>
@@ -429,11 +420,14 @@ function ExpatTherapyConsultation() {
       <section className="expat-what-includes-section">
         <div className="expat-container">
           <h2 className="expat-section-title-white">
-            Your options for professional support:
+            Professional Therapy, In English, On Your Terms
           </h2>
+          <p className="expat-section-subtitle-white" style={{color: '#fff', textAlign: 'center', marginBottom: '2rem', fontSize: '1.1rem'}}>
+            We make it simple to get the help you need. Our team is made of experienced, professional therapists who are all fluent English speakers.
+          </p>
 
-          <div className="expat-features-grid">
-            <div className="expat-feature-item">
+          <div className="expat-therapy-options-grid">
+            <div className="expat-therapy-option-item">
               <div className="expat-feature-icon">
                 <svg
                   width="32"
@@ -448,9 +442,10 @@ function ExpatTherapyConsultation() {
                   <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
                 </svg>
               </div>
-              <h3>Counselling & Psychotherapy</h3>
+              <h3>Online Therapy</h3>
+              <p>Get help from anywhere in the world. All you need is a private space and an internet connection.</p>
             </div>
-            <div className="expat-feature-item">
+            <div className="expat-therapy-option-item">
               <div className="expat-feature-icon">
                 <svg
                   width="32"
@@ -465,7 +460,76 @@ function ExpatTherapyConsultation() {
                   <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
                 </svg>
               </div>
-              <h3>Couples Therapy</h3>
+              <h3>In-Person Therapy</h3>
+              <p>Meet your therapist face-to-face at our comfortable, private office in Gdańsk.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Steps Section */}
+      <section className="expat-steps-section">
+        <div className="expat-container">
+          <h2 className="expat-section-title">
+            Start in 3 Simple Steps
+          </h2>
+
+          <div className="expat-steps-grid">
+            <div className="expat-step-item">
+              <div className="expat-step-icon">1</div>
+              <h3>1. Fill out the short form</h3>
+              <p>Click the button and answer a few simple questions. It only takes about 1 minute.</p>
+            </div>
+            <div className="expat-step-item">
+              <div className="expat-step-icon">2</div>
+              <h3>2. Book your free call</h3>
+              <p>After you submit the form, you will see our calendar. Pick a free 15-minute time that works for you.</p>
+            </div>
+            <div className="expat-step-item">
+              <div className="expat-step-icon">3</div>
+              <h3>3. Talk to our specialist</h3>
+              <p>This free, confidential call is for you. We will listen, answer your questions, and plan the best next steps together.</p>
+            </div>
+          </div>
+
+          <button
+            className="expat-cta-button expat-final"
+            onClick={() => {
+              setShowModal(true);
+            }}
+          >
+            FILL FORM TO BOOK YOUR CALL
+          </button>
+        </div>
+      </section>
+
+      {/* Pricing Section */}
+      <section className="expat-what-includes-section">
+        <div className="expat-container">
+          <h2 className="expat-section-title-white">Clear, Simple Pricing</h2>
+          <p className="expat-section-subtitle-white" style={{color: '#fff', textAlign: 'center', marginBottom: '2rem', fontSize: '1.1rem'}}>
+            No hidden fees. No surprises. We believe in transparent pricing.
+          </p>
+
+          <div className="expat-features-grid">
+            <div className="expat-feature-item">
+              <div className="expat-feature-icon">
+                <svg
+                  width="32"
+                  height="32"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                  <polyline points="22 4 12 14.01 9 11.01" />
+                </svg>
+              </div>
+              <h3>Free 15-Minute Intro Call</h3>
+              <p>A free, no-pressure chat to see if we are a good fit for you.</p>
             </div>
             <div className="expat-feature-item">
               <div className="expat-feature-icon">
@@ -484,123 +548,63 @@ function ExpatTherapyConsultation() {
                   <line x1="12" y1="17" x2="12" y2="21" />
                 </svg>
               </div>
-              <h3>Online Consultations</h3>
+              <h3>Online Therapy Session</h3>
+              <p>50 minutes - 250 PLN / 60 EUR</p>
             </div>
-          </div>
-
-          <div className="expat-bottom-text">
-            <button
-              className="expat-cta-button expat-secondary"
-              onClick={() => {
-                // INTENT SIGNAL - Secondary CTA shows continued interest
-                if (window.fbq) {
-                  window.fbq('track', 'InitiateCheckout', {
-                    content_name: 'Expat Therapy CTA - Secondary Form Intent',
-                    content_category: 'INTENT_SIGNAL',
-                    content_type: 'form_opening_secondary',
-                    value: 0, // 0 value - statistics tracking only
-                    currency: 'PLN',
-                    intent_level: 'secondary_form_opening',
-                    conversion_likelihood: 'medium'
-                  }, '328637166250708');
-                  
-                  window.fbq('trackCustom', 'ExpatTherapyFormIntent', {
-                    event_priority: 'INTENT_SIGNAL',
-                    intent_action: 'secondary_cta_clicked',
-                    cta_type: 'secondary_form_opener',
-                    cta_position: 'features_section',
-                    user_journey_stage: 'deep_consideration',
-                    conversion_probability: 'very_high', // Scrolled down and clicked
-                    value: 0, // Analytics only
-                    currency: 'PLN'
-                  }, '328637166250708');
-                  
-
-                }
-
-                // Google Analytics - Secondary CTA tracking
-                if (window.gtag) {
-                  window.gtag('event', 'cta_click', {
-                    event_category: 'User Engagement',
-                    event_label: 'Features Section - Secondary CTA',
-                    cta_position: 'features_section',
-                    intent_level: 'medium',
-                    conversion_likelihood: 'very_high'
-                  });
-                }
-
-                setShowModal(true);
-              }}
-            >
-              ➤ FIND OUT HOW WE CAN HELP YOU
-            </button>
+            <div className="expat-feature-item">
+              <div className="expat-feature-icon">
+                <svg
+                  width="32"
+                  height="32"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                  <polyline points="9 22 9 12 15 12 15 22" />
+                </svg>
+              </div>
+              <h3>In-Person Therapy in Gdańsk</h3>
+              <p>50 minutes - 250 PLN / 60 EUR</p>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Steps Section */}
-      <section className="expat-steps-section">
-        <div className="expat-container">
-          <h2 className="expat-section-title">
-            How expats in Poland get started (3 simple steps):
-          </h2>
-
-          <div className="expat-steps-grid">
-            <div className="expat-step-item">
-              <div className="expat-step-icon">1</div>
-              <h3>
-                1. Click the button and fill out the form (takes 1 minute)
-              </h3>
-            </div>
-            <div className="expat-step-item">
-              <div className="expat-step-icon">2</div>
-              <h3>2. Get contacted within 24h by English speaking therapist</h3>
-            </div>
-            <div className="expat-step-item">
-              <div className="expat-step-icon">3</div>
-              <h3>3. Schedule your FREE 15 minute call</h3>
-            </div>
-          </div>
-
-          <button
-            className="expat-cta-button expat-final"
-            onClick={() => {
-              setShowModal(true);
-            }}
-          >
-            START MY EXPAT THERAPY JOURNEY
-          </button>
-        </div>
-      </section>
-
-      {/* Founder Section */}
+      {/* Location Section */}
       <section className="expat-founder-section">
         <div className="expat-container">
-          <h2 className="expat-section-title-white"></h2>
+          <h2 className="expat-section-title-white">For Our Clients in Poland & Around the World</h2>
 
           <div className="expat-founder-grid">
             <div className="expat-founder-content">
-              <h3>You’re in good hands</h3>
+              <h3>Living in Gdańsk or Poland?</h3>
               <p>
-                Our licensed psychologists understand firsthand the ups and
-                downs of expat life — and how to help you navigate them.
+                We help many international students and professionals living in Poland. If you are in or near Gdańsk, we offer comfortable, in-person sessions at our office in Sobótki 22/2, Gdańsk Wrzeszcz.
               </p>
               <p>
-                Since 2018, we’ve been supporting expats in Poland with
-                everything from cultural shock and relationship crises to
-                personal growth, offering sessions in fluent English.
+                Online sessions are also available for you, no matter where you are in Poland.
               </p>
-              <h3>Ready to heal and grow?</h3>
+              <h3>Affordable, High-Quality Care - Wherever You Are</h3>
+              <p>
+                If you are living in another country, you don't have to choose between high-quality therapy and a high price.
+              </p>
+              <p>
+                Our online sessions give you access to professional, experienced therapists from the comfort of your home. Get the support you need, in English, at a fair price.
+              </p>
+            </div>
+            <div className="expat-founder-image">
               <button
                 className="expat-cta-button expat-final-cta"
                 onClick={() => {
                   setShowModal(true);
                 }}
               >
-                YES, I WANT TO GET STARTED
+                FILL FORM & BOOK YOUR FREE CALL
               </button>
-            </div>
-            <div className="expat-founder-image">
               <img
                 src={
                   process.env.PUBLIC_URL + "/images/mindinblue_therapists.png"
@@ -613,6 +617,29 @@ function ExpatTherapyConsultation() {
                 }}
               />
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Final CTA Section */}
+      <section className="expat-steps-section">
+        <div className="expat-container">
+          <h2 className="expat-section-title">Ready to Talk? We're Here to Help.</h2>
+          <p style={{textAlign: 'center', marginBottom: '2rem', fontSize: '1.1rem'}}>
+            Taking the first step is often the hardest. You don't have to figure this out alone. Our team is here to support you.
+          </p>
+          <p style={{textAlign: 'center', marginBottom: '2rem'}}>
+            Book your free, confidential 15-minute call today. We will listen and help you find the right path forward.
+          </p>
+          <div style={{textAlign: 'center'}}>
+            <button
+              className="expat-cta-button expat-final"
+              onClick={() => {
+                setShowModal(true);
+              }}
+            >
+              FILL FORM & BOOK YOUR FREE CALL
+            </button>
           </div>
         </div>
       </section>
