@@ -25,7 +25,7 @@
 
 /* Top Banner */
 .expat-top-banner {
-  background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+  background: linear-gradient(135deg, #2a66c7 0%, #3fa9f5 100%);
   color: white;
   padding: 12px 0;
   text-align: center;
@@ -324,10 +324,17 @@
   font-size: 0.95rem;
 }
 
-/* Black Sections */
-.expat-what-includes-section,
+/* Blue Sections - Different Shades for Visual Separation */
+.expat-what-includes-section {
+  background: linear-gradient(135deg, #2a66c7 0%, #3fa9f5 100%);
+  color: white;
+  padding: 100px 0;
+  position: relative;
+  overflow: hidden;
+}
+
 .expat-founder-section {
-  background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+  background: linear-gradient(135deg, #1e4a99 0%, #2a66c7 100%);
   color: white;
   padding: 100px 0;
   position: relative;

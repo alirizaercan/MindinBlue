@@ -179,6 +179,15 @@ function ExpatTherapyConsultation() {
   // + Initialize EmailJS (reuse the same public key as /contact)
   useEffect(() => {
     emailjs.init("WsafYrZj3fnh_4yA0"); // same as Contact.js
+    
+    // DataLayer: Page View Event
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      'event': 'page_view',
+      'page_path': '/expat-therapy-poland',
+      'page_title': 'Expat Therapy Poland - Professional English Therapy',
+      'page_location': window.location.href
+    });
   }, []);
 
   // Preserve fbclid and other tracking parameters in localStorage
@@ -280,6 +289,17 @@ function ExpatTherapyConsultation() {
     setShowModal(false);
   };
 
+  // DataLayer: CTA Button Click Tracking
+  const handleCTAClick = useCallback((buttonLocation) => {
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      'event': 'cta_click',
+      'button_text': 'FILL FORM & BOOK YOUR FREE CALL',
+      'button_location': buttonLocation
+    });
+    setShowModal(true);
+  }, []);
+
   // REPLACE mailto with EmailJS
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -316,6 +336,15 @@ function ExpatTherapyConsultation() {
         EMAILJS_TEMPLATE_ID_EXPAT,
         templateParams
       );
+
+      // DataLayer: Form Submission Event
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({
+        'event': 'form_submit',
+        'form_name': 'expat_therapy_consultation',
+        'form_type': 'lead_generation',
+        'session_type': sessionType
+      });
 
       // Optional: user feedback
       alert("Thank you for your application! We will contact you within 24h.");
@@ -404,9 +433,7 @@ function ExpatTherapyConsultation() {
               </ul>
               <button
                 className="expat-cta-button"
-                onClick={() => {
-                  setShowModal(true);
-                }}
+                onClick={() => handleCTAClick('hero_section')}
               >
                 ➤ FILL FORM & BOOK YOUR FREE CALL
               </button>
@@ -599,9 +626,7 @@ function ExpatTherapyConsultation() {
             <div className="expat-founder-image">
               <button
                 className="expat-cta-button expat-final-cta"
-                onClick={() => {
-                  setShowModal(true);
-                }}
+                onClick={() => handleCTAClick('location_section')}
               >
                 FILL FORM & BOOK YOUR FREE CALL
               </button>
@@ -634,9 +659,7 @@ function ExpatTherapyConsultation() {
           <div style={{textAlign: 'center'}}>
             <button
               className="expat-cta-button expat-final"
-              onClick={() => {
-                setShowModal(true);
-              }}
+              onClick={() => handleCTAClick('final_section')}
             >
               FILL FORM & BOOK YOUR FREE CALL
             </button>
@@ -688,6 +711,13 @@ function ExpatTherapyConsultation() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="expat-cta-button"
+                onClick={() => {
+                  window.dataLayer.push({
+                    'event': 'calendly_click',
+                    'button_text': 'BOOK YOUR FREE CONSULTATION NOW',
+                    'button_location': 'video_section'
+                  });
+                }}
               >
                 ➤ BOOK YOUR FREE CONSULTATION NOW
               </a>
@@ -711,6 +741,13 @@ function ExpatTherapyConsultation() {
               target="_blank"
               rel="noopener noreferrer"
               className="expat-cta-button expat-final"
+              onClick={() => {
+                window.dataLayer.push({
+                  'event': 'calendly_click',
+                  'button_text': 'BOOK YOUR FREE CONSULTATION NOW',
+                  'button_location': 'benefits_section'
+                });
+              }}
             >
               ➤ BOOK YOUR FREE CONSULTATION NOW
             </a>

@@ -1,6 +1,5 @@
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { useEffect } from "react";
-import CookieConsent from "react-cookie-consent";
 import { LanguageProvider } from "./contexts/LanguageContext";
 import { applySEO } from "./utils/seo";
 import { gtmPageView } from "./utils/gtm";
@@ -74,55 +73,6 @@ function App() {
     <LanguageProvider>
       <BrowserRouter>
         <AppContent />
-        <CookieConsent
-          location="bottom"
-          buttonText="Accept"
-          declineButtonText="Decline"
-          enableDeclineButton
-          cookieName="mindinblue_cookie_consent"
-          containerClasses="cookie-consent-container"
-          contentClasses="cookie-consent-content"
-          buttonWrapperClasses="cookie-consent-buttons"
-          style={{
-            background: "#2c3e50",
-            fontSize: "15px",
-            padding: "20px",
-            paddingRight: "40px"
-          }}
-          buttonStyle={{
-            background: "#3498db",
-            color: "#fff",
-            fontSize: "15px",
-            padding: "12px 30px",
-            borderRadius: "5px",
-            fontWeight: "600",
-            marginRight: "40px"
-          }}
-          declineButtonStyle={{
-            background: "#e74c3c",
-            color: "#fff",
-            fontSize: "15px",
-            padding: "12px 30px",
-            borderRadius: "5px",
-            fontWeight: "600",
-            marginRight: "10px"
-          }}
-          expires={365}
-          onAccept={() => {
-            if (window.gtag) {
-              window.gtag('consent', 'update', {
-                'ad_storage': 'granted',
-                'ad_user_data': 'granted',
-                'ad_personalization': 'granted',
-                'analytics_storage': 'granted',
-                'personalization_storage': 'granted'
-              });
-            }
-          }}
-        >
-          This website uses cookies to enhance the user experience.{" "}
-          <a href="/contact" style={{ color: "#3498db", fontWeight: "600" }}>Learn more</a>
-        </CookieConsent>
       </BrowserRouter>
     </LanguageProvider>
   );
