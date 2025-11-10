@@ -437,7 +437,6 @@ function ExpatTherapyConsultation() {
               >
                 ➤ FILL FORM & BOOK YOUR FREE CALL
               </button>
-              <p className="expat-homepage-warning-text">⚠️ LIMITED SPOTS</p>
             </div>
           </section>
         </div>
