@@ -67,7 +67,7 @@ export const seoConfig = {
     keywords:
       "English speaking therapist Poland, therapy Gdansk, counselling Poland, couples therapy, online therapy, expat therapy",
     canonical: "https://mindinblue.com/",
-    ogImage: "https://mindinblue.com/images/mindinblue_therapists.png",
+    ogImage: "https://mindinblue.com/images/mindinblue_therapists.jpg",
   },
   team: {
     title:
@@ -77,7 +77,7 @@ export const seoConfig = {
     keywords:
       "English speaking psychologist Poland, licensed therapist Gdansk, CBT therapist, psychodynamic therapy Poland",
     canonical: "https://mindinblue.com/team",
-    ogImage: "https://mindinblue.com/images/mindinblue_therapists.png",
+    ogImage: "https://mindinblue.com/images/mindinblue_therapists.jpg",
   },
   services: {
     title:
@@ -97,7 +97,7 @@ export const seoConfig = {
     keywords:
       "contact therapist Poland, book therapy consultation, English speaking psychologist contact, therapy appointment Gdansk",
     canonical: "https://mindinblue.com/contact",
-    ogImage: "https://mindinblue.com/images/mindinblue_therapists.png",
+    ogImage: "https://mindinblue.com/images/mindinblue_therapists.jpg",
   },
   counsellingPsychotherapy: {
     title:
@@ -134,8 +134,8 @@ export const seoConfig = {
       "Specialized therapy services for expats in Poland. Cultural adaptation support, language-barrier-free counselling, and mental health services for international residents.",
     keywords:
       "expat therapy Poland, therapy for foreigners, cultural adaptation support, international therapy services, expat mental health",
-    canonical: "https://mindinblue.com/expat-therapy-poland",
-    ogImage: "https://mindinblue.com/images/mindinblue_therapists.png",
+    canonical: "https://mindinblue.com/expat-poland",
+    ogImage: "https://mindinblue.com/images/mindinblue_therapists.jpg",
   },
 };
 

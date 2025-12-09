@@ -184,7 +184,7 @@ function ExpatTherapyConsultation() {
     window.dataLayer = window.dataLayer || [];
     window.dataLayer.push({
       'event': 'page_view',
-      'page_path': '/expat-therapy-poland',
+      'page_path': '/expat-poland',
       'page_title': 'Expat Therapy Poland - Professional English Therapy',
       'page_location': window.location.href
     });
@@ -294,7 +294,7 @@ function ExpatTherapyConsultation() {
     window.dataLayer = window.dataLayer || [];
     window.dataLayer.push({
       'event': 'cta_click',
-      'button_text': 'FILL FORM & BOOK YOUR FREE CALL',
+      'button_text': 'FILL FORM & BOOK YOUR CALL',
       'button_location': buttonLocation
     });
     setShowModal(true);
@@ -402,7 +402,7 @@ function ExpatTherapyConsultation() {
               Finding the Right Support Shouldn't Be This Hard
             </h1>
             <p className="expat-hero-subtitle">
-              Finding a therapist who understands you can feel overwhelming, especially when you are living in a new place.
+              Finding a therapist who understands you can feel difficult, especially when you are living in a new place.
             </p>
           </section>
 
@@ -411,7 +411,7 @@ function ExpatTherapyConsultation() {
             <div className="expat-homepage-image">
               <img
                 src={
-                  process.env.PUBLIC_URL + "/images/mindinblue_therapists.png"
+                  process.env.PUBLIC_URL + "/images/mindinblue_therapists.webp"
                 }
                 alt="Mind in Blue Professional Therapy"
                 className="expat-therapy-image"
@@ -429,20 +429,127 @@ function ExpatTherapyConsultation() {
               <ul className="expat-homepage-benefits-list">
                 <li>✓ It's hard to find a qualified therapist who speaks fluent English.</li>
                 <li>✓ Therapy in your country is too expensive or has long waiting lists.</li>
-                <li>✓ You need to find a professional you can trust with your mental health.</li>
+                <li>✓ You need to find a professional you can trust.</li>
               </ul>
               <button
                 className="expat-cta-button"
                 onClick={() => handleCTAClick('hero_section')}
               >
-                ➤ FILL FORM & BOOK YOUR FREE CALL
+                ➤ FILL FORM & BOOK YOUR CALL
               </button>
             </div>
           </section>
         </div>
       </main>
 
-      {/* Black Section - What's Included */}
+      {/* Pricing Section - Moved before Steps */}
+      <section className="expat-what-includes-section">
+        <div className="expat-container">
+          <h2 className="expat-section-title-white">Clear, Simple Pricing</h2>
+          <p className="expat-section-subtitle-white" style={{color: '#fff', textAlign: 'center', marginBottom: '2rem', fontSize: '1.1rem'}}>
+            No hidden fees. No surprises. We believe in transparent pricing.
+          </p>
+
+          <div className="expat-features-grid">
+            <div className="expat-feature-item">
+              <div className="expat-feature-icon">
+                <svg
+                  width="32"
+                  height="32"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                  <polyline points="22 4 12 14.01 9 11.01" />
+                </svg>
+              </div>
+              <h3>15-Minute Intro Call</h3>
+              <p>A free, no-pressure chat to see if we are a good fit for you.</p>
+            </div>
+            <div className="expat-feature-item">
+              <div className="expat-feature-icon">
+                <svg
+                  width="32"
+                  height="32"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
+                  <line x1="8" y1="21" x2="16" y2="21" />
+                  <line x1="12" y1="17" x2="12" y2="21" />
+                </svg>
+              </div>
+              <h3>Online Therapy Session</h3>
+              <p>50 minutes - 250 PLN / 60 EUR</p>
+            </div>
+            <div className="expat-feature-item">
+              <div className="expat-feature-icon">
+                <svg
+                  width="32"
+                  height="32"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                  <polyline points="9 22 9 12 15 12 15 22" />
+                </svg>
+              </div>
+              <h3>In-Person Therapy in Gdańsk</h3>
+              <p>50 minutes - 250 PLN / 60 EUR</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Steps Section - Moved after Pricing */}
+      <section className="expat-steps-section">
+        <div className="expat-container">
+          <h2 className="expat-section-title">
+            Start in 3 Simple Steps
+          </h2>
+
+          <div className="expat-steps-grid">
+            <div className="expat-step-item">
+              <div className="expat-step-icon">1</div>
+              <h3>1. Fill out the short form</h3>
+              <p>Click the button and answer a few simple questions. It only takes about 1 minute.</p>
+            </div>
+            <div className="expat-step-item">
+              <div className="expat-step-icon">2</div>
+              <h3>2. Book your intro call</h3>
+              <p>After you submit the form, you will see our calendar. Pick a free 15-minute time that works for you.</p>
+            </div>
+            <div className="expat-step-item">
+              <div className="expat-step-icon">3</div>
+              <h3>3. Talk to our specialist</h3>
+              <p>This free, confidential call is for you. We will listen, answer your questions, and plan the best next steps together.</p>
+            </div>
+          </div>
+
+          <button
+            className="expat-cta-button expat-final"
+            onClick={() => {
+              setShowModal(true);
+            }}
+          >
+            FILL FORM TO BOOK YOUR CALL
+          </button>
+        </div>
+      </section>
+
+            {/* Black Section - What's Included */}
       <section className="expat-what-includes-section">
         <div className="expat-container">
           <h2 className="expat-section-title-white">
@@ -493,114 +600,7 @@ function ExpatTherapyConsultation() {
         </div>
       </section>
 
-      {/* Steps Section */}
-      <section className="expat-steps-section">
-        <div className="expat-container">
-          <h2 className="expat-section-title">
-            Start in 3 Simple Steps
-          </h2>
-
-          <div className="expat-steps-grid">
-            <div className="expat-step-item">
-              <div className="expat-step-icon">1</div>
-              <h3>1. Fill out the short form</h3>
-              <p>Click the button and answer a few simple questions. It only takes about 1 minute.</p>
-            </div>
-            <div className="expat-step-item">
-              <div className="expat-step-icon">2</div>
-              <h3>2. Book your free call</h3>
-              <p>After you submit the form, you will see our calendar. Pick a free 15-minute time that works for you.</p>
-            </div>
-            <div className="expat-step-item">
-              <div className="expat-step-icon">3</div>
-              <h3>3. Talk to our specialist</h3>
-              <p>This free, confidential call is for you. We will listen, answer your questions, and plan the best next steps together.</p>
-            </div>
-          </div>
-
-          <button
-            className="expat-cta-button expat-final"
-            onClick={() => {
-              setShowModal(true);
-            }}
-          >
-            FILL FORM TO BOOK YOUR CALL
-          </button>
-        </div>
-      </section>
-
-      {/* Pricing Section */}
-      <section className="expat-what-includes-section">
-        <div className="expat-container">
-          <h2 className="expat-section-title-white">Clear, Simple Pricing</h2>
-          <p className="expat-section-subtitle-white" style={{color: '#fff', textAlign: 'center', marginBottom: '2rem', fontSize: '1.1rem'}}>
-            No hidden fees. No surprises. We believe in transparent pricing.
-          </p>
-
-          <div className="expat-features-grid">
-            <div className="expat-feature-item">
-              <div className="expat-feature-icon">
-                <svg
-                  width="32"
-                  height="32"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
-                  <polyline points="22 4 12 14.01 9 11.01" />
-                </svg>
-              </div>
-              <h3>Free 15-Minute Intro Call</h3>
-              <p>A free, no-pressure chat to see if we are a good fit for you.</p>
-            </div>
-            <div className="expat-feature-item">
-              <div className="expat-feature-icon">
-                <svg
-                  width="32"
-                  height="32"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
-                  <line x1="8" y1="21" x2="16" y2="21" />
-                  <line x1="12" y1="17" x2="12" y2="21" />
-                </svg>
-              </div>
-              <h3>Online Therapy Session</h3>
-              <p>50 minutes - 250 PLN / 60 EUR</p>
-            </div>
-            <div className="expat-feature-item">
-              <div className="expat-feature-icon">
-                <svg
-                  width="32"
-                  height="32"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
-                  <polyline points="9 22 9 12 15 12 15 22" />
-                </svg>
-              </div>
-              <h3>In-Person Therapy in Gdańsk</h3>
-              <p>50 minutes - 250 PLN / 60 EUR</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Location Section */}
+      {/* Online/In-Person Section - Now 4th */}
       <section className="expat-founder-section">
         <div className="expat-container">
           <h2 className="expat-section-title-white">For Our Clients in Poland & Around the World</h2>
@@ -627,11 +627,11 @@ function ExpatTherapyConsultation() {
                 className="expat-cta-button expat-final-cta"
                 onClick={() => handleCTAClick('location_section')}
               >
-                FILL FORM & BOOK YOUR FREE CALL
+                FILL FORM & BOOK YOUR INTRO CALL
               </button>
               <img
                 src={
-                  process.env.PUBLIC_URL + "/images/mindinblue_therapists.png"
+                  process.env.PUBLIC_URL + "/images/mindinblue_therapists.webp"
                 }
                 alt="Mind in Blue Team"
                 className="expat-founder-photo"
@@ -660,7 +660,7 @@ function ExpatTherapyConsultation() {
               className="expat-cta-button expat-final"
               onClick={() => handleCTAClick('final_section')}
             >
-              FILL FORM & BOOK YOUR FREE CALL
+              FILL FORM & BOOK YOUR CALL
             </button>
           </div>
         </div>
@@ -675,7 +675,7 @@ function ExpatTherapyConsultation() {
       <div className="expat-highlight-section">
         <div className="expat-container">
           <p>
-            🎯 Next step: Watch the video below and book your free consultation
+            🎯 Next step: Watch the video below and book your consultation
             call
           </p>
         </div>
@@ -713,12 +713,12 @@ function ExpatTherapyConsultation() {
                 onClick={() => {
                   window.dataLayer.push({
                     'event': 'calendly_click',
-                    'button_text': 'BOOK YOUR FREE CONSULTATION NOW',
+                    'button_text': 'BOOK YOUR CONSULTATION NOW',
                     'button_location': 'video_section'
                   });
                 }}
               >
-                ➤ BOOK YOUR FREE CONSULTATION NOW
+                ➤ BOOK YOUR CONSULTATION NOW
               </a>
             </div>
           </section>
@@ -743,12 +743,12 @@ function ExpatTherapyConsultation() {
               onClick={() => {
                 window.dataLayer.push({
                   'event': 'calendly_click',
-                  'button_text': 'BOOK YOUR FREE CONSULTATION NOW',
+                  'button_text': 'BOOK YOUR CONSULTATION NOW',
                   'button_location': 'benefits_section'
                 });
               }}
             >
-              ➤ BOOK YOUR FREE CONSULTATION NOW
+              ➤ BOOK YOUR CONSULTATION NOW
             </a>
             <p className="expat-warning-text">
               → Don't wait - schedule your call today and take the first step
@@ -828,7 +828,7 @@ function ExpatTherapyConsultation() {
               rel="noopener noreferrer"
               className="expat-cta-button expat-secondary"
             >
-              ➤ SCHEDULE MY FREE CALL
+              ➤ SCHEDULE MY CALL
             </a>
           </div>
         </div>
