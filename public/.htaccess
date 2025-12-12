@@ -62,10 +62,14 @@ RewriteRule ^(.+?)/$ /$1 [R=301,L]
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^$ /index.html [L]
-# known routes
+
+# Redirect old expat URL to new one
+RewriteRule ^expat-therapy-poland/?$ /expat-poland [R=301,L]
+
+# known routes - serve index.html for React Router
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^(team|services|contact|counselling-psychotherapy|couples-therapy|online-consultation|expat-therapy-poland)/?$ /index.html [L]
+RewriteRule ^(team|services|contact|counselling-psychotherapy|couples-therapy|online-consultation|expat-poland)/?$ /index.html [L]
 
 
 # Security headers
