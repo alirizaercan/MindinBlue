@@ -1,0 +1,20 @@
+RewriteEngine On
+RewriteBase /
+
+# =====================================================
+# en.mindinblue.com - SADECE /expat-poland çalışır
+# Diğer tüm sayfalar mindinblue.com'a yönlendirilir
+# =====================================================
+
+# Ana sayfa (/) → mindinblue.com'a yönlendir
+RewriteRule ^$ https://mindinblue.com/ [R=301,L]
+
+# expat-poland sayfası - KALSIN (React Router)
+RewriteRule ^expat-poland/?$ /index.html [L]
+
+# Static dosyalar - olduğu gibi servis et
+RewriteCond %{REQUEST_FILENAME} -f
+RewriteRule ^ - [L]
+
+# Diğer TÜM sayfalar → mindinblue.com'a yönlendir
+RewriteRule ^(.+)$ https://mindinblue.com/$1 [R=301,L]

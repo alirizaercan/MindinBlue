@@ -1,0 +1,55 @@
+{
+  "short_name": "MindinBlue",
+  "name": "MindinBlue - English Speaking Therapists in Poland",
+  "description": "Professional English-speaking therapy services in Poland. Licensed psychologists offering counselling, couples therapy, and online consultations.",
+  "icons": [
+    {
+      "src": "/logos/favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "/logos/mindinblue_logo.png",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/logos/mindinblue_logo.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "any maskable"
+    }
+  ],
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "theme_color": "#3fa9f5",
+  "background_color": "#ffffff",
+  "categories": ["health", "medical", "lifestyle"],
+  "lang": "en",
+  "scope": "/",
+  "shortcuts": [
+    {
+      "name": "Book Consultation",
+      "short_name": "Book",
+      "description": "Book a free consultation with our therapists",
+      "url": "/contact",
+      "icons": [{ "src": "/logos/mindinblue_logo.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Our Services",
+      "short_name": "Services", 
+      "description": "View our therapy services",
+      "url": "/services",
+      "icons": [{ "src": "/logos/mindinblue_logo.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Meet Our Team",
+      "short_name": "Team",
+      "description": "Meet our qualified therapists",
+      "url": "/team", 
+      "icons": [{ "src": "/logos/mindinblue_logo.png", "sizes": "192x192" }]
+    }
+  ]
+}

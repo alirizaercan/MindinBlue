@@ -1,0 +1,20 @@
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://mindinblue.com/sitemap.xml
+
+# Block unnecessary paths
+Disallow: /static/
+Disallow: /*.json$
+Disallow: /manifest.json
+
+# Allow important files
+Allow: /static/css/
+Allow: /static/js/
+Allow: /static/media/
+
+# Crawl delay (optional)
+Crawl-delay: 1
+
+Disallow: /search
