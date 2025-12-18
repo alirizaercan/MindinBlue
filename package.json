@@ -6,7 +6,7 @@
   "homepage": "https://mindinblue.com",
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "react-scripts build && xcopy /E /I /Y build\\static build\\en\\static && copy /Y build\\index.html build\\en\\index.html && copy /Y build\\asset-manifest.json build\\en\\asset-manifest.json",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "dev": "react-scripts start"

@@ -418,14 +418,14 @@
   font-size: 1rem;
 }
 
-/* Features Grid (4 items - Pricing) */
+/* Features Grid (3 items - Pricing) */
 .expat-features-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 30px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
   margin-bottom: 60px;
   margin-top: 60px;
-  max-width: 1200px;
+  max-width: 1100px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -468,19 +468,15 @@
   font-size: 1.3rem;
   font-weight: 700;
   color: white;
-  margin-bottom: 18px;
+  margin-bottom: 12px;
   letter-spacing: -0.3px;
-  min-height: 3.2rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .expat-feature-item p {
   color: rgba(255, 255, 255, 0.85);
-  line-height: 1.7;
+  line-height: 1.6;
   font-size: 1rem;
-  margin-top: auto;
+  margin: 0;
 }
 
 .expat-bottom-text {
