@@ -507,7 +507,28 @@ function ExpatTherapyConsultation() {
                 </svg>
               </div>
               <h3>In-Person Therapy in Gdańsk</h3>
-              <p>50 minutes - 250 PLN / 60 EUR</p>
+              <p>50 minutes - 330 PLN / 80 EUR</p>
+            </div>
+            <div className="expat-feature-item">
+              <div className="expat-feature-icon">
+                <svg
+                  width="32"
+                  height="32"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                  <circle cx="9" cy="7" r="4" />
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                </svg>
+              </div>
+              <h3>Couples Therapy</h3>
+              <p>50 minutes - 330 PLN / 80 EUR</p>
             </div>
           </div>
         </div>
@@ -595,6 +616,27 @@ function ExpatTherapyConsultation() {
               </div>
               <h3>In-Person Therapy</h3>
               <p>Meet your therapist face-to-face at our comfortable, private office in Gdańsk.</p>
+            </div>
+            <div className="expat-therapy-option-item">
+              <div className="expat-feature-icon">
+                <svg
+                  width="32"
+                  height="32"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                  <circle cx="9" cy="7" r="4" />
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                </svg>
+              </div>
+              <h3>Couples Therapy</h3>
+              <p>Work through relationship challenges together with professional guidance and support.</p>
             </div>
           </div>
         </div>

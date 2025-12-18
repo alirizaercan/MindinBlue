@@ -362,14 +362,14 @@
   line-height: 1.2;
 }
 
-/* Therapy Options Grid (2 items - Online/In-Person) */
+/* Therapy Options Grid (3 items - Online/In-Person/Couples) */
 .expat-therapy-options-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 50px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
   margin-bottom: 60px;
   margin-top: 60px;
-  max-width: 800px;
+  max-width: 1100px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -418,14 +418,14 @@
   font-size: 1rem;
 }
 
-/* Features Grid (3 items - Pricing) */
+/* Features Grid (4 items - Pricing) */
 .expat-features-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 40px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
   margin-bottom: 60px;
   margin-top: 60px;
-  max-width: 1100px;
+  max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -437,6 +437,9 @@
   border-radius: 12px;
   transition: all 0.3s ease;
   border: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .expat-feature-item:hover {
@@ -452,6 +455,7 @@
   justify-content: center;
   align-items: center;
   color: white;
+  height: 52px;
 }
 
 .expat-feature-icon svg {
@@ -461,17 +465,22 @@
 }
 
 .expat-feature-item h3 {
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   font-weight: 700;
   color: white;
   margin-bottom: 18px;
   letter-spacing: -0.3px;
+  min-height: 3.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .expat-feature-item p {
   color: rgba(255, 255, 255, 0.85);
   line-height: 1.7;
   font-size: 1rem;
+  margin-top: auto;
 }
 
 .expat-bottom-text {
