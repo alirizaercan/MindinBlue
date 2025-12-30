@@ -33,6 +33,8 @@ const ContactModal = memo(
             to get started
           </h2>
           <form onSubmit={handleSubmit}>
+            {/* Hidden GTM UID field for tracking */}
+            <input type="hidden" id="gtm_uid" name="gtm_uid" value={formData.gtm_uid || ''} />
             <div className="expat-form-group">
               <label htmlFor="firstName">First Name *</label>
               <input
@@ -174,6 +176,7 @@ function ExpatTherapyConsultation() {
     goal: "",
     budget: "",
     consent: false,
+    gtm_uid: "", // Add GTM UID to form data
   });
 
   // + Initialize EmailJS (reuse the same public key as /contact)
@@ -198,17 +201,23 @@ function ExpatTherapyConsultation() {
     const utm_source = urlParams.get('utm_source');
     const utm_medium = urlParams.get('utm_medium');
     const utm_campaign = urlParams.get('utm_campaign');
-    
+    // Get GTM UID from cookie if available
+    const gtmUid = (() => {
+      const match = document.cookie.match('(^|;)\\s*gtm_uid\\s*=\\s*([^;]+)');
+      return match ? match.pop() : '';
+    })();
+    setFormData((prev) => ({
+      ...prev,
+      gtm_uid: gtmUid || ''
+    }));
     if (fbclid) {
       localStorage.setItem('_fbclid', fbclid);
       localStorage.setItem('_fbclid_timestamp', Date.now().toString());
       console.log('✅ fbclid saved to localStorage:', fbclid);
     }
-    
     if (fbp) {
       localStorage.setItem('_fbp_param', fbp);
     }
-    
     if (utm_source || utm_medium || utm_campaign) {
       const utm_data = {
         utm_source,
@@ -329,6 +338,7 @@ function ExpatTherapyConsultation() {
         session_type: sessionType,
         message: biggestChallengeText, // только этот блок
         to_email: "anna.rozkwitalska@gmail.com",
+        gtm_uid: formData.gtm_uid || '', // Pass GTM UID
       };
 
       await emailjs.send(
@@ -343,7 +353,8 @@ function ExpatTherapyConsultation() {
         'event': 'form_submit',
         'form_name': 'expat_therapy_consultation',
         'form_type': 'lead_generation',
-        'session_type': sessionType
+        'session_type': sessionType,
+        'gtm_uid': formData.gtm_uid || ''
       });
 
       // Optional: user feedback
@@ -359,6 +370,7 @@ function ExpatTherapyConsultation() {
         goal: "",
         budget: "",
         consent: false,
+        gtm_uid: "",
       });
       setShowModal(false);
       setCurrentPage("thankyou");
