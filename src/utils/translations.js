@@ -42,13 +42,6 @@ export const translations = {
     alicjagajewskaDescription:
       "I’m an English-speaking psychologist, graduate of SWPS University in Sopot and postgraduate studies in Clinical Psychology at the Medical University of Gdańsk. I’m currently studying psychotraumatology at the Triada Institute in Gdańsk.\n\nI work with teenagers and adults at the Social Welfare Home in Bielawki and in private practice. My experience includes work at the Psychiatric Hospital in Gdańsk, the “Mrowisko” Therapeutic Center in Sopot, and providing therapy for victims of domestic violence at the Social Welfare Center in Subkowy.\n\nI help clients facing loneliness, relationship difficulties, prolonged anxiety, sadness, anger, mood swings, low self-esteem, and life crises such as domestic violence or bereavement.",
 
-    // Magdalena Muskat
-    magdalenamuskatTitle: "Psychologist & Counsellor",
-    magdalenamuskatDescription:
-      "I’m a Polish- and English-speaking psychologist and trainer, graduate of SWPS University in Sopot, with certification in Solution Brief Therapy (level 1) and experience leading growth workshops. I’m currently expanding my skills in systemic psychotherapy.\n\nHaving lived in different countries, I understand the challenges of cultural differences and adapting to new situations. I’m an empathetic and attentive specialist who believes everyone has a unique story — my role is to help you connect with yourself and hear your own inner voice more clearly.\n\nFeel free to get in touch if you have questions or want to book a session.",
-    magdalenamuskatClosingMessage:
-      "Feel free to get in touch with us if you have any questions or want to book a consultation session.",
-
     // Team member translations with correct key format
     annarozkwitalskadescription:
       "Hello, I’m Anna, founder of Mind in Blue. I coordinate our clinic and am your first point of contact when you reach out to us. I’ll listen to your needs, answer your questions, and connect you with one of our therapists.\n\nHaving lived, studied, and worked in several countries, I understand the unique challenges of adapting to new cultures, navigating life changes, and building a sense of belonging far from home. This experience inspired me to create Mind in Blue—a safe, culturally sensitive space where people can find support in English without worrying about not being understood.\n\nOur team offers therapy in English and Polish, both online and in person. I make sure you feel understood and supported from the very first conversation.\n\nIf you’re ready to take the next step, I’ll be here to guide you through the process and arrange your first session.\n\nTo maintain the highest professional and ethical standards, I regularly consult with a certified supervisor.",
@@ -115,24 +108,6 @@ export const translations = {
       "Want to rebuild their self-esteem",
       "Struggle with a life crisis, such as domestic violence, bereavement",
     ],
-
-    // Magdalena Muskat
-    magdalenamuskatitle: "Psychologist & Counsellor",
-    magdalenamuskatdescription:
-      "I’m a Polish- and English-speaking psychologist and trainer, graduate of SWPS University in Sopot, with certification in Solution Brief Therapy (level 1) and experience leading growth workshops. I’m currently expanding my skills in systemic psychotherapy.\n\nHaving lived in different countries, I understand the challenges of cultural differences and adapting to new situations. I’m an empathetic and attentive specialist who believes everyone has a unique story — my role is to help you connect with yourself and hear your own inner voice more clearly.\n\nFeel free to get in touch if you have questions or want to book a session.",
-    magdalenamuskatspecialties: [
-      "Solution Brief Therapy",
-      "Systemic Psychotherapy",
-      "Cultural Adaptation",
-      "Personal Growth Workshops",
-      "Cross-Cultural Counselling",
-      "Life Transitions",
-      "Identity Development",
-      "Self-Discovery",
-      "Narrative Therapy",
-    ],
-    magdalenamuskatclosingmessage:
-      "Feel free to get in touch with us if you have any questions or want to book a consultation session.",
 
     // Main navigation and sections
     home: "Home",
@@ -266,12 +241,6 @@ export const translations = {
 
     alicjaClosingMessage:
       "Healing is possible, and you don't have to face your challenges alone. I'm here to support you every step of the way.",
-
-    magdalenaDescription:
-      "I’m a Polish- and English-speaking psychologist and trainer, graduate of SWPS University in Sopot, with certification in Solution Brief Therapy (level 1) and experience leading growth workshops. I’m currently expanding my skills in systemic psychotherapy.\n\nHaving lived in different countries, I understand the challenges of cultural differences and adapting to new situations. I’m an empathetic and attentive specialist who believes everyone has a unique story — my role is to help you connect with yourself and hear your own inner voice more clearly.\n\nFeel free to get in touch if you have questions or want to book a session.",
-
-    magdalenaClosingMessage:
-      "Feel free to get in touch with us if you have any questions or want to book a consultation session.",
 
     // Footer
     followUsOnSocialMedia: "Follow Us On Instagram",
@@ -443,24 +412,6 @@ export const translations = {
       "Borykają się z kryzysem życiowym, takim jak przemoc domowa, żałoba",
     ],
 
-    // Magdalena Muskat
-    magdalenamuskatitle: "Psycholog i Doradca",
-    magdalenamuskatdescription:
-      "Jestem psycholożką i trenerką mówiącą po polsku i angielsku, absolwentką Uniwersytetu SWPS w Sopocie, z certyfikatem z Terapii Skoncentrowanej na Rozwiązaniach (poziom 1) oraz doświadczeniem w prowadzeniu warsztatów rozwojowych. Obecnie poszerzam swoje umiejętności w zakresie psychoterapii systemowej.\n\nPonieważ osobiście doświadczyłam życia w różnych krajach, rozumiem, jak trudne może być stawianie czoła różnicom kulturowym, adaptacja do nowej sytuacji życiowej.\n\nZapraszam do kontaktu w razie pytań lub chęci umówienia sesji.",
-    magdalenamuskatspecialties: [
-      "Terapia Skoncentrowana na Rozwiązaniach",
-      "Psychoterapia Systemowa",
-      "Adaptacja Kulturowa",
-      "Warsztaty Rozwoju Osobistego",
-      "Doradztwo Międzykulturowe",
-      "Przejścia Życiowe",
-      "Rozwój Tożsamości",
-      "Samopoznanie",
-      "Terapia Narracyjna",
-    ],
-    magdalenamuskatclosingmessage:
-      "Zapraszam do kontaktu, jeśli masz jakiekolwiek pytania lub chcesz umówić sesję konsultacyjną.",
-
     // Specialties translations
     annarozkwitalskaaspecialties: [
       "Terapia Psychodynamiczna",
@@ -510,13 +461,6 @@ export const translations = {
     alicjagajewskaTitle: "Psycholog i Doradca",
     alicjagajewskaDescription:
       "Jestem psycholożką mówiącą po angielsku, absolwentką Uniwersytetu SWPS w Sopocie oraz studiów podyplomowych z psychologii klinicznej na Gdańskim Uniwersytecie Medycznym. Obecnie kształcę się w zakresie psychotraumatologii w Instytucie „Triada” w Gdańsku.\n\nPracuję z młodzieżą i dorosłymi w Domu Pomocy Społecznej w Bielawkach oraz w prywatnej praktyce. Doświadczenie zdobywałam m.in. w Szpitalu Psychiatrycznym w Gdańsku, Ośrodku Terapeutycznym „Mrówisko” w Sopocie oraz prowadząc terapię dla ofiar przemocy domowej w OPS w Subkowach.\n\nPomagam osobom zmagającym się z samotnością, trudnościami w relacjach, przewlekłym lękiem, smutkiem, złością, wahaniami nastroju, niskim poczuciem własnej wartości oraz kryzysami życiowymi, takimi jak przemoc domowa czy żałoba.",
-
-    // Magdalena Muskat
-    magdalenamuskatTitle: "Psycholog i Doradca",
-    magdalenamuskatDescription:
-      "Jestem psycholożką i trenerką mówiącą po polsku i angielsku, absolwentką Uniwersytetu SWPS w Sopocie, z certyfikatem z Terapii Skoncentrowanej na Rozwiązaniach (poziom 1) oraz doświadczeniem w prowadzeniu warsztatów rozwojowych. Obecnie poszerzam swoje umiejętności w zakresie psychoterapii systemowej.\n\nPonieważ osobiście doświadczyłam życia w różnych krajach, rozumiem, jak trudne może być stawianie czoła różnicom kulturowym, adaptacja do nowej sytuacji życiowej.\n\nZapraszam do kontaktu w razie pytań lub chęci umówienia sesji.",
-    magdalenamuskatClosingMessage:
-      "Zapraszam do kontaktu, jeśli masz jakiekolwiek pytania lub chcesz umówić sesję konsultacyjną.",
 
     // Home Page
     heroTitle: "Dla tych, którzy są gotowi zrobić krok w stronę zmiany",
@@ -641,12 +585,6 @@ export const translations = {
 
     alicjaClosingMessage:
       "Uzdrowienie jest możliwe i nie musisz sam stawiać czoła swoim wyzwaniom. Jestem tutaj, aby wspierać Cię na każdym kroku.",
-
-    magdalenaDescription:
-      "Jestem polsko- i anglojęzycznym psychologiem i trainerem. Ukończyłam Uniwersytet SWPS w Sopocie i zdobyłam certyfikat I stopnia z Terapii Skoncentrowanej na Rozwiązaniach, prowadząc warsztaty rozwojowe. Dodatkowo obecnie zdobywam doświadczenie w psychoterapii systemowej.\n\nPonieważ osobiście doświadczyłam życia w różnych krajach, rozumiem, jak trudne może być stawianie czoła różnicom kulturowym i adaptacja do nowej sytuacji życiowej.\n\nJestem empatycznym i uważnym specjalistą, wierzącym, że każdy ma unikalną historię do opowiedzenia, a moją rolą jest pomoc klientowi w spotkaniu z samym sobą, aby móc uważniej słuchać własnego dialogu, własnej historii.",
-
-    magdalenaClosingMessage:
-      "Zachęcam do skontaktowania się z nami, jeśli masz jakiekolwiek pytania lub chcesz umówić sesję konsultacyjną.",
 
     // Footer
     followUsOnSocialMedia: "Obserwuj nas na Instagramie",

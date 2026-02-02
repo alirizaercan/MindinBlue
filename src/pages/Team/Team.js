@@ -79,21 +79,6 @@ const Team = () => {
       }
     }
 
-    if (member.name === "Magdalena Muskat") {
-      if (field === "description" && currentLanguage === "PL") {
-        return t("magdalenamuskatdescription");
-      }
-      if (field === "specialties" && currentLanguage === "PL") {
-        return t("magdalenamuskatspecialties");
-      }
-      if (field === "closingMessage" && currentLanguage === "PL") {
-        return t("magdalenamuskatclosingmessage");
-      }
-      if (field === "title" && currentLanguage === "PL") {
-        return t("magdalenamuskatitle");
-      }
-    }
-
     // Return original for all other cases
     return member[field];
   };
@@ -240,31 +225,6 @@ const Team = () => {
         "Struggle with a life crisis, such as domestic violence, bereavement",
       ],
       email: "alicja@mindinblue.com",
-      languages: ["English", "Polish"],
-    },
-    {
-      id: 6,
-      name: "Magdalena Muskat",
-      title: "Psychologist & Counsellor",
-      image: "/images/magdalena.jpg",
-      flags: ["🇬🇧", "🇵🇱"],
-      experience: "Multiple years",
-      specialties: [
-        "Solution Brief Therapy",
-        "Systemic Psychotherapy",
-        "Cultural Adaptation",
-        "Personal Growth Workshops",
-        "Cross-Cultural Counselling",
-        "Life Transitions",
-        "Identity Development",
-        "Self-Discovery",
-        "Narrative Therapy",
-      ],
-      description:
-        "I’m a Polish- and English-speaking psychologist and trainer, graduate of SWPS University in Sopot, with certification in Solution Brief Therapy (level 1) and experience leading growth workshops. I’m currently expanding my skills in systemic psychotherapy.\n\nHaving lived in different countries, I understand the challenges of cultural differences and adapting to new situations. I’m an empathetic and attentive specialist who believes everyone has a unique story — my role is to help you connect with yourself and hear your own inner voice more clearly.\n\nFeel free to get in touch if you have questions or want to book a session.",
-      closingMessage:
-        "Feel free to get in touch with us if you have any questions or want to book a consultation session.",
-      email: "magdalena@mindinblue.com",
       languages: ["English", "Polish"],
     },
   ];
