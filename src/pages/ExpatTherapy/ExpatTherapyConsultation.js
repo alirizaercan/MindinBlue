@@ -181,7 +181,7 @@ function ExpatTherapyConsultation() {
 
   // + Initialize EmailJS (reuse the same public key as /contact)
   useEffect(() => {
-    emailjs.init("WsafYrZj3fnh_4yA0"); // same as Contact.js
+    emailjs.init("B2NnJfUfc5hCo2Ntb"); // same as Contact.js
     
     // DataLayer: Page View Event
     window.dataLayer = window.dataLayer || [];
