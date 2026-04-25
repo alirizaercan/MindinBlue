@@ -137,13 +137,23 @@ export const seoConfig = {
     canonical: "https://mindinblue.com/expat-poland",
     ogImage: "https://mindinblue.com/images/mindinblue_therapists.jpg",
   },
+  neurodivergentTherapy: {
+    title:
+      "Neurodivergent Therapy in English | ADHD & Autism Specialist | Mind in Blue",
+    description:
+      "CBT therapy for neurodivergent adults — ADHD, autism spectrum, sensory sensitivity, and burnout. English-speaking specialist, online or in-person in Gdańsk. No waiting lists.",
+    keywords:
+      "ADHD therapist English, autism spectrum CBT therapy, neurodivergent therapy Poland, ADHD psychologist Gdańsk, autism therapist online English",
+    canonical: "https://mindinblue.com/neurodivergent-therapy",
+    ogImage: "https://mindinblue.com/images/mindinblue_therapists.jpg",
+  },
 };
 
 // Apply SEO settings for a specific page
 export const applySEO = (pageKey) => {
   const config = seoConfig[pageKey];
   if (!config) return;
-  const canonical = pathToCanonical(config.path);
+  const canonical = config.canonical || pathToCanonical(config.path);
   updatePageTitle(config.title);
   updateMetaDescription(config.description);
   updateCanonicalUrl(canonical);

@@ -17,6 +17,9 @@ const Team = () => {
       if (field === "description" && currentLanguage === "PL") {
         return t("annarozkwitalskadescription");
       }
+      if (field === "sessionBenefits" && currentLanguage === "PL") {
+        return t("annaSessionBenefits");
+      }
       if (field === "closingMessage" && currentLanguage === "PL") {
         return t("annarozkwitalskaclosingmessage");
       }
@@ -71,6 +74,9 @@ const Team = () => {
       if (field === "description" && currentLanguage === "PL") {
         return t("alicjagajewskadescription");
       }
+      if (field === "sessionBenefits" && currentLanguage === "PL") {
+        return t("alicjagajewskasessionbenefits");
+      }
       if (field === "specialties" && currentLanguage === "PL") {
         return t("alicjagajewskaspecialties");
       }
@@ -91,6 +97,57 @@ const Team = () => {
       }
       if (field === "title" && currentLanguage === "PL") {
         return t("magdalenamuskatitle");
+      }
+    }
+
+    if (member.name === "Martin Rutkowski") {
+      if (field === "experience" && currentLanguage === "PL") {
+        return t("martinrutkowskiexperience");
+      }
+      if (field === "description" && currentLanguage === "PL") {
+        return t("martinrutkowskidescription");
+      }
+      if (field === "specialties" && currentLanguage === "PL") {
+        return t("martinrutkowskispecialties");
+      }
+      if (field === "title" && currentLanguage === "PL") {
+        return t("martinrutkowskititle");
+      }
+    }
+
+    if (member.name === "Renata") {
+      if (field === "experience" && currentLanguage === "PL") {
+        return t("renataexperience");
+      }
+      if (field === "description" && currentLanguage === "PL") {
+        return t("renatadescription");
+      }
+      if (field === "specialties" && currentLanguage === "PL") {
+        return t("renataspecialties");
+      }
+      if (field === "sessionBenefits" && currentLanguage === "PL") {
+        return t("renatasessionbenefits");
+      }
+      if (field === "title" && currentLanguage === "PL") {
+        return t("renatatitle");
+      }
+    }
+
+    if (member.name === "Barbara") {
+      if (field === "experience" && currentLanguage === "PL") {
+        return t("barbaraexperience");
+      }
+      if (field === "description" && currentLanguage === "PL") {
+        return t("barbaradescription");
+      }
+      if (field === "specialties" && currentLanguage === "PL") {
+        return t("barbaraspecialties");
+      }
+      if (field === "sessionBenefits" && currentLanguage === "PL") {
+        return t("barbarasessionbenefits");
+      }
+      if (field === "title" && currentLanguage === "PL") {
+        return t("barbaratitle");
       }
     }
 
@@ -267,6 +324,98 @@ const Team = () => {
       email: "magdalena@mindinblue.com",
       languages: ["English", "Polish"],
     },
+    {
+      id: 7,
+      name: "Martin Rutkowski",
+      title: "Graduate Psychologist",
+      image: "/images/Martin Rutkowski.jpg",
+      flags: ["🇬🇧", "🇵🇱"],
+      experience: "Multiple years",
+      specialties: [
+        "Psychodynamic Psychotherapy",
+        "Cognitive Behavioral Therapy (CBT)",
+        "Schema Therapy-Informed Work",
+        "Anxiety & Depression",
+        "Phobias & Insomnia",
+        "Relationship Difficulties",
+        "High Stress",
+        "Eating Disorders",
+        "Bipolar Mood Disorders",
+        "Anger Difficulties",
+        "Low Self-Esteem",
+        "Life Transitions & Bereavement",
+        "Personality Disorders",
+      ],
+      description:
+        "I am a native-speaking graduate psychologist specialising in psychodynamic psychotherapy and cognitive-behavioral therapy (schema therapy-informed). I offer both short- and long-term individual therapy for adults who are experiencing a range of emotional, psychological, and life difficulties. I work with concerns such as anxiety, depression, phobias, insomnia, relationship difficulties, high stress, bulimia nervosa, binge-eating disorder, bipolar mood disorders, anger difficulties, low self-esteem, significant life transitions, and bereavement.\n\nI also welcome individuals who may feel dissatisfied with aspects of their lives, relationships, or sense of self, and who are seeking a supportive and reflective space to better understand themselves and create meaningful change. I have a particular interest in working with relationship-related difficulties and personality disorders.",
+      email: "contact@mindinblue.com",
+      languages: ["English", "Polish"],
+    },
+    {
+      id: 8,
+      name: "Renata",
+      title: "Psychologist & Certified CBT Therapist",
+      image: "/images/renata.jpg",
+      flags: ["🇬🇧", "🇵🇱"],
+      experience: "Over 20 years",
+      specialties: [
+        "Cognitive-Behavioural Therapy",
+        "Trauma-Focused CBT",
+        "Common Mental Health Issues",
+        "Affective Disorders",
+        "Anxiety Disorders",
+        "Couples and Interpersonal Therapy",
+        "CBT for Sexual Dysfunction",
+        "Schema Therapy-Informed Work",
+        "Dialectical Behaviour Therapy (DBT)",
+        "LGBTQ+ Affirmative Therapy",
+        "Neurodiversity-Affirmative Therapy",
+      ],
+      description:
+        "I’m an English-speaking psychologist with over 20 years of experience in the field of psychology and health care. I’m also a certified cognitive-behavioural therapist trained at University of Birmingham (UK) and Instytut Poznawczy in Kraków (Poland).\n\nI’ve spent 13 years living and working in United Kingdom, including 6 years of professional experience in NHS based Improving Access to Psychological Therapies (IAPT) Programme. Now based in Poland, I work solely in private practice, providing psychological interventions and psychotherapy to adults and couples in need of help, online.\n\nIn my work I use mainly CBT approach, integrating elements of Schema Therapy, Dialectical Behaviour Therapy (DBT) and neurobiological perspective. I have experience working with members of culturally diverse communities and minorities.",
+      sessionBenefits: [
+        "Be open and honest",
+        "Expect compassion and support",
+        "Look for solutions to improve your wellbeing",
+        "Focus on your relationships and interpersonal patterns",
+        "Discuss causes for the difficulties you currently experience, including past and present",
+      ],
+      email: "contact@mindinblue.com",
+      languages: ["English", "Polish"],
+    },
+    {
+      id: 9,
+      name: "Barbara",
+      title: "Psychologist & CBT Therapist in Training",
+      image: "/images/barbara-private-profile.svg",
+      flags: ["🇬🇧", "🇵🇱"],
+      experience: "Over 10 years (including 2 years in the NHS)",
+      specialties: [
+        "Low Mood & Depression",
+        "Anxiety & Stress",
+        "Sleep Difficulties",
+        "OCD",
+        "Phobias & Panic Attacks",
+        "Work Burnout",
+        "Low Energy & Motivation",
+        "Foreign National Support in Poland",
+        "ADHD Support",
+        "Autism Spectrum Support",
+        "Neurodivergent Burnout",
+      ],
+      description:
+        "I am an English-speaking psychologist and CBT therapist in training. I spent half of my life in the UK, where I studied psychology and then worked within the Talking Therapies service in the NHS (National Health Service) in Oxford. My Oxford-based NHS training and work experience equipped me with the ability to effectively assess what areas of one's life need to be addressed to see improvement in wellbeing. It also gave me the opportunity to work within a multicultural environment and support people of different age groups, backgrounds, religious beliefs, and sexual orientations. It allowed me to recognise the different types of challenges that people can experience and how to best support them.\n\nI also work with neurodivergent adults, including people with ADHD and autism spectrum disorder (ASD). I offer neurodiversity-affirming therapy that takes into account the specific cognitive and emotional experiences of neurodivergent individuals.\n\nI work with adults and offer both short- and long-term therapy. We can start with short-term interventions and monitor results. If you like the way we work together and would like to continue, we can then have a discussion about committing to the therapy long-term.\n\nI am a member of the British Association for Behavioural and Cognitive Psychotherapies (BABCP) and the Polish Association for Cognitive and Behavioural Therapies (PTTPB).",
+      sessionBenefits: [
+        "Explore how to improve your sleep",
+        "Learn strategies to improve your mood",
+        "Learn strategies to manage your anxiety",
+        "Explore what contributes to your symptoms and what changes you need to make to improve your situation",
+        "Develop skills to manage your thoughts and overthinking",
+        "Learn strategies tailored to your neurodivergent brain, including managing ADHD symptoms, autism-related anxiety, and emotional regulation",
+      ],
+      email: "contact@mindinblue.com",
+      languages: ["English", "Polish"],
+    },
   ];
 
   const handleMemberClick = (member) => {
@@ -381,7 +530,7 @@ const Team = () => {
                 <p>
                   {selectedMember.experience === "Multiple years"
                     ? t("multipleYears")
-                    : selectedMember.experience}
+                    : getTranslatedContent(selectedMember, "experience")}
                 </p>
               </div>
 
@@ -401,35 +550,12 @@ const Team = () => {
                 <div className="modal-section">
                   <h3>{t("sessionBenefits")}</h3>
                   <ul className="specialties-list">
-                    {(() => {
-                      // Special handling for team members' sessionBenefits translation
-                      if (
-                        selectedMember.name === "Anna Rozkwitalska" &&
-                        currentLanguage === "PL"
-                      ) {
-                        const translated = t("annaSessionBenefits");
-                        if (Array.isArray(translated)) {
-                          return translated.map((benefit, index) => (
-                            <li key={index}>{benefit}</li>
-                          ));
-                        }
-                      }
-                      if (
-                        selectedMember.name === "Alicja Gajewska" &&
-                        currentLanguage === "PL"
-                      ) {
-                        const translated = t("alicjagajewskasessionbenefits");
-                        if (Array.isArray(translated)) {
-                          return translated.map((benefit, index) => (
-                            <li key={index}>{benefit}</li>
-                          ));
-                        }
-                      }
-                      // Default to original sessionBenefits
-                      return selectedMember.sessionBenefits.map(
-                        (benefit, index) => <li key={index}>{benefit}</li>
-                      );
-                    })()}
+                    {(
+                      getTranslatedContent(selectedMember, "sessionBenefits") ||
+                      selectedMember.sessionBenefits
+                    ).map((benefit, index) => (
+                      <li key={index}>{benefit}</li>
+                    ))}
                   </ul>
                 </div>
               )}

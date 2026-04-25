@@ -16,6 +16,7 @@ const CounsellingPsychotherapy = lazy(() => import("./pages/CounsellingPsychothe
 const CouplesTherapy = lazy(() => import("./pages/CouplesTherapy/CouplesTherapy"));
 const OnlineConsultation = lazy(() => import("./pages/OnlineConsultation/OnlineConsultation"));
 const ExpatTherapyConsultation = lazy(() => import("./pages/ExpatTherapy/ExpatTherapyConsultation"));
+const NeurodivergentTherapy = lazy(() => import("./pages/ExpatTherapy/NeurodivergentTherapy"));
 
 // Loading component
 const PageLoader = () => (
@@ -34,7 +35,10 @@ const PageLoader = () => (
 
 function AppContent() {
   const location = useLocation();
-  const isExpatTherapyPage = location.pathname === '/expat-poland' || location.pathname === '/expat-therapy-poland';
+  const isExpatTherapyPage =
+    location.pathname === '/expat-poland' ||
+    location.pathname === '/expat-therapy-poland' ||
+    location.pathname === '/neurodivergent-therapy';
 
   // Apply SEO based on current route
   useEffect(() => {
@@ -46,7 +50,8 @@ function AppContent() {
       '/counselling-psychotherapy': 'counsellingPsychotherapy',
       '/couples-therapy': 'couplesTherapy',
       '/online-consultation': 'onlineConsultation',
-      '/expat-poland': 'expatTherapy'
+      '/expat-poland': 'expatTherapy',
+      '/neurodivergent-therapy': 'neurodivergentTherapy'
     };
 
     const seoKey = routeToSEOMap[location.pathname];
@@ -80,6 +85,7 @@ function AppContent() {
           <Route path="/online-consultation" element={<OnlineConsultation />} />
           {/* Expat Therapy - Standalone landing page without Header/Footer */}
           <Route path="/expat-poland" element={<ExpatTherapyConsultation />} />
+          <Route path="/neurodivergent-therapy" element={<NeurodivergentTherapy />} />
           {/* 301 Redirect from old URL to new URL */}
           <Route path="/expat-therapy-poland" element={<Navigate to="/expat-poland" replace />} />
         </Routes>

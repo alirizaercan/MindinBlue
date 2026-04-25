@@ -648,6 +648,80 @@ export const translations = {
     magdalenaClosingMessage:
       "Zachęcam do skontaktowania się z nami, jeśli masz jakiekolwiek pytania lub chcesz umówić sesję konsultacyjną.",
 
+    // Martin Rutkowski
+    martinrutkowskititle: "Psycholog",
+    martinrutkowskiexperience: "Wieloletnie doświadczenie",
+    martinrutkowskidescription:
+      "Jestem psychologiem i native speakerem języka angielskiego, specjalizującym się w psychoterapii psychodynamicznej oraz terapii poznawczo-behawioralnej z elementami terapii schematów. Oferuję krótkoterminową i długoterminową terapię indywidualną dla dorosłych, którzy doświadczają różnych trudności emocjonalnych, psychologicznych i życiowych. Pracuję z takimi obszarami jak lęk, depresja, fobie, bezsenność, trudności w relacjach, wysoki poziom stresu, bulimia, zaburzenie z napadami objadania się, choroba afektywna dwubiegunowa, trudności ze złością, niskie poczucie własnej wartości, istotne zmiany życiowe oraz żałoba.\n\nZapraszam również osoby, które odczuwają niezadowolenie z różnych aspektów swojego życia, relacji lub poczucia własnego ja i szukają wspierającej, refleksyjnej przestrzeni, aby lepiej zrozumieć siebie i wprowadzić znaczącą zmianę. Szczególnie interesuje mnie praca z trudnościami w relacjach oraz zaburzeniami osobowości.",
+    martinrutkowskispecialties: [
+      "Psychoterapia Psychodynamiczna",
+      "Terapia Poznawczo-Behawioralna (CBT)",
+      "Praca z Elementami Terapii Schematów",
+      "Lęk i Depresja",
+      "Fobie i Bezsenność",
+      "Trudności w Relacjach",
+      "Wysoki Poziom Stresu",
+      "Zaburzenia Odżywiania",
+      "Choroba Afektywna Dwubiegunowa",
+      "Trudności ze Złością",
+      "Niskie Poczucie Własnej Wartości",
+      "Zmiany Życiowe i Żałoba",
+      "Zaburzenia Osobowości",
+    ],
+
+    // Renata
+    renatatitle: "Psycholog i Certyfikowana Terapeutka CBT",
+    renataexperience: "Ponad 20 lat",
+    renatadescription:
+      "Jestem psycholożką mówiącą po angielsku, z ponad 20-letnim doświadczeniem w obszarze psychologii i ochrony zdrowia. Jestem również certyfikowaną terapeutką poznawczo-behawioralną, szkoloną na University of Birmingham w Wielkiej Brytanii oraz w Instytucie Poznawczym w Krakowie.\n\nPrzez 13 lat mieszkałam i pracowałam w Wielkiej Brytanii, w tym przez 6 lat zdobywałam doświadczenie zawodowe w programie Improving Access to Psychological Therapies (IAPT) prowadzonym w ramach NHS. Obecnie mieszkam w Polsce i pracuję wyłącznie w praktyce prywatnej, oferując interwencje psychologiczne i psychoterapię online dorosłym oraz parom potrzebującym wsparcia.\n\nW pracy korzystam głównie z podejścia CBT, integrując elementy terapii schematów, terapii dialektyczno-behawioralnej (DBT) oraz perspektywy neurobiologicznej. Mam doświadczenie w pracy z osobami z różnych kulturowo społeczności oraz z grup mniejszościowych.",
+    renataspecialties: [
+      "Terapia Poznawczo-Behawioralna",
+      "CBT Ukierunkowana na Traumę",
+      "Powszechne Trudności Zdrowia Psychicznego",
+      "Zaburzenia Afektywne",
+      "Zaburzenia Lękowe",
+      "Terapia Par i Terapia Interpersonalna",
+      "CBT w Zaburzeniach Seksualnych",
+      "Praca z Elementami Terapii Schematów",
+      "Terapia Dialektyczno-Behawioralna (DBT)",
+      "Podejście Afirmujące LGBTQ+",
+      "Podejście Afirmujące Neuroróżnorodność",
+    ],
+    renatasessionbenefits: [
+      "Być otwartym/ą i szczerym/ą",
+      "Oczekiwać współczucia i wsparcia",
+      "Szukać rozwiązań poprawiających dobrostan",
+      "Skupić się na relacjach i wzorcach interpersonalnych",
+      "Omówić przyczyny obecnie doświadczanych trudności, zarówno z przeszłości, jak i teraźniejszości",
+    ],
+
+    // Barbara
+    barbaratitle: "Psycholog i Terapeutka CBT w Trakcie Szkolenia",
+    barbaraexperience: "Ponad 10 lat (w tym 2 lata w NHS)",
+    barbaradescription:
+      "Jestem psycholożką mówiącą po angielsku oraz terapeutką CBT w trakcie szkolenia. Połowę życia spędziłam w Wielkiej Brytanii, gdzie studiowałam psychologię, a następnie pracowałam w Talking Therapies w ramach NHS (National Health Service) w Oxfordzie. Szkolenie i doświadczenie zawodowe zdobyte w NHS w Oxfordzie wyposażyły mnie w umiejętność skutecznej oceny, które obszary życia wymagają pracy, aby poprawić dobrostan. Dały mi również możliwość pracy w środowisku wielokulturowym oraz wspierania osób w różnym wieku, z różnych środowisk, wyznań i orientacji seksualnych. Pozwoliło mi to rozpoznawać różne typy trudności, których ludzie mogą doświadczać, oraz dobierać najlepsze formy wsparcia.\n\nPracuję również z osobami dorosłymi neuroróżnorodnymi, w tym z osobami z ADHD i ze spektrum autyzmu (ASD). Oferuję terapię afirmującą neuroróżnorodność, uwzględniającą specyficzne doświadczenia poznawcze i emocjonalne osób neuroróżnorodnych.\n\nPracuję z dorosłymi i oferuję zarówno terapię krótkoterminową, jak i długoterminową. Możemy rozpocząć od krótkoterminowych interwencji i monitorować rezultaty. Jeśli odpowiada Ci nasz sposób pracy i chcesz kontynuować, możemy omówić możliwość dłuższego procesu terapeutycznego.\n\nJestem członkinią British Association for Behavioural and Cognitive Psychotherapies (BABCP) oraz Polskiego Towarzystwa Terapii Poznawczej i Behawioralnej (PTTPB).",
+    barbaraspecialties: [
+      "Obniżony Nastrój i Depresja",
+      "Lęk i Stres",
+      "Trudności ze Snem",
+      "OCD",
+      "Fobie i Ataki Paniki",
+      "Wypalenie Zawodowe",
+      "Niski Poziom Energii i Motywacji",
+      "Wsparcie dla Obcokrajowców w Polsce",
+      "Wsparcie w ADHD",
+      "Wsparcie dla Osób w Spektrum Autyzmu",
+      "Wypalenie Neuroróżnorodne",
+    ],
+    barbarasessionbenefits: [
+      "Zbadać, jak poprawić sen",
+      "Nauczyć się strategii poprawy nastroju",
+      "Nauczyć się strategii radzenia sobie z lękiem",
+      "Zrozumieć, co przyczynia się do objawów i jakie zmiany mogą poprawić Twoją sytuację",
+      "Rozwinąć umiejętności radzenia sobie z myślami i nadmiernym analizowaniem",
+      "Poznać strategie dostosowane do Twojego neuroróżnorodnego mózgu, w tym radzenia sobie z objawami ADHD, lękiem związanym z autyzmem i regulacją emocji",
+    ],
+
     // Footer
     followUsOnSocialMedia: "Obserwuj nas na Instagramie",
     copyright: "© 2024 Mind in Blue",
