@@ -31,21 +31,6 @@ const Team = () => {
       }
     }
 
-    if (member.name === "Agata Gulbierz") {
-      if (field === "description" && currentLanguage === "PL") {
-        return t("agatagulbierzdescription");
-      }
-      if (field === "closingMessage" && currentLanguage === "PL") {
-        return t("agatagulbierzclosingmessage");
-      }
-      if (field === "specialties" && currentLanguage === "PL") {
-        return t("agatagulbierzspecialties");
-      }
-      if (field === "title" && currentLanguage === "PL") {
-        return t("agatagulbierztitle");
-      }
-    }
-
     if (member.name === "Justyna Foster") {
       if (field === "description" && currentLanguage === "PL") {
         return t("justynafosterdescription");
@@ -82,21 +67,6 @@ const Team = () => {
       }
       if (field === "title" && currentLanguage === "PL") {
         return t("alicjagajewskatitle");
-      }
-    }
-
-    if (member.name === "Magdalena Muskat") {
-      if (field === "description" && currentLanguage === "PL") {
-        return t("magdalenamuskatdescription");
-      }
-      if (field === "specialties" && currentLanguage === "PL") {
-        return t("magdalenamuskatspecialties");
-      }
-      if (field === "closingMessage" && currentLanguage === "PL") {
-        return t("magdalenamuskatclosingmessage");
-      }
-      if (field === "title" && currentLanguage === "PL") {
-        return t("magdalenamuskatitle");
       }
     }
 
@@ -193,38 +163,6 @@ const Team = () => {
     },
     {
       id: 2,
-      name: "Agata Gulbierz",
-      title: "Psychologist & CBT",
-      image: "/images/agata.jpg",
-      flags: ["🇬🇧", "🇵🇱"],
-      experience: "10+ years",
-      specialties: [
-        "Cognitive Behavioral Therapy (CBT)",
-        "Acceptance and Commitment Therapy (ACT)",
-        "Motivational Interviewing (MI)",
-        "Emotion Regulation",
-        "Mental Resilience Building",
-        "Self-Confidence Building",
-        "Relationship Improvement",
-        "Adolescent Therapy (14+)",
-        "Personal Growth",
-      ],
-      description:
-        "I’m an English-speaking psychologist, counsellor, and CBT therapist in training, working online and in person in Gdańsk. I specialise in supporting adolescents (14+) and adults in managing stress, difficult emotions, and life challenges, with a focus on building mental resilience.\n\nI use evidence-based methods such as CBT, ACT, and Motivational Interviewing to help clients improve emotional regulation, self-esteem, and relationships. My approach is based on trust, acceptance, and understanding, always tailored to individual needs.\n\nI have experience in local organisations, foundations, and the Psychiatric Hospital in Gdańsk, as well as over 10 years in business environments in Poland, Hungary, and England. As a member of the Polish Society for Cognitive and Behavioural Therapy, I regularly train and work under professional supervision to maintain high standards.\n\nIf you’re ready to strengthen your mental health and quality of life, get in touch — I’m here to help.\n\n\n\n",
-      sessionBenefits: [
-        "Struggle with regulating their emotions",
-        "Feel lonely or lack self-confidence",
-        "Are searching for meaning or purpose in life",
-        "Wish to grow personally and better understand themselves",
-        "Want to improve their relationships with others",
-      ],
-      closingMessage:
-        "If you are looking to improve your quality of life, deepen your self-understanding, and become a stronger, more resilient version of yourself — feel free to get in touch. I am here to support you in facing challenges and discovering your potential.",
-      email: "agata@mindinblue.com",
-      languages: ["English", "Polish"],
-    },
-    {
-      id: 3,
       name: "Justyna Foster",
       title: "Social Worker & Psychotherapist",
       image: "/images/justyna.jpg",
@@ -247,7 +185,7 @@ const Team = () => {
       languages: ["English", "Polish"],
     },
     {
-      id: 4,
+      id: 3,
       name: "Monika Skwierawska",
       title: "Psychologist & Psychodynamic Psychotherapy",
       image: "/images/monika.jpg",
@@ -270,7 +208,7 @@ const Team = () => {
       languages: ["English", "Polish"],
     },
     {
-      id: 5,
+      id: 4,
       name: "Alicja Gajewska",
       title: "Psychologist & Counsellor",
       image: "/images/alicia.jpg",
@@ -300,32 +238,7 @@ const Team = () => {
       languages: ["English", "Polish"],
     },
     {
-      id: 6,
-      name: "Magdalena Muskat",
-      title: "Psychologist & Counsellor",
-      image: "/images/magdalena.jpg",
-      flags: ["🇬🇧", "🇵🇱"],
-      experience: "Multiple years",
-      specialties: [
-        "Solution Brief Therapy",
-        "Systemic Psychotherapy",
-        "Cultural Adaptation",
-        "Personal Growth Workshops",
-        "Cross-Cultural Counselling",
-        "Life Transitions",
-        "Identity Development",
-        "Self-Discovery",
-        "Narrative Therapy",
-      ],
-      description:
-        "I’m a Polish- and English-speaking psychologist and trainer, graduate of SWPS University in Sopot, with certification in Solution Brief Therapy (level 1) and experience leading growth workshops. I’m currently expanding my skills in systemic psychotherapy.\n\nHaving lived in different countries, I understand the challenges of cultural differences and adapting to new situations. I’m an empathetic and attentive specialist who believes everyone has a unique story — my role is to help you connect with yourself and hear your own inner voice more clearly.\n\nFeel free to get in touch if you have questions or want to book a session.",
-      closingMessage:
-        "Feel free to get in touch with us if you have any questions or want to book a consultation session.",
-      email: "magdalena@mindinblue.com",
-      languages: ["English", "Polish"],
-    },
-    {
-      id: 7,
+      id: 5,
       name: "Martin Rutkowski",
       title: "Graduate Psychologist",
       image: "/images/Martin Rutkowski.jpg",
@@ -352,7 +265,7 @@ const Team = () => {
       languages: ["English", "Polish"],
     },
     {
-      id: 8,
+      id: 6,
       name: "Renata",
       title: "Psychologist & Certified CBT Therapist",
       image: "/images/renata.jpg",
@@ -384,7 +297,7 @@ const Team = () => {
       languages: ["English", "Polish"],
     },
     {
-      id: 9,
+      id: 7,
       name: "Barbara",
       title: "Psychologist & CBT Therapist in Training",
       image: "/images/barbara-private-profile.svg",
