@@ -240,7 +240,7 @@ const Team = () => {
     {
       id: 5,
       name: "Martin Rutkowski",
-      title: "Graduate Psychologist",
+      title: "Psychologist & Psychotherapist",
       image: "/images/Martin Rutkowski.jpg",
       flags: ["🇬🇧", "🇵🇱"],
       experience: "Multiple years",
@@ -299,7 +299,7 @@ const Team = () => {
     {
       id: 7,
       name: "Barbara",
-      title: "Psychologist & CBT Therapist in Training",
+      title: "Psychologist & CBT Therapist",
       image: "/images/barbara-private-profile.svg",
       flags: ["🇬🇧", "🇵🇱"],
       experience: "Over 10 years (including 2 years in the NHS)",
@@ -317,7 +317,7 @@ const Team = () => {
         "Neurodivergent Burnout",
       ],
       description:
-        "I am an English-speaking psychologist and CBT therapist in training. I spent half of my life in the UK, where I studied psychology and then worked within the Talking Therapies service in the NHS (National Health Service) in Oxford. My Oxford-based NHS training and work experience equipped me with the ability to effectively assess what areas of one's life need to be addressed to see improvement in wellbeing. It also gave me the opportunity to work within a multicultural environment and support people of different age groups, backgrounds, religious beliefs, and sexual orientations. It allowed me to recognise the different types of challenges that people can experience and how to best support them.\n\nI also work with neurodivergent adults, including people with ADHD and autism spectrum disorder (ASD). I offer neurodiversity-affirming therapy that takes into account the specific cognitive and emotional experiences of neurodivergent individuals.\n\nI work with adults and offer both short- and long-term therapy. We can start with short-term interventions and monitor results. If you like the way we work together and would like to continue, we can then have a discussion about committing to the therapy long-term.\n\nI am a member of the British Association for Behavioural and Cognitive Psychotherapies (BABCP) and the Polish Association for Cognitive and Behavioural Therapies (PTTPB).",
+        "I am an English-speaking psychologist and CBT therapist. I spent half of my life in the UK, where I studied psychology and then worked within the Talking Therapies service in the NHS (National Health Service) in Oxford. My Oxford-based NHS training and work experience equipped me with the ability to effectively assess what areas of one's life need to be addressed to see improvement in wellbeing. It also gave me the opportunity to work within a multicultural environment and support people of different age groups, backgrounds, religious beliefs, and sexual orientations. It allowed me to recognise the different types of challenges that people can experience and how to best support them.\n\nI also work with neurodivergent adults, including people with ADHD and autism spectrum disorder (ASD). I offer neurodiversity-affirming therapy that takes into account the specific cognitive and emotional experiences of neurodivergent individuals.\n\nI work with adults and offer both short- and long-term therapy. We can start with short-term interventions and monitor results. If you like the way we work together and would like to continue, we can then have a discussion about committing to the therapy long-term.\n\nI am a member of the British Association for Behavioural and Cognitive Psychotherapies (BABCP) and the Polish Association for Cognitive and Behavioural Therapies (PTTPB).",
       sessionBenefits: [
         "Explore how to improve your sleep",
         "Learn strategies to improve your mood",
