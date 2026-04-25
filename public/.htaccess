@@ -69,7 +69,7 @@ RewriteRule ^expat-therapy-poland/?$ /expat-poland [R=301,L]
 # known routes - serve index.html for React Router
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^(team|services|contact|counselling-psychotherapy|couples-therapy|online-consultation|expat-poland)/?$ /index.html [L]
+RewriteRule ^(team|services|contact|counselling-psychotherapy|couples-therapy|online-consultation|expat-poland|neurodivergent-therapy)/?$ /index.html [L]
 
 
 # Security headers
