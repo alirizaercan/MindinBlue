@@ -21,7 +21,7 @@ function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   // Initialize EmailJS (add your public key from EmailJS dashboard)
-  emailjs.init("WsafYrZj3fnh_4yA0"); // Replace with your EmailJS public key
+  emailjs.init("B2NnJfUfc5hCo2Ntb"); // Replace with your EmailJS public key
 
   const validateForm = () => {
     const newErrors = {};
