@@ -532,7 +532,7 @@ function NeurodivergentTherapy() {
                 </svg>
               </div>
               <h3>Online Therapy Session</h3>
-              <p>50 min - 250 PLN / 60 EUR</p>
+              <p>50 min - 250 PLN / 65 EUR</p>
             </div>
             <div className="expat-feature-item">
               <div className="expat-feature-icon">
@@ -551,7 +551,7 @@ function NeurodivergentTherapy() {
                 </svg>
               </div>
               <h3>In-Person Therapy in Gdańsk</h3>
-              <p>50 min - 330 PLN / 80 EUR</p>
+              <p>50 min - 250 PLN / 65 EUR</p>
             </div>
           </div>
         </div>
