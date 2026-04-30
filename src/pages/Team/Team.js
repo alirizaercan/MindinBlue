@@ -85,7 +85,7 @@ const Team = () => {
       }
     }
 
-    if (member.name === "Renata") {
+    if (member.name === "Renata Dobrowolska") {
       if (field === "experience" && currentLanguage === "PL") {
         return t("renataexperience");
       }
@@ -103,7 +103,7 @@ const Team = () => {
       }
     }
 
-    if (member.name === "Barbara") {
+    if (member.name === "Barbara Sobolewska") {
       if (field === "experience" && currentLanguage === "PL") {
         return t("barbaraexperience");
       }
@@ -266,7 +266,7 @@ const Team = () => {
     },
     {
       id: 6,
-      name: "Renata",
+      name: "Renata Dobrowolska",
       title: "Psychologist & Certified CBT Therapist",
       image: "/images/renata.jpg",
       flags: ["🇬🇧", "🇵🇱"],
@@ -298,9 +298,9 @@ const Team = () => {
     },
     {
       id: 7,
-      name: "Barbara",
+      name: "Barbara Sobolewska",
       title: "Psychologist & CBT Therapist",
-      image: "/images/barbara-private-profile.svg",
+      image: "/images/barbara.jpg",
       flags: ["🇬🇧", "🇵🇱"],
       experience: "Over 10 years (including 2 years in the NHS)",
       specialties: [

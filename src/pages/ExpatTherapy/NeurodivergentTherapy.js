@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useCallback, memo } from "react";
 import "./expat-therapy-styles.css";
 import emailjs from "@emailjs/browser"; // + EmailJS
+import { pushToDataLayer } from "../../utils/gtm";
 
 // Добавьте рядом с импортами (замените на ваш новый template_id из EmailJS)
 const EMAILJS_SERVICE_ID = "service_6nnbqus";
@@ -120,6 +121,18 @@ const ContactModal = memo(
             </div>
 
             <div className="expat-form-group">
+              <label htmlFor="message">Message (optional)</label>
+              <textarea
+                id="message"
+                name="message"
+                value={formData.message || ""}
+                onChange={handleInputChange}
+                rows="4"
+                placeholder="Anything else you would like us to know?"
+              />
+            </div>
+
+            <div className="expat-form-group">
               <label htmlFor="budget">Preferred way to receive support *</label>
               <select
                 id="budget"
@@ -192,6 +205,7 @@ function NeurodivergentTherapy() {
     phone: "",
     experience: "",
     supportAreas: [],
+    message: "",
     budget: "",
     consent: false,
     gtm_uid: "", // Add GTM UID to form data
@@ -201,10 +215,7 @@ function NeurodivergentTherapy() {
   useEffect(() => {
     emailjs.init("WsafYrZj3fnh_4yA0"); // same as Contact.js
     
-    // DataLayer: Page View Event
-    window.dataLayer = window.dataLayer || [];
-    window.dataLayer.push({
-      'event': 'page_view',
+    pushToDataLayer('page_view', {
       'page_path': '/neurodivergent-therapy',
       'page_title': 'Neurodivergent Therapy in English - ADHD & Autism Specialist',
       'page_location': window.location.href
@@ -330,9 +341,7 @@ function NeurodivergentTherapy() {
 
   // DataLayer: CTA Button Click Tracking
   const handleCTAClick = useCallback((buttonLocation) => {
-    window.dataLayer = window.dataLayer || [];
-    window.dataLayer.push({
-      'event': 'cta_click',
+    pushToDataLayer('cta_click', {
       'button_text': 'FILL FORM & BOOK YOUR CALL',
       'button_location': buttonLocation
     });
@@ -356,7 +365,12 @@ function NeurodivergentTherapy() {
           ? formData.supportAreas.join(", ")
           : "-";
 
-      const biggestChallengeText = `What brings you here:\n${selectedSupportAreas}`;
+      const optionalMessage =
+        formData.message && formData.message.trim()
+          ? formData.message.trim()
+          : "-";
+
+      const biggestChallengeText = `What brings you here:\n${selectedSupportAreas}\n\nMessage:\n${optionalMessage}`;
 
       const templateParams = {
         from_name: `${formData.firstName || ""} ${
@@ -379,10 +393,7 @@ function NeurodivergentTherapy() {
         templateParams
       );
 
-      // DataLayer: Form Submission Event
-      window.dataLayer = window.dataLayer || [];
-      window.dataLayer.push({
-        'event': 'form_submit',
+      pushToDataLayer('form_submit', {
         'form_name': 'neurodivergent_therapy_consultation',
         'form_type': 'lead_generation',
         'session_type': sessionType,
@@ -400,6 +411,7 @@ function NeurodivergentTherapy() {
         phone: "",
         experience: "",
         supportAreas: [],
+        message: "",
         budget: "",
         consent: false,
         gtm_uid: "",
@@ -770,8 +782,7 @@ function NeurodivergentTherapy() {
                 rel="noopener noreferrer"
                 className="expat-cta-button"
                 onClick={() => {
-                  window.dataLayer.push({
-                    'event': 'calendly_click',
+                  pushToDataLayer('calendly_click', {
                     'button_text': 'BOOK YOUR CONSULTATION NOW',
                     'button_location': 'video_section'
                   });
@@ -800,8 +811,7 @@ function NeurodivergentTherapy() {
               rel="noopener noreferrer"
               className="expat-cta-button expat-final"
               onClick={() => {
-                window.dataLayer.push({
-                  'event': 'calendly_click',
+                pushToDataLayer('calendly_click', {
                   'button_text': 'BOOK YOUR CONSULTATION NOW',
                   'button_location': 'benefits_section'
                 });

@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useCallback, memo } from "react";
 import "./expat-therapy-styles.css";
 import emailjs from "@emailjs/browser"; // + EmailJS
+import { pushToDataLayer } from "../../utils/gtm";
 
 // Добавьте рядом с импортами (замените на ваш новый template_id из EmailJS)
 const EMAILJS_SERVICE_ID = "service_6nnbqus";
@@ -183,10 +184,7 @@ function ExpatTherapyConsultation() {
   useEffect(() => {
     emailjs.init("B2NnJfUfc5hCo2Ntb"); // same as Contact.js
     
-    // DataLayer: Page View Event
-    window.dataLayer = window.dataLayer || [];
-    window.dataLayer.push({
-      'event': 'page_view',
+    pushToDataLayer('page_view', {
       'page_path': '/expat-poland',
       'page_title': 'Expat Therapy Poland - Professional English Therapy',
       'page_location': window.location.href
@@ -300,9 +298,7 @@ function ExpatTherapyConsultation() {
 
   // DataLayer: CTA Button Click Tracking
   const handleCTAClick = useCallback((buttonLocation) => {
-    window.dataLayer = window.dataLayer || [];
-    window.dataLayer.push({
-      'event': 'cta_click',
+    pushToDataLayer('cta_click', {
       'button_text': 'FILL FORM & BOOK YOUR CALL',
       'button_location': buttonLocation
     });
@@ -347,10 +343,7 @@ function ExpatTherapyConsultation() {
         templateParams
       );
 
-      // DataLayer: Form Submission Event
-      window.dataLayer = window.dataLayer || [];
-      window.dataLayer.push({
-        'event': 'form_submit',
+      pushToDataLayer('form_submit', {
         'form_name': 'expat_therapy_consultation',
         'form_type': 'lead_generation',
         'session_type': sessionType,
@@ -746,8 +739,7 @@ function ExpatTherapyConsultation() {
                 rel="noopener noreferrer"
                 className="expat-cta-button"
                 onClick={() => {
-                  window.dataLayer.push({
-                    'event': 'calendly_click',
+                  pushToDataLayer('calendly_click', {
                     'button_text': 'BOOK YOUR CONSULTATION NOW',
                     'button_location': 'video_section'
                   });
@@ -776,8 +768,7 @@ function ExpatTherapyConsultation() {
               rel="noopener noreferrer"
               className="expat-cta-button expat-final"
               onClick={() => {
-                window.dataLayer.push({
-                  'event': 'calendly_click',
+                pushToDataLayer('calendly_click', {
                   'button_text': 'BOOK YOUR CONSULTATION NOW',
                   'button_location': 'benefits_section'
                 });

@@ -9,7 +9,54 @@
  * Initialize dataLayer if not exists
  */
 const initDataLayer = () => {
+  if (typeof window === 'undefined') {
+    return;
+  }
+
   window.dataLayer = window.dataLayer || [];
+};
+
+let gtmErrorGuardInstalled = false;
+
+const isLocalDevelopment = () =>
+  process.env.NODE_ENV === 'development' &&
+  typeof window !== 'undefined' &&
+  ['localhost', '127.0.0.1'].includes(window.location.hostname);
+
+/**
+ * Prevent third-party GTM tag errors from taking over the React dev overlay.
+ * This only runs on localhost development builds.
+ */
+export const installGtmErrorGuard = () => {
+  if (!isLocalDevelopment() || gtmErrorGuardInstalled) {
+    return;
+  }
+
+  gtmErrorGuardInstalled = true;
+
+  window.addEventListener(
+    'error',
+    (event) => {
+      const errorSource = [
+        event.message,
+        event.filename,
+        event.error && event.error.stack,
+      ]
+        .filter(Boolean)
+        .join(' ');
+
+      const isGtmError =
+        errorSource.includes('googletagmanager.com') ||
+        errorSource.includes('gtm.js') ||
+        event.message === 'Script error.';
+
+      if (isGtmError) {
+        console.warn('GTM script error suppressed in local development.', event);
+        event.preventDefault();
+      }
+    },
+    true
+  );
 };
 
 /**
@@ -19,13 +66,22 @@ const initDataLayer = () => {
  */
 export const pushToDataLayer = (event, data = {}) => {
   initDataLayer();
-  
-  window.dataLayer.push({
+
+  if (typeof window === 'undefined') {
+    return;
+  }
+
+  const payload = {
     event: event,
     ...data
-  });
-  
-  console.log('📦 GTM DataLayer Push:', { event, ...data });
+  };
+
+  try {
+    window.dataLayer.push(payload);
+    console.log('GTM DataLayer Push:', payload);
+  } catch (error) {
+    console.warn('GTM DataLayer push failed:', error, payload);
+  }
 };
 
 /**
@@ -224,9 +280,11 @@ export const gtmClearEcommerce = () => {
 };
 
 // Initialize dataLayer on module load
+installGtmErrorGuard();
 initDataLayer();
 
 export default {
+  installGtmErrorGuard,
   pushToDataLayer,
   gtmPageView,
   gtmFormSubmit,
